@@ -1,0 +1,1 @@
+schema_version,score_unit,method,scale,combination_id,tuning_folds,evaluation_panel,evaluation_piece_count,checkpoint_id,candidate_hash,config_hash,beat_fmeasure,beat_cmlt,beat_amlt,downbeat_fmeasure,downbeat_cmlt,downbeat_amlt

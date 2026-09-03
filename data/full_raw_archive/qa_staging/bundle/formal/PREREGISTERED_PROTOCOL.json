@@ -1,0 +1,846 @@
+{
+  "aggregation": "unweighted macro mean over pieces",
+  "code": {
+    "files": {
+      "decoders": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/decoders.py",
+        "sha256": "f66e7dfb09b208882749fe6d212d8363b28b7a2da397b4ba297b93df1825eaed"
+      },
+      "driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/run_driver/run_casm_ranked_protocol.py",
+        "sha256": "2f7d607dadd69292db11fe48567830290dff9b7c3bfe248d811bd2db64a99550"
+      },
+      "evaluation": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/evaluation.py",
+        "sha256": "a47a422ba7c70092203d9fea21b3e2ae64d01b5bcefb64c5a4ef1b8b22230962"
+      },
+      "historical_search": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/scripts/search_asm.py",
+        "sha256": "cad5937ca87ebfcbf7d7c26127f946d5558bbb3792b46bdb629157e8f33a21c9"
+      },
+      "supplemental_driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/code/run_casm_fixed_fold0_exhaustive_combinations.py",
+        "sha256": "cd914055738f4789241dc160dbc0b33bf8667bd2866f8d4af997572022c466e1"
+      }
+    },
+    "git_commit": "5b5a7fc7372ee4e272493b26b47f2f7c1937334e",
+    "git_dirty": true
+  },
+  "design": {
+    "combination_counts": {
+      "1f": 7,
+      "2f": 21,
+      "4f": 35,
+      "7f": 1
+    },
+    "contract": "all C(7,k) subsets for k in {1,2,4,7}; fold0 never enters selection",
+    "development_fold_universe": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "families": {
+      "1f": [
+        {
+          "folds": [
+            1
+          ],
+          "label": "1f_1"
+        },
+        {
+          "folds": [
+            2
+          ],
+          "label": "1f_2"
+        },
+        {
+          "folds": [
+            3
+          ],
+          "label": "1f_3"
+        },
+        {
+          "folds": [
+            4
+          ],
+          "label": "1f_4"
+        },
+        {
+          "folds": [
+            5
+          ],
+          "label": "1f_5"
+        },
+        {
+          "folds": [
+            6
+          ],
+          "label": "1f_6"
+        },
+        {
+          "folds": [
+            7
+          ],
+          "label": "1f_7"
+        }
+      ],
+      "2f": [
+        {
+          "folds": [
+            1,
+            2
+          ],
+          "label": "2f_1_2"
+        },
+        {
+          "folds": [
+            1,
+            3
+          ],
+          "label": "2f_1_3"
+        },
+        {
+          "folds": [
+            1,
+            4
+          ],
+          "label": "2f_1_4"
+        },
+        {
+          "folds": [
+            1,
+            5
+          ],
+          "label": "2f_1_5"
+        },
+        {
+          "folds": [
+            1,
+            6
+          ],
+          "label": "2f_1_6"
+        },
+        {
+          "folds": [
+            1,
+            7
+          ],
+          "label": "2f_1_7"
+        },
+        {
+          "folds": [
+            2,
+            3
+          ],
+          "label": "2f_2_3"
+        },
+        {
+          "folds": [
+            2,
+            4
+          ],
+          "label": "2f_2_4"
+        },
+        {
+          "folds": [
+            2,
+            5
+          ],
+          "label": "2f_2_5"
+        },
+        {
+          "folds": [
+            2,
+            6
+          ],
+          "label": "2f_2_6"
+        },
+        {
+          "folds": [
+            2,
+            7
+          ],
+          "label": "2f_2_7"
+        },
+        {
+          "folds": [
+            3,
+            4
+          ],
+          "label": "2f_3_4"
+        },
+        {
+          "folds": [
+            3,
+            5
+          ],
+          "label": "2f_3_5"
+        },
+        {
+          "folds": [
+            3,
+            6
+          ],
+          "label": "2f_3_6"
+        },
+        {
+          "folds": [
+            3,
+            7
+          ],
+          "label": "2f_3_7"
+        },
+        {
+          "folds": [
+            4,
+            5
+          ],
+          "label": "2f_4_5"
+        },
+        {
+          "folds": [
+            4,
+            6
+          ],
+          "label": "2f_4_6"
+        },
+        {
+          "folds": [
+            4,
+            7
+          ],
+          "label": "2f_4_7"
+        },
+        {
+          "folds": [
+            5,
+            6
+          ],
+          "label": "2f_5_6"
+        },
+        {
+          "folds": [
+            5,
+            7
+          ],
+          "label": "2f_5_7"
+        },
+        {
+          "folds": [
+            6,
+            7
+          ],
+          "label": "2f_6_7"
+        }
+      ],
+      "4f": [
+        {
+          "folds": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "label": "4f_1_2_3_4"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "label": "4f_1_2_3_5"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "label": "4f_1_2_3_6"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            3,
+            7
+          ],
+          "label": "4f_1_2_3_7"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "label": "4f_1_2_4_5"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            4,
+            6
+          ],
+          "label": "4f_1_2_4_6"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "label": "4f_1_2_4_7"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "label": "4f_1_2_5_6"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            5,
+            7
+          ],
+          "label": "4f_1_2_5_7"
+        },
+        {
+          "folds": [
+            1,
+            2,
+            6,
+            7
+          ],
+          "label": "4f_1_2_6_7"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "label": "4f_1_3_4_5"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "label": "4f_1_3_4_6"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            4,
+            7
+          ],
+          "label": "4f_1_3_4_7"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "label": "4f_1_3_5_6"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "label": "4f_1_3_5_7"
+        },
+        {
+          "folds": [
+            1,
+            3,
+            6,
+            7
+          ],
+          "label": "4f_1_3_6_7"
+        },
+        {
+          "folds": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "label": "4f_1_4_5_6"
+        },
+        {
+          "folds": [
+            1,
+            4,
+            5,
+            7
+          ],
+          "label": "4f_1_4_5_7"
+        },
+        {
+          "folds": [
+            1,
+            4,
+            6,
+            7
+          ],
+          "label": "4f_1_4_6_7"
+        },
+        {
+          "folds": [
+            1,
+            5,
+            6,
+            7
+          ],
+          "label": "4f_1_5_6_7"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "label": "4f_2_3_4_5"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "label": "4f_2_3_4_6"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "label": "4f_2_3_4_7"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "label": "4f_2_3_5_6"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "label": "4f_2_3_5_7"
+        },
+        {
+          "folds": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "label": "4f_2_3_6_7"
+        },
+        {
+          "folds": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "label": "4f_2_4_5_6"
+        },
+        {
+          "folds": [
+            2,
+            4,
+            5,
+            7
+          ],
+          "label": "4f_2_4_5_7"
+        },
+        {
+          "folds": [
+            2,
+            4,
+            6,
+            7
+          ],
+          "label": "4f_2_4_6_7"
+        },
+        {
+          "folds": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "label": "4f_2_5_6_7"
+        },
+        {
+          "folds": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "label": "4f_3_4_5_6"
+        },
+        {
+          "folds": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "label": "4f_3_4_5_7"
+        },
+        {
+          "folds": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "label": "4f_3_4_6_7"
+        },
+        {
+          "folds": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "label": "4f_3_5_6_7"
+        },
+        {
+          "folds": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "label": "4f_4_5_6_7"
+        }
+      ],
+      "7f": [
+        {
+          "folds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "label": "7f_1_2_3_4_5_6_7"
+        }
+      ]
+    },
+    "permanently_held_out_smc_fold": 0,
+    "total_combinations": 64
+  },
+  "fixed_evaluation_panels": {
+    "gtzan_final1": {
+      "metrics": [
+        "beat_fmeasure",
+        "beat_cmlt",
+        "beat_amlt",
+        "downbeat_fmeasure",
+        "downbeat_cmlt",
+        "downbeat_amlt"
+      ],
+      "piece_count": 993,
+      "used_for_selection": false
+    },
+    "lock_order": "all 64 selections and hashes locked before either fixed-panel score is computed",
+    "smc_fold0": {
+      "metrics": [
+        "beat_fmeasure",
+        "beat_cmlt",
+        "beat_amlt"
+      ],
+      "piece_count": 27,
+      "used_for_selection": false
+    }
+  },
+  "gtzan": {
+    "cache_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/gtzan_3seed/beat_this_final1_gtzan",
+    "checkpoint_seed": 1,
+    "eligible_for_clean_test_claim": false,
+    "gtzan_used_for_casm_parameter_selection": false,
+    "lock_order": "all 64 CASM selections and hashes locked before GTZAN inventory is opened",
+    "seed_selection_basis": "prior observed GTZAN Beat F1; final1 was the post-hoc best checkpoint under that metric",
+    "test_conditioned_backbone_seed": true
+  },
+  "metrics": [
+    "beat_fmeasure",
+    "beat_cmlt",
+    "beat_amlt",
+    "downbeat_fmeasure",
+    "downbeat_cmlt",
+    "downbeat_amlt"
+  ],
+  "mock": false,
+  "name": "casm-fixed-fold0-exhaustive-combination-scaling-v1",
+  "protocol_hash": "9b9e84109178a998f9c9215244c7eee2be1b4d1c1bf4b25d93147c462668fae3",
+  "schema_version": 1,
+  "sealed_registry": {
+    "candidate_name_set_sha256": "7bc595a2b01ca86f27c0f6abfd8df45705a35c346e94109b39f5ae39613eb3fb",
+    "complete_candidate_count": 918,
+    "incomplete_candidate_count": 0,
+    "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache"
+  },
+  "selection": {
+    "candidate_spaces": {
+      "agreement": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "duration_coarse": {
+        "duration_sigma": [
+          0.15,
+          0.22,
+          0.35
+        ],
+        "duration_weight": [
+          0.25,
+          0.5,
+          1.0,
+          2.0,
+          4.0
+        ],
+        "uncertain_sigma": [
+          0.3,
+          0.55,
+          0.9
+        ]
+      },
+      "duration_refine": {
+        "duration_sigma": [
+          0.08,
+          0.12,
+          0.15,
+          0.18
+        ],
+        "duration_weight": [
+          4.0,
+          6.0,
+          8.0,
+          12.0
+        ],
+        "uncertain_sigma": [
+          0.1,
+          0.2,
+          0.3,
+          0.4
+        ]
+      },
+      "fallback": {
+        "fallback_maximal_ratio": [
+          1.6,
+          1.8,
+          2.0
+        ],
+        "fallback_minimal_ratio": [
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          1.0
+        ]
+      },
+      "historical_local": {
+        "bar_reward": [
+          0.2
+        ],
+        "downbeat_agreement_threshold": [
+          0.5,
+          0.7
+        ],
+        "downbeat_temperature": [
+          3.0,
+          5.0
+        ],
+        "duration_sigma": [
+          0.12,
+          0.18
+        ],
+        "duration_weight": [
+          8.0,
+          16.0
+        ],
+        "fallback_maximal_ratio": [
+          1.6,
+          2.0
+        ],
+        "fallback_minimal_ratio": [
+          0.85,
+          0.95
+        ],
+        "meter_change_penalty": [
+          2.0,
+          4.0
+        ],
+        "meters": [
+          [
+            3,
+            4
+          ]
+        ],
+        "uncertain_sigma": [
+          0.15,
+          0.25
+        ]
+      },
+      "meter": {
+        "bar_reward": [
+          0.0,
+          0.2,
+          0.4,
+          0.6,
+          0.8
+        ],
+        "downbeat_temperature": [
+          1.0,
+          2.0,
+          4.0
+        ],
+        "meter_change_penalty": [
+          0.5,
+          1.5,
+          3.0
+        ],
+        "meters": [
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ]
+      }
+    },
+    "data_visibility": "Beat This OOF folds1..7 only; fold0 and GTZAN metrics unavailable until all 64 configurations are locked",
+    "f1_guard_absolute_0_to_1": 0.0005,
+    "historical_parameters": {
+      "bar_reward": 0.0,
+      "candidate_threshold": 0.03,
+      "downbeat_agreement_threshold": 0.6,
+      "downbeat_agreement_tolerance": 0.07,
+      "downbeat_mode": "meter",
+      "downbeat_temperature": 4.0,
+      "duration_sigma": 0.15,
+      "duration_weight": 12.0,
+      "fallback_maximal_ratio": 1.8,
+      "fallback_minimal_ratio": 0.9,
+      "fps": 50.0,
+      "local_window_seconds": 8.0,
+      "logit_clip": 6.0,
+      "max_bpm": 300.0,
+      "meter_change_penalty": 3.0,
+      "meters": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "min_bpm": 30.0,
+      "temperature": 2.0,
+      "tempo_bias": 0.15,
+      "uncertain_sigma": 0.2
+    },
+    "metric_tie_absolute_0_to_1": 0.0005,
+    "rule": "sealed ranked-protocol run_staged_search/select_lexicographic",
+    "stages": [
+      "duration coarse",
+      "duration refinement",
+      "downbeat meter",
+      "agreement",
+      "fallback",
+      "Historical one-field local refinement"
+    ]
+  },
+  "selection_inventory": {
+    "fingerprint": "74d9614ea931f7fa68406d8682a784a0eb48019215ef5b09ba6bf2145229a85d",
+    "fold0_piece_count": 0,
+    "partition_counts": {
+      "fold1": 570,
+      "fold2": 562,
+      "fold3": 567,
+      "fold4": 569,
+      "fold5": 573,
+      "fold6": 575,
+      "fold7": 569
+    },
+    "piece_count": 3985
+  },
+  "source_oof_inventory": {
+    "file_sha256": "c238f63f6c4e83a5c53f21c3100bcd4d97a0f2f919e01c1e6f3f490f593df494",
+    "fingerprint": "7cf06624c82be99b3bbe4b339c4aef723302bf92f07b9080ffe46bc27d8efe46",
+    "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/protocol/input_inventory.json",
+    "piece_count": 4556
+  },
+  "source_seal": {
+    "file_sha256": "1b1de4669c11ed317b7cb4c100fc3ef3866d7773519027e1ecb5fab649597965",
+    "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/postprocess/seals/TOTAL_MANIFEST.json",
+    "payload_hash": "c69ccb0d7dc54eb634b137d905db0779c2d38d1d546666a1db958435e0e1a99e"
+  },
+  "trim_seconds": 5.0,
+  "uncertainty": {
+    "claim_limit": "descriptive across-combination uncertainty, not test-population or training-seed CI",
+    "replicates": 100000,
+    "seed": 20260902,
+    "summary": "mean, population SD, descriptive percentile bootstrap CI",
+    "unit": "fold combination"
+  },
+  "workers": 12
+}

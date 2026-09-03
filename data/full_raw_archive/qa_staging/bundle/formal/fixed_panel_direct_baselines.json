@@ -1,0 +1,27 @@
+{
+  "configuration_hash": "6acfad49ba1080aa053ac1950e3a73d11af7efd1cdfecdd111329a76a544d92a",
+  "gtzan_final1": {
+    "metrics": {
+      "beat_amlt": 0.8986722530578288,
+      "beat_cmlt": 0.8055241089747935,
+      "beat_fmeasure": 0.8948580842013736,
+      "downbeat_amlt": 0.7893379478375557,
+      "downbeat_cmlt": 0.6789836811441256,
+      "downbeat_fmeasure": 0.7842041279731435
+    },
+    "piece_count": 993
+  },
+  "method": "Beat This Direct",
+  "protocol_hash": "9b9e84109178a998f9c9215244c7eee2be1b4d1c1bf4b25d93147c462668fae3",
+  "smc_fold0": {
+    "metrics": {
+      "beat_amlt": 0.7212584700548198,
+      "beat_cmlt": 0.6031252961411672,
+      "beat_fmeasure": 0.6502497771278297,
+      "downbeat_amlt": "nan",
+      "downbeat_cmlt": "nan",
+      "downbeat_fmeasure": "nan"
+    },
+    "piece_count": 27
+  }
+}

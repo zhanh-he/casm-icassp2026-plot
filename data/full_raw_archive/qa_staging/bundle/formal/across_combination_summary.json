@@ -1,0 +1,325 @@
+{
+  "bootstrap_replicates": 100000,
+  "bootstrap_seed": 20260902,
+  "families": {
+    "exhaustive_1f": {
+      "combination_count": 7,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9015989833707396,
+                0.9049865410380254
+              ],
+              "mean": 0.9032991019363144,
+              "population_sd": 0.0022707549852650413
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8078606215749478,
+                0.8106747711241856
+              ],
+              "mean": 0.8092706450532521,
+              "population_sd": 0.0019323056990682723
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8952976237306515,
+                0.8956943285091681
+              ],
+              "mean": 0.8955015538243493,
+              "population_sd": 0.0002704006579411749
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8488569649916482,
+                0.852936302880952
+              ],
+              "mean": 0.850863051491592,
+              "population_sd": 0.002811082016249856
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7140801145284497,
+                0.7155290516511518
+              ],
+              "mean": 0.7148458922574534,
+              "population_sd": 0.0009810380671861625
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.7907262659092871,
+                0.7923292574266949
+              ],
+              "mean": 0.7915606308956912,
+              "population_sd": 0.001112934026627845
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7411579333669748,
+                0.7532280069245517
+              ],
+              "mean": 0.7473776957284055,
+              "population_sd": 0.008336415660102701
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6138050007093642,
+                0.6271940606578023
+              ],
+              "mean": 0.6207222319952137,
+              "population_sd": 0.009059110262307124
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6524214320299105,
+                0.6568025048788314
+              ],
+              "mean": 0.6547418267638507,
+              "population_sd": 0.002975623226621381
+            }
+          }
+        }
+      },
+      "tuning_size": 1
+    },
+    "exhaustive_2f": {
+      "combination_count": 21,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9033540826427208,
+                0.904543352681271
+              ],
+              "mean": 0.9039608354775669,
+              "population_sd": 0.001391636676484698
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8092815467035706,
+                0.81023031018713
+              ],
+              "mean": 0.809764908829363,
+              "population_sd": 0.0011037142031007261
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8954830874386184,
+                0.8956351502012367
+              ],
+              "mean": 0.8955628840008409,
+              "population_sd": 0.000178415380763606
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8507955333960333,
+                0.8521010738674791
+              ],
+              "mean": 0.8514660329898869,
+              "population_sd": 0.001526503133711558
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7151402424504144,
+                0.715910853510598
+              ],
+              "mean": 0.7155224407559084,
+              "population_sd": 0.0009024955641544187
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.791851522066482,
+                0.792435939751608
+              ],
+              "mean": 0.7921699738442989,
+              "population_sd": 0.0006834871210222792
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7501870151487414,
+                0.7539956463166098
+              ],
+              "mean": 0.7523068736939672,
+              "population_sd": 0.004467375086857053
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6217242003463074,
+                0.6265139183549218
+              ],
+              "mean": 0.6241414026398994,
+              "population_sd": 0.005610365159266148
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6548760239801348,
+                0.6568008667793107
+              ],
+              "mean": 0.6558255226943219,
+              "population_sd": 0.002253322309357807
+            }
+          }
+        }
+      },
+      "tuning_size": 2
+    },
+    "exhaustive_4f": {
+      "combination_count": 35,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9042939523839738,
+                0.9050143791520613
+              ],
+              "mean": 0.9046527598363115,
+              "population_sd": 0.0010868733831533623
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8099956861173471,
+                0.8104839429889384
+              ],
+              "mean": 0.810236369594624,
+              "population_sd": 0.0007360142857434423
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8954488174642812,
+                0.8955639037193648
+              ],
+              "mean": 0.8955065533321573,
+              "population_sd": 0.00017393538485846637
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8517112197929565,
+                0.8525893129180812
+              ],
+              "mean": 0.8521408201175521,
+              "population_sd": 0.0013252215473180762
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.715131235726011,
+                0.7155769718879201
+              ],
+              "mean": 0.715345860738141,
+              "population_sd": 0.0006743493092917325
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.791604120948272,
+                0.792013446727274
+              ],
+              "mean": 0.7918147108607441,
+              "population_sd": 0.0006227129593514491
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7537187511839469,
+                0.7557127180501502
+              ],
+              "mean": 0.7547075782163272,
+              "population_sd": 0.003015678587811284
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6254511621375509,
+                0.6284488543992028
+              ],
+              "mean": 0.6269158640330512,
+              "population_sd": 0.004521584783317324
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6563687134930777,
+                0.6576161103255672
+              ],
+              "mean": 0.6569820200764204,
+              "population_sd": 0.0018813135913756944
+            }
+          }
+        }
+      },
+      "tuning_size": 4
+    },
+    "exhaustive_7f": {
+      "combination_count": 1,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.9055207788131425,
+              "population_sd": null
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.8106324836792859,
+              "population_sd": null
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.8953434153195663,
+              "population_sd": null
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.8525365103160145,
+              "population_sd": null
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7147934068928178,
+              "population_sd": null
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7908669649274843,
+              "population_sd": null
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7589673472276188,
+              "population_sd": null
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.6292443559606538,
+              "population_sd": null
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.6576139596187013,
+              "population_sd": null
+            }
+          }
+        }
+      },
+      "tuning_size": 7
+    }
+  },
+  "interpretation": "descriptive across-combination uncertainty; not a test-population or training-seed confidence interval",
+  "resampling_unit": "fold combination"
+}

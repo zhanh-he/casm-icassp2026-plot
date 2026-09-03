@@ -1,0 +1,21 @@
+{
+  "combination_rows": 64,
+  "family_counts": {
+    "0": 1,
+    "1": 7,
+    "2": 21,
+    "4": 35,
+    "7": 1
+  },
+  "independent_summary_path": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/analysis/independent_family_summary.csv",
+  "independent_summary_sha256": "4d527959ca68995cbea6488d33e4b465261778b4cd492ee9f42c88b20b1d2ab2",
+  "input_rows": 65,
+  "metric_count": 9,
+  "outputs": {
+    "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/analysis/markdown_tables/combination_exact_scores.md": "1fdb5c6e384b70ec41a7044c0c4050975b5fdf307450a78b89c8adc026cdaa95",
+    "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/analysis/markdown_tables/family_summary_9_metrics.md": "dc16db0402b83324a824ac4ef94a7c1b242df993dfa49cd73e47496d554f1f41"
+  },
+  "results_path": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/formal_results/fixed_panel_combination_results.csv",
+  "results_sha256": "2a710ea97794ecbee79ab0b7363f37debfd76fe85a2a5bd82fb6a7e2818345f6",
+  "status": "PASS"
+}

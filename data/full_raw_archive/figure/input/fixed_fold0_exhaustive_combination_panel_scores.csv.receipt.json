@@ -1,0 +1,17 @@
+{
+  "family_counts": {
+    "0": 1,
+    "1": 7,
+    "2": 21,
+    "4": 35,
+    "7": 1
+  },
+  "identity_candidate_hash_substitutions": 0,
+  "output_path": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/input/fixed_fold0_exhaustive_combination_panel_scores.csv",
+  "output_rows": 130,
+  "output_sha256": "dc160e0a7dfbbf927801c1377fcc5cf4ea4500ae11c9ad11bd0621aea6a9c527",
+  "schema_version": "structbeat.casm.fixed-fold0-combination-panel.v1",
+  "source_path": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/formal_results/fixed_panel_combination_results.csv",
+  "source_rows": 65,
+  "source_sha256": "2a710ea97794ecbee79ab0b7363f37debfd76fe85a2a5bd82fb6a7e2818345f6"
+}

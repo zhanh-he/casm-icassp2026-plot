@@ -1,0 +1,22 @@
+{
+  "bundle_manifest_file_sha256": "0b76fe89e26f1c76c3c49ed553cd08370ee64fc00781a52f14b1022f38c9e8c1",
+  "outputs": [
+    {
+      "path": "recomputed_fixed_panel_rows.csv",
+      "sha256": "3fffe7d33197573811e7845f9375d79a5f474e6d3842f544166429ecc30b4ab4",
+      "size": 22285
+    },
+    {
+      "path": "recomputed_across_combination_summary.csv",
+      "sha256": "621d4792491322251ee1efc125f9ba289dd9ae33f0690bf9df191a1bb4087048",
+      "size": 3979
+    },
+    {
+      "path": "qa_results.json",
+      "sha256": "b67713641cfa49baf2b78c5c572e87713d61eb5e717822d18d78de9631d0f489",
+      "size": 12094
+    }
+  ],
+  "payload_hash": "2be499b7e8b4be4342de241d772ebad61a949d44aae2df0863be49462d10893d",
+  "qa_script_sha256": "35f7d078648a4f849f80900f59cbe884630df89c1b6a1215d1844fface28cda3"
+}

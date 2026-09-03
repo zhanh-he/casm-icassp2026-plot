@@ -1,0 +1,9 @@
+{
+  "checksum_receipt_sha256": "916ea5564acdf12dd78471ffa0e8d5a31debab7624bc7d3d347312e3d620ee5e",
+  "completed_at": "2026-09-02T13:46:51.185877+10:00",
+  "host": "gadi-cpu-clx-0537.gadi.nci.org.au",
+  "pbs_job_id": "178019643.gadi-pbs",
+  "pid": 172524,
+  "qa_results_sha256": "b67713641cfa49baf2b78c5c572e87713d61eb5e717822d18d78de9631d0f489",
+  "status": "COMPLETE"
+}

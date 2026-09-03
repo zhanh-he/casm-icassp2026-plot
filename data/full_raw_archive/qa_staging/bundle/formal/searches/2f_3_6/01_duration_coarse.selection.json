@@ -1,0 +1,59 @@
+{
+  "declared_candidate_count": 45,
+  "executed_candidate_count": 45,
+  "mock_guard_override": false,
+  "selected": {
+    "candidate_hash": "83dfd6bb98d67cfd686138d28469f05573caf259caed8292c4fc6d5063b08486",
+    "changed_parameter_count": 3,
+    "guard_pass": true,
+    "historical_distance": 2.0166666666666666,
+    "overall": {
+      "beat_amlt": 0.8755194672278419,
+      "beat_cmlt": 0.8039027177066848,
+      "beat_fmeasure": 0.8950991474792427,
+      "downbeat_amlt": 0.8125339562117976,
+      "downbeat_cmlt": 0.739586561398906,
+      "downbeat_fmeasure": 0.8595563561235187
+    },
+    "parameters": {
+      "bar_reward": 0.0,
+      "candidate_threshold": 0.03,
+      "downbeat_agreement_threshold": 0.6,
+      "downbeat_agreement_tolerance": 0.07,
+      "downbeat_mode": "snap",
+      "downbeat_temperature": 4.0,
+      "duration_sigma": 0.15,
+      "duration_weight": 1.0,
+      "fallback_maximal_ratio": 1.8,
+      "fallback_minimal_ratio": 0.9,
+      "fps": 50.0,
+      "local_window_seconds": 8.0,
+      "logit_clip": 6.0,
+      "max_bpm": 300.0,
+      "meter_change_penalty": 3.0,
+      "meters": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "min_bpm": 30.0,
+      "temperature": 2.0,
+      "tempo_bias": 0.15,
+      "uncertain_sigma": 0.3
+    },
+    "six_metric_wins": 6,
+    "smc": {
+      "beat_amlt": 0.6314479227176643,
+      "beat_cmlt": 0.5854284722158133,
+      "beat_fmeasure": 0.6484649428658208,
+      "downbeat_amlt": "nan",
+      "downbeat_cmlt": "nan",
+      "downbeat_fmeasure": "nan"
+    }
+  },
+  "stage": "01_duration_coarse",
+  "unique_candidate_count": 45
+}

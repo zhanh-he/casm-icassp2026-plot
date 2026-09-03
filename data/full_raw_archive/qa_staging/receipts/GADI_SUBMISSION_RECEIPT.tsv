@@ -1,0 +1,6 @@
+submitted_at	2026-09-02T13:44:34+10:00
+pbs_job_id	178019643.gadi-pbs
+bundle_manifest_sha256	0b76fe89e26f1c76c3c49ed553cd08370ee64fc00781a52f14b1022f38c9e8c1
+qa_output	/g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/qa
+pbs_script_sha256	083104dab48d4e0e0a666cce3d464ea8814381b7611ddb7bb22faf5a0bfa286e
+qa_script_sha256	35f7d078648a4f849f80900f59cbe884630df89c1b6a1215d1844fface28cda3

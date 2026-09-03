@@ -1,0 +1,115 @@
+{
+  "files": [
+    {
+      "path": "PREREGISTERED_PROTOCOL.json",
+      "sha256": "9ecc12775d164f2d0127b0359053b938a174486fd0a817aa92171170dfa506f9",
+      "size": 17002
+    },
+    {
+      "path": "input_inventory.json",
+      "sha256": "c238f63f6c4e83a5c53f21c3100bcd4d97a0f2f919e01c1e6f3f490f593df494",
+      "size": 1693339
+    },
+    {
+      "path": "selection_inventory_folds1_7.json",
+      "sha256": "3dd64ebfa918556b1429a51037c8190db5ecea1fcf08b204f2be45bcb8ad2a33",
+      "size": 1480641
+    },
+    {
+      "path": "smc_fold0_inventory.json",
+      "sha256": "941c8dfbcc09be1741830328f0ecd1465d40556aad88b3db3c1edf16a7b482f5",
+      "size": 9813
+    },
+    {
+      "path": "combination_selection_results.json",
+      "sha256": "f998c9e392c9c9527eff65050472c94a8cad308935300b30e3ca908d6bb8cee2",
+      "size": 116981
+    },
+    {
+      "path": "combination_selection_results.csv",
+      "sha256": "cf74176e803ed358785693a4453a3708609731255752efe394808a5c1ab66657",
+      "size": 55283
+    },
+    {
+      "path": "FROZEN_COMBINATIONS_LOCK.json",
+      "sha256": "43a9574f7acff5bb97b3b7ff6bc17ec74ce6e14731c8120fbc61363c857e9f3e",
+      "size": 78635
+    },
+    {
+      "path": "smc_fold0_results.json",
+      "sha256": "a9e200e3bddd3fe168c37e6ca1688d35bf3ce308b59d91503a2370bc5bad09df",
+      "size": 53416
+    },
+    {
+      "path": "smc_fold0_results.csv",
+      "sha256": "d143b7f155f4372d5379b86823db502084af2cb604ced5dbc08aa054ac1c8dd6",
+      "size": 14458
+    },
+    {
+      "path": "smc_fold0_per_piece.csv.gz",
+      "sha256": "d8e6b05df3486acfad988adfa667a6c3d24a7e0dcf38a9c7a3a634d85404faf6",
+      "size": 14213
+    },
+    {
+      "path": "gtzan_final1_inventory.json",
+      "sha256": "ea52309284e12e899408dfaf51f5b1238e6d8d95442aadeb9e1b74e87115cc32",
+      "size": 350852
+    },
+    {
+      "path": "gtzan_final1_results.json",
+      "sha256": "58262df256f1be32ce548e6998dec862a333e194b9594f7c4a75ea85e4d9c89c",
+      "size": 64606
+    },
+    {
+      "path": "gtzan_final1_results.csv",
+      "sha256": "57975539b0088a9774f5e3128e32016d5a861af65d0164ce1d800457b559bfac",
+      "size": 18189
+    },
+    {
+      "path": "gtzan_final1_per_piece.csv.gz",
+      "sha256": "bc0cdbccbedb7090e9888557c4ccd33a5a0618a5e54bf01af952b71eeb82d9dc",
+      "size": 800769
+    },
+    {
+      "path": "fixed_panel_direct_baselines.json",
+      "sha256": "05a576abd7339196f0d87a7bb58f0967db58336e3cd892f4813e2110c95aa978",
+      "size": 821
+    },
+    {
+      "path": "fixed_panel_direct_baselines.csv",
+      "sha256": "c2286955959e7f7b9273409f58742adb20dd54ae43f26d2e6dcb4cffedbc8387",
+      "size": 314
+    },
+    {
+      "path": "fixed_panel_combination_results.json",
+      "sha256": "0e5205639c9e96c5786ef1368b6b60b4d505d2b41256dedf656d48be4450a5df",
+      "size": 87034
+    },
+    {
+      "path": "fixed_panel_combination_results.csv",
+      "sha256": "2a710ea97794ecbee79ab0b7363f37debfd76fe85a2a5bd82fb6a7e2818345f6",
+      "size": 54949
+    },
+    {
+      "path": "across_combination_summary.json",
+      "sha256": "9adbd45f9998f059bec3499180e78d0ad5193f346040c395d8651684b1bbb6b6",
+      "size": 10165
+    },
+    {
+      "path": "across_combination_summary.csv",
+      "sha256": "bbaae190e9cad312a0c8a9041fff5a9137b8fd4351ee9435b5fd034735056cf5",
+      "size": 4008
+    }
+  ],
+  "frozen_lock_hash": "b98a3fabf6c44d1d5bcd8d71d552b2a4e59bd199a4ba2d7d8adfe3834000246f",
+  "manifest_payload_hash": "07dfd39fc54f184b6c336a5f4a8d804c8fb1ae40779d3d133f5f99c683a3ed60",
+  "private_selection_registry_complete_candidates": 452,
+  "private_smc_registry_complete_candidates": 4,
+  "protocol_hash": "9b9e84109178a998f9c9215244c7eee2be1b4d1c1bf4b25d93147c462668fae3",
+  "sealed_registry_receipt": {
+    "candidate_name_set_sha256": "7bc595a2b01ca86f27c0f6abfd8df45705a35c346e94109b39f5ae39613eb3fb",
+    "complete_candidate_count": 918,
+    "incomplete_candidate_count": 0,
+    "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache"
+  }
+}

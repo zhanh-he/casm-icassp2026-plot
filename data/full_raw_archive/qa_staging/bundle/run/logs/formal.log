@@ -1,0 +1,960 @@
+[fixed-fold0-selection-oof] evaluate casm 53116e1004d4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 53116e1004d4 in 15.8s
+[fixed-fold0-selection-oof] evaluate casm 2c2fa4f00590 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2c2fa4f00590 in 11.8s
+[fixed-fold0-selection-oof] evaluate casm 3f100b528024 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3f100b528024 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm eb9562025f22 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete eb9562025f22 in 13.2s
+[fixed-fold0-selection-oof] evaluate casm a8068f27503e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a8068f27503e in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 69da3048ce52 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 69da3048ce52 in 12.3s
+[fixed-fold0-selection-oof] evaluate casm f72888d7ce6f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f72888d7ce6f in 10.9s
+[fixed-fold0-selection-oof] evaluate casm e40a6e8959d0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e40a6e8959d0 in 12.3s
+[fixed-fold0-selection-oof] evaluate casm 3511f705cff3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3511f705cff3 in 10.9s
+[fixed-fold0-selection-oof] evaluate casm 4e11aeaaefef on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4e11aeaaefef in 12.0s
+[fixed-fold0-selection-oof] evaluate casm 48065f860739 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 48065f860739 in 10.3s
+[fixed-fold0-selection-oof] evaluate casm 611585690480 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 611585690480 in 12.5s
+[fixed-fold0-selection-oof] evaluate casm fa677a60ed13 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fa677a60ed13 in 10.7s
+[fixed-fold0-selection-oof] evaluate casm 2f93528486af on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2f93528486af in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 70dc9c402f96 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 70dc9c402f96 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 6d6e4422b640 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6d6e4422b640 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 646bb157944f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 646bb157944f in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 59524e1c9874 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 59524e1c9874 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 6baa551bc4e0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6baa551bc4e0 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm beeb624e2fa5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete beeb624e2fa5 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c9d1a3f528bc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c9d1a3f528bc in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 31e93e52f453 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 31e93e52f453 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm a00a0797722c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a00a0797722c in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 628e1080507f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 628e1080507f in 11.4s
+[fixed-fold0-selection-oof] evaluate casm b1fd482a5a36 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b1fd482a5a36 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm f0601f60331f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f0601f60331f in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 1825c4a6c367 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1825c4a6c367 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 44eabd384999 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 44eabd384999 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 18d6fa1253dd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 18d6fa1253dd in 10.5s
+[fixed-fold0-selection-oof] evaluate casm 266cf9dbc966 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 266cf9dbc966 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 1e9858ca608f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1e9858ca608f in 10.1s
+[fixed-fold0-selection-oof] evaluate casm b3eff98d9a94 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b3eff98d9a94 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 30b751bbd13b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 30b751bbd13b in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 46277746bb96 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 46277746bb96 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm c968e17a9b4a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c968e17a9b4a in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 3813d2b2cb1a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3813d2b2cb1a in 11.4s
+[fixed-fold0-selection-oof] evaluate casm fcf5e5f6db9e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fcf5e5f6db9e in 10.1s
+[fixed-fold0-selection-oof] evaluate casm c8d41bd9e173 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c8d41bd9e173 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 2e66cd611d98 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2e66cd611d98 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 266e02f1c199 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 266e02f1c199 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 5549cbf6f1ee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5549cbf6f1ee in 10.2s
+[fixed-fold0-selection-oof] evaluate casm b1c81eff6f84 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b1c81eff6f84 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 5a9a3818ca34 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5a9a3818ca34 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 60d2fb74bebc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 60d2fb74bebc in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 8bcc65e8f216 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8bcc65e8f216 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 50400571e710 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 50400571e710 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm e50c508e8724 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e50c508e8724 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 48fac672a819 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 48fac672a819 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm c95ed94c878c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c95ed94c878c in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 07a7d9573110 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 07a7d9573110 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm fa98c194b437 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fa98c194b437 in 10.3s
+[fixed-fold0-selection-oof] evaluate casm 0e3afdb52095 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0e3afdb52095 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 85e25bf7afde on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 85e25bf7afde in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 0747e4c7a177 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0747e4c7a177 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 22a3fc2c021c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 22a3fc2c021c in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 7220a8b28607 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7220a8b28607 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 675e784cacb5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 675e784cacb5 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm f79653aa7321 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f79653aa7321 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 7fc22ed82e60 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7fc22ed82e60 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 66e64eef90a1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 66e64eef90a1 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 8af258738145 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8af258738145 in 9.8s
+[fixed-fold0-selection-oof] evaluate casm 4f611cb3504b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4f611cb3504b in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 5da338107c97 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5da338107c97 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 02c232b23327 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 02c232b23327 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a5e9f7bc087d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a5e9f7bc087d in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 23b5f1823e5c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 23b5f1823e5c in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 67816ce74cfe on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 67816ce74cfe in 10.1s
+[fixed-fold0-selection-oof] evaluate casm dcdb24e38e78 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete dcdb24e38e78 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 73c855645a3e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 73c855645a3e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm a172c53b22f2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a172c53b22f2 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm fa422a5aa903 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fa422a5aa903 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 91d1a360772a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 91d1a360772a in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 73e5deb4ec4e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 73e5deb4ec4e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm f7813c656e3c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f7813c656e3c in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 1a164f4d3c92 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1a164f4d3c92 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 009381c8573d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 009381c8573d in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 12c6cbf8918a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 12c6cbf8918a in 10.7s
+[fixed-fold0-selection-oof] evaluate casm 5ea6af1223c2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5ea6af1223c2 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 47c553438812 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 47c553438812 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm eea14b16c87f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete eea14b16c87f in 11.3s
+[fixed-fold0-selection-oof] evaluate casm e64db520fcfc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e64db520fcfc in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 36f28900b8ee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 36f28900b8ee in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 8fe5d1039eb4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8fe5d1039eb4 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 65e04b8a8053 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 65e04b8a8053 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm b494e55f22dd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b494e55f22dd in 10.6s
+[fixed-fold0-selection-oof] evaluate casm 29cc45735b74 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 29cc45735b74 in 12.1s
+[fixed-fold0-selection-oof] evaluate casm 06b7151b504f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 06b7151b504f in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 45c3d06c3279 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 45c3d06c3279 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm a5d51dd94df5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a5d51dd94df5 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 065a10093692 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 065a10093692 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a0adadc07eee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a0adadc07eee in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 4e3cfc96829a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4e3cfc96829a in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 286202049b54 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 286202049b54 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 81b3f63761f5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 81b3f63761f5 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 4b2f93096b95 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4b2f93096b95 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 835bd772d97a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 835bd772d97a in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 53bd1f6be3de on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 53bd1f6be3de in 11.3s
+[fixed-fold0-selection-oof] evaluate casm a1ed6f3f496b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a1ed6f3f496b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm e5948d06f96e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e5948d06f96e in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a6629defa870 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a6629defa870 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 252f7adc4993 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 252f7adc4993 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 0a39d5f85178 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0a39d5f85178 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm bbe26378f00c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bbe26378f00c in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 227da8d23eb4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 227da8d23eb4 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 24c7e1c541a6 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 24c7e1c541a6 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm ffbed68a7ac0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ffbed68a7ac0 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 97dd72e37234 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 97dd72e37234 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 6b194fab25bc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6b194fab25bc in 11.5s
+[fixed-fold0-selection-oof] evaluate casm c0a8d556ec2f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c0a8d556ec2f in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 2c529e35f946 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2c529e35f946 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 1737b3a8b5af on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1737b3a8b5af in 11.5s
+[fixed-fold0-selection-oof] evaluate casm cbce44eaf230 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete cbce44eaf230 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm d9990835daaa on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d9990835daaa in 11.4s
+[fixed-fold0-selection-oof] evaluate casm f0c7ee26543b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f0c7ee26543b in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 691696de66c9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 691696de66c9 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm ffdd1845a3c3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ffdd1845a3c3 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 37a3ea1db4ba on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 37a3ea1db4ba in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 892bd68e924d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 892bd68e924d in 10.2s
+[fixed-fold0-selection-oof] evaluate casm e5c74855e0e4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e5c74855e0e4 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 80a15eda9b05 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 80a15eda9b05 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 7d60f23bb3f2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7d60f23bb3f2 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm bae67ba281ab on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bae67ba281ab in 10.0s
+[fixed-fold0-selection-oof] evaluate casm c4bb3a9714aa on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c4bb3a9714aa in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 0ba733655f9b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0ba733655f9b in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 0a5d0b6be910 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0a5d0b6be910 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 39b9b0fba7df on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 39b9b0fba7df in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 5be121c5e430 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5be121c5e430 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 11c2dc86dae1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 11c2dc86dae1 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 8467b67aac4a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8467b67aac4a in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 084a9981399b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 084a9981399b in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 38b3d6865df0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 38b3d6865df0 in 11.7s
+[fixed-fold0-selection-oof] evaluate casm 1714fb47f71a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1714fb47f71a in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 934bc62bda3f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 934bc62bda3f in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a2d33bfc7c3c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a2d33bfc7c3c in 9.9s
+[fixed-fold0-selection-oof] evaluate casm e8726f65a751 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e8726f65a751 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm b5cd77385bb5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b5cd77385bb5 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 5b38e456f356 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5b38e456f356 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c6c6cced20f3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c6c6cced20f3 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 913812172bc1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 913812172bc1 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm d15a3a48c8de on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d15a3a48c8de in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 5bc8033694f1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5bc8033694f1 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 5632302c909e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5632302c909e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 26d072ffd0c0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 26d072ffd0c0 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c939b9c26cc4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c939b9c26cc4 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm d1f506935e89 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d1f506935e89 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm f7c0142c4ad2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f7c0142c4ad2 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm e6125d0c4276 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e6125d0c4276 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 448c09f3eb64 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 448c09f3eb64 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 4c8483f885f3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4c8483f885f3 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 99f83781a6dd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 99f83781a6dd in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 1ba35612b5c6 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1ba35612b5c6 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 0f20b3724e90 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0f20b3724e90 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 17672c727e35 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 17672c727e35 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm b8405930c363 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b8405930c363 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 6e785a45a182 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6e785a45a182 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c5a098263ef8 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c5a098263ef8 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 9d06d2d1da20 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9d06d2d1da20 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 0a80dc31f238 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0a80dc31f238 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 5b694544874d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5b694544874d in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 1693db27c507 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1693db27c507 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm bd8f4f62fabf on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bd8f4f62fabf in 11.5s
+[fixed-fold0-selection-oof] evaluate casm c420c8d6e858 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c420c8d6e858 in 10.5s
+[fixed-fold0-selection-oof] evaluate casm 4600c222d148 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4600c222d148 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 603632a3cc5e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 603632a3cc5e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm d300d7e686c0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d300d7e686c0 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 200676678e38 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 200676678e38 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 8f91382686ee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8f91382686ee in 11.3s
+[fixed-fold0-selection-oof] evaluate casm a0e3a8bc211a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a0e3a8bc211a in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 54e4380ff355 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 54e4380ff355 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 0e49d656d01c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0e49d656d01c in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 4f85a6c358f4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4f85a6c358f4 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm ef733533a3f3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ef733533a3f3 in 9.8s
+[fixed-fold0-selection-oof] evaluate casm 033d78c343ae on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 033d78c343ae in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 417dcb8b4ab1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 417dcb8b4ab1 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm c08ec2d85402 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c08ec2d85402 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 36049aba7aab on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 36049aba7aab in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 78ebfe4d757b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 78ebfe4d757b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 75f1e5eafd86 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 75f1e5eafd86 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 7a6aba9a9710 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7a6aba9a9710 in 11.1s
+[fixed-fold0-selection-oof] evaluate casm 949835d45a04 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 949835d45a04 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 297adae4bb8c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 297adae4bb8c in 11.5s
+[fixed-fold0-selection-oof] evaluate casm c2ca6a64ca01 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c2ca6a64ca01 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 47d8c0121954 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 47d8c0121954 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 5be151efb308 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5be151efb308 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 4ada003f1de7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4ada003f1de7 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 416a6e368917 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 416a6e368917 in 10.3s
+[fixed-fold0-selection-oof] evaluate casm c6986e954fde on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c6986e954fde in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 39be7adb23e8 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 39be7adb23e8 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm f2e400443749 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f2e400443749 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 061d0633e698 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 061d0633e698 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 00249d2cdf5a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 00249d2cdf5a in 11.4s
+[fixed-fold0-selection-oof] evaluate casm e0788cd96b86 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e0788cd96b86 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm b9c098c9b35a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b9c098c9b35a in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 7a6734b59a2f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7a6734b59a2f in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 5aef38024c73 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5aef38024c73 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm e01e70b96beb on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e01e70b96beb in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 50f7a8c3f38f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 50f7a8c3f38f in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 4d3ea3418187 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4d3ea3418187 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 651bf0f87178 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 651bf0f87178 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm c3481ebfe757 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c3481ebfe757 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 0860efacbcf1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0860efacbcf1 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 90ee53abae5a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 90ee53abae5a in 10.0s
+[fixed-fold0-selection-oof] evaluate casm d341b7e186ab on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d341b7e186ab in 11.3s
+[fixed-fold0-selection-oof] evaluate casm aae36fc4822c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete aae36fc4822c in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 5cf1f4472469 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5cf1f4472469 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a74cfa704149 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a74cfa704149 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 8f5d718ddab4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8f5d718ddab4 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm d58b9504e96c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d58b9504e96c in 11.6s
+[fixed-fold0-selection-oof] evaluate casm e8fe52478466 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e8fe52478466 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm e9e368498b64 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e9e368498b64 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 342a21b05fc5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 342a21b05fc5 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 242efffd22cd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 242efffd22cd in 11.5s
+[fixed-fold0-selection-oof] evaluate casm f8cd8fc385ea on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f8cd8fc385ea in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 43595c5682b3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 43595c5682b3 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c3cc3734b67d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c3cc3734b67d in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 3c75a0390adf on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3c75a0390adf in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 41e136e27456 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 41e136e27456 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 9826ef93b447 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9826ef93b447 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm e3cdb995e842 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e3cdb995e842 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 71f570e3c935 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 71f570e3c935 in 11.1s
+[fixed-fold0-selection-oof] evaluate casm 3be7930b4841 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3be7930b4841 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm c133ab0c7359 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c133ab0c7359 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 6e76108b09f2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6e76108b09f2 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 3267bbf4b435 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3267bbf4b435 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 238d2ca3022a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 238d2ca3022a in 11.4s
+[fixed-fold0-selection-oof] evaluate casm d3d9ed15c93c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d3d9ed15c93c in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 71b433972c0d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 71b433972c0d in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 9b2cfdb97ac1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9b2cfdb97ac1 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm f7058b25ba00 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f7058b25ba00 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 406bf6b6f0fd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 406bf6b6f0fd in 11.7s
+[fixed-fold0-selection-oof] evaluate casm 7d924b1828b7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7d924b1828b7 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm d4f4d978417e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d4f4d978417e in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 0cf0179b26ff on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0cf0179b26ff in 10.1s
+[fixed-fold0-selection-oof] evaluate casm d1efa88e4daf on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d1efa88e4daf in 11.4s
+[fixed-fold0-selection-oof] evaluate casm f9a7d973bc0f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f9a7d973bc0f in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 2e118ad60778 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2e118ad60778 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 709a2e69b46b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 709a2e69b46b in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 6139a6f88f6a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6139a6f88f6a in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 37d8081a53ca on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 37d8081a53ca in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 0288074e6499 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0288074e6499 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 4fb8eb288be4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4fb8eb288be4 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 179d2cac852a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 179d2cac852a in 11.3s
+[fixed-fold0-selection-oof] evaluate casm ee4ccb90fe9e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ee4ccb90fe9e in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 97758fb99887 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 97758fb99887 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm b242ba747957 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b242ba747957 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm fca688250a65 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fca688250a65 in 12.2s
+[fixed-fold0-selection-oof] evaluate casm aa7ee0ff1373 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete aa7ee0ff1373 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 54b74dad588e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 54b74dad588e in 12.2s
+[fixed-fold0-selection-oof] evaluate casm 50b79f8855a0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 50b79f8855a0 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm d6118fce6590 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d6118fce6590 in 12.9s
+[fixed-fold0-selection-oof] evaluate casm 93bb4e20c8da on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 93bb4e20c8da in 11.4s
+[fixed-fold0-selection-oof] evaluate casm f0da9588f86c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f0da9588f86c in 12.7s
+[fixed-fold0-selection-oof] evaluate casm c75d8f5c0404 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c75d8f5c0404 in 11.0s
+[fixed-fold0-selection-oof] evaluate casm 1dfa2f2d9ec2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1dfa2f2d9ec2 in 12.4s
+[fixed-fold0-selection-oof] evaluate casm ae55ffa2af6f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ae55ffa2af6f in 10.5s
+[fixed-fold0-selection-oof] evaluate casm a8cf80f4677b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a8cf80f4677b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 88757d6f420d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 88757d6f420d in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 5675d9d7a013 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5675d9d7a013 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 6d10037945fa on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6d10037945fa in 9.9s
+[fixed-fold0-selection-oof] evaluate casm b9b1cce2df8a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b9b1cce2df8a in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 76f068ee69c0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 76f068ee69c0 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 8c2d15546c46 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8c2d15546c46 in 11.1s
+[fixed-fold0-selection-oof] evaluate casm 8b9d4948c0ea on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8b9d4948c0ea in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 9e1bfce4f27f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9e1bfce4f27f in 11.3s
+[fixed-fold0-selection-oof] evaluate casm d178fa4b5e99 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d178fa4b5e99 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 1eec96ba70f0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1eec96ba70f0 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm c0c1113d26d4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c0c1113d26d4 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 7f3fc5818fbc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7f3fc5818fbc in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 3e95f043fc3f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3e95f043fc3f in 10.1s
+[fixed-fold0-selection-oof] evaluate casm d92b891a4555 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d92b891a4555 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm bc6f9e4bce09 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bc6f9e4bce09 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 6b941f2bd899 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6b941f2bd899 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 7483d171134b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7483d171134b in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 4c0ecfb49ebd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4c0ecfb49ebd in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 73aec22ad122 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 73aec22ad122 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm baed3b29a96d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete baed3b29a96d in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 3ebc982a5b6c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3ebc982a5b6c in 9.9s
+[fixed-fold0-selection-oof] evaluate casm ec4ec3ba1c00 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ec4ec3ba1c00 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 89de9aec5c99 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 89de9aec5c99 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 1e3649d79b91 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1e3649d79b91 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 988ab70050f1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 988ab70050f1 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 88f33e01348e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 88f33e01348e in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 4e654425d7fe on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4e654425d7fe in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 9369b166b738 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9369b166b738 in 11.7s
+[fixed-fold0-selection-oof] evaluate casm 3e84f4f518a3 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3e84f4f518a3 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 9f94c762f86b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9f94c762f86b in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 2413b4193d9c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2413b4193d9c in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 84c45ccf896b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 84c45ccf896b in 11.3s
+[fixed-fold0-selection-oof] evaluate casm c6ef3d988895 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c6ef3d988895 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm fad3e7cb15ce on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fad3e7cb15ce in 11.4s
+[fixed-fold0-selection-oof] evaluate casm cae6b2bcde5b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete cae6b2bcde5b in 9.8s
+[fixed-fold0-selection-oof] evaluate casm f015126fe6f7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f015126fe6f7 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 1693724ee8ee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1693724ee8ee in 10.2s
+[fixed-fold0-selection-oof] evaluate casm bf09ded1fb15 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bf09ded1fb15 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 4a9e12a9b4f0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4a9e12a9b4f0 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 3738921603c4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3738921603c4 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 7f770e68dfd5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7f770e68dfd5 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 7f729d2fbe2b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7f729d2fbe2b in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 062b72f26382 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 062b72f26382 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm ffe5c1c5578b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ffe5c1c5578b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm db9df810400e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete db9df810400e in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 1b6a816a5efc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1b6a816a5efc in 11.5s
+[fixed-fold0-selection-oof] evaluate casm ba2b297e91c4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ba2b297e91c4 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 63866c5c9e77 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 63866c5c9e77 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm bf7a8024e10c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bf7a8024e10c in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 3b1f340a5fd9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3b1f340a5fd9 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 9d26e94ec0ac on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9d26e94ec0ac in 10.0s
+[fixed-fold0-selection-oof] evaluate casm b93640dd0dba on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b93640dd0dba in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 0badd7639455 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0badd7639455 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 693173a275d5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 693173a275d5 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 930e80bfcf6f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 930e80bfcf6f in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 065460071b9f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 065460071b9f in 11.5s
+[fixed-fold0-selection-oof] evaluate casm a25d9e67f103 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a25d9e67f103 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm df419f2a0633 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete df419f2a0633 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 34a873f25461 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 34a873f25461 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 1da1cc0bb664 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1da1cc0bb664 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 04a7780b2b64 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 04a7780b2b64 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm b9416c8b6f63 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b9416c8b6f63 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 8740c83c14b4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8740c83c14b4 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm d0498c790d41 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d0498c790d41 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 78d500bff6b1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 78d500bff6b1 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 4005a62e24e1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4005a62e24e1 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm afe5636a4274 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete afe5636a4274 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm faf1b009386c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete faf1b009386c in 11.3s
+[fixed-fold0-selection-oof] evaluate casm aafcaeabb909 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete aafcaeabb909 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm d17d8e1b7d6b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d17d8e1b7d6b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm d71d2b154076 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d71d2b154076 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 04f303a1eee4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 04f303a1eee4 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm bf5375f15bd4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bf5375f15bd4 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 559a869954c9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 559a869954c9 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm bd7eaaa61e1a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bd7eaaa61e1a in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 70fbc5853b01 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 70fbc5853b01 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm e398fb52697e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e398fb52697e in 11.2s
+[fixed-fold0-selection-oof] evaluate casm ede7d639deed on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ede7d639deed in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 88389a93c2e2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 88389a93c2e2 in 11.6s
+[fixed-fold0-selection-oof] evaluate casm 84225fd399d4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 84225fd399d4 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 1b68253fbf57 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1b68253fbf57 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 67a344103ce2 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 67a344103ce2 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm f822235be2f5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f822235be2f5 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 0043da54e871 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0043da54e871 in 10.5s
+[fixed-fold0-selection-oof] evaluate casm 95432cdc058f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 95432cdc058f in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 4b82fc253dbf on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4b82fc253dbf in 10.0s
+[fixed-fold0-selection-oof] evaluate casm ea377721c4e0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ea377721c4e0 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm f3251ba9a005 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f3251ba9a005 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 312ecd6baf7e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 312ecd6baf7e in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 93750ddd2c25 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 93750ddd2c25 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 18f75b065744 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 18f75b065744 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 8cde11cb1fd7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8cde11cb1fd7 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm a49849fb7143 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a49849fb7143 in 11.7s
+[fixed-fold0-selection-oof] evaluate casm b96eed8c634d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b96eed8c634d in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 3165ea88b001 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 3165ea88b001 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 99b8486db7ab on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 99b8486db7ab in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 32571c97c98c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 32571c97c98c in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 54769c1f5351 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 54769c1f5351 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 901e356cd44c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 901e356cd44c in 11.2s
+[fixed-fold0-selection-oof] evaluate casm abe9e004cdc5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete abe9e004cdc5 in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 4486e414d948 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4486e414d948 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 525121d0da25 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 525121d0da25 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 243c1747ec5b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 243c1747ec5b in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 205a0d420999 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 205a0d420999 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 7699550655b5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7699550655b5 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 472742d46c41 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 472742d46c41 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm d5c2350029f4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d5c2350029f4 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 503f6466fb4e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 503f6466fb4e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm f9bef34860b7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f9bef34860b7 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 40318dc62840 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 40318dc62840 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 1c85f1afb553 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1c85f1afb553 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm bb60c1b2a29c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bb60c1b2a29c in 10.0s
+[fixed-fold0-selection-oof] evaluate casm ef6526c6a5f4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ef6526c6a5f4 in 11.7s
+[fixed-fold0-selection-oof] evaluate casm d8b6a860ad0b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d8b6a860ad0b in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 63803dabc1a7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 63803dabc1a7 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm a77f371af3fd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a77f371af3fd in 9.9s
+[fixed-fold0-selection-oof] evaluate casm ad0fc48b0258 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ad0fc48b0258 in 11.2s
+[fixed-fold0-selection-oof] evaluate casm c6e4e9b7d380 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c6e4e9b7d380 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 7cc9c39914ba on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7cc9c39914ba in 11.4s
+[fixed-fold0-selection-oof] evaluate casm c661ac91e480 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c661ac91e480 in 10.2s
+[fixed-fold0-selection-oof] evaluate casm c85532d9ea7b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c85532d9ea7b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm cae6df9f47e5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete cae6df9f47e5 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm c6b4626310a1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c6b4626310a1 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm fb85dd7a0a82 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fb85dd7a0a82 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 7c0eb43e41a0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7c0eb43e41a0 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm eeccde9c407f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete eeccde9c407f in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 2a0ccd0fd878 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2a0ccd0fd878 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 43275fc0f8f9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 43275fc0f8f9 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm ff99276a2213 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ff99276a2213 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 7ce21689c1c5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7ce21689c1c5 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 57e7eae6ad38 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 57e7eae6ad38 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 47472a4e900f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 47472a4e900f in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 7466dd706b3e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7466dd706b3e in 11.8s
+[fixed-fold0-selection-oof] evaluate casm 80b301fb1010 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 80b301fb1010 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm c32909b527b0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c32909b527b0 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm e265bfcefcef on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e265bfcefcef in 10.1s
+[fixed-fold0-selection-oof] evaluate casm c72a7fe63560 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c72a7fe63560 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 4bbbd58b548c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4bbbd58b548c in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 274949a6b135 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 274949a6b135 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 7ebe2333f56c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7ebe2333f56c in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 51d66dd8776b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 51d66dd8776b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 8044770d5cab on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8044770d5cab in 10.0s
+[fixed-fold0-selection-oof] evaluate casm f093c0460146 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f093c0460146 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 4b071699fbee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4b071699fbee in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 4627e5581e98 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4627e5581e98 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 38eaf5cc17d1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 38eaf5cc17d1 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 67bd1b62911d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 67bd1b62911d in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 1fecaeed857d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1fecaeed857d in 10.2s
+[fixed-fold0-selection-oof] evaluate casm 8ab444da6b64 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8ab444da6b64 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm f40352c900ca on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f40352c900ca in 9.9s
+[fixed-fold0-selection-oof] evaluate casm 833b216c3207 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 833b216c3207 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm acf0e1682acd on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete acf0e1682acd in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 393123ebe2b7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 393123ebe2b7 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 50b9ec9feb79 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 50b9ec9feb79 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 572b6483d1fb on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 572b6483d1fb in 11.2s
+[fixed-fold0-selection-oof] evaluate casm 26da6ab33002 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 26da6ab33002 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm c7259189925a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c7259189925a in 13.9s
+[fixed-fold0-selection-oof] evaluate casm 4f11d25ba211 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4f11d25ba211 in 15.2s
+[fixed-fold0-selection-oof] evaluate casm 0e5c115793b0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0e5c115793b0 in 12.4s
+[fixed-fold0-selection-oof] evaluate casm 5e7368647fe1 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5e7368647fe1 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 427775edccfa on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 427775edccfa in 11.4s
+[fixed-fold0-selection-oof] evaluate casm b36194519cee on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b36194519cee in 10.1s
+[fixed-fold0-selection-oof] evaluate casm f90c6072a296 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f90c6072a296 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 441687b614b9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 441687b614b9 in 10.1s
+[fixed-fold0-selection-oof] evaluate casm 37dd0d95afdc on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 37dd0d95afdc in 11.7s
+[fixed-fold0-selection-oof] evaluate casm 950b06799902 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 950b06799902 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 45283d527e6a on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 45283d527e6a in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 779c9356ef4d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 779c9356ef4d in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 25e06d00d7b9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 25e06d00d7b9 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 02724309869e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 02724309869e in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 499e58ae7c33 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 499e58ae7c33 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm 0735bd224580 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0735bd224580 in 10.0s
+[fixed-fold0-selection-oof] evaluate casm 22306695a3fb on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 22306695a3fb in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 6c253d423d35 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6c253d423d35 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 5bf1a49642a7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5bf1a49642a7 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 443cbccf605c on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 443cbccf605c in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 507012ec1571 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 507012ec1571 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 2649dea9cbc0 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2649dea9cbc0 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 6bee2b6af481 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 6bee2b6af481 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm a6c18cb82a21 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a6c18cb82a21 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 2eedd0072392 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 2eedd0072392 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm a9b8e998114e on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a9b8e998114e in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 09d7cc87198f on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 09d7cc87198f in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 0da7ce21a5c5 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 0da7ce21a5c5 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 8855cba825c4 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 8855cba825c4 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 65a6769c0e3b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 65a6769c0e3b in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 107118148c1b on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 107118148c1b in 11.6s
+[fixed-fold0-selection-oof] evaluate casm c0762fea64a9 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c0762fea64a9 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm 05d28ecc3cd6 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 05d28ecc3cd6 in 11.1s
+[fixed-fold0-selection-oof] evaluate casm 1a1e4df39057 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 1a1e4df39057 in 11.5s
+[fixed-fold0-selection-oof] evaluate casm de7843e2b71d on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete de7843e2b71d in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 82312f6b31f7 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 82312f6b31f7 in 11.3s
+[fixed-fold0-selection-oof] evaluate casm bb6b89467672 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete bb6b89467672 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 9fcf38e518fe on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 9fcf38e518fe in 11.3s
+[fixed-fold0-selection-oof] evaluate casm debf90cb4468 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete debf90cb4468 in 11.4s
+[fixed-fold0-selection-oof] evaluate casm 4a3d2ceb9771 on 3985 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 4a3d2ceb9771 in 11.5s
+[smc-fold0-after-lock] evaluate minimal a4c58a1c57fb on 27 pieces with 12 workers
+[smc-fold0-after-lock] complete a4c58a1c57fb in 0.1s
+[smc-fold0-after-lock] evaluate casm 252f7adc4993 on 27 pieces with 12 workers
+[smc-fold0-after-lock] complete 252f7adc4993 in 0.2s
+[smc-fold0-after-lock] evaluate casm 23b5f1823e5c on 27 pieces with 12 workers
+[smc-fold0-after-lock] complete 23b5f1823e5c in 0.1s
+[smc-fold0-after-lock] evaluate casm 7a6aba9a9710 on 27 pieces with 12 workers
+[smc-fold0-after-lock] complete 7a6aba9a9710 in 0.1s
+[smc-fold0-after-lock] evaluate casm 107118148c1b on 27 pieces with 12 workers
+[smc-fold0-after-lock] complete 107118148c1b in 0.4s
+[gtzan-final1-after-lock] evaluate minimal d0e720fc9330 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete d0e720fc9330 in 0.5s
+[gtzan-final1-after-lock] evaluate casm acf5fae8cfff on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete acf5fae8cfff in 0.9s
+[gtzan-final1-after-lock] evaluate casm 3eb744091ebe on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 3eb744091ebe in 0.9s
+[gtzan-final1-after-lock] evaluate casm 5b4ba2bc7eec on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 5b4ba2bc7eec in 0.9s
+[gtzan-final1-after-lock] evaluate casm 275dce34e863 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 275dce34e863 in 0.9s
+[gtzan-final1-after-lock] evaluate casm b3c0b8acb708 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete b3c0b8acb708 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 8b682cffb055 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 8b682cffb055 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 9be53b7a5c6c on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 9be53b7a5c6c in 0.9s
+[gtzan-final1-after-lock] evaluate casm 31bc7e5e5745 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 31bc7e5e5745 in 1.0s
+[gtzan-final1-after-lock] evaluate casm 56dd65669f74 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 56dd65669f74 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 943b4d2ec545 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 943b4d2ec545 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 861576f454d0 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 861576f454d0 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 40402c691892 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 40402c691892 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 82f69f08ef53 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 82f69f08ef53 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 04582774af4d on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 04582774af4d in 0.9s
+[gtzan-final1-after-lock] evaluate casm 4b7d813bf874 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 4b7d813bf874 in 0.9s
+[gtzan-final1-after-lock] evaluate casm d99a6fb6e502 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete d99a6fb6e502 in 1.0s
+[gtzan-final1-after-lock] evaluate casm 5dcdf9470b2f on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 5dcdf9470b2f in 0.9s
+[gtzan-final1-after-lock] evaluate casm 046445d01278 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 046445d01278 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 4593bf15a815 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 4593bf15a815 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 74a65799c2d1 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 74a65799c2d1 in 0.9s
+[gtzan-final1-after-lock] evaluate casm 9d7768db4241 on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete 9d7768db4241 in 0.9s
+[gtzan-final1-after-lock] evaluate casm e8d91e00ee5a on 993 pieces with 12 workers
+[gtzan-final1-after-lock] complete e8d91e00ee5a in 0.9s

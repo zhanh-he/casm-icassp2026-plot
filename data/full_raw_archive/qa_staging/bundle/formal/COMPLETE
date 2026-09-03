@@ -1,0 +1,13 @@
+{
+  "artifact_manifest_sha256": "ec6bb5cce3afeffc7d082edad40860fbfcc93769af42ce123552a6893a2afdeb",
+  "combination_count": 64,
+  "completed_at": "2026-09-02T13:40:52.084513+10:00",
+  "elapsed_seconds": 5045.99848985672,
+  "frozen_lock_hash": "b98a3fabf6c44d1d5bcd8d71d552b2a4e59bd199a4ba2d7d8adfe3834000246f",
+  "gtzan_piece_count": 993,
+  "host": "mengh-8625",
+  "pid": 1097320,
+  "protocol_hash": "9b9e84109178a998f9c9215244c7eee2be1b4d1c1bf4b25d93147c462668fae3",
+  "smc_fold0_piece_count": 27,
+  "unique_configuration_count": 22
+}

@@ -1,0 +1,4 @@
+PID=1097320
+LOG=/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/logs/formal.log
+OUTPUT=/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal
+STARTED_UTC=2026-09-02T02:16:46Z

@@ -1,0 +1,384 @@
+Loading python3/3.11.7
+  Loading requirement: intel-mkl/2023.2.0
+{
+  "artifact_manifest_payload_hash": "07dfd39fc54f184b6c336a5f4a8d804c8fb1ae40779d3d133f5f99c683a3ed60",
+  "bootstrap": {
+    "interpretation": "descriptive across-combination uncertainty; not a test-population or training-seed CI",
+    "replicates": 100000,
+    "seed": 20260902,
+    "seven_fold_descriptive_bootstrap_ci95": null,
+    "seven_fold_population_sd": null,
+    "unit": "fold combination"
+  },
+  "bundle_manifest_file_sha256": "0b76fe89e26f1c76c3c49ed553cd08370ee64fc00781a52f14b1022f38c9e8c1",
+  "bundle_manifest_payload_hash": "172a64b37d748905929a3cd73ca303973d6fbed85576f8e5f349a928e018be07",
+  "completed_at": "2026-09-02T13:46:51.154060+10:00",
+  "fold0_leakage_detected": false,
+  "freeze_before_evaluation": {
+    "artifact_manifest_mtime_ns": 1788320452083657100,
+    "bundle_lock_order": {
+      "first_gtzan_output_mtime_ns": 1788320442926600800,
+      "first_smc_output_mtime_ns": 1788320421013410900,
+      "frozen_lock_mtime_ns": 1788320418825499800,
+      "lock_before_gtzan": true,
+      "lock_before_smc": true
+    },
+    "complete_mtime_ns": 1788320452085010300,
+    "earliest_evaluation_mtime_ns": 1788320421013410900,
+    "locked_at": "2026-09-02T13:40:18.822815+10:00",
+    "source_lock_mtime_ns": 1788320418825499800,
+    "verified_evaluation_file_count": 13
+  },
+  "frozen_lock_hash": "b98a3fabf6c44d1d5bcd8d71d552b2a4e59bd199a4ba2d7d8adfe3834000246f",
+  "host": "gadi-cpu-clx-0537.gadi.nci.org.au",
+  "pbs_job_id": "178019643.gadi-pbs",
+  "protocol_hash": "9b9e84109178a998f9c9215244c7eee2be1b4d1c1bf4b25d93147c462668fae3",
+  "same_configuration_hashes_across_panels": true,
+  "schema": "structbeat.casm.fixed-fold0-exhaustive.gadi-qa.v1",
+  "status": "PASS",
+  "summary": {
+    "exhaustive_1f": {
+      "combination_count": 7,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9015989833707384,
+                0.9049865410380243
+              ],
+              "mean": 0.9032991019363132,
+              "population_sd": 0.0022707549852651527
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.807860621574947,
+                0.810674771124185
+              ],
+              "mean": 0.8092706450532514,
+              "population_sd": 0.001932305699068325
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8952976237306517,
+                0.8956943285091684
+              ],
+              "mean": 0.8955015538243496,
+              "population_sd": 0.00027040065794108775
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8488569649916486,
+                0.8529363028809527
+              ],
+              "mean": 0.8508630514915926,
+              "population_sd": 0.002811082016249917
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7140801145284498,
+                0.7155290516511519
+              ],
+              "mean": 0.7148458922574535,
+              "population_sd": 0.0009810380671861497
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.7907262659092879,
+                0.7923292574266958
+              ],
+              "mean": 0.791560630895692,
+              "population_sd": 0.0011129340266279885
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7411579333669748,
+                0.7532280069245517
+              ],
+              "mean": 0.7473776957284054,
+              "population_sd": 0.00833641566010269
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6138050007093643,
+                0.6271940606578025
+              ],
+              "mean": 0.6207222319952138,
+              "population_sd": 0.009059110262307156
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6524214320299105,
+                0.6568025048788316
+              ],
+              "mean": 0.6547418267638508,
+              "population_sd": 0.0029756232266214466
+            }
+          }
+        }
+      },
+      "tuning_size": 1
+    },
+    "exhaustive_2f": {
+      "combination_count": 21,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9033540826427197,
+                0.9045433526812701
+              ],
+              "mean": 0.9039608354775659,
+              "population_sd": 0.0013916366764847542
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8092815467035702,
+                0.8102303101871293
+              ],
+              "mean": 0.8097649088293624,
+              "population_sd": 0.0011037142031007157
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8954830874386187,
+                0.8956351502012371
+              ],
+              "mean": 0.8955628840008413,
+              "population_sd": 0.00017841538076355748
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8507955333960336,
+                0.8521010738674795
+              ],
+              "mean": 0.8514660329898873,
+              "population_sd": 0.00152650313371163
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7151402424504144,
+                0.7159108535105982
+              ],
+              "mean": 0.7155224407559085,
+              "population_sd": 0.0009024955641544038
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.791851522066483,
+                0.7924359397516089
+              ],
+              "mean": 0.7921699738442998,
+              "population_sd": 0.0006834871210223381
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7501870151487414,
+                0.7539956463166098
+              ],
+              "mean": 0.7523068736939671,
+              "population_sd": 0.004467375086857042
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6217242003463074,
+                0.6265139183549218
+              ],
+              "mean": 0.6241414026398994,
+              "population_sd": 0.005610365159266147
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6548760239801348,
+                0.6568008667793107
+              ],
+              "mean": 0.6558255226943219,
+              "population_sd": 0.002253322309357823
+            }
+          }
+        }
+      },
+      "tuning_size": 2
+    },
+    "exhaustive_4f": {
+      "combination_count": 35,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.9042939523839735,
+                0.9050143791520608
+              ],
+              "mean": 0.9046527598363104,
+              "population_sd": 0.0010868733831533783
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8099956861173464,
+                0.8104839429889378
+              ],
+              "mean": 0.8102363695946233,
+              "population_sd": 0.000736014285743453
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.8954488174642812,
+                0.8955639037193649
+              ],
+              "mean": 0.8955065533321575,
+              "population_sd": 0.00017393538485845523
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.8517112197929577,
+                0.8525893129180823
+              ],
+              "mean": 0.8521408201175528,
+              "population_sd": 0.0013252215473181725
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7151312357260112,
+                0.7155769718879202
+              ],
+              "mean": 0.7153458607381411,
+              "population_sd": 0.0006743493092917019
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.791604120948273,
+                0.792013446727275
+              ],
+              "mean": 0.7918147108607451,
+              "population_sd": 0.0006227129593514478
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": [
+                0.7537187511839469,
+                0.7557127180501502
+              ],
+              "mean": 0.7547075782163272,
+              "population_sd": 0.003015678587811289
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": [
+                0.6254511621375509,
+                0.628448854399203
+              ],
+              "mean": 0.6269158640330513,
+              "population_sd": 0.004521584783317321
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": [
+                0.6563687134930778,
+                0.6576161103255673
+              ],
+              "mean": 0.6569820200764204,
+              "population_sd": 0.0018813135913757061
+            }
+          }
+        }
+      },
+      "tuning_size": 4
+    },
+    "exhaustive_7f": {
+      "combination_count": 1,
+      "panels": {
+        "gtzan_final1": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.9055207788131414,
+              "population_sd": null
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.810632483679285,
+              "population_sd": null
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.8953434153195664,
+              "population_sd": null
+            },
+            "downbeat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.8525365103160152,
+              "population_sd": null
+            },
+            "downbeat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7147934068928179,
+              "population_sd": null
+            },
+            "downbeat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7908669649274853,
+              "population_sd": null
+            }
+          }
+        },
+        "smc_fold0": {
+          "metrics": {
+            "beat_amlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.7589673472276187,
+              "population_sd": null
+            },
+            "beat_cmlt": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.6292443559606539,
+              "population_sd": null
+            },
+            "beat_fmeasure": {
+              "descriptive_bootstrap_ci95": null,
+              "mean": 0.6576139596187013,
+              "population_sd": null
+            }
+          }
+        }
+      },
+      "tuning_size": 7
+    }
+  },
+  "synthetic_fixture": false,
+  "verified_bundle_file_count": 968,
+  "verified_combination_count": 64,
+  "verified_family_counts": {
+    "exhaustive_1f": 7,
+    "exhaustive_2f": 21,
+    "exhaustive_4f": 35,
+    "exhaustive_7f": 1
+  },
+  "verified_gtzan_ledger_row_count": 64545,
+  "verified_gtzan_piece_count_per_method": 993,
+  "verified_smc_ledger_row_count": 1755,
+  "verified_smc_piece_count_per_method": 27,
+  "verified_unique_configuration_count": 22
+}
+
+======================================================================================
+                  Resource Usage on 2026-09-02 13:46:54:
+   Job Id:             178019643.gadi-pbs
+   Project:            wa66
+   Exit Status:        0
+   Service Units:      0.01
+   NCPUs Requested:    1                   CPU Time Used: 00:00:22        
+   Memory Requested:   4.0GB                 Memory Used: 2.11GB          
+   Walltime Requested: 00:30:00            Walltime Used: 00:00:26        
+   JobFS Requested:    1.0GB                  JobFS Used: 0B              
+======================================================================================

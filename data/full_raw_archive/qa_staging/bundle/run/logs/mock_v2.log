@@ -1,0 +1,64 @@
+[fixed-fold0-selection-oof] evaluate minimal 83282755a4fb on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 83282755a4fb in 0.1s
+[fixed-fold0-selection-oof] evaluate casm a2b632e5e9a8 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete a2b632e5e9a8 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm ca322d236b16 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ca322d236b16 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 590db15d549d on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 590db15d549d in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 5fc6a9d439b9 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5fc6a9d439b9 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm ca1a4cd99e0a on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete ca1a4cd99e0a in 0.1s
+[fixed-fold0-selection-oof] evaluate casm b1010798c40d on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete b1010798c40d in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 51be7ab9fa00 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 51be7ab9fa00 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm fa7374e8713e on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete fa7374e8713e in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 308f48f09725 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 308f48f09725 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm d2b1cec22ad4 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d2b1cec22ad4 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm d745526875d1 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete d745526875d1 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm e27f6794b86c on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e27f6794b86c in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 7a1907627aad on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 7a1907627aad in 0.1s
+[fixed-fold0-selection-oof] evaluate casm acc9e3e533d1 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete acc9e3e533d1 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm c4a73b3c6e19 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c4a73b3c6e19 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 5e3628364790 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 5e3628364790 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm f00f306ca732 on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete f00f306ca732 in 0.1s
+[fixed-fold0-selection-oof] evaluate casm e20a0793bd7e on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete e20a0793bd7e in 0.1s
+[fixed-fold0-selection-oof] evaluate casm 759a57495c0a on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete 759a57495c0a in 0.1s
+[fixed-fold0-selection-oof] evaluate casm c0bb881a19cf on 21 pieces with 12 workers
+[fixed-fold0-selection-oof] complete c0bb881a19cf in 0.1s
+[smc-fold0-after-lock] evaluate minimal ee566dca7c99 on 1 pieces with 12 workers
+[smc-fold0-after-lock] complete ee566dca7c99 in 0.0s
+[smc-fold0-after-lock] evaluate casm d2b1cec22ad4 on 1 pieces with 12 workers
+[smc-fold0-after-lock] complete d2b1cec22ad4 in 0.1s
+[smc-fold0-after-lock] evaluate casm b1010798c40d on 1 pieces with 12 workers
+[smc-fold0-after-lock] complete b1010798c40d in 0.0s
+[smc-fold0-after-lock] evaluate casm 5e3628364790 on 1 pieces with 12 workers
+[smc-fold0-after-lock] complete 5e3628364790 in 0.1s
+[smc-fold0-after-lock] evaluate casm c0bb881a19cf on 1 pieces with 12 workers
+[smc-fold0-after-lock] complete c0bb881a19cf in 0.0s
+[gtzan-final1-after-lock] evaluate minimal 1f1d7c232f05 on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete 1f1d7c232f05 in 0.1s
+[gtzan-final1-after-lock] evaluate casm 223e7463baf7 on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete 223e7463baf7 in 0.1s
+[gtzan-final1-after-lock] evaluate casm 002253971093 on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete 002253971093 in 0.1s
+[gtzan-final1-after-lock] evaluate casm 14e87c25b149 on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete 14e87c25b149 in 0.1s
+[gtzan-final1-after-lock] evaluate casm 0b8267d5d16e on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete 0b8267d5d16e in 0.1s
+[gtzan-final1-after-lock] evaluate casm feb0af974b54 on 3 pieces with 12 workers
+[gtzan-final1-after-lock] complete feb0af974b54 in 0.1s

@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/home/mengh/miniconda3/envs/auto-structbeat/bin/python",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/code/run_casm_fixed_fold0_exhaustive_combinations.py",
+    "--project-root",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot",
+    "--sealed-driver",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/run_driver/run_casm_ranked_protocol.py",
+    "--sealed-registry",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache",
+    "--source-inventory",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/protocol/input_inventory.json",
+    "--source-direct-metadata",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/protocol/candidate_cache/oof/0b06abdb65a55dbc572db34cbb751fc0cbca6fb4c7d9f22ecbf5145c100dba63.json",
+    "--source-seal-manifest",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/postprocess/seals/TOTAL_MANIFEST.json",
+    "--gtzan-final1-cache",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/caches/gtzan_3seed/beat_this_final1_gtzan",
+    "--output",
+    "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal",
+    "--workers",
+    "12",
+    "--verify-result-hashes"
+  ],
+  "host": "mengh-8625",
+  "mock": false,
+  "pid": 1097320,
+  "started_at": "2026-09-02T12:16:46.086051+10:00",
+  "started_epoch": 1788315406.0860403,
+  "workers": 12
+}

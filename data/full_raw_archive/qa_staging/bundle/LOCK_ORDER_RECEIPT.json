@@ -1,0 +1,7 @@
+{
+  "first_gtzan_output_mtime_ns": 1788320442926600800,
+  "first_smc_output_mtime_ns": 1788320421013410900,
+  "frozen_lock_mtime_ns": 1788320418825499800,
+  "lock_before_gtzan": true,
+  "lock_before_smc": true
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "structbeat.casm.fixed-fold0-axis-overrides.v1",
+  "panels": {
+    "gtzan_final1.beat.beat_fmeasure": {"top_tick_pct": null, "tick_count": 5},
+    "gtzan_final1.beat.beat_cmlt": {"top_tick_pct": null, "tick_count": 5},
+    "gtzan_final1.beat.beat_amlt": {"top_tick_pct": null, "tick_count": 5},
+    "gtzan_final1.downbeat.downbeat_fmeasure": {"top_tick_pct": null, "tick_count": 5},
+    "gtzan_final1.downbeat.downbeat_cmlt": {"top_tick_pct": null, "tick_count": 5},
+    "gtzan_final1.downbeat.downbeat_amlt": {"top_tick_pct": null, "tick_count": 5},
+    "smc_fold0.beat.beat_fmeasure": {"top_tick_pct": null, "tick_count": 5},
+    "smc_fold0.beat.beat_cmlt": {"top_tick_pct": null, "tick_count": 5},
+    "smc_fold0.beat.beat_amlt": {"top_tick_pct": null, "tick_count": 5}
+  }
+}

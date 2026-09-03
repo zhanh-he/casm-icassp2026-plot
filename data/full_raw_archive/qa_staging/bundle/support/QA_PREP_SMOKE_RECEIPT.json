@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "bash_syntax": "PASS",
+    "python_compile": "PASS",
+    "self_test": {
+      "combination_count": 64,
+      "experimental_results_created": false,
+      "family_counts": {
+        "exhaustive_1f": 7,
+        "exhaustive_2f": 21,
+        "exhaustive_4f": 35,
+        "exhaustive_7f": 1
+      },
+      "seven_fold_ci": null,
+      "seven_fold_population_sd": null,
+      "status": "PASS"
+    },
+    "synthetic_bundle_integration": {
+      "bootstrap_replicates": 100000,
+      "bundle_file_count": 888,
+      "bundle_manifest_sha256": "0eed9d278d1db1295c7ff5e627ebd3a1fd51ef8f4820b54fbad73adab3df7ba2",
+      "bundle_path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/mock_v2_bundle_test_v2",
+      "fold0_leakage_detected": false,
+      "freeze_before_gtzan": true,
+      "freeze_before_smc": true,
+      "gtzan_ledger_row_count": 195,
+      "gtzan_piece_count_per_method": 3,
+      "same_configuration_hashes_across_panels": true,
+      "smc_ledger_row_count": 65,
+      "smc_piece_count_per_method": 1,
+      "status": "PASS",
+      "synthetic_fixture": true,
+      "temporary_output_removed": true
+    }
+  },
+  "created_at": "2026-09-02T10:33:50+08:00",
+  "formal_results_validated": false,
+  "gadi_job_submitted": false,
+  "pbs_sha256": "083104dab48d4e0e0a666cce3d464ea8814381b7611ddb7bb22faf5a0bfa286e",
+  "python_sha256": "35f7d078648a4f849f80900f59cbe884630df89c1b6a1215d1844fface28cda3",
+  "schema": "structbeat.casm.fixed-fold0-exhaustive.qa-prep-smoke.v1",
+  "status": "QA_CODE_READY_AWAITING_FORMAL_BUNDLE"
+}

@@ -1,0 +1,93 @@
+{
+  "candidates": {
+    "02e78e97b3575ed22c4a68dcfc81f511bc3633ac348bf19828f51f4ed80f53aa": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/02e78e97b3575ed22c4a68dcfc81f511bc3633ac348bf19828f51f4ed80f53aa"
+    },
+    "107118148c1b1acced3662a494a4ae9524e458ca4615e0179c1d8fe4e57447af": {
+      "origin": "formal-private-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal/candidate_registry/107118148c1b1acced3662a494a4ae9524e458ca4615e0179c1d8fe4e57447af"
+    },
+    "201b2335735f185d7c2c1bf7313df4c6f201c4f93888e3198ada6e4cc43128e9": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/201b2335735f185d7c2c1bf7313df4c6f201c4f93888e3198ada6e4cc43128e9"
+    },
+    "23b5f1823e5c92dd3ec1d1c93bb609620bfc6eb184ba4c67b0f3228c5d0ba596": {
+      "origin": "formal-private-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal/candidate_registry/23b5f1823e5c92dd3ec1d1c93bb609620bfc6eb184ba4c67b0f3228c5d0ba596"
+    },
+    "251c96b23223b2e4ddef7f4ab85592663a1c27fcd6d62b1a5d1ef5625ed01f71": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/251c96b23223b2e4ddef7f4ab85592663a1c27fcd6d62b1a5d1ef5625ed01f71"
+    },
+    "252f7adc4993a27ce00bdc1dad7e2b3f27228ec9dc04b8980d8c60817d32a6e4": {
+      "origin": "formal-private-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal/candidate_registry/252f7adc4993a27ce00bdc1dad7e2b3f27228ec9dc04b8980d8c60817d32a6e4"
+    },
+    "5449db395c98788f75d1c9169835e8deeff5c25cc7da68199a488f9e66217a64": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/5449db395c98788f75d1c9169835e8deeff5c25cc7da68199a488f9e66217a64"
+    },
+    "5ae7853db9345eae791a827e2178f0ffa4574a12583ca0c52ae8faa89e5eecc7": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/5ae7853db9345eae791a827e2178f0ffa4574a12583ca0c52ae8faa89e5eecc7"
+    },
+    "653f3d357e6b4c512bcbc23898a498c6a99848064662301b22c619ec10718fe1": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/653f3d357e6b4c512bcbc23898a498c6a99848064662301b22c619ec10718fe1"
+    },
+    "70843a30a69a606429c7501bcdc734becdf8d909b206f5ef421c651fb75f66e5": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/70843a30a69a606429c7501bcdc734becdf8d909b206f5ef421c651fb75f66e5"
+    },
+    "7a6aba9a9710b7cc52f1eba4edef3d1aa0afd518424c40b247cfcac11019a45e": {
+      "origin": "formal-private-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_combinations_v1/formal/candidate_registry/7a6aba9a9710b7cc52f1eba4edef3d1aa0afd518424c40b247cfcac11019a45e"
+    },
+    "8178e190c878986ab60533dcb2f17871f6b125943ba9905e572163eb9d2aefd3": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/8178e190c878986ab60533dcb2f17871f6b125943ba9905e572163eb9d2aefd3"
+    },
+    "88936ef9e12e27c5ca919d5ae37462e628a6134dfefea3c7dcf8b4ef7df24ca9": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/88936ef9e12e27c5ca919d5ae37462e628a6134dfefea3c7dcf8b4ef7df24ca9"
+    },
+    "93f40ad87602ae68d84c6d1d72e307c27a67cc94d2b508f619f3376df08ae7de": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/93f40ad87602ae68d84c6d1d72e307c27a67cc94d2b508f619f3376df08ae7de"
+    },
+    "99a99862abea8248ce12c6486ece9d222829d4a0d87a1451f542fa7d8536855e": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/99a99862abea8248ce12c6486ece9d222829d4a0d87a1451f542fa7d8536855e"
+    },
+    "b7b84e5dac4f1104b8bcfbde183e511b6587341f422ef4fc62519f7d1fdd4b92": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/b7b84e5dac4f1104b8bcfbde183e511b6587341f422ef4fc62519f7d1fdd4b92"
+    },
+    "b8b42390ad658a4e8c52cf8c64d4156a5244974a78a09c35773489ffacc5db4e": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/b8b42390ad658a4e8c52cf8c64d4156a5244974a78a09c35773489ffacc5db4e"
+    },
+    "c5604f9b5a1cb968d28c2e21cb202ab2c9da28b89eb19f009022a06dbace3ff4": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/c5604f9b5a1cb968d28c2e21cb202ab2c9da28b89eb19f009022a06dbace3ff4"
+    },
+    "c9b58fc4e32a1fcd463357f7adf6d9a5409bb428ed71bc6b9578383c6a67d08e": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/c9b58fc4e32a1fcd463357f7adf6d9a5409bb428ed71bc6b9578383c6a67d08e"
+    },
+    "d28a24d9ef5e8c97ba73ec5991d45021b1022f67c2d4183c7f718dbaf2eb1f73": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/d28a24d9ef5e8c97ba73ec5991d45021b1022f67c2d4183c7f718dbaf2eb1f73"
+    },
+    "e2069de93ca8cce0012ba616e6cfa21a465e0459854a4cce9c830dff33f8a251": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/e2069de93ca8cce0012ba616e6cfa21a465e0459854a4cce9c830dff33f8a251"
+    },
+    "f5d30ffcfb9ba054e4c9f5495b055ed41b21bda8e5033f95c1133bce1c90370c": {
+      "origin": "sealed-918-registry",
+      "source_root": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/formal/candidate_cache/f5d30ffcfb9ba054e4c9f5495b055ed41b21bda8e5033f95c1133bce1c90370c"
+    }
+  },
+  "selected_unique_candidate_count": 22
+}

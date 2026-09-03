@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+#PBS -N casm-f0-exhaustive-qa
+#PBS -P wa66
+#PBS -q normal
+#PBS -l ncpus=1,mem=4GB,jobfs=1GB,walltime=00:30:00
+#PBS -l storage=gdata/wa66
+#PBS -j oe
+
+set -euo pipefail
+umask 027
+
+: "${CASM_F0_BUNDLE_ROOT:?Set the staged, immutable compact bundle directory}"
+: "${CASM_F0_BUNDLE_MANIFEST:?Set the staged BUNDLE_MANIFEST.json path}"
+: "${CASM_F0_BUNDLE_MANIFEST_SHA256:?Set its independently transferred SHA-256}"
+: "${CASM_F0_QA_OUTPUT:?Set a new durable Gadi QA output directory}"
+: "${CASM_F0_QA_SCRIPT:?Set the staged independent Python QA script path}"
+
+record_wrapper_failure() {
+  local status=$?
+  if (( status != 0 )); then
+    mkdir -p "$CASM_F0_QA_OUTPUT"
+    if [[ ! -f "$CASM_F0_QA_OUTPUT/FAILED" ]]; then
+      {
+        printf 'failed_at\t%s\n' "$(date -Iseconds)"
+        printf 'pbs_job_id\t%s\n' "${PBS_JOBID:-unknown}"
+        printf 'reason\tPBS wrapper or Python environment failed before QA completion\n'
+      } > "$CASM_F0_QA_OUTPUT/FAILED"
+    fi
+    rm -f "$CASM_F0_QA_OUTPUT/RUNNING"
+  fi
+  exit "$status"
+}
+trap record_wrapper_failure EXIT
+
+module purge
+module load python3/3.11.7
+
+export PYTHONNOUSERSITE=1
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export XDG_CACHE_HOME="${PBS_JOBFS}/xdg-cache"
+mkdir -p "$XDG_CACHE_HOME"
+
+CASM_F0_QA_PYTHON_BIN="${CASM_F0_QA_PYTHON:-python3}"
+command -v "$CASM_F0_QA_PYTHON_BIN" >/dev/null
+
+if [[ -e "$CASM_F0_QA_OUTPUT" ]] && find "$CASM_F0_QA_OUTPUT" -mindepth 1 -print -quit | grep -q .; then
+  printf 'Refusing non-empty QA output directory: %s\n' "$CASM_F0_QA_OUTPUT" >&2
+  exit 2
+fi
+mkdir -p "$CASM_F0_QA_OUTPUT"
+
+QA_COMMAND=(
+  "$CASM_F0_QA_PYTHON_BIN" "$CASM_F0_QA_SCRIPT"
+  --bundle-root "$CASM_F0_BUNDLE_ROOT"
+  --bundle-manifest "$CASM_F0_BUNDLE_MANIFEST"
+  --manifest-sha256 "$CASM_F0_BUNDLE_MANIFEST_SHA256"
+  --output "$CASM_F0_QA_OUTPUT"
+  --resamples 100000
+  --seed 20260902
+)
+
+CASM_F0_QA_SCRIPT_SHA256="$(sha256sum "$CASM_F0_QA_SCRIPT" | awk '{print $1}')"
+{
+  printf 'launched_at\t%s\n' "$(date -Iseconds)"
+  printf 'pbs_job_id\t%s\n' "${PBS_JOBID:-unknown}"
+  printf 'host\t%s\n' "$(hostname)"
+  printf 'qa_script\t%s\n' "$CASM_F0_QA_SCRIPT"
+  printf 'qa_script_sha256\t%s\n' "$CASM_F0_QA_SCRIPT_SHA256"
+  printf 'bundle_root\t%s\n' "$CASM_F0_BUNDLE_ROOT"
+  printf 'bundle_manifest\t%s\n' "$CASM_F0_BUNDLE_MANIFEST"
+  printf 'bundle_manifest_sha256\t%s\n' "$CASM_F0_BUNDLE_MANIFEST_SHA256"
+  printf 'command\t'
+  printf '%q ' "${QA_COMMAND[@]}"
+  printf '\n'
+} > "$CASM_F0_QA_OUTPUT/PBS_LAUNCH_RECEIPT.tsv"
+
+"${QA_COMMAND[@]}"
+
+trap - EXIT

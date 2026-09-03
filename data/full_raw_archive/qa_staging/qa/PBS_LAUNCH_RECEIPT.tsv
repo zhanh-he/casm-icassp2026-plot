@@ -1,0 +1,9 @@
+launched_at	2026-09-02T13:46:27+10:00
+pbs_job_id	178019643.gadi-pbs
+host	gadi-cpu-clx-0537.gadi.nci.org.au
+qa_script	/g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/code/gadi_casm_fixed_fold0_exhaustive_qa.py
+qa_script_sha256	35f7d078648a4f849f80900f59cbe884630df89c1b6a1215d1844fface28cda3
+bundle_root	/g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/bundle
+bundle_manifest	/g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/bundle/BUNDLE_MANIFEST.json
+bundle_manifest_sha256	0b76fe89e26f1c76c3c49ed553cd08370ee64fc00781a52f14b1022f38c9e8c1
+command	python3 /g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/code/gadi_casm_fixed_fold0_exhaustive_qa.py --bundle-root /g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/bundle --bundle-manifest /g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/bundle/BUNDLE_MANIFEST.json --manifest-sha256 0b76fe89e26f1c76c3c49ed553cd08370ee64fc00781a52f14b1022f38c9e8c1 --output /g/data/wa66/hanyu/auto_structbeat/runs/20260902_casm_fixed_fold0_exhaustive_qa/qa --resamples 100000 --seed 20260902 

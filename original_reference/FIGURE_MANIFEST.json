@@ -1,0 +1,144 @@
+{
+  "axis_geometry": {
+    "gtzan_final1.beat.beat_amlt": {
+      "first_labeled_tick_pct": 89.86722530578288,
+      "lower_pct": 87.86722530578288,
+      "ticks_pct": [
+        89.86722530578288,
+        90.36722530578288,
+        90.86722530578288,
+        91.36722530578288
+      ],
+      "top_labeled_tick_pct": 91.36722530578288,
+      "upper_pct": 91.43472530578288
+    },
+    "gtzan_final1.beat.beat_cmlt": {
+      "first_labeled_tick_pct": 80.55241089747935,
+      "lower_pct": 78.55241089747935,
+      "ticks_pct": [
+        80.55241089747935,
+        81.05241089747935,
+        81.55241089747935,
+        82.05241089747935
+      ],
+      "top_labeled_tick_pct": 82.05241089747935,
+      "upper_pct": 82.11991089747934
+    },
+    "gtzan_final1.beat.beat_fmeasure": {
+      "first_labeled_tick_pct": 89.48580842013736,
+      "lower_pct": 87.48580842013736,
+      "ticks_pct": [
+        89.48580842013736,
+        89.68580842013736,
+        89.88580842013737,
+        90.08580842013737
+      ],
+      "top_labeled_tick_pct": 90.08580842013737,
+      "upper_pct": 90.14580842013737
+    },
+    "gtzan_final1.downbeat.downbeat_amlt": {
+      "first_labeled_tick_pct": 78.93379478375557,
+      "lower_pct": 76.93379478375557,
+      "ticks_pct": [
+        78.93379478375557,
+        80.93379478375557,
+        82.93379478375557,
+        84.93379478375557,
+        86.93379478375557
+      ],
+      "top_labeled_tick_pct": 86.93379478375557,
+      "upper_pct": 87.29379478375557
+    },
+    "gtzan_final1.downbeat.downbeat_cmlt": {
+      "first_labeled_tick_pct": 67.89836811441255,
+      "lower_pct": 65.89836811441255,
+      "ticks_pct": [
+        67.89836811441255,
+        69.89836811441255,
+        71.89836811441255,
+        73.89836811441255
+      ],
+      "top_labeled_tick_pct": 73.89836811441255,
+      "upper_pct": 74.16836811441254
+    },
+    "gtzan_final1.downbeat.downbeat_fmeasure": {
+      "first_labeled_tick_pct": 78.42041279731436,
+      "lower_pct": 76.42041279731436,
+      "ticks_pct": [
+        78.42041279731436,
+        78.92041279731436,
+        79.42041279731436,
+        79.92041279731436
+      ],
+      "top_labeled_tick_pct": 79.92041279731436,
+      "upper_pct": 79.98791279731435
+    },
+    "smc_fold0.beat.beat_amlt": {
+      "first_labeled_tick_pct": 72.12584700548199,
+      "lower_pct": 70.12584700548199,
+      "ticks_pct": [
+        72.12584700548199,
+        74.12584700548199,
+        76.12584700548199,
+        78.12584700548199
+      ],
+      "top_labeled_tick_pct": 78.12584700548199,
+      "upper_pct": 78.39584700548198
+    },
+    "smc_fold0.beat.beat_cmlt": {
+      "first_labeled_tick_pct": 60.31252961411672,
+      "lower_pct": 58.31252961411672,
+      "ticks_pct": [
+        60.31252961411672,
+        61.31252961411672,
+        62.31252961411672,
+        63.31252961411672,
+        64.31252961411673
+      ],
+      "top_labeled_tick_pct": 64.31252961411673,
+      "upper_pct": 64.49252961411673
+    },
+    "smc_fold0.beat.beat_fmeasure": {
+      "first_labeled_tick_pct": 65.02497771278297,
+      "lower_pct": 63.02497771278297,
+      "ticks_pct": [
+        65.02497771278297,
+        65.52497771278297,
+        66.02497771278297,
+        66.52497771278297
+      ],
+      "top_labeled_tick_pct": 66.52497771278297,
+      "upper_pct": 66.59247771278297
+    }
+  },
+  "axis_overrides": null,
+  "axis_overrides_sha256": null,
+  "builder": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/build_fixed_fold0_exhaustive_scaling_figure.py",
+  "builder_sha256": "1b7055ad726a3b9a7447c0002ab3acd3a11db311f882d8faf65f1ba9b133de49",
+  "expected_combination_counts": {
+    "1": 7,
+    "2": 21,
+    "4": 35,
+    "7": 1
+  },
+  "fixed_panels": {
+    "gtzan_final1": 993,
+    "smc_fold0": 27
+  },
+  "input": "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/input/fixed_fold0_exhaustive_combination_panel_scores.csv",
+  "input_row_count": 130,
+  "input_sha256": "dc160e0a7dfbbf927801c1377fcc5cf4ea4500ae11c9ad11bd0621aea6a9c527",
+  "manifest_hashing": "FIGURE_MANIFEST.sha256 stores this manifest's SHA-256",
+  "outputs": {
+    "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/output/casm_fixed_fold0_exhaustive_combination_scaling_3x3.png": "4d25cf56dde674920285532c2eb59cbbdbdaec9855dea79f04a01cabf2af8103",
+    "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/output/casm_fixed_fold0_exhaustive_combination_scaling_3x3.svg": "0722c216f4ffdbb6b2140ed4a984cfeab02dc7f031f8d5ac3ca0a073488b7931",
+    "/Users/jollibear/.codex/visualizations/2026/09/02/casm_fixed_fold0_exhaustive_combination_scaling/figure/output/plotted_family_summary.csv": "a61970aa7918d6d12be4e24fc3ef63f775046a03b90248f8b2c8b6d174bccae7"
+  },
+  "schema": "structbeat.casm.fixed-fold0-exhaustive-figure-manifest.v1",
+  "score_unit": "raw_0_1",
+  "y_axis_rule": {
+    "broken_axis": false,
+    "first_labeled_tick": "panel-specific Direct score",
+    "lower": "panel-specific Direct raw score minus 0.02 (2.0 percentage points)"
+  }
+}
