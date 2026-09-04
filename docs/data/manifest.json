@@ -1,0 +1,8 @@
+{
+  "source_figure_fragment": "self-run-figures/figure1-20260902-1210/reference/real-decoder-contrast.html",
+  "source_figure_sha256": "c9c1b6d120386d4104ed6d74acfa68921ca1eb8d75fbc4458ea3e46454f75e34",
+  "case_data_sha256": "0992207acfc6e0f03058a4c49428ae2f8b0f0290fcee7442ee34d5cefd68fd88",
+  "visualization_sha256": "4b70d66ea8b2f2277d029e708db35bda3320984febe9ba101a4d5478bc77f14b",
+  "case_count": 2,
+  "audio_policy": "No SMC waveform is redistributed. Event clicks are synthesized in-browser; authorized local audio can be loaded without upload."
+}

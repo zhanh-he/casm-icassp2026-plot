@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Listen to reference and decoded beat paths while inspecting the frozen CASM decoder visualization.">
+  <title>CASM Decoder Listening Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">Beat and downbeat structured post-processing</p>
+        <h1>CASM Decoder Listening Demo</h1>
+        <p class="lede">Hear how the reference and four decoders place beats on the same frozen Beat This activation.</p>
+      </div>
+      <a class="github-link" href="https://github.com/zhanh-he/casm-icassp2026-plot" target="_blank" rel="noreferrer">
+        <i data-lucide="github" aria-hidden="true"></i>
+        <span>Source</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="listening-band" aria-labelledby="listen-heading">
+      <div class="content-width">
+        <div class="band-heading">
+          <div>
+            <p class="section-kicker">Synchronized audition</p>
+            <h2 id="listen-heading">Listen to the visible window</h2>
+          </div>
+          <p id="windowLabel" class="window-label tabular">Loading cases...</p>
+        </div>
+
+        <div id="methodButtons" class="method-switch" role="radiogroup" aria-label="Audition source"></div>
+
+        <div class="transport-row">
+          <button id="playButton" class="command command--primary" type="button">
+            <i data-lucide="play" aria-hidden="true"></i>
+            <span>Play</span>
+          </button>
+          <button id="stopButton" class="icon-command" type="button" aria-label="Stop playback" title="Stop playback" disabled>
+            <i data-lucide="square" aria-hidden="true"></i>
+          </button>
+          <div class="progress-block">
+            <progress id="playProgress" value="0" max="1" aria-label="Playback progress"></progress>
+            <output id="playTime" class="tabular">00:00.00 / 00:18.00</output>
+          </div>
+        </div>
+
+        <div class="audio-options">
+          <label class="upload-command" for="audioFile">
+            <i data-lucide="audio-lines" aria-hidden="true"></i>
+            <span>Load local audio</span>
+          </label>
+          <input id="audioFile" type="file" accept="audio/*">
+
+          <label class="toggle-control">
+            <input id="mixAudio" type="checkbox" disabled>
+            <span>Mix music under clicks</span>
+          </label>
+
+          <label class="range-control" for="clickVolume">
+            <span>Click</span>
+            <input id="clickVolume" type="range" min="0" max="1" step="0.05" value="0.72">
+          </label>
+
+          <label class="range-control" for="musicVolume">
+            <span>Music</span>
+            <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.72" disabled>
+          </label>
+        </div>
+
+        <div class="status-row">
+          <span id="statusDot" class="status-dot" aria-hidden="true"></span>
+          <p id="audioStatus" role="status" aria-live="polite">Preparing click synthesis...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="figure-section" aria-labelledby="figure-heading">
+      <div class="content-width">
+        <div class="figure-heading">
+          <div>
+            <p class="section-kicker">Frozen real-case evidence</p>
+            <h2 id="figure-heading">Activation, event paths, and decoded IBI</h2>
+          </div>
+          <p>Move the window slider below. Playback follows the selected case and interval.</p>
+        </div>
+        <iframe id="figureFrame" src="visualization.html" title="Interactive decoder contrast visualization"></iframe>
+      </div>
+    </section>
+
+    <section class="protocol-band" aria-labelledby="protocol-heading">
+      <div class="content-width protocol-grid">
+        <div>
+          <p class="section-kicker">Protocol note</p>
+          <h2 id="protocol-heading">What you are hearing</h2>
+        </div>
+        <p>Beat clicks are synthesized from the exact event arrays shown above. A higher click marks a predicted downbeat when available. SMC provides beat references but no reference downbeat labels in this protocol.</p>
+        <p>The SMC waveform is not redistributed here. Loading an authorized local recording enables synchronized original-audio and click-overlay playback; the file remains inside your browser.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="content-width footer-inner">
+      <p>CASM real-case visualization · Beat This frozen OOF activations · SMC 117 and SMC 221</p>
+      <p>Inspired by the <a href="https://sunnycyc.github.io/plpdp4beat-demo/">PLPDP listening demo</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
