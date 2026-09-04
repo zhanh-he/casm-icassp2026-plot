@@ -26,55 +26,7 @@
   </header>
 
   <main>
-    <section class="listening-band" aria-labelledby="listen-heading">
-      <div class="content-width">
-        <div class="band-heading">
-          <div>
-            <p class="section-kicker">Synchronized audition</p>
-            <h2 id="listen-heading">Listen to the visible window</h2>
-          </div>
-          <p id="windowLabel" class="window-label tabular">Loading cases...</p>
-        </div>
-
-        <div id="methodButtons" class="method-switch" role="radiogroup" aria-label="Audition source"></div>
-
-        <div class="transport-row">
-          <button id="playButton" class="command command--primary" type="button">
-            <i data-lucide="play" aria-hidden="true"></i>
-            <span>Play</span>
-          </button>
-          <button id="stopButton" class="icon-command" type="button" aria-label="Stop playback" title="Stop playback" disabled>
-            <i data-lucide="square" aria-hidden="true"></i>
-          </button>
-          <div class="progress-block">
-            <progress id="playProgress" value="0" max="1" aria-label="Playback progress"></progress>
-            <output id="playTime" class="tabular">00:00.00 / 00:18.00</output>
-          </div>
-        </div>
-
-        <div class="audio-options">
-          <label class="toggle-control">
-            <input id="mixAudio" type="checkbox" disabled>
-            <span>Mix music under clicks</span>
-          </label>
-
-          <label class="range-control" for="clickVolume">
-            <span>Click</span>
-            <input id="clickVolume" type="range" min="0" max="1" step="0.05" value="0.72">
-          </label>
-
-          <label class="range-control" for="musicVolume">
-            <span>Music</span>
-            <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.72" disabled>
-          </label>
-        </div>
-
-        <div class="status-row">
-          <span id="statusDot" class="status-dot" aria-hidden="true"></span>
-          <p id="audioStatus" role="status" aria-live="polite">Loading the complete real performance...</p>
-        </div>
-      </div>
-    </section>
+    <audio id="musicPlayer" preload="metadata" playsinline hidden></audio>
 
     <section class="figure-section" aria-labelledby="figure-heading">
       <div class="content-width">
@@ -83,7 +35,6 @@
             <p class="section-kicker">Frozen real-case evidence</p>
             <h2 id="figure-heading">Activation, event paths, and decoded IBI</h2>
           </div>
-          <p>Move the window slider below. Playback follows the selected case and interval.</p>
         </div>
         <iframe id="figureFrame" src="visualization.html" title="Interactive decoder contrast visualization"></iframe>
       </div>

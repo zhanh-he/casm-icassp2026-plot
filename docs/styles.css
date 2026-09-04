@@ -134,6 +134,9 @@ h2 {
   gap: 24px;
 }
 
+.figure-heading > div { min-width: 0; }
+.figure-heading h2 { max-width: 100%; overflow-wrap: anywhere; }
+
 .window-label {
   margin: 0;
   padding-bottom: 2px;

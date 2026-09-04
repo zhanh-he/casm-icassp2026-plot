@@ -13,6 +13,10 @@ The page preserves the exact D3 visualization and adds synchronized Web Audio
 audition for GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
 Clicks are synthesized from the frozen event arrays in `data/cases.json`.
 
+One-click audition buttons sit directly below the decoder score table. Music is
+streamed through the browser's native MP3 player; the click and music gains are
+fixed, so the public interface only exposes the controls needed for comparison.
+
 Each case includes its complete 40-second SMC MIREX performance. Original plays
 the music alone; GroundTruth and every decoder overlay their events on exactly
 the same recording. The figure opens on the selected 18-second analysis window,
