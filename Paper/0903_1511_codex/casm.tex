@@ -334,16 +334,24 @@ with interval width 0.18; it should not be confused with the learned CRF in
 \cite{fillon2015crf}. \emph{CombFilter} uses \texttt{madmom}'s global
 tempo/iterative-alignment processor \cite{bock2015combfilter}. CRF and
 CombFilter decode downbeat activations at 8--100 BPM and snap their outputs to
-their respective beat grids.
+their respective beat grids. \emph{PLPDP} \cite{chiu2023localperiodicity} is
+the authors' released multi-kernel implementation. We test a common-support
+55--215 BPM setting and an SMC-opt variant with 30--300 BPM support; only the
+tempo limits differ, while all other settings retain the published defaults.
+Specifically, the 1-, 3-, and 5-s PLP curves are multiplied, the 1-s kernel's
+lower limit remains 60 BPM as required to contain a complete period, and the
+50-Hz sigmoid beat activation is linearly resampled to the implementation's
+native 100 Hz. PLPDP is beat-only, so the unchanged Direct downbeat maxima are
+snapped to its decoded beat grid, as for the other beat-only baselines.
 
 \subsection{Frozen operating point and scale analysis}
 
-Every CASM row in Sec.~\ref{sec:results} uses exactly one explicitly loaded
-Frozen-4F configuration:
+Every CASM row in Sec.~\ref{sec:results} uses the same explicitly loaded
+Frozen-4F configuration apart from the reported tempo-support comparison:
 \[
 \begin{split}
 &F=50,\quad \theta_{\mathrm c}=0.03,\quad
-(B_{\min},B_{\max})=(30,300),\\
+(B_{\min},B_{\max})=(55,215)\ \text{(default)},\\
 &|\mathcal W|=8{\rm\,s},\quad \beta=0.15,\quad
 (T,L)=(2,6),\\
 &(\lambda,\sigma_0,\sigma_{\mathrm u})=(4,0.12,0.40),\quad
@@ -352,7 +360,8 @@ Frozen-4F configuration:
 (T_{\mathrm d},\eta,\rho,\gamma)=(4,3,0,0.6).
 \end{split}
 \]
-Its scalar settings were selected on the union of SMC folds
+The CASM-SMC-opt row changes only $(B_{\min},B_{\max})$ to $(30,300)$.
+The remaining scalar settings were selected on the union of SMC folds
 $\{2,7,1,3\}$ and then reused for all tracks and all backbones. Thus
 context-aware means input-conditioned inference, not test-time parameter
 updates: CASM has validation-selected parameters, but no annotated beat,
@@ -380,9 +389,9 @@ held-out optimum.
 \begin{table*}[t]
 \centering
 \caption{Post-processor comparison. Direct rows are absolute percentages;
-all following rows are percentage-point changes from the Direct row of the
-same backbone. CASM uses one Frozen-4F configuration. DBN-SMC-opt is a
-target-selected diagnostic, not a clean SMC result.}
+others are percentage-point changes. Default CASM/PLPDP use $[55,215]$ BPM;
+their SMC-opt rows use $[30,300]$ BPM. DBN-SMC-opt follows
+Sec.~\ref{sec:exp}; all SMC-opt rows are target-selected diagnostics.}
 \label{tab:postprocessor_ablation}
 \begingroup
 \fontsize{7.5pt}{9pt}\selectfont
@@ -407,23 +416,36 @@ target-selected diagnostic, not a clean SMC result.}
 & 62.7 & 51.4 & 61.0 \\
 \rowcolor{gray!10}
 \quad w. CASM
-& $\mathbf{+0.2}$ & $+0.4$ & $+0.6$
-& $\mathbf{+0.6}$ & $+3.2$ & $+6.0$
-& $\mathbf{+0.3}$ & $\mathbf{+2.4}$ & $+3.3$ \\
-\quad w. DBN
-& $-1.0$ & $\mathbf{+0.7}$ & $+1.3$
+& $\mathbf{+0.1}$ & $+0.5$ & $+0.6$
+& $\mathbf{+0.5}$ & $+3.0$ & $+5.9$
+& $+0.2$ & $+2.4$ & $+3.3$ \\
+\quad w. CASM, SMC-opt
+& $\mathbf{+0.1}$ & $+0.3$ & $+0.4$
+& $\mathbf{+0.5}$ & $+2.9$ & $+5.9$
+& $\mathbf{+0.3}$ & $\mathbf{+2.5}$ & $+3.2$ \\
+\rowcolor{gray!10}
+\quad w. DBN \cite{krebs2015dbn}
+& $-1.0$ & $+0.7$ & $+1.3$
 & $-0.9$ & $\mathbf{+6.2}$ & $\mathbf{+8.7}$
 & $-5.2$ & $-3.9$ & $+1.5$ \\
-\rowcolor{gray!10}
 \quad w. DBN, SMC-opt
 & $-0.5$ & $-0.9$ & $+0.2$
 & $-1.5$ & $-0.6$ & $+1.1$
 & $-1.6$ & $+0.4$ & $\mathbf{+3.5}$ \\
+\rowcolor{gray!10}
+\quad w. PLPDP \cite{chiu2023localperiodicity}
+& $-0.1$ & $\mathbf{+0.8}$ & $+0.1$
+& $-0.2$ & $+0.1$ & $-0.1$
+& $-1.4$ & $-4.7$ & $+0.5$ \\
+\quad w. PLPDP, SMC-opt
+& $\mathbf{+0.1}$ & $+0.3$ & $+0.3$
+& $+0.1$ & $+0.2$ & $+0.2$
+& $-0.9$ & $-3.5$ & $-0.3$ \\
+\rowcolor{gray!10}
 \quad w. CombFilter \cite{bock2015combfilter}
 & $-4.0$ & $-3.6$ & $+0.1$
 & $-3.3$ & $+3.2$ & $+7.6$
 & $-7.1$ & $+1.1$ & $+3.1$ \\
-\rowcolor{gray!10}
 \quad w. CRF \cite{korzeniowski2014crf}
 & $-0.6$ & $-0.3$ & $\mathbf{+1.4}$
 & $-1.4$ & $+1.9$ & $+5.5$
@@ -483,10 +505,17 @@ behaviour is conservative: it preserves local event placement while recovering
 part of the continuity absent from peak picking. DBN produces larger
 continuity changes in several GTZAN downbeat conditions, but those changes are
 frequently accompanied by lower beat or downbeat F1 and are less stable on
-SMC. The SMC-selected DBN also changes its trade-off when transferred back to
-GTZAN. We therefore do not claim that CASM dominates DBN, CRF, or comb
-filtering. The evidence supports a reusable operating point whose corrections
-depend on the input rather than a new target-specific recipe.
+SMC. The closest adaptive baseline, PLPDP, is nearly F1-neutral on GTZAN and
+raises beat CMLt by 0.8 points, but on SMC its 0.5-point AMLt gain accompanies
+losses of 1.4 F1 and 4.7 CMLt points. Expanding its support to 30--300 BPM
+reduces the F1 and CMLt losses to 0.9 and 3.5 points, respectively, but turns
+the 0.5-point AMLt gain into a 0.3-point loss. Local periodicity alone therefore
+does not guarantee a favourable correction under difficult activations. The
+SMC-selected DBN also changes its
+trade-off when transferred back to GTZAN. We therefore do not claim that CASM
+dominates DBN, PLPDP, CRF, or comb filtering. The evidence supports a reusable
+operating point whose corrections depend on the input rather than a new
+target-specific recipe.
 
 \subsection{Context among recent trackers}
 
@@ -621,10 +650,11 @@ loop. Second, CASM searches 30--300 BPM while the default DBN searches
 55--215 BPM. Recent SMC analysis reports many references below that lower
 limit \cite{ahn2026smcblindspot}; a matched-support DBN is therefore required
 before attributing an SMC difference solely to CASM's ambiguity mechanism.
-Third, the present aggregate tables do not isolate the sparse graph,
+Third, the main aggregate table does not isolate the sparse graph,
 strength-versus-width ambiguity gate, or the two safeguards. A direct PLPDP
-baseline, fixed-period DP, component ablations, and per-corpus fallback and
-meter-path acceptance rates are the decisive experiments. Track-paired
+comparison is now included for Beat This, but fixed-period DP, component
+ablations, PLPDP on the remaining backbones, and per-corpus fallback and
+meter-path acceptance rates remain decisive. Track-paired
 bootstrap or randomization tests should accompany them; three training seeds
 or eight folds alone do not justify significance claims.
 
@@ -639,8 +669,8 @@ the same deterministic module runs without upstream retraining, user
 annotation, or per-track tempo and meter settings. Current evidence supports
 a conservative F1--continuity alternative to Direct and DBN decoding, not
 universal dominance. The next version should use strict nested or
-leave-one-dataset-out calibration, matched tempo-support baselines, PLPDP and
-mechanism ablations, and explicit safeguard statistics. Multi-hypothesis
+leave-one-dataset-out calibration, matched tempo-support baselines, broader
+PLPDP and mechanism ablations, and explicit safeguard statistics. Multi-hypothesis
 period paths, causal decoding, and a differentiable duration layer are natural
 extensions, as is evaluation on every recent tracker that releases compatible
 activations.
