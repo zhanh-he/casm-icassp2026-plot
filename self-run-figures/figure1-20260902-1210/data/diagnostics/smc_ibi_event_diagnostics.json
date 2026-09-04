@@ -1,0 +1,113 @@
+{
+  "trim_seconds": 5.0,
+  "event_tolerance_seconds": 0.07,
+  "diagnostic_warning": "Midpoint-aligned IBI MAE/correlation are explanatory diagnostics, not standard beat-tracking benchmark metrics. IBI differencing can hide absolute phase errors and event insertions/deletions.",
+  "cases": {
+    "smc/smc_221/track.npy": {
+      "dataset": "smc",
+      "methods": {
+        "direct": {
+          "groundtruth_count": 30,
+          "estimate_count": 31,
+          "true_positive": 15,
+          "false_positive": 16,
+          "false_negative": 15,
+          "event_f1": 0.491803,
+          "matched_timing_mae_seconds": 0.03886,
+          "midpoint_aligned_ibi_mae_seconds": 0.255573,
+          "midpoint_aligned_ibi_correlation": 0.46791,
+          "ibi_comparison_count": 26
+        },
+        "fixed_semimarkov": {
+          "groundtruth_count": 30,
+          "estimate_count": 30,
+          "true_positive": 12,
+          "false_positive": 18,
+          "false_negative": 18,
+          "event_f1": 0.4,
+          "matched_timing_mae_seconds": 0.034742,
+          "midpoint_aligned_ibi_mae_seconds": 0.150285,
+          "midpoint_aligned_ibi_correlation": -0.310345,
+          "ibi_comparison_count": 27
+        },
+        "dbn": {
+          "groundtruth_count": 30,
+          "estimate_count": 40,
+          "true_positive": 17,
+          "false_positive": 23,
+          "false_negative": 13,
+          "event_f1": 0.485714,
+          "matched_timing_mae_seconds": 0.037235,
+          "midpoint_aligned_ibi_mae_seconds": 0.269731,
+          "midpoint_aligned_ibi_correlation": -0.021662,
+          "ibi_comparison_count": 27
+        },
+        "casm": {
+          "groundtruth_count": 30,
+          "estimate_count": 29,
+          "true_positive": 15,
+          "false_positive": 14,
+          "false_negative": 15,
+          "event_f1": 0.508475,
+          "matched_timing_mae_seconds": 0.03886,
+          "midpoint_aligned_ibi_mae_seconds": 0.106618,
+          "midpoint_aligned_ibi_correlation": 0.512579,
+          "ibi_comparison_count": 26
+        }
+      }
+    },
+    "smc/smc_117/track.npy": {
+      "dataset": "smc",
+      "methods": {
+        "direct": {
+          "groundtruth_count": 35,
+          "estimate_count": 36,
+          "true_positive": 23,
+          "false_positive": 13,
+          "false_negative": 12,
+          "event_f1": 0.647887,
+          "matched_timing_mae_seconds": 0.025448,
+          "midpoint_aligned_ibi_mae_seconds": 0.194013,
+          "midpoint_aligned_ibi_correlation": 0.161034,
+          "ibi_comparison_count": 34
+        },
+        "fixed_semimarkov": {
+          "groundtruth_count": 35,
+          "estimate_count": 36,
+          "true_positive": 11,
+          "false_positive": 25,
+          "false_negative": 24,
+          "event_f1": 0.309859,
+          "matched_timing_mae_seconds": 0.018409,
+          "midpoint_aligned_ibi_mae_seconds": 0.106865,
+          "midpoint_aligned_ibi_correlation": 0.354829,
+          "ibi_comparison_count": 31
+        },
+        "dbn": {
+          "groundtruth_count": 35,
+          "estimate_count": 48,
+          "true_positive": 21,
+          "false_positive": 27,
+          "false_negative": 14,
+          "event_f1": 0.506024,
+          "matched_timing_mae_seconds": 0.0243,
+          "midpoint_aligned_ibi_mae_seconds": 0.243845,
+          "midpoint_aligned_ibi_correlation": -0.02779,
+          "ibi_comparison_count": 34
+        },
+        "casm": {
+          "groundtruth_count": 35,
+          "estimate_count": 39,
+          "true_positive": 23,
+          "false_positive": 16,
+          "false_negative": 12,
+          "event_f1": 0.621622,
+          "matched_timing_mae_seconds": 0.02273,
+          "midpoint_aligned_ibi_mae_seconds": 0.117384,
+          "midpoint_aligned_ibi_correlation": 0.273575,
+          "ibi_comparison_count": 34
+        }
+      }
+    }
+  }
+}

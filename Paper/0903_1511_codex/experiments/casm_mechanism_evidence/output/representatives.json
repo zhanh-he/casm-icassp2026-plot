@@ -1,0 +1,74 @@
+[
+  {
+    "delta_cmlt": 0.2352941176470588,
+    "delta_fmeasure": 0.0784313725490196,
+    "panel": "bt_smc_oof",
+    "period_margin_median": 0.2156866937875747,
+    "piece": "smc/smc_037/track.npy",
+    "role": "improvement",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold5_val/smc__smc_037__track.npy.npz"
+  },
+  {
+    "delta_cmlt": -0.0626728110599078,
+    "delta_fmeasure": -0.0925477535647028,
+    "panel": "bt_smc_oof",
+    "period_margin_median": 0.1204465180635452,
+    "piece": "smc/smc_266/track.npy",
+    "role": "failure",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold5_val/smc__smc_266__track.npy.npz"
+  },
+  {
+    "delta_cmlt": 0.0,
+    "delta_fmeasure": 0.0,
+    "panel": "bt_smc_oof",
+    "period_margin_median": 0.0305681899189949,
+    "piece": "smc/smc_287/track.npy",
+    "role": "ambiguous",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold6_val/smc__smc_287__track.npy.npz"
+  },
+  {
+    "delta_cmlt": 0.0,
+    "delta_fmeasure": 0.0,
+    "panel": "bt_smc_oof",
+    "period_margin_median": 0.4232423305511474,
+    "piece": "smc/smc_026/track.npy",
+    "role": "clear",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold1_val/smc__smc_026__track.npy.npz"
+  },
+  {
+    "delta_cmlt": 0.276595744680851,
+    "delta_fmeasure": 0.1294520547945206,
+    "panel": "bt_gtzan_seed0",
+    "period_margin_median": 0.1447546631097793,
+    "piece": "gtzan/gtzan_classical_00001/track.npy",
+    "role": "improvement",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/pilot/beat_this_final0_gtzan/gtzan__gtzan_classical_00001__track.npy.npz"
+  },
+  {
+    "delta_cmlt": -0.2391304347826086,
+    "delta_fmeasure": -0.099722136461871,
+    "panel": "bt_gtzan_seed0",
+    "period_margin_median": 0.0713978707790374,
+    "piece": "gtzan/gtzan_classical_00051/track.npy",
+    "role": "failure",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/pilot/beat_this_final0_gtzan/gtzan__gtzan_classical_00051__track.npy.npz"
+  },
+  {
+    "delta_cmlt": 0.0,
+    "delta_fmeasure": 0.0,
+    "panel": "bt_gtzan_seed0",
+    "period_margin_median": 0.0129003729671239,
+    "piece": "gtzan/gtzan_hiphop_00072/track.npy",
+    "role": "ambiguous",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/pilot/beat_this_final0_gtzan/gtzan__gtzan_hiphop_00072__track.npy.npz"
+  },
+  {
+    "delta_cmlt": 0.0,
+    "delta_fmeasure": 0.0,
+    "panel": "bt_gtzan_seed0",
+    "period_margin_median": 0.3525306284427643,
+    "piece": "gtzan/gtzan_classical_00063/track.npy",
+    "role": "clear",
+    "source_path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/pilot/beat_this_final0_gtzan/gtzan__gtzan_classical_00063__track.npy.npz"
+  }
+]

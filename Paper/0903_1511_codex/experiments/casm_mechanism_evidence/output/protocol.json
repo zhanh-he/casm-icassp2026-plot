@@ -1,0 +1,83 @@
+{
+  "created_at_unix": 1788476825.334521,
+  "frozen_parameter_sha256": "251c96b23223b2e4ddef7f4ab85592663a1c27fcd6d62b1a5d1ef5625ed01f71",
+  "frozen_parameters": {
+    "bar_reward": 0.0,
+    "candidate_threshold": 0.03,
+    "downbeat_agreement_threshold": 0.6,
+    "downbeat_agreement_tolerance": 0.07,
+    "downbeat_mode": "meter",
+    "downbeat_temperature": 4.0,
+    "duration_sigma": 0.12,
+    "duration_weight": 4.0,
+    "fallback_maximal_ratio": 1.8,
+    "fallback_minimal_ratio": 0.85,
+    "fps": 50.0,
+    "local_window_seconds": 8.0,
+    "logit_clip": 6.0,
+    "max_bpm": 300.0,
+    "meter_change_penalty": 3.0,
+    "meters": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "min_bpm": 30.0,
+    "temperature": 2.0,
+    "tempo_bias": 0.15,
+    "uncertain_sigma": 0.4
+  },
+  "method_labels": {
+    "casm_full": "CASM",
+    "dbn_default": "DBN (55--215 BPM)",
+    "dbn_matched_30_300": "DBN (30--300 BPM)",
+    "direct": "Direct",
+    "local_target_fixed": "Local target, fixed precision",
+    "no_safeguard": "CASM without safeguards",
+    "one_sided": "One-endpoint context",
+    "plpdp": "PLPDP",
+    "strength_only": "Ambiguity: strength only",
+    "width_only": "Ambiguity: width only"
+  },
+  "methods": [
+    "direct",
+    "casm_full",
+    "local_target_fixed",
+    "strength_only",
+    "width_only",
+    "one_sided",
+    "no_safeguard",
+    "dbn_default",
+    "dbn_matched_30_300",
+    "plpdp"
+  ],
+  "panels": {
+    "bt_gtzan_seed0": {
+      "label": "Beat This / GTZAN seed 0",
+      "piece_count": 993
+    },
+    "bt_smc_oof": {
+      "label": "Beat This / SMC OOF",
+      "piece_count": 217
+    },
+    "mscnn_gtzan": {
+      "label": "MSCNN-lite / GTZAN",
+      "piece_count": 993
+    },
+    "mscnn_smc_oof": {
+      "label": "MSCNN-lite / SMC OOF",
+      "piece_count": 217
+    },
+    "tcn_smc_final0": {
+      "label": "TCN / SMC final0",
+      "piece_count": 217
+    }
+  },
+  "project_root": "/media/mengh/SharedData/zhanh/auto_structbeat",
+  "script_sha256": "5246203da07e05180638177862ec8372841a285bab5721225ac34abf5d230010",
+  "trim_seconds": 5.0,
+  "workers": 12
+}

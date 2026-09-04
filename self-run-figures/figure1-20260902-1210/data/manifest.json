@@ -1,0 +1,125 @@
+{
+  "bundle": "StructBeat Figure 1 exact-data reproduction",
+  "cases": {
+    "smc_221": {
+      "piece": "smc/smc_221/track.npy",
+      "fold": "fold 6",
+      "fps": 50.0,
+      "duration_seconds": 40.02,
+      "recommended_window_start": 6.14,
+      "recommended_window_seconds": 18.0,
+      "logit_frames": 2001,
+      "spectrogram_shape": [
+        2001,
+        128
+      ],
+      "spectrogram_dtype": "float16",
+      "probability_rounding_error": {
+        "beat_probability_max_abs": 4.98954209203744e-06,
+        "downbeat_probability_max_abs": 4.9946725688698734e-06
+      }
+    },
+    "smc_117": {
+      "piece": "smc/smc_117/track.npy",
+      "fold": "fold 5",
+      "fps": 50.0,
+      "duration_seconds": 40.02,
+      "recommended_window_start": 21.48,
+      "recommended_window_seconds": 18.0,
+      "logit_frames": 2001,
+      "spectrogram_shape": [
+        2001,
+        128
+      ],
+      "spectrogram_dtype": "float16",
+      "probability_rounding_error": {
+        "beat_probability_max_abs": 4.994251965331764e-06,
+        "downbeat_probability_max_abs": 4.994251965331764e-06
+      }
+    }
+  },
+  "dbn_configuration": {
+    "min_bpm": 35.0,
+    "max_bpm": 160.0,
+    "transition_lambda": 50.0,
+    "observation_lambda": 8.0,
+    "threshold": 0.03,
+    "beats_per_bar": [
+      3,
+      4
+    ],
+    "warning": "Illustration-tuned on the displayed cases; not an aggregate benchmark setting."
+  },
+  "audio": {
+    "bundled_waveform": false,
+    "reason": "The Beat This distribution used here provides precomputed spectrograms and annotations, not redistributable SMC waveform audio.",
+    "override": "Set AUDIO_OVERRIDE in the notebook to an authorized local WAV/FLAC/OGG file."
+  },
+  "files": [
+    {
+      "path": "data/diagnostics/smc_ibi_event_diagnostics.json",
+      "bytes": 3866,
+      "sha256": "850bd0bbdb17e61019dfb442cc95b60dd65aa14ac7c03d94c8bd5b77fb528e7a"
+    },
+    {
+      "path": "data/figure_payloads/smc_117.json",
+      "bytes": 73096,
+      "sha256": "fd6292bb5e94ab88c1149999aa92361b9288e5fc9f586a1e9ad52016036a1d7c"
+    },
+    {
+      "path": "data/figure_payloads/smc_221.json",
+      "bytes": 68412,
+      "sha256": "0af73fed851dd3bb5445f204fd750789b2fb2832f637554709fdedf71e621b49"
+    },
+    {
+      "path": "data/raw_cache/smc_117_beat_this_oof.npz",
+      "bytes": 18213,
+      "sha256": "24df22f943bf4bb545997438016bfac1f638c93d14b17e639d22e802f478969e"
+    },
+    {
+      "path": "data/raw_cache/smc_221_beat_this_oof.npz",
+      "bytes": 18173,
+      "sha256": "680db63a77c1a2ba4050c47b5cdd56887998f409abd663096483135d1a25ac40"
+    },
+    {
+      "path": "data/spectrograms/smc_117_spectrogram.npy",
+      "bytes": 512384,
+      "sha256": "6d32f66a873d0d165384f12cb76949c26955fa6fdffdfacaa69d94195f8fabe6"
+    },
+    {
+      "path": "data/spectrograms/smc_221_spectrogram.npy",
+      "bytes": 512384,
+      "sha256": "7d2c40fbd7baedab25f0b3512d5968d5e2dd568405237c6421d8bfd407312d9d"
+    },
+    {
+      "path": "data/tables/smc_117_events.csv",
+      "bytes": 13803,
+      "sha256": "a532d7c0b9750e164dcf383fd6f08a0b718ee5caa207e0095f6a8e5b56be4fab"
+    },
+    {
+      "path": "data/tables/smc_117_ibi.csv",
+      "bytes": 12554,
+      "sha256": "f8b06ec0c24e8a4fe805e3510f217f720839f1533f4567ee02923c4d28f543a7"
+    },
+    {
+      "path": "data/tables/smc_117_priors.csv",
+      "bytes": 17262,
+      "sha256": "dd23e9b90a70e6ab2b81ab46e7afcfd55dcb0395b016c3c4c7723a5763264231"
+    },
+    {
+      "path": "data/tables/smc_221_events.csv",
+      "bytes": 11631,
+      "sha256": "8aba876dc655360839c89dd6f8def718151f68015daadbeff381d148de6fac38"
+    },
+    {
+      "path": "data/tables/smc_221_ibi.csv",
+      "bytes": 10593,
+      "sha256": "a266d6eaca1dd650a3305d23551e4f9d73a3600298587c7e26d9b0c533c3ce11"
+    },
+    {
+      "path": "data/tables/smc_221_priors.csv",
+      "bytes": 12875,
+      "sha256": "3bf3877ac770bf103f728eee460158dd2c317c9cf75b8f4423d51ea2177024bd"
+    }
+  ]
+}

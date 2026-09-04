@@ -1,0 +1,292 @@
+\begin{thebibliography}{10}
+
+\bibitem{krebs2015dbn}
+Florian Krebs, Sebastian B{\"o}ck, and Gerhard Widmer,
+\newblock ``An efficient state-space model for joint tempo and meter
+  tracking,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2015, pp. 72--78.
+
+\bibitem{chen2022postprocessingfree}
+Tsung-Ping Chen and Li~Su,
+\newblock ``Toward postprocessing-free neural networks for joint beat and
+  downbeat estimation,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2022, pp. 27--35.
+
+\bibitem{foscarin2024beat}
+Francesco Foscarin, Jan Schl{\"u}ter, and Gerhard Widmer,
+\newblock ``Beat this! accurate beat tracking without {DBN} postprocessing,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2024, pp. 962--969.
+
+\bibitem{ahn2026smcblindspot}
+Jaehoon Ahn, Tae~Gum Hwang, and Moon-Ryul Jung,
+\newblock ``The {SMC} blind spot: A failure mode analysis of state-of-the-art
+  beat tracking,'' 2026.
+
+\bibitem{ellis2007beattracking}
+Daniel P.~W. Ellis,
+\newblock ``Beat tracking by dynamic programming,''
+\newblock {\em Journal of New Music Research}, vol. 36, no. 1, pp. 51--60,
+  2007.
+
+\bibitem{korzeniowski2014crf}
+Filip Korzeniowski, Sebastian B{\"o}ck, and Gerhard Widmer,
+\newblock ``Probabilistic extraction of beat positions from a beat activation
+  function,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2014, pp. 513--518.
+
+\bibitem{fillon2015crf}
+Thomas Fillon, Cyril Joder, Simon Durand, and Slim Essid,
+\newblock ``A conditional random field system for beat tracking,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2015, pp. 424--428.
+
+\bibitem{durand2016crfdownbeat}
+Simon Durand and Slim Essid,
+\newblock ``Downbeat detection with conditional random fields and deep learned
+  features,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2016, pp. 386--392.
+
+\bibitem{fuentes2019skipchain}
+Magdalena Fuentes, Brian McFee, H{\'e}l{\`e}ne~C. Crayencour, Slim Essid, and
+  Juan~Pablo Bello,
+\newblock ``A music structure informed downbeat tracking system using
+  skip-chain conditional random fields and deep learning,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2019, pp. 481--485.
+
+\bibitem{fuentes2019microtiming}
+Magdalena Fuentes, Lucas~S. Maia, Mart{\'i}n Rocamora, Luiz W.~P. Biscainho,
+  H{\'e}l{\`e}ne~C. Crayencour, Slim Essid, and Juan~P. Bello,
+\newblock ``Tracking beats and microtiming in afro-latin american music using
+  conditional random fields and deep learning,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2019, pp. 251--258.
+
+\bibitem{bock2015combfilter}
+Sebastian B{\"o}ck, Florian Krebs, and Gerhard Widmer,
+\newblock ``Accurate tempo estimation based on recurrent neural networks and
+  resonating comb filters,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2015, pp. 625--631.
+
+\bibitem{bock2019multitask}
+Sebastian B{\"o}ck, Matthew E.~P. Davies, and Peter Knees,
+\newblock ``Multi-task learning of tempo and beat: Learning one to improve the
+  other,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2019, pp. 486--493.
+
+\bibitem{bock2016joint}
+Sebastian B{\"o}ck, Florian Krebs, and Gerhard Widmer,
+\newblock ``Joint beat and downbeat tracking with recurrent neural networks,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2016, pp. 255--261.
+
+\bibitem{degara2012reliability}
+Norberto Degara, Enrique Argones~R{\'u}a, Antonio Pena, Soledad
+  Torres-Guijarro, Matthew E.~P. Davies, and Mark~D. Plumbley,
+\newblock ``Reliability-informed beat tracking of musical signals,''
+\newblock {\em IEEETransactionsonAudio,Speech,andLanguageProcessing}, vol. 20,
+  no. 1, pp. 290--301, 2012.
+
+\bibitem{heydari2022semimarkov}
+Mojtaba Heydari, Matthew~C. McCallum, Andreas~F. Ehmann, and Zhiyao Duan,
+\newblock ``A novel {1D} state space for efficient music rhythmic analysis,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2022, pp. 421--425.
+
+\bibitem{hainsworth2004particle}
+Stephen~W. Hainsworth and Malcolm~D. Macleod,
+\newblock ``Particle filtering applied to musical tempo tracking,''
+\newblock {\em EURASIP Journal on Applied Signal Processing}, vol. 2004, no.
+  15, pp. 2385--2395, 2004.
+
+\bibitem{heydari2021beatnet}
+Mojtaba Heydari, Frank Cwitkowitz, and Zhiyao Duan,
+\newblock ``{BeatNet}: {CRNN} and particle filtering for online joint beat,
+  downbeat and meter tracking,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2021, pp. 270--277.
+
+\bibitem{heydari2024beatnetplus}
+Mojtaba Heydari and Zhiyao Duan,
+\newblock ``{BeatNet+}: Real-time rhythm analysis for diverse music audio,''
+\newblock {\em
+  TransactionsoftheInternationalSocietyforMusicInformationRetrieval}, vol. 7,
+  no. 1, pp. 274--287, 2024.
+
+\bibitem{chiu2023localperiodicity}
+Ching-Yu Chiu, Meinard M{\"u}ller, Matthew E.~P. Davies, Alvin Wen-Yu Su, and
+  Yi-Hsuan Yang,
+\newblock ``Local periodicity-based beat tracking for expressive classical
+  piano music,''
+\newblock {\em IEEE/ACMTransactionsonAudio,Speech,andLanguageProcessing}, vol.
+  31, pp. 2824--2835, 2023.
+
+\bibitem{meier2024realtime}
+Peter Meier, Ching-Yu Chiu, and Meinard M{\"u}ller,
+\newblock ``A real-time beat tracking system with zero latency and enhanced
+  controllability,''
+\newblock {\em
+  TransactionsoftheInternationalSocietyforMusicInformationRetrieval}, vol. 7,
+  no. 1, pp. 213--227, 2024.
+
+\bibitem{chiu2025dplp}
+Ching-Yu Chiu, Sebastian Strahl, and Meinard M{\"u}ller,
+\newblock ``{dPLP}: A differentiable version of predominant local pulse
+  estimation,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2025, pp. 198--205.
+
+\bibitem{sarawagi2004semimarkov}
+Sunita Sarawagi and William~W. Cohen,
+\newblock ``Semi-markov conditional random fields for information extraction,''
+\newblock in {\em AdvancesinNeuralInformationProcessingSystems(NeurIPS)}, 2004,
+  vol.~17.
+
+\bibitem{pinto2021userdriven}
+Ant{\'o}nio~S{\'a} Pinto, Sebastian B{\"o}ck, Jaime~S. Cardoso, and Matthew
+  E.~P. Davies,
+\newblock ``User-driven fine-tuning for beat tracking,''
+\newblock {\em Electronics}, vol. 10, no. 13, pp. 1518, 2021.
+
+\bibitem{maia2022adapting}
+Lucas~S. Maia, Mart{\'i}n Rocamora, Luiz W.~P. Biscainho, and Magdalena
+  Fuentes,
+\newblock ``Adapting meter tracking models to latin american music,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2022, pp. 361--368.
+
+\bibitem{pinto2023bridging}
+Ant{\'o}nio~S{\'a} Pinto and Gilberto Bernardes,
+\newblock ``Bridging the rhythmic gap: A user-centric approach to beat tracking
+  in challenging music signals,''
+\newblock in {\em
+  ProceedingsoftheInternationalSymposiumonComputerMusicMultidisciplinaryResearch(CMMR)},
+  2023, pp. 512--523.
+
+\bibitem{maia2024selective}
+Lucas~S. Maia, Mart{\'i}n Rocamora, Luiz W.~P. Biscainho, and Magdalena
+  Fuentes,
+\newblock ``Selective annotation of few data for beat tracking of latin
+  american music using rhythmic features,''
+\newblock {\em
+  TransactionsoftheInternationalSocietyforMusicInformationRetrieval}, vol. 7,
+  no. 1, pp. 99--112, 2024.
+
+\bibitem{pinto2026challenging}
+Ant{\'o}nio~S{\'a} Pinto, Gilberto Bernardes, and Matthew E.~P. Davies,
+\newblock ``Challenging beat tracking: Tackling polyrhythm, polymetre, and
+  polytempo with human-in-the-loop adaptation,''
+\newblock in {\em Music and Sound Generation in the AI Era}. 2026, vol. 15236
+  of {\em Lecture Notes in Computer Science}, pp. 461--479, Springer.
+
+\bibitem{bolt2026reformulated}
+James Bolt, Johan Pauwels, and George Fazekas,
+\newblock ``Beat and downbeat detection: A reformulated approach,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2026, pp. 15282--15286.
+
+\bibitem{foscarin2026masked}
+Francesco Foscarin, Filip Korzeniowski, and Richard Vogl,
+\newblock ``Masked diffusion enables coherent beat tracking,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2026.
+
+\bibitem{ahn2025beatfcos}
+Jaehoon Ahn and Moon-Ryul Jung,
+\newblock ``Beat tracking as object detection,'' 2025.
+
+\bibitem{gagnere2025multiple}
+Alexandre Gagner{\'e}, Slim Essid, and Geoffroy Peeters,
+\newblock ``Controlling contrastive self-supervised learning with
+  knowledge-driven multiple hypothesis: Application to beat tracking,'' 2025.
+
+\bibitem{smc}
+Andr{\'e} Holzapfel, Matthew E.~P. Davies, Jos{\'e}~R. Zapata, Jo{\~a}o~Lobato
+  Oliveira, and Fabien Gouyon,
+\newblock ``Selective sampling for beat tracking evaluation,''
+\newblock {\em IEEETransactionsonAudio,Speech,andLanguageProcessing}, vol. 20,
+  no. 9, pp. 2539--2548, 2012.
+
+\bibitem{he2026dynest}
+Zhanhong He, Hanyu Meng, Defeng Huang, and Roberto Togneri,
+\newblock ``Joint estimation of piano dynamics and metrical structure with a
+  multi-task multi-scale network,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2026, pp. 14607--14611.
+
+\bibitem{bock2020deconstruct}
+Sebastian B{\"o}ck and Matthew E.~P. Davies,
+\newblock ``Deconstruct, analyse, reconstruct: How to improve tempo, beat, and
+  downbeat estimation,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2020, pp. 574--582.
+
+\bibitem{raffel2014mireval}
+Colin Raffel, Brian McFee, Eric~J. Humphrey, Justin Salamon, Oriol Nieto, Dawen
+  Liang, and Daniel P.~W. Ellis,
+\newblock ``mir\_eval: A transparent implementation of common {MIR} metrics,''
+\newblock in {\em
+  ProceedingsoftheInternationalSocietyforMusicInformationRetrievalConference(ISMIR)},
+  2014, pp. 367--372.
+
+\bibitem{ru2025hingenet}
+Ganghui Ru, Jieying Wang, Jiahao Zhao, Yulun Wu, Yi~Yu, Nannan Jiang, Wei Wang,
+  and Wei Li,
+\newblock ``{HingeNet}: A harmonic-aware fine-tuning approach for beat
+  tracking,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonMultimediaandExpo(ICME)}, 2025,
+  pp. 1--6.
+
+\bibitem{ru2025beatfm}
+Ganghui Ru, Jieying Wang, Jiahao Zhao, Yulun Wu, Yi~Yu, Nannan Jiang, Wei Wang,
+  and Wei Li,
+\newblock ``{BeatFM}: Improving beat tracking with pre-trained music foundation
+  model,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonMultimediaandExpo(ICME)}, 2025,
+  pp. 1--6.
+
+\bibitem{ru2026beatmamba}
+Ganghui Ru, Yi~Yu, and Wei Li,
+\newblock ``{BeatMamba}: Bidirectional selective state-space modeling for
+  efficient beat tracking,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2026.
+
+\bibitem{zhang2025beatkan}
+Zhicheng Zhang, Ganghui Ru, and Wei Li,
+\newblock ``{BeatKAN}: An efficient and drum-attuned beat tracking method using
+  kolmogorov-arnold networks,''
+\newblock in {\em
+  ProceedingsoftheIEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP)},
+  2025, pp. 1--5.
+
+\end{thebibliography}

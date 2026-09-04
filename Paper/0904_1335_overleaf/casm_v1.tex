@@ -1,0 +1,601 @@
+\documentclass{article}
+\usepackage{spconf,amsmath,amssymb,graphicx}
+\usepackage[flushleft]{threeparttable}
+\usepackage{cite}
+\usepackage{booktabs,multirow}
+\usepackage[table]{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\title{CASM: A Context-Aware Semi-Markov Alternative to DBN Post-Processing for Beat Tracking}
+
+\name{Zhanhong He$^{1}$, Hanyu Meng$^{2}$, Yaolong Ju$^{3}$}
+\address{
+    $^{1}$The University of Western Australia, Perth, Australia\\
+    $^{2}$The University of New South Wales, Sydney, Australia\\
+    $^{3}$Great Bay University, Guangdong, China
+}
+
+\begin{document}
+\ninept
+\maketitle
+
+\begin{abstract}
+The last stage of beat tracking must turn dense neural activations into a
+discrete and musically coherent event sequence. Direct peak picking preserves
+local evidence but can fragment the pulse, whereas dynamic Bayesian networks
+(DBNs) restore continuity through globally configured tempo and meter
+assumptions that need not transfer to difficult music. We introduce CASM, a
+plug-in, context-aware semi-Markov decoder over a sparse graph of
+activation-supported beat candidates. CASM estimates local periodicity and its
+ambiguity from the current activation sequence; this ambiguity jointly controls
+the strength and width of each event-to-event duration potential. It therefore
+commits strongly when the pulse is clear and relaxes toward the neural evidence
+when competing metrical levels are plausible. A beat-count safeguard and a
+beat-synchronous meter decoder make this behaviour deterministic and
+auditable. One globally calibrated CASM configuration is applied without
+backbone retraining or track-specific BPM and meter settings to Beat This,
+MSCNN-lite, and TCN activations on GTZAN and SMC. The results position CASM as
+a conservative F1--continuity operating point rather than a universal
+replacement for DBN. An exploratory calibration-scale study further shows
+metric-dependent saturation and decreasing sensitivity to fold composition.
+\end{abstract}
+
+\begin{keywords}
+beat tracking, downbeat tracking, semi-Markov decoding, post-processing,
+local periodicity
+\end{keywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+The final decoder in a beat tracker is deceptively consequential. A neural
+network can assign high framewise probability to genuine beats while still
+producing duplicates, gaps, metrical-level switches, or downbeats that are
+inconsistent with its beat grid. Event-level F-measure rewards accurate local
+placement, whereas continuity measures additionally ask whether one metrical
+interpretation persists through time. This creates a practical tension:
+weak decoding respects a capable network but may yield an unstable clock;
+strong decoding restores a clock but can overwrite correct, expressive, or
+unusual evidence.
+
+One prevalent structured decoder is the dynamic Bayesian network (DBN)
+\cite{krebs2015dbn}. Its latent tempo, position, and meter states are valuable
+precisely because they can repair noisy activations. The permitted tempo
+support, meter set, and transition stiffness, however, are configured globally.
+The posterior adapts its state path to the input, but the form and strength of
+the temporal assumptions do not become more cautious when the input itself
+reveals half/double-tempo ambiguity. Re-optimizing those settings on a target
+corpus is legitimate development-set model selection, yet a
+test- or target-informed recipe is no longer evidence of out-of-the-box
+transfer. Recent post-processing-free trackers show that strong networks can
+avoid some DBN errors \cite{chen2022postprocessingfree,foscarin2024beat},
+but minimal peak picking can sacrifice sequence continuity. Recent failure
+analysis on the deliberately difficult SMC corpus makes this trade-off
+especially visible \cite{ahn2026smcblindspot}.
+
+We ask whether the temporal prior itself can listen to the current activation.
+Our answer is \emph{CASM}, a Context-Aware Semi-Markov post-processor. CASM
+constructs a sparse graph whose nodes are activation maxima and whose edges are
+complete inter-beat segments. At both endpoints of an edge, it estimates a
+local period and a best-versus-competing-period margin. Clear periodic evidence
+creates a narrow, strong duration potential; ambiguous evidence simultaneously
+weakens and broadens that potential. CASM is consequently an automatic
+correction layer in a precise, limited sense: after one global calibration, it
+requires neither track metadata nor per-track decoder adjustment, while its
+constraints remain input-dependent at inference.
+
+Our contributions are threefold:
+\begin{itemize}
+  \setlength\itemsep{0pt}
+  \setlength\parskip{0pt}
+  \item We formulate maximum-score beat decoding on a sparse semi-Markov graph
+  of activation-supported candidates. Each duration potential uses both
+  endpoint contexts and is conditioned on their ambiguity.
+  \item We connect beat decoding to a beat-synchronous variable-meter decoder
+  and two explicit safeguards, yielding a deterministic plug-in that does not
+  retrain the upstream tracker.
+  \item We study one frozen operating point across three different activation
+  backbones and analyse how the amount and composition of decoder-calibration
+  data affect transfer, while separating exploratory selection from clean
+  evaluation claims.
+\end{itemize}
+
+\section{Related Work}
+\label{sec:related}
+
+\subsection{From activations to event sequences}
+
+Dynamic programming has long combined onset evidence with inter-beat
+regularity \cite{ellis2007beattracking}. Korzeniowski \emph{et al.} proposed a
+Bayesian beat-position extractor around a dominant beat interval
+\cite{korzeniowski2014crf}; its implementation is exposed by \texttt{madmom}
+under the historical name \texttt{CRFBeatDetectionProcessor}, although the
+paper is not the learned linear-chain CRF of Fillon \emph{et al.}
+\cite{fillon2015crf}. The learned CRF branch was extended to downbeats
+\cite{durand2016crfdownbeat} and, in 2019, to skip-chain musical structure and
+Afro-Latin microtiming \cite{fuentes2019skipchain,fuentes2019microtiming}.
+Resonating comb filters form a different branch: they estimate a dominant
+global tempo from recurrent activations \cite{bock2015combfilter}, after which
+events are aligned to that periodicity. The 2019 multi-task tempo--beat model
+\cite{bock2019multitask} extended neural training rather than this comb-filter
+event decoder, and retained structured inference. DBNs instead enumerate
+tempo--phase--meter states and decode their most likely trajectory
+\cite{krebs2015dbn,bock2016joint}; they remain common in recent high-performing
+systems.
+
+\subsection{Local, segmental, and modern alternatives}
+
+Reliability-informed tracking established the principle that temporal
+commitment should depend on evidence quality \cite{degara2012reliability}.
+More recently, a compact one-dimensional semi-Markov state space represented
+time-varying rhythmic jumps for causal joint tracking
+\cite{heydari2022semimarkov}. Particle filters have long maintained online
+tempo hypotheses \cite{hainsworth2004particle}, and BeatNet/BeatNet+ extend
+that branch to joint real-time rhythm analysis
+\cite{heydari2021beatnet,heydari2024beatnetplus}.
+PLPDP is CASM's closest conceptual predecessor: it derives predominant local
+pulse information and uses dense-frame dynamic programming for expressive
+tempo \cite{chiu2023localperiodicity}. Its real-time continuation improves
+controllability \cite{meier2024realtime}, and dPLP makes local-pulse estimation
+differentiable \cite{chiu2025dplp}.
+
+CASM does not claim novelty for local periodicity, dynamic programming, or
+semi-Markov inference separately. Unlike PLPDP's dense frame grid, it scores
+only segments joining retained activation maxima and conditions each segment on
+the local period \emph{and ambiguity at both endpoints}. Ambiguity modulates
+both penalty strength and tolerance, rather than merely supplying a preferred
+period. Unlike the one-dimensional causal semi-Markov model, CASM is an
+offline sparse event graph with explicit fallback behaviour. Unlike a DBN, it
+does not maintain a dense tempo--phase state lattice; unlike a semi-CRF
+\cite{sarawagi2004semimarkov}, its potentials are not learned or normalized.
+
+Another response to difficult rhythm is to adapt the tracker with user
+annotations \cite{pinto2021userdriven,maia2022adapting,pinto2023bridging,
+maia2024selective,pinto2026challenging}. That line is complementary: it deliberately imports
+target-specific supervision. CASM instead recomputes its constraint from
+unlabelled test activations and leaves upstream weights fixed. At the other
+extreme, recent work reformulates the prediction task itself
+\cite{bolt2026reformulated}; masked diffusion learns coherent sequences through
+iterative refinement \cite{foscarin2026masked}, while BeatFCOS predicts
+intervals as objects with Soft-NMS \cite{ahn2025beatfcos}. Knowledge-driven
+metrical hypotheses have also been introduced during self-supervised
+pre-training \cite{gagnere2025multiple}. These are modern alternatives to
+traditional post-processing, but require a changed or retrained predictor;
+CASM targets the still-useful deployment setting in which only a frozen
+activation interface is available.
+
+\section{CASM: Context-Aware Semi-Markov Decoding}
+\label{sec:method}
+
+\subsection{Candidate graph and segmental objective}
+
+Let a frozen tracker output beat and downbeat logits
+$z_t^{\mathrm b}$ and $z_t^{\mathrm d}$ at $F$ frames per second, and let
+$a_t=\operatorname{sigmoid}(z_t^{\mathrm b})$. We retain one-dimensional
+local maxima, including valid boundary maxima, whose probability exceeds
+$\theta_{\mathrm c}$. The ordered candidate set is
+$\mathcal C=\{t_1,\ldots,t_N\}$. A directed edge $(i,j)$ spans the complete
+candidate-to-candidate interval
+\[
+  \Delta_{ij}=(t_j-t_i)/F
+\]
+and is admissible when
+$\Delta_{ij}\in[60/B_{\max},60/B_{\min}]$. CASM never inserts an event away
+from a retained neural maximum; it selects a sparse path
+$\pi=(i_1,\ldots,i_K)$ by maximizing
+\begin{equation}
+  \mathcal S(\pi)=\sum_{k=1}^{K}e_{i_k}
+  -\sum_{k=2}^{K}D_{i_{k-1},i_k}.
+  \label{eq:casm-objective}
+\end{equation}
+Here $e_i$ is clipped logit evidence and $D_{ij}$ scores the duration of a
+whole segment. This variable-duration edge potential is the precise
+semi-Markov component; Eq.~\eqref{eq:casm-objective} is a maximum-score
+decoder, not a generative hidden semi-Markov model.
+
+\subsection{Local period and ambiguity}
+
+For each candidate $i$, we evaluate integer lags
+$\ell\in\mathcal L=\{\ell_{\min},\ldots,\ell_{\max}\}$ in a centred local
+window $\mathcal W_i$. Zero-padded normalized autocorrelation gives
+\begin{equation}
+q_i(\ell)=
+\frac{\langle a_u a_{u-\ell}\rangle_{u\in\mathcal W_i}}
+{\sqrt{\langle a_u^2\rangle_{u\in\mathcal W_i}
+       \langle a_{u-\ell}^2\rangle_{u\in\mathcal W_i}+\epsilon_q}}
+\left(\frac{\ell_{\min}}{\ell}\right)^\beta ,
+\label{eq:casm-period}
+\end{equation}
+where the last factor is a mild fast-tempo bias. We take
+$\ell_i^\star=\arg\max_\ell q_i(\ell)$ and $\tau_i=\ell_i^\star/F$.
+The runner-up excludes the best lag and its two neighbours, exposing
+competing nearby and metrical-level periodicities. Their separation is
+\begin{equation}
+c_i=\operatorname{clip}_{[0,1]}
+\left[
+\frac{q_i(\ell_i^\star)-
+\max_{\ell:\,|\ell-\ell_i^\star|>2}q_i(\ell)}
+{|q_i(\ell_i^\star)|+\epsilon_c}
+\right].
+\label{eq:casm-ambiguity}
+\end{equation}
+We call $c_i$ a \emph{period margin}, not calibrated correctness. If at least
+five candidates exist, both $\tau_i$ and $c_i$ are median-filtered over five
+successive candidates.
+
+\subsection{Ambiguity-conditioned duration inference}
+
+For edge $(i,j)$, CASM combines the endpoint contexts geometrically:
+$\bar\tau_{ij}=\sqrt{\tau_i\tau_j}$ and
+$c_{ij}=\sqrt{c_i c_j}$. Its duration cost is
+\begin{equation}
+D_{ij}=\frac{\lambda c_{ij}}{2}
+\left[
+\frac{\log(\Delta_{ij}/\bar\tau_{ij})}
+{\sigma_0+(1-c_{ij})\sigma_{\mathrm u}}
+\right]^2 .
+\label{eq:casm-duration}
+\end{equation}
+The log ratio treats proportional timing errors symmetrically. More
+importantly, $c_{ij}$ plays two coupled roles. A separated local-period peak
+increases the multiplier and narrows the scale, enforcing a clear pulse.
+Competing periods reduce the multiplier and widen the scale, allowing the path
+to follow activation evidence instead of confidently imposing the wrong
+metrical level.
+
+With
+$e_j=\operatorname{clip}(z^{\mathrm b}_{t_j}/T,-L,L)$, the Viterbi-style
+recurrence is
+\begin{equation}
+V_j=e_j+\max\!\left\{0,\!
+\max_{\substack{i<j\\(i,j)\ {\rm admissible}}}
+\left(V_i-D_{ij}\right)\right\}.
+\label{eq:casm-dp}
+\end{equation}
+The zero branch permits a new path after an unfavourable prefix, and
+backtracking starts from $\arg\max_j V_j$. In parallel, a Direct path is
+formed by seven-frame max pooling, a strict zero-logit threshold, and
+one-frame peak deduplication, matching Beat This's minimal decoder
+\cite{foscarin2024beat}. If the number of structured events divided by the
+number of Direct events lies outside
+$[r_{\min},r_{\max}]$, the Direct path is returned. Empty candidate input
+returns an empty sequence. The count test is a deterministic safety gate, not
+a learned router.
+
+\subsection{Beat-synchronous downbeats}
+
+Let the decoded beat grid be
+$\widehat{\mathcal B}=\{\widehat b_n\}$. CASM scores possible downbeats only
+at these beat locations. For a bar length $m$ in the allowed meter set
+$\mathcal M$, define
+$g_n=\operatorname{clip}(z^{\mathrm d}_{\widehat b_n}/T_{\mathrm d},-L,L)
++\rho$. A variable-meter recurrence connects successive downbeats:
+\begin{equation}
+H_{n,m}=g_n+\max_{m'\in\mathcal M}
+\left[H_{n-m,m'}-\eta\,\mathbf 1(m'\ne m)\right].
+\label{eq:casm-meter}
+\end{equation}
+Initial states are permitted near the beginning and termination near the end,
+so a decoded path can change bar length while paying switch cost $\eta$.
+Separately, Direct downbeat maxima are snapped to
+$\widehat{\mathcal B}$. The meter path is retained only if its one-to-one
+event F-measure against this snapped path is at least $\gamma$ under a 70-ms
+tolerance; otherwise CASM returns the snapped path. Consequently every
+reported downbeat remains on the selected beat grid.
+
+\section{Experiments}
+\label{sec:exp}
+
+\subsection{Data, backbones, and metrics}
+
+We evaluate on GTZAN ($N=993$) using the annotations and exclusions of Beat This \cite{foscarin2024beat}, and on the deliberately difficult SMC corpus ($N=217$) \cite{smc}; SMC provides beat but not downbeat annotations. We use three 50-Hz activation backbones: the Beat This spectrogram Transformer \cite{foscarin2024beat}, the lightweight multi-scale convolutional backbone MSCNN-lite \cite{he2026dynest}, and the TCN of \cite{bock2020deconstruct}. The decoder receives only their framewise beat and downbeat logits.
+
+For GTZAN, \texttt{final0}, \texttt{final1}, and \texttt{final2} are three independently trained full-data backbone seeds. Their training excludes GTZAN but includes SMC. We first macro-average over the same 993 tracks and then average the three seed-level scores. For SMC, using those full-data checkpoints would leak training examples; we instead use the corresponding held-out checkpoint for each of eight folds. Seven folds contain 27 tracks and the eighth contains 28; we average their fold-level macro scores. CASM itself is deterministic and has neither a neural checkpoint nor a random seed.
+
+Following the established protocol, the first 5\\,s are trimmed and \texttt{mir\\\_eval} computes F1 with $\pm70$\\,ms tolerance, CMLt, and AMLt \cite{raffel2014mireval}. CMLt requires a continuously correct metrical level; AMLt additionally accepts the standard off-beat and half/double-level interpretations. Seed variation on GTZAN and fold variation on SMC have different replication units and are descriptive, not confidence intervals.
+
+\subsection{Decoder baselines}
+
+\emph{Direct} is the minimal peak picker defined in Sec.\~\ref{sec:method}. \emph{DBN} is the conventional joint \texttt{madmom} configuration: meters $\\{3,4\\}$, 55--215 BPM, transition weight 100, observation weight 16, and threshold 0.05 \cite{krebs2015dbn}. \emph{DBN-SMC-opt} is deliberately diagnostic. Its sequential beat and bar stages were selected from 753 configurations on the TCN SMC 8-fold OOF activations, maximizing beat F1 with CMLt/AMLt tie-breaks, and only then frozen for the three backbones and GTZAN. It uses 50--215 BPM, 30 tempo states, transition/observation weights 7/20, threshold 0.3, meters $\\{3,4\\}$, bar-observation weight 100, and meter-switch probability $10^{-7}$. It is neither a clean SMC test nor a published SMC-specific recipe from \cite{bock2020deconstruct}.
+
+The \emph{CRF} row uses \texttt{madmom}'s historically named \texttt{CRFBeatDetectionProcessor} \cite{korzeniowski2014crf} at 30--300 BPM with interval width 0.18; it should not be confused with the learned CRF in \cite{fillon2015crf}. \emph{CombFilter} uses \texttt{madmom}'s global tempo/iterative-alignment processor \cite{bock2015combfilter}. CRF and CombFilter decode downbeat activations at 8--100 BPM and snap their outputs to their respective beat grids.
+
+\subsection{Frozen operating point and scale analysis}
+Every CASM row in Sec.~\ref{sec:results} uses exactly one explicitly loaded
+Frozen-4F configuration:
+\[
+\begin{split}
+&F=50,\quad \theta_{\mathrm c}=0.03,\quad
+(B_{\min},B_{\max})=(30,300),\\
+&|\mathcal W|=8{\rm\,s},\quad \beta=0.15,\quad
+(T,L)=(2,6),\\
+&(\lambda,\sigma_0,\sigma_{\mathrm u})=(4,0.12,0.40),\quad
+[r_{\min},r_{\max}]=[0.85,1.8],\\
+&\mathcal M=\{2,\ldots,7\},\quad
+(T_{\mathrm d},\eta,\rho,\gamma)=(4,3,0,0.6).
+\end{split}
+\]
+Its scalar settings were selected on the union of SMC folds $\\{2,7,1,3\\}$ and then reused for all tracks and all backbones. Thus context-aware means input-conditioned inference, not test-time parameter updates: CASM has validation-selected parameters, but no annotated beat, inter-beat-interval, BPM, or meter input at inference.
+
+The choice to foreground 4F was made \emph{after} inspecting the calibration sensitivity analysis and is therefore exploratory. The seven-fold configuration is the only comparator locked before GTZAN inspection; it differs from 4F only in $\sigma\_0=0.15$. For the scale study, SMC fold 0 ($N=27$) is never used for selection. From folds 1--7 we enumerate every 1-, 2-, and 4-fold calibration subset ($7$, $21$, and $35$ combinations) plus the seven-fold union, and evaluate all locked configurations on the same SMC fold 0 and fixed GTZAN/\texttt{final1} panel. The latter panel is test-conditioned and is used only to describe sensitivity, not to claim a held-out optimum.
+
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{A single operating point across backbones}
+
+% DATA AUDIT (2026-09-04): Numeric cells below are deliberately preserved at
+% the owner's request. Reconcile them with the 2026-09-03 canonical absolute
+% ledger before submission; do not infer new values from the displayed deltas.
+\begin{table*}[t]
+\centering
+\caption{Post-processor comparison. Direct rows are absolute percentages;
+all following rows are percentage-point changes from the Direct row of the
+same backbone. CASM uses one Frozen-4F configuration. DBN-SMC-opt is a
+target-selected diagnostic, not a clean SMC result.}
+\label{tab:postprocessor_ablation}
+\begingroup
+\fontsize{7.5pt}{9pt}\selectfont
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.0}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|rrr|rrr|rrr}
+\toprule
+\multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Method}}}
+& \multicolumn{6}{c|}{\textbf{GTZAN (Beat / Downbeat)}}
+& \multicolumn{3}{c}{\textbf{SMC (Beat)}} \\
+\cmidrule(lr){2-7}
+\cmidrule(l){8-10}
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt \\
+\midrule
+
+\textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& 89.1 & 79.8 & 89.8
+& 78.3 & 67.2 & 79.1
+& 62.7 & 51.4 & 61.0 \\
+\rowcolor{gray!10}
+\quad w. CASM
+& $\mathbf{+0.2}$ & $+0.4$ & $+0.6$
+& $\mathbf{+0.6}$ & $+3.2$ & $+6.0$
+& $\mathbf{+0.3}$ & $\mathbf{+2.4}$ & $+3.3$ \\
+\quad w. DBN
+& $-1.0$ & $\mathbf{+0.7}$ & $+1.3$
+& $-0.9$ & $\mathbf{+6.2}$ & $\mathbf{+8.7}$
+& $-5.2$ & $-3.9$ & $+1.5$ \\
+\rowcolor{gray!10}
+\quad w. DBN, SMC-opt
+& $-0.5$ & $-0.9$ & $+0.2$
+& $-1.5$ & $-0.6$ & $+1.1$
+& $-1.6$ & $+0.4$ & $\mathbf{+3.5}$ \\
+\quad w. CombFilter \cite{bock2015combfilter}
+& $-4.0$ & $-3.6$ & $+0.1$
+& $-3.3$ & $+3.2$ & $+7.6$
+& $-7.1$ & $+1.1$ & $+3.1$ \\
+\rowcolor{gray!10}
+\quad w. CRF \cite{korzeniowski2014crf}
+& $-0.6$ & $-0.3$ & $\mathbf{+1.4}$
+& $-1.4$ & $+1.9$ & $+5.5$
+& $-1.2$ & $+1.4$ & $+1.2$ \\
+\midrule
+\textbf{MSCNN-lite} (direct) \cite{he2026dynest}
+& 86.1 & 73.4 & 79.9
+& 70.8 & 53.1 & 63.1
+& 57.2 & 42.0 & 48.4 \\
+\rowcolor{gray!10}
+\quad w. CASM
+& $\mathbf{+0.4}$ & $+1.5$ & $+2.4$
+& $+1.7$ & $+6.8$ & $+11.7$
+& $\mathbf{+0.5}$ & $+3.3$ & $+4.4$ \\
+\quad w. DBN
+& $-0.6$ & $\mathbf{+4.0}$ & $\mathbf{+7.2}$
+& $\mathbf{+1.8}$ & $\mathbf{+15.8}$ & $\mathbf{+21.2}$
+& $-4.9$ & $+0.3$ & $+3.9$ \\
+\rowcolor{gray!10}
+\quad w. DBN, SMC-opt
+& $-1.1$ & $+0.2$ & $+5.9$
+& $-0.9$ & $+9.5$ & $+14.6$
+& $+0.3$ & $\mathbf{+3.5}$ & $\mathbf{+6.8}$ \\
+
+\midrule
+\textbf{TCN} (direct) \cite{bock2020deconstruct}
+& 87.1 & 73.8 & 81.7
+& 62.4 & 24.6 & 59.9
+& 52.9 & 30.1 & 36.0 \\
+\rowcolor{gray!10}
+\quad w. CASM
+& $\mathbf{+0.3}$ & $\mathbf{+1.3}$ & $+1.6$
+& $+2.3$ & $+19.4$ & $+14.0$
+& $+0.3$ & $+3.8$ & $+5.2$ \\
+\quad w. DBN
+& $-2.6$ & $-0.7$ & $\mathbf{+5.0}$
+& $\mathbf{+4.9}$ & $\mathbf{+23.2}$ & $\mathbf{+22.9}$
+& $-0.9$ & $-7.0$ & $+2.3$ \\
+\rowcolor{gray!10}
+\quad w. DBN, SMC-opt
+& $-1.9$ & $-0.8$ & $+4.4$
+& $-0.2$ & $+8.9$ & $+9.3$
+& $\mathbf{+1.7}$ & $\mathbf{+4.5}$ & $\mathbf{+8.2}$ \\
+% Completed TCN/MSCNN-lite CombFilter and CRF rows exist in the canonical
+% ledger and should be integrated only when the owner unlocks table revision.
+\bottomrule
+\end{tabular}%
+}
+\endgroup
+\end{table*}
+
+Table~\ref{tab:postprocessor_ablation} is best read as a transfer and
+trade-off table, not a winner count. At its displayed precision, the same
+CASM setting produces positive changes from Direct across the three
+backbones, two corpora, and all available metrics. Its characteristic
+behaviour is conservative: it preserves local event placement while recovering
+part of the continuity absent from peak picking. DBN produces larger
+continuity changes in several GTZAN downbeat conditions, but those changes are
+frequently accompanied by lower beat or downbeat F1 and are less stable on
+SMC. The SMC-selected DBN also changes its trade-off when transferred back to
+GTZAN. We therefore do not claim that CASM dominates DBN, CRF, or comb
+filtering. The evidence supports a reusable operating point whose corrections
+depend on the input rather than a new target-specific recipe.
+
+\subsection{Context among recent trackers}
+
+% DATA AUDIT (2026-09-04): Numeric cells below are deliberately preserved.
+% Three cells conflict with the 2026-09-03 canonical ledger and must be
+% adjudicated by the owner before submission.
+\begin{table*}[t]
+\centering
+\caption{Contextual comparison with recent beat/downbeat trackers. Values are
+percentages reported under each cited system's protocol; differing training
+data, checkpoints, and inference procedures make this literature context, not
+a controlled ranking. Our rows use GTZAN three-seed means and SMC eight-fold
+OOF means.}
+\label{tab:sota}
+\begingroup
+\fontsize{7.5pt}{9pt}\selectfont
+\setlength{\tabcolsep}{2.6pt}
+\renewcommand{\arraystretch}{1.0}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+\multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Method}}}
+& \multicolumn{6}{c|}{\textbf{GTZAN (Beat / Downbeat)}}
+& \multicolumn{3}{c}{\textbf{SMC (Beat)}} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+\cmidrule(l){8-10}
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt \\
+\midrule
+\rowcolor{gray!10}
+\textbf{HN-MERT} w. DBN \cite{ru2025hingenet}
+& \textbf{89.7} & 81.4 & \textbf{94.3}
+& 77.4 & 71.6 & 87.2
+& 61.7 & -- & -- \\
+\textbf{HN-MusicFM} w. DBN
+& 89.2 & 80.9 & 93.7
+& \textbf{79.8} & 73.2 & \textbf{89.5}
+& 60.6 & -- & -- \\
+\rowcolor{gray!10}
+\textbf{BeatFM-MERT} w. DBN \cite{ru2025beatfm}
+& \underline{89.5} & \underline{82.7} & \underline{93.9}
+& 76.7 & 70.2 & 85.4
+& 61.3 & -- & -- \\
+\textbf{BeatFM-MusicFM} w. DBN
+& 89.1 & 80.6 & 93.5
+& \underline{79.6} & \underline{74.4} & \underline{88.7}
+& 60.5 & -- & -- \\
+\rowcolor{gray!10}
+\textbf{BeatMamba} w. DBN \cite{ru2026beatmamba}
+& 88.9 & 82.3 & \textbf{94.3}
+& -- & -- & --
+& 58.7 & 46.8 & 62.4 \\
+\textbf{BeatKAN} w. DBN \cite{zhang2025beatkan}
+& 88.2 & 78.1 & 92.3
+& -- & -- & --
+& 59.8 & 48.4 & \underline{64.0} \\
+\rowcolor{gray!10}
+\textbf{MDM-BeatThis} (direct) \cite{foscarin2026masked}
+& \textbf{89.7} & \textbf{82.9} & 92.5
+& 79.5 & \textbf{76.4} & 88.5
+& 61.0 & 48.9 & \textbf{64.3} \\
+\textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& 89.1 & 79.8 & 89.8
+& 78.3 & 67.2 & 79.1
+& \underline{62.7} & \underline{51.4} & 61.0 \\
+\rowcolor{gray!10}
+\textbf{BeatThis} w. DBN
+& 88.1 & 80.5 & 91.1
+& 77.4 & 73.4 & 87.8
+& 57.5 & 47.5 & 62.5 \\
+\textbf{BeatThis} w. CASM (proposed)
+& 89.3 & 80.2 & 90.4
+& 78.9 & 70.4 & 85.1
+& \textbf{63.0} & \textbf{53.8} & \textbf{64.3} \\
+\bottomrule
+\end{tabular}%
+}
+\vspace{2pt}
+\begin{minipage}{0.99\textwidth}
+\footnotesize
+GTZAN rows from this work average three independently trained backbone seeds;
+SMC rows from this work average eight fold-level macro scores from 217
+track-disjoint OOF predictions. These are different descriptive replication
+axes. CASM uses the same Frozen-4F decoder in both cases; its SMC row is
+backbone-level OOF but not strict nested OOF for decoder selection.
+\end{minipage}
+\endgroup
+\end{table*}
+
+Table~\ref{tab:sota} answers a narrower question than
+Table~\ref{tab:postprocessor_ablation}: whether an accessible modern backbone
+remains competitive when its minimal decoder is replaced. We could reproduce
+a compatible activation interface only for Beat This, so the table does not
+imply that CASM improves HingeNet, BeatFM, BeatMamba, BeatKAN, or MDM. Their
+rows retain their authors' training and decoding pipelines. This distinction
+also clarifies CASM's practical niche. MDM and BeatFCOS alter the learned
+predictor to produce coherent sequences or intervals
+\cite{foscarin2026masked,ahn2025beatfcos}; CASM can instead be attached to
+already trained logit-producing models. Testing the same decoder on future
+systems requires authors to expose framewise activations, not only final event
+times.
+
+\subsection{What calibration-scale sensitivity shows}
+
+% The full nine-panel plot remains in figures/p2.jpg for a supplement.  In the
+% main paper, its size displaces the references and obscures the central result.
+The fixed-panel sensitivity analysis does not show that 4F is optimal, nor
+that more data hurts machine learning. CASM learns no network weights here:
+the independent variable is the amount of data used to select global decoder
+scalars. On the held-out SMC panel, the family centres of F1, CMLt, and AMLt
+rise from 1F to 7F. On GTZAN, beat F1 and downbeat F1/CMLt peak at 2F, while
+beat CMLt/AMLt and downbeat AMLt continue to 7F. Hence the defensible
+conclusion is metric-dependent diminishing returns rather than a universal
+best scale.
+
+There is nevertheless a useful stability result. From 1F to 2F to 4F, the
+across-combination population spread decreases in all nine panels: more
+calibration data makes the selected decoder less sensitive to which SMC folds
+are present, even when the external point estimate does not improve
+monotonically. We retain 4F as a balanced, post-hoc operating point for the
+present analysis. Its near-identical seven-fold comparator is the appropriate
+pre-GTZAN locked reference; a new external test set or nested selection is
+needed to establish superiority.
+
+\subsection{Limitations and decisive next tests}
+
+Three limitations bound the current claim. First, SMC activations are
+backbone-level OOF, but the single 4F decoder is not selected in a nested outer
+loop. Second, CASM searches 30--300 BPM while the default DBN searches
+55--215 BPM. Recent SMC analysis reports many references below that lower
+limit \cite{ahn2026smcblindspot}; a matched-support DBN is therefore required
+before attributing an SMC difference solely to CASM's ambiguity mechanism.
+Third, the present aggregate tables do not isolate the sparse graph,
+strength-versus-width ambiguity gate, or the two safeguards. A direct PLPDP
+baseline, fixed-period DP, component ablations, and per-corpus fallback and
+meter-path acceptance rates are the decisive experiments. Track-paired
+bootstrap or randomization tests should accompany them; three training seeds
+or eight folds alone do not justify significance claims.
+
+\section{Conclusion and Future Work}
+\label{sec:concl}
+
+CASM revisits structured beat decoding as an inductive bias conditioned on each
+input, not as a return to a fixed global grid. It joins activation-supported events
+with locally centred segment potentials and deliberately relaxes those
+potentials when periodic evidence is ambiguous. Once globally calibrated,
+the same deterministic module runs without upstream retraining, user
+annotation, or per-track tempo and meter settings. Current evidence supports
+a conservative F1--continuity alternative to Direct and DBN decoding, not
+universal dominance. The next version should use strict nested or
+leave-one-dataset-out calibration, matched tempo-support baselines, PLPDP and
+mechanism ablations, and explicit safeguard statistics. Multi-hypothesis
+period paths, causal decoding, and a differentiable duration layer are natural
+extensions, as is evaluation on every recent tracker that releases compatible
+activations.
+
+\bibliographystyle{IEEEbib}
+\bibliography{casm}
+
+\end{document}

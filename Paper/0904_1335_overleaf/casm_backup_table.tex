@@ -1,0 +1,565 @@
+% Good example
+% https://mm.kaist.ac.kr/pubs/pdfs/jung22c.pdf?utm_source=chatgpt.com
+% https://arxiv.org/pdf/2309.08279
+
+\documentclass{article}
+\usepackage{spconf,amsmath,graphicx,hyperref}
+\usepackage{amsmath}         
+\usepackage[flushleft]{threeparttable} 
+\usepackage{cite}
+\usepackage{booktabs, multirow}
+\usepackage{enumitem} %缩进itemize
+\usepackage{amssymb}
+\usepackage[table]{xcolor} % 表格颜色
+% \usepackage{lilyglyphs} % dynamic symbols
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\tikzset{
+  block/.style={draw, rounded corners, very thick, align=center, inner sep=3pt, minimum height=8mm, fill=white},
+  tinyblock/.style={draw, rounded corners, thick, inner sep=2pt, minimum height=4mm, fill=white},
+  arrow/.style={-Latex, very thick}
+}
+% Example definitions.
+% --------------------
+\def\x{{\mathbf x}}
+\def\L{{\cal L}}
+
+% Robust Beat Reward: When is an Interpretable MIR Score Trustworthy Enough for Generative Model Post-Training?
+
+% Title.
+% ------
+\title{CASM: Context-Aware Semi-Markov as Alternative to DBN Beat Tracking Post-Processor}
+%
+% Single address.
+% ---------------
+\name{Zhanhong He$^{1}$, Hanyu Meng$^{2}$, Yaolong Ju$^{3}$}
+\address{
+    $^{1}$The University of Western Australia, Perth, Australia\\
+    $^{2}$The University of New South Wales, Sydney, Australia\\
+    $^{2}$Great Bay University, Guangdong, China
+}
+%
+% For example:
+% ------------
+%\address{School\\
+%	Department\\
+%	Address}
+%
+% Two addresses (uncomment and modify for two-address case).
+% ----------------------------------------------------------
+%\twoauthors
+%  {A. Author-one, B. Author-two\sthanks{Thanks to XYZ agency for funding.}}
+%	{School A-B\\
+%	Department A-B\\
+%	Address A-B}
+%  {C. Author-three, D. Author-four\sthanks{The fourth author performed the work
+%	while at ...}}
+%	{School C-D\\
+%	Department C-D\\
+%	Address C-D}
+%
+\begin{document}
+\ninept
+%
+\maketitle
+%
+\begin{abstract}
+Effective activation-to-event decoder. An alternative post-processing stategies, plug-in and go as DBN post-processor, not need to retrain the backbone beat and downbeat tracking model.
+
+Estimating piano dynamic from audio recordings is a fundamental challenge in computational music analysis. In this paper, we propose an efficient multi-task network that jointly predicts dynamic levels, change points, beats, and downbeats from a shared latent representation. These four targets form the metrical structure of dynamics in the music score. Inspired by recent vocal dynamic research, we use a multi-scale network as the backbone, which takes Bark-scale specific loudness as the input feature. Compared to log-Mel as input, this reduces model size from 14.7 M to 0.5 M, enabling long sequential input. We use a 60-second audio length in audio segmentation, which doubled the length of beat tracking commonly used. Evaluated on the public MazurkaBL dataset, our model achieves state-of-the-art results across all tasks. This work sets a new benchmark for piano dynamic estimation and delivers a powerful and compact tool, paving the way for large-scale, resource-efficient analysis of musical expression.
+
+% With only 0.4 MiB of trainable parameters (vs. 13.3 MiB if use log-Mel spectrogram as input feature), our system uses a 60-second input audio, doubling the length typically used in beat tracking, which we identify as optimal for the combined tasks' performance. 
+\end{abstract}
+%
+\begin{keywords}
+Piano dynamics estimation, beat tracking, Bark-scale specific loudness, multi-scale network, multi-task learning
+\end{keywords}
+%
+\section{Introduction}
+\label{sec:intro}
+The creation, comprehension and reproduction of music are fundamental aspects of human culture. In Western musical tradition, the term \textit{dynamics} refers to a coarse guide to the intended loudness. Indicated in a score by markings such as \textit{p} (\textit{piano}, soft) and \textit{f} (\textit{forte}, loud), dynamics are essential for shaping musical phrases, conveying emotion, and articulating structural differentiation \cite{cancinoChacon2018computational}. This vocabulary extends to a nuanced range of static levels, from \textit{pp} (\textit{pianissimo}) to \textit{ff} (\textit{fortissimo}), and includes gradual transitions like \textit{crescendo} and \textit{decrescendo}. The computational modeling of these expressive markings is valuable for music education and performance analysis \cite{narang2022analysis, zhang2025llaqo, park2025dynvisual}, as well as theory-informed music generation \cite{wu2024musiccontrolnet, he2025filling}.
+
+The core challenge in estimating from audio lies in the inherent relativity and ambiguity of dynamic markings. A symbol like \textit{pianissimo} does not map to a fixed physical measurement like a decibel level. Instead, its interpretation is deeply contextual, influenced by musical style, performer's intent, and the acoustic environment \cite{kosta2014dynpiano, jones2023probingdyn}. This lack of a standardized ground truth has historically posed a significant challenge for machine learning algorithms, often leading to poor generalization among different performers or pieces \cite{kosta2016mapping, kosta2018mazurkabl}. 
+
+To circumvent the ambiguity of music dynamics, a common strategy in music transcription and analysis is to adopt MIDI velocity as a proxy target \cite{van2014dynmidi, hawthorne2018onf, kim2023score, kim2024method}. This approach, however, introduces its own set of challenges. MIDI velocity reflects the performer's physical action rather than perceived loudness, and is confounded by the instrument's unique timbre and touch \cite{berndt2010modelling}. While automatic music transcription (AMT) systems can accurately estimate MIDI velocity from Yamaha Disklavier piano performances, generalizing this capability across diverse pianos remains unsolved \cite{edwards2024general}. This makes the subsequent task of regressing dynamic markings from the estimated MIDI velocity inherently unreliable.
+
+Given these complexities, we propose an end-to-end multi-task learning approach to estimate piano dynamics and their underlying metrical structure directly from audio. Inspired by recent advances in vocal dynamics estimation \cite{narang2024automatic}, we use Bark-scale specific loudness (BSSL) as the input feature. The BSSL is processed by a multi-scale network backbone, adapted from \cite{li2023frame}, to extract a shared latent representation that reconciles the divergent temporal requirements of the distinct tasks. This unified latent representation is then channeled through a Multi-gate Mixture-of-Experts (MMoE) layer \cite{ma2018mmoe}, which generates specialized features for four task heads that jointly predict: (1) dynamic levels, (2) change points, (3) beat positions, and (4) downbeat positions. Together, these targets capture both the dynamic markings and their underlying metrical structure, since the beat and downbeat grid provides the rhythmic foundation of a musical score.
+
+The primary application of our proposed multi-task framework is to enrich musical scores that possess reliable beat information but lack dynamic markings, a common scenario for music archives and the output of score-level AMT systems \cite{ijcai2024p862}. As depicted in Fig.~\ref{fg:bark}, this workflow aligns the model's predicted dynamics to a provided beat grid. Furthermore, the model's ability to jointly predict the beat and downbeat also allows it to operate fully end-to-end without a pre-existing music score, making it a versatile tool for large-scale piano performance analysis directly from audio.\footnote{Code and pre-trained models are available at: \url{https://github.com/zhanh-he/piano-dynamic-estimation}}
+
+
+% The proposed multi-task framework offers significant practical applications compared to single-task approaches. Its primary use is to enrich a musical score with dynamic markings, which is particularly valuable for enhancing the output of score-level automatic music transcription systems that typically capture only musical notes. This is achieved by combining the model's predicted dynamic levels and change points and aligning them to a beat grid (see Fig. \ref{fg:bark}). A more advanced application stems from the model's end-to-end design, where it can predict the beat and downbeat grid by itself, using these internal predictions to post-process the dynamics. This enables fully audio-based music analysis where no ground-truth score or annotations are available. By achieving state-of-the-art results on the MazurkaBL dataset \cite{kosta2018mazurkabl}, we present this multi-task multi-scale network as a complete, end-to-end tool that supports large-scale music performance analysis, making it a valuable resource for the music research community.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/p1.png}
+\caption{Workflow for adding dynamic markings to an AMT-transcribed score from audio. The highlighted region (90–105 s of Chopin Mazurka Op. 6 No. 1) shows a case study. Dynamic markings are aligned with the musical beat grid, and a change point indicates a contextual shift in the dynamic levels.} 
+\label{fg:bark}
+\end{center}
+\end{figure}
+
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Bark-Scale Specific Loudness}
+\label{ssec:bark}
+Bark-scale features are derived from a psychoacoustic model of human loudness perception across critical bands \cite{zwicker1999psychoacoustics}. While log-Mel spectrograms remain dominant in modern deep learning pipelines, the effectiveness of Bark-based representations is supported by extensive research. For instance, recent work has demonstrated that Bark-scale cepstral coefficients can improve speaker recognition under short-duration constraints \cite{zi2024bgcc}, and a high-resolution variant of BSSL has shown performance gains over log-Mel inputs for vocal dynamics estimation \cite{narang2024automatic}. Given the growing evidence supporting Bark-scale features, coupled with BSSL's established success in previous piano dynamics research \cite{kosta2016mapping}, we adopt it as the foundational feature for this work.
+
+The primary challenge was the implementation of the BSSL extractor. Standardized toolboxes like MOSQITO \cite{san2021mosqito}, while compliant with ISO 532-1:2017 standard, are designed for robust sound quality assessment and thus mandate a 48 kHz sampling rate with constrained STFT parameters. Since most music and piano recordings are encoded at 44.1 kHz, using MOSQITO would necessitate upsampling, a computationally expensive process that can introduce interpolation artifacts. Therefore, we developed a custom BSSL feature extractor in the PyTorch framework, reproducing the \texttt{ma\_sone} function from the widely used Music Analysis MATLAB toolbox by Pampalk \cite{pampalk2004toolbox}, which is based on the algorithmic chain proposed in \cite{pampalk2002content}. This approach allows for the flexible parameter settings crucial for fair and efficient experimentation.
+
+The feature extraction pipeline begins by converting the audio to mono, peak-normalizing it to $-1$\,dBFS. To ensure compatibility with a recent state-of-the-art (SOTA) beat tracking model \cite{foscarin2024beat}, the audio is resampled to 22.05\,kHz, and a short-time Fourier transform (STFT) is computed using a Hann window of length 1024 and a frame rate of 50\,fps (i.e., 20 ms per frame and hop size of 441). The resulting power spectrogram is then transformed into the BSSL through a series of psychoacoustic modeling steps. These include outer- and middle-ear weighting, grouping spectral energy into critical bands, modeling spectral masking, and nonlinear mapping to the perceptual \textit{sone} scale. This process yields the final input feature, a BSSL matrix $\mathbf{X}\in\mathbb{R}^{22 \times T}$, where $T$ denotes the number of time frames. The choice of 22 Bark bands is determined by the 11.025\,kHz Nyquist frequency, which fully covers the 22nd Bark band (extending to 9.5 kHz). While the total loudness provides an intuitive visualization (Fig.\ref{fg:bark}), the $22 \times T$ BSSL matrix is input to the model to preserve rich spectral details.
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/p2.png}
+\caption{Architecture of the proposed multi-task framework. A three-branch multi-scale network encodes either log-Mel or BSSL input. Branches operate at lengths $T$, $T/s$, and $T/s^{2}$, with outputs a latent sequence of shape $T\times8$. An 8-expert MMoE with four gates forms task-specific features, followed by linear heads to output four distinct targets. The scaling factor $s$ is a tunable hyperparameter.} 
+\label{fg:model}
+\end{center}
+\end{figure*}
+
+\subsection{Model Architecture}
+\label{ssec:model}
+The proposed model architecture is illustrated in Fig. \ref{fg:model}. With divergent acoustic requirements, dynamic estimation requires a large temporal receptive field \cite{narang2024automatic}, whereas beat and downbeat tracking require high temporal resolution to locate transient onsets \cite{bock2020deconstruct}. To address this need for varied receptive fields, we adapt the multi-scale network from \cite{li2023frame} as a shared encoder. Given an $F{\times}T$ time–frequency feature as input, the features are first normalized via 2D Batch Normalization (requiring a dimension transposition). The encoder's branches are then built from a series of residual and self-attention blocks detailed in \cite{li2023frame}. The encoder operates on three such parallel branches at different temporal resolutions, corresponding to lengths of $T$, $T/s$, and $T/s^{2}$, where down- and upsampling by the scaling factor $s$ are achieved using strides in max-pooling and transposed convolutions. Our architecture departs from the original design \cite{li2023frame} in two key ways: we treat the scaling factor $s$ as a configurable hyperparameter rather than a fixed value of 3, and the encoder outputs a shared latent sequence $\mathbf{Z}\in\mathbb{R}^{T \times 8}$ for later processing, rather than feeding into a single-task classifier.
+
+To mitigate negative transfer between our acoustically diverse tasks, we develop a MMoE module \cite{ma2018mmoe} as a task-aware decoder that processes the shared representation. The module consists of two main components:
+\begin{itemize}[noitemsep, topsep=1pt, leftmargin=*, labelsep=0.4em]
+\item \textbf{Shared Experts}: The module contains a pool of 8 shared experts. Each expert in $i=1, \dots, 8$ is a lightweight temporal convolutional block. It comprises two sequential 1D convolutional layers, each with a kernel size of 3 and a length-preserving padding, separated by a ReLU activation. All experts process the shared latent sequence $\mathbf{Z}$ in parallel to produce a set of expert outputs.
+\item \textbf{Task-Specific Gates}: For each of the four tasks $k$, a dedicated gating network $G_k(\cdot)$ acts as a dynamic router. Each gate is implemented as a simple linear layer that takes the latent feature $\mathbf{z}_t$ at each time step $t$ and outputs a softmax-normalized weight vector $\mathbf{w}_k(t) \in \mathbb{R}^8$. This vector determines how to weigh the contributions of the different experts for that specific task.
+\end{itemize}
+The final feature vector for task $k$ at a given time step $t$, denoted $\mathbf{y}_{k,t}$, is computed as the weighted sum of gates with all expert outputs:
+\begin{equation}
+\mathbf{y}_{k,t} = \sum_{i=1}^{8} \mathbf{w}_{k,i}(t) \cdot \mathbf{e}_{i,t} \,\,\, \text{where} \,\,\, \mathbf{w}_k(t) = \operatorname{Softmax}(G_k(\mathbf{z}_t))
+\label{eq:mmoe_corrected}
+\end{equation}
+where $\mathbf{e}_{i,t}$ is the output of the $i$-th expert, and the weight vector $\mathbf{w}(t)$ is produced by the task-specific gate, whose $i$-th component $\mathbf{w}_{k,i}(t)$ represents the importance of expert $i$ for task $k$ at that time step. This computation is performed at each frame to form the complete task-specific feature $\mathbf{Y}_k = [\mathbf{y}_{k,1}, \dots, \mathbf{y}_{k,T}]^\top \in \mathbb{R}^{T \times 8}$. These four specialized representations are then mapped to the final logits by separate linear heads.
+
+\subsection{Task-Specific Post-Processing}
+\label{ssec:post}
+The model’s raw output is a sequence of frame-wise probabilities (i.e., logits), which we convert into discrete musical events via tailored post-processing. For beat and downbeat detection, we adopt the procedure from \cite{foscarin2024beat}, identifying events by thresholding probabilities at 50\% and applying peak-picking within a 70\,ms neighborhood ($\pm3$ frames at 50\,fps). For dynamic markings, i.e., the dynamic level of each detected beat is determined by taking the \texttt{argmax} of the class probabilities at that specific time frame. Finally, change points are determined in a two-step process: we first identify all frames where the probabilities exceed a 75\% threshold, and then snap each of these candidates to the nearest detected beat to determine its location. This final beat-snapping step is performed because, while not a strict musical rule, the annotations (e.g., dynamic markings) in the MazurkaBL dataset are exclusively beat-aligned \cite{kosta2018mazurkabl}, and this approach maintains consistency with prior work \cite{kosta2017thesis}.
+
+
+\subsection{Loss Function}
+\label{ssec:loss}
+Training the multi-task model involves a composite loss that combines specialized objectives for each task. Our multi-task loss, $\mathcal{L}_\mathrm{MTL}$, is defined as the sum of four task-specific losses:
+\begin{equation}
+\mathcal{L}_{\mathrm{MTL}}
+= \mathcal{L}_{\mathrm{Dyn}}
++ \mathcal{L}_{\mathrm{CPt}}
++ \mathcal{L}_{\mathrm{Beat}}
++ \mathcal{L}_{\mathrm{Dbt}}
+\end{equation}
+where each component is defined as follows. For the binary targets (change points, beats, and downbeats), the loss terms $\mathcal{L}_{CPt}$, $\mathcal{L}_{Beat}$, and $\mathcal{L}_{Dbt}$ employ the shift-tolerant weighted binary cross-entropy proposed in \cite{foscarin2024beat}. This function addresses two key challenges: it counteracts the extreme sparsity of targets by weighting positive frames more heavily, and it accommodates annotation timing imprecision by incorporating a $\pm3$ frame tolerance window. For the multiclass target, dynamics, the loss term $\mathcal{L}_{Dyn}$ is a standard cross-entropy, masked by the ground-truth beat positions. This marking enforces a data-driven prior on the dataset's annotation style (i.e., dynamic markings occur only on beats), guiding the model to ignore spurious inter-beat fluctuations.
+
+
+\section{Experiments}
+\label{sec:exp}
+
+\subsection{Dataset}
+\label{ssec:data}
+We use the MazurkaBL dataset \cite{kosta2018mazurkabl}, a score-aligned corpus of 2,098 solo piano recordings covering 44 Chopin Mazurkas. After excluding two mazurkas with irregular dynamics annotations (M06-4 and M63-2), 1,999 recordings are used. While similar datasets like the recently introduced EME33 \cite{hung2024eme33} exist, MazurkaBL is the largest publicly available resource for studying notated dynamics versus performed loudness from audio. Its provision of score-aligned beat times and verified expressive markings has led to its wide adoption in music analysis research. Designed for different goals, other large datasets like MAESTRO \cite{hawthorne2019maestro} use MIDI velocity as a proxy for dynamics, while others such as ASAP \cite{foscarin2020asap} provide score-aligned annotations but lack dynamic markings.
+ % ATEPP \cite{zhang2022atepp} 
+\subsection{Implementation Details}
+\label{ssec:impl}
+We use a 5-fold cross-validation protocol, stratified by 44 mazurkas, to train and evaluate our model. For each fold, the model is trained for 120 epochs, with the best-performing checkpoint selected based on the F1 score on its respective validation set. The training configuration includes the AdamW optimizer with a learning rate of 3e-4, a batch size of 10, and a fixed random seed of 86. 
+
+For data augmentation, we slice audio into 60-second segments with 50\% overlap during training, while no overlap is used for evaluation. Both BSSL (22 Bark bands) and log-Mel (128 mel bins) features are extracted using the same STFT parameters as in \cite{foscarin2024beat} to ensure identical temporal resolution. The model employs a compact configuration with an empirically optimal temporal scaling factor of $s=5$. It predicts dynamic levels across $C=6$ classes: a \textit{blank} class for silence before the first annotation, and the five dynamic classes (\textit{pp, p, mf, f, ff}) from the MazurkaBL dataset. When run on a NVIDIA RTX 3090 (24 GiB), a full 5-fold run completed in approximately 20 hours, with peak GPU memory usage of 4 GiB.
+
+\begin{table*}[t]
+\centering
+\caption{Cross-dataset evaluation on GTZAN and SMC.
+GTZAN results report the mean $\pm$ standard deviation across three seeds;
+SMC results report the mean $\pm$ standard deviation across eight
+backbone-OOF folds. CASM denotes the Frozen-4F configuration selected
+using folds $\{2,7,1,3\}$.}
+\label{tab:audiodyn_cross_dataset}
+\begingroup
+\fontsize{9pt}{11pt}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.0}
+
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+\multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Method}}}
+& \multicolumn{3}{c|}{\textbf{GTZAN Beat}}
+& \multicolumn{3}{c|}{\textbf{GTZAN Downbeat}}
+& \multicolumn{3}{c}{\textbf{SMC Beat}} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+\cmidrule(l){8-10}
+
+& \textbf{F1} & \textbf{CMLt} & \textbf{AMLt}
+& \textbf{F1} & \textbf{CMLt} & \textbf{AMLt}
+& \textbf{F1} & \textbf{CMLt} & \textbf{AMLt} \\
+\midrule
+
+\textbf{Hung et al.} + DBN \cite{hung2022modeling}
+& 88.7 & 81.2 & 92.0
+& 75.6 & 71.5 & 88.1
+& 60.5 & 51.4 & 66.3 \\
+
+\textbf{TCN} + DBN  \cite{bock2020deconstruct}
+& 88.5 & 81.3 & 93.1
+& 67.2 & 64.0 & 83.2
+& 55.2 & 46.5 & 64.3 \\
+
+\textbf{HingeNet-MERT} (DBN) \cite{ru2025hingenet}
+& 89.7 & 81.4 & 94.3
+& 77.4 & 71.6 & 87.2
+& 61.7 & n/a & n/a \\
+
+\textbf{HingeNet-MusicFM} (DBN) \cite{ru2025hingenet}
+& 89.2 & 80.9 & 93.7
+& 79.8 & 73.2 & 89.5
+& 60.6 & n/a & n/a \\
+
+\textbf{BeatFM-MERT} (DBN) \cite{ru2025beatfm}
+& 89.5 & 82.7 & 93.9
+& 76.7 & 70.2 & 85.4
+& 61.3 & n/a & n/a \\
+
+\textbf{BeatFM-MusicFM} (DBN) \cite{ru2025beatfm}
+& 89.1 & 80.6 & 93.5
+& 79.6 & 74.4 & 88.7
+& 60.5 & n/a & n/a \\
+
+\textbf{MDM-BeatThis} (direct) \cite{foscarin2026masked}
+& $89.7 \pm 0.2$ & $82.9 \pm 0.4$ & $92.5 \pm 0.2$
+& $79.5 \pm 0.3$ & $76.4 \pm 0.6$ & $88.5 \pm 0.3$
+& $61.0 \pm 2.0$ & $48.8 \pm 6.9$ & $64.3 \pm 6.1$ \\
+
+\textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& $89.1 \pm 0.3$ & $79.8 \pm 0.6$ & $89.8 \pm 0.4$
+& $78.3 \pm 0.4$ & $67.2 \pm 0.8$ & $79.1 \pm 0.6$
+& $62.7 \pm 3.0$ & $51.4 \pm 7.4$ & $61.0 \pm 5.0$ \\
+
+\textbf{BeatThis} (CASM, proposed)
+& $89.2 \pm 0.3$ & $80.2 \pm 0.7$ & $90.4 \pm 0.3$
+& $78.9 \pm 0.3$ & $70.4 \pm 0.9$ & $85.1 \pm 0.5$
+& $63.0 \pm 3.1$ & $53.8 \pm 7.4$ & $63.7 \pm 5.4$ \\
+
+\midrule
+
+\textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& $89.1 \pm 0.3$ & $79.8 \pm 0.6$ & $89.8 \pm 0.4$
+& $78.3 \pm 0.4$ & $67.2 \pm 0.8$ & $79.1 \pm 0.6$
+& $62.7 \pm 3.0$ & $51.4 \pm 7.4$ & $61.0 \pm 5.0$ \\
+
+\quad + DBN
+& $88.1 \pm 0.3$ & $80.5 \pm 0.4$ & $91.1 \pm 0.2$
+& $77.4 \pm 0.2$ & $73.4 \pm 0.2$ & $87.8 \pm 0.5$
+& $57.5 \pm 3.8$ & $47.5 \pm 7.2$ & $65.5 \pm 6.4$ \\
+
+\quad + CASM, proposed
+& $89.2 \pm 0.3$ & $80.2 \pm 0.7$ & $90.4 \pm 0.3$
+& $78.9 \pm 0.3$ & $70.4 \pm 0.9$ & $85.1 \pm 0.5$
+& $63.0 \pm 3.1$ & $53.8 \pm 7.4$ & $63.7 \pm 5.4$ \\
+
+\quad + CombFilter
+& $85.1 \pm 0.3$ & $76.2 \pm 0.7$ & $89.9 \pm 0.3$
+& $75.0 \pm 0.4$ & $70.4 \pm 0.1$ & $86.7 \pm 0.4$
+& $55.6 \pm 4.1$ & $52.5 \pm 8.9$ & $64.5 \pm 5.7$ \\
+
+\quad + CRF
+& $88.5 \pm 0.3$ & $79.5 \pm 0.5$ & $91.2 \pm 0.1$
+& $76.9 \pm 0.1$ & $69.1 \pm 0.7$ & $84.6 \pm 0.2$
+& $61.5 \pm 2.9$ & $54.8 \pm 8.0$ & $69.2 \pm 5.5$ \\
+
+\midrule
+
+\textbf{MSCNN-lite} (direct)
+& $86.1 \pm 0.1$ & $73.4 \pm 0.5$ & $79.9 \pm 0.3$
+& $70.8 \pm 0.3$ & $53.1 \pm 0.6$ & $63.1 \pm 0.4$
+& $57.2 \pm 4.0$ & $42.0 \pm 8.9$ & $48.4 \pm 8.3$ \\
+
+\quad + DBN
+& $85.5 \pm 0.2$ & $77.4 \pm 0.6$ & $87.1 \pm 0.2$
+& $72.6 \pm 0.8$ & $68.9 \pm 1.0$ & $84.3 \pm 0.5$
+& $52.3 \pm 4.0$ & $42.3 \pm 7.7$ & $56.3 \pm 6.1$ \\
+
+\quad + CASM, proposed
+& $86.5 \pm 0.1$ & $74.8 \pm 0.6$ & $82.3 \pm 0.3$
+& $72.5 \pm 0.6$ & $59.9 \pm 0.6$ & $74.8 \pm 0.7$
+& $57.7 \pm 4.3$ & $45.3 \pm 9.2$ & $52.8 \pm 8.7$ \\
+
+\midrule
+
+\textbf{TCN} (direct) \cite{bock2020deconstruct}
+& $87.1 \pm 0.1$ & $73.8 \pm 0.3$ & $81.7 \pm 0.1$
+& $62.4 \pm 0.5$ & $24.6 \pm 1.5$ & $59.9 \pm 0.9$
+& $52.9 \pm 3.3$ & $30.1 \pm 5.3$ & $36.0 \pm 4.3$ \\
+
+\quad + DBN
+& $84.5 \pm 0.0$ & $73.1 \pm 0.3$ & $86.7 \pm 0.3$
+& $67.3 \pm 0.8$ & $60.8 \pm 0.2$ & $82.8 \pm 0.1$
+& $42.0 \pm 3.6$ & $23.1 \pm 5.0$ & $38.3 \pm 4.8$ \\
+
+\quad + CASM, proposed
+& $87.4 \pm 0.1$ & $75.1 \pm 0.4$ & $83.3 \pm 0.1$
+& $64.7 \pm 0.3$ & $33.9 \pm 2.3$ & $73.9 \pm 0.6$
+& $53.2 \pm 3.6$ & $33.9 \pm 5.7$ & $41.2 \pm 5.1$ \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.99\linewidth}
+\footnotesize
+GTZAN is held out from model training and reports three-seed
+mean $\pm$ population standard deviation. SMC statistics are calculated
+from eight fold-level macro scores. For CASM [4F], the backbone predictions
+are eight-fold OOF, while the decoder configuration is selected using
+folds $\{2,7,1,3\}$; therefore, this row should not be described as strict
+nested decoder-selection OOF. A displayed standard deviation of $0.0$
+means that the unrounded value is below $0.05$ percentage point.
+\end{minipage}
+
+\endgroup
+\end{table*}
+
+\vspace{2pt}
+\begin{minipage}{0.99\textwidth}
+\footnotesize
+\emph{Protocol note.}
+For Beat This, MSCNN-lite, TCN, and MDM, SMC predictions are produced by the
+corresponding held-out backbone checkpoint for each fold. The fixed 4F decoder
+was selected using folds $\{2,7,1,3\}$ and then applied to all eight OOF
+backbone folds; consequently, its SMC row is an eight-fold
+backbone-OOF result, but not a strict nested decoder-selection estimate.
+The ``wait exp'' cells indicate that no auditable CASM-Frozen-4F or
+three-seed result exists; historical CASM values were not substituted.
+\end{minipage}
+
+\endgroup
+\end{table*}
+
+\subsection{Comparison Candidates}
+\label{ssec:candidates}
+Due to the reproduceability, we are gainting several open-availble deep-learning beat tracking model as the backbone, connecting to our proposed CASM post-processor. These models are:
+
+(1) Beat This \cite{foscarin2024beat}: an transformer-based model, the original code, and its open-available model checkpoint was used. We only use to do re-evaluation in this progress.
+(2) Multi-Scale CNN \cite{}: 
+
+Some models are trained on different data pipeline, while still fair reserved the Ballroom, Hainsworth, SMC dataset for 8-fold cross evaluation, we only reported their paper results 
+
+
+\noindent\textbf{Single-task Multi-scale Network.} We establish single-task baselines by adapting the multi-scale network from \cite{li2023frame}, integrating their model architecture (code publicly available) into our data handling pipeline and training an independent model for each target. The loss for each single-task network is the corresponding single term from our multi-task loss, with an empirically optimal temporal scaling factor of 5.
+
+\noindent\textbf{Dynamic and Change Point Baselines.} We report published results from representative methods in \cite{kosta2017thesis}. This includes the Artificial Neural Networks (ANN) for dynamics, and the Pruned Exact Linear Time (PELT) algorithms for change points. These methods are tuning-intensive and non-end-to-end, so we report the literature scores rather than re-implement them.
+
+\noindent\textbf{Beat and Downbeat Baselines.} We include the time-convolutional network (TCN) with a dynamic Bayesian network (DBN) post-processor \cite{bock2020deconstruct}, and the recent state-of-the-art transformer model, Beat This \cite{foscarin2024beat}. Both models can estimate beats and downbeats simultaneously. We retrain them from scratch on the MazurkaBL dataset using their publicly available code and the same 5-fold protocol as ours.
+
+
+\subsection{Evaluation Metrics}
+\label{ssec:metrics}
+Performance on all four tasks is evaluated using the F1 score. For beat and downbeat tracking, we report F1 with a \mbox{$\pm70$\,ms} tolerance, consistent with prior work \cite{bock2020deconstruct,foscarin2024beat}. Evaluation of both dynamics and change points is consistent with \cite{kosta2017thesis}. For dynamics, the model's continuous output (dynamic level curve) is first sampled at each ground-truth beat location, and these values are then discretized into the corresponding dynamic markings. This converts the frame-wise prediction into a sequence of beat-wise labels, which are evaluated using a macro-averaged F1 score across five dynamic classes (\textit{pp, p, mf, f, ff}, excluding the \textit{blank} class). For change points, their predictions are snapped to the nearest ground-truth beat before being evaluated with a standard F1 score. This beat-wise alignment for both tasks turns the evaluation into a direct, musically metrical index-based comparison, thus requiring no additional timing tolerance.
+
+
+\section{Results}
+\label{sec:results}
+\subsection{Main Result}
+As presented in Table~\ref{tab:main_results}, our proposed multi-task model achieves SOTA performance in dynamics and change point estimation, while performing competitively on the remaining tasks. The effectiveness of the multi-task learning paradigm is underscored by the model's superior performance relative to its single-task counterpart using the same BSSL features. This includes significant F1 score improvements in dynamics (+3.8\%), change points (+5.1\%), beats (+0.1\%), and downbeats (+10.2\%). Beyond these quantitative improvements, the multi-task model offers considerable practical utility. It operates within a highly parameter-efficient framework (0.5 M vs. 4$\times$ single-task 0.4 M) and can utilize its own predicted beat positions for post-processing, enabling practical application on unannotated audio.
+
+Our analysis also reveals a strong task-feature dependency: BSSL features are optimal for dynamics, change points, and beats estimation, whereas log-Mel features are preferable for downbeat tracking. A primary advantage of BSSL is its compactness (22 Bark bins vs. 128 Mel bins in our STFT setup). Within our multi-task multi-scale network, which relies on convolutional residual blocks, this smaller input dimension can reduce the model's trainable parameters from 14.7 M to just 0.5 M. This significantly smaller footprint enables the model to process longer audio sequences, directly benefiting tasks that require long-term temporal information and highlighting BSSL's potential for a wider range of musical applications with long-term dependencies.
+
+\subsection{Ablation Study}
+To validate our design choices, we conduct a comprehensive ablation study, introducing an average score (calculated by averaging the 5-fold mean F1 scores from the four tasks) to measure global performance. We systematically evaluate four configurations against our full model: (i) removing the MMoE module; (ii) disabling the multi-scale functionality by setting the scaling factor $s=1$; (iii) removing data augmentation by using non-overlapping 60-second audio segments in training stage; and (iv) reducing the input audio length from our default setting 60-second to 30-second (same length as in \cite{foscarin2024beat}). As detailed in Table \ref{tab:ablation}, each of the proposed components and training choices contributes meaningfully to the model's final performance, with the extended 60-second input context providing a significant advantage in dynamics-related tasks.
+
+
+\begin{table}[t]
+\centering
+\caption{Comparison of beat-tracking post-processors across different backbone models on GTZAN and SMC. CASM denotes the Frozen-4F configuration selected using folds $\{2,7,1,3\}$. GTZAN values are means over three independently trained checkpoints; SMC values are means over eight OOF folds. DBN-SMC-opt was selected on TCN SMC OOF activations and then frozen across backbones and GTZAN.}
+\label{tab:audiodyn_postprocessor_ablation}
+\begingroup
+\fontsize{7.5pt}{9pt}\selectfont
+\setlength{\tabcolsep}{0.5pt}
+\renewcommand{\arraystretch}{1.0}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+\multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Method}}}
+& \multicolumn{6}{c|}{\textbf{GTZAN (Beat / Downbeat)}}
+& \multicolumn{3}{c}{\textbf{SMC (Beat)}} \\
+\cmidrule(lr){2-7}
+\cmidrule(l){8-10}
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt
+& F1 & CMLt & AMLt \\
+\midrule
+
+\textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& \underline{89.1} & 79.8 & 89.8
+& \underline{78.3} & 67.2 & 79.1
+& \underline{62.7} & 51.4 & 61.0 \\
+\rowcolor{gray!10}
+\quad + CASM 
+& \textbf{89.2} & 80.2 & 90.4
+& \textbf{78.9} & 70.4 & 85.1
+& \textbf{63.0} & \underline{53.8} & 63.7 \\
+\quad + DBN
+& 88.1 & \underline{80.5} & \underline{91.1}
+& 77.4 & \textbf{73.4} & \textbf{87.8}
+& 57.5 & 47.5 & \underline{65.5} \\
+\quad + DBN-SMC-opt
+& 88.6 & \textbf{80.7} & 91.0
+& 76.8 & \underline{71.8} & 85.2
+& 61.1 & 51.8 & 64.5 \\
+\quad + CombFilter
+& 85.1 & 76.2 & 89.9
+& 75.0 & 70.4 & \underline{86.7}
+& 55.6 & 52.5 & 64.5 \\
+\quad + CRF
+& 88.5 & 79.5 & \textbf{91.2}
+& 76.9 & 69.1 & 84.6
+& 61.5 & 52.8 & 62.2 \\
+% & 61.5 & \textbf{54.8} & \textbf{69.2} \\ 这批结果不对，comment out待check
+
+
+\midrule
+% MSCNN denotes MSCNN-lite.
+\textbf{MSCNN-lite} (direct) \cite{he2026dynest}
+& \underline{86.1} & 73.4 & 79.9
+& 70.8 & 53.1 & 63.1
+& 57.2 & 42.0 & 48.4 \\
+\rowcolor{gray!10}
+\quad + CASM
+& \textbf{86.5} & \underline{74.9} & 82.3
+& \underline{72.5} & 59.9 & 74.8
+& \textbf{57.7} & \underline{45.3} & 52.8 \\
+\quad + DBN
+& 85.5 & \textbf{77.4} & \textbf{87.1}
+& \textbf{72.6} & \textbf{68.9} & \textbf{84.3}
+& 52.3 & 42.3 & \underline{56.3} \\
+\quad + DBN-SMC-opt
+& 85.0 & 73.6 & \underline{85.8}
+& 69.9 & \underline{62.6} & \underline{77.7}
+& \underline{57.5} & \textbf{47.5} & \textbf{58.2} \\
+
+\midrule
+\textbf{TCN} (direct) \cite{bock2020deconstruct}
+& 87.1 & 73.8 & 81.7
+& 62.4 & 24.6 & 59.9
+& 52.9 & 30.1 & 36.0 \\
+\rowcolor{gray!10}
+\quad + CASM 
+& \underline{87.4} & \underline{75.1} & 83.3
+& \underline{64.7} & 34.0 & 73.9
+& \underline{53.2} & 33.9 & 41.2 \\
+\quad + DBN
+& 84.5 & 73.1 & 86.7
+& \textbf{67.3} & \textbf{60.8} & \textbf{82.8}
+& 42.0 & 23.1 & 38.3 \\
+\quad + DBN, SMC-opt
+& 85.2 & 73.0 & \underline{87.1}
+& 62.6 & \underline{53.5} & 69.2
+& \textbf{55.6} & \textbf{44.6} & \textbf{56.2} \\
+\quad + CombFilter
+& 80.8 & 74.9 & 86.0
+& 60.2 & 36.8 & \underline{79.4}
+& 47.2 & \underline{39.4} & \underline{53.9} \\
+\quad + CRF
+& \textbf{87.8} & \textbf{77.1} & \textbf{89.5}
+& 63.9 & 29.4 & 78.2
+& 50.6 & 27.9 & 48.4 \\
+\bottomrule
+\end{tabular}%
+}
+\endgroup
+\end{table}
+
+\section{Conclusion}
+\label{sec:concl}
+In this paper, we proposed a compact multi-task, multi-scale network that jointly estimates piano dynamics, change points, beats, and downbeats directly from audio. Using Bark-scale specific loudness as input and an MMoE decoder, our model leverages a 60-second temporal context while remaining highly parameter-efficient with only 0.5 M parameters. Evaluated on the MazurkaBL dataset, our model achieves state-of-the-art results for dynamics and change point detection, while demonstrating competitive performance in beat and downbeat tracking. This demonstrates not only the model's practical utility but also its significant potential for broader applications. Future work will focus on combining our proposed model with score-level piano transcription systems. Such an end-to-end pipeline could produce music scores with dynamic markings from the performance audio, but developing appropriate evaluation methods for such comprehensive outputs presents a new challenge.
+
+% Below is an example of how to insert images. Delete the ``\vspace'' line,
+% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
+% with a suitable PostScript file name.
+% -------------------------------------------------------------------------
+% \begin{figure}[htb]
+
+% \begin{minipage}[b]{1.0\linewidth}
+%   \centering
+%   \centerline{\includegraphics[width=8.5cm]{image1}}
+% %  \vspace{2.0cm}
+%   \centerline{(a) Result 1}\medskip
+% \end{minipage}
+% %
+% \begin{minipage}[b]{.48\linewidth}
+%   \centering
+%   \centerline{\includegraphics[width=4.0cm]{image3}}
+% %  \vspace{1.5cm}
+%   \centerline{(b) Results 3}\medskip
+% \end{minipage}
+% \hfill
+% \begin{minipage}[b]{0.48\linewidth}
+%   \centering
+%   \centerline{\includegraphics[width=4.0cm]{image4}}
+% %  \vspace{1.5cm}
+%   \centerline{(c) Result 4}\medskip
+% \end{minipage}
+% %
+% \caption{Example of placing a figure with experimental results.}
+% \label{fig:res}
+% %
+% \end{figure}
+
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+% -------------------------------------------------------------------------
+%\vfill
+%\pagebreak
+
+% \section{COPYRIGHT FORMS}
+% \label{sec:copyright}
+
+% You must submit your fully comPELTed, signed IEEE electronic copyright release
+% form when you submit your paper. We {\bf must} have this form before your paper
+% can be published in the proceedings.
+
+% \vfill\pagebreak
+
+% \section{RELATION TO PRIOR WORK}
+% \label{sec:prior}
+
+% The text of the paper should contain discussions on how the paper's
+% contributions are related to prior work in the field. It is important
+% to put new work in  context, to give credit to foundational work, and
+% to provide details associated with the previous work that have appeared
+% in the literature. This discussion may be a separate, numbered section
+% or it may appear elsewhere in the body of the manuscript, but it must
+% be present.
+
+% You should differentiate what is new and how your work expands on
+% or takes a different path from the prior studies. An example might
+% read something to the effect: "The work presented here has focused
+% on the formulation of the ABC algorithm, which takes advantage of
+% non-uniform time-frequency domain analysis of data. The work by
+% Smith and Cohen \cite{Lamp86} considers only fixed time-domain analysis and
+% the work by Jones et al \cite{C2} takes a different approach based on
+% fixed frequency partitioning. While the present study is related
+% to recent approaches in time-frequency analysis [3-5], it capitalizes
+% on a new feature space, which was not considered in these earlier
+% studies."
+
+% \section{REFERENCES}
+% \label{sec:refs}
+
+% List and number all bibliographical references at the end of the
+% paper. The references can be numbered in alphabetic order or in
+% order of appearance in the document. When referring to them in
+% the text, type the corresponding reference number in square
+% brackets as shown at the end of this sentence \cite{C2}. An
+% additional final page (the fifth page, in most cases) is
+% allowed, but must contain only references to the prior
+% literature.
+
+% Please follow the IEEE Citation Guidelines, \url{https://ieee-dataport.org/sites/default/files/analysis/27/IEEE\%20Citation\%20Guidelines.pdf} for formatting of references.
+
+% References should be produced using the bibtex program from suitable
+% BiBTeX files (here: strings, refs, manuals). The IEEEbib.bst bibliography
+% style file from IEEE produces unsorted bibliography list.
+% -------------------------------------------------------------------------
+\bibliographystyle{IEEEbib}
+\bibliography{dynest}
+
+\end{document}

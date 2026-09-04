@@ -1,0 +1,924 @@
+{
+  "checks": [
+    {
+      "detail": "experiment runner emitted COMPLETE",
+      "name": "complete marker",
+      "passed": true
+    },
+    {
+      "detail": "50 rows for 5 panels x 10 methods",
+      "name": "aggregate grid",
+      "passed": true
+    },
+    {
+      "detail": "26370 unique panel/method/piece rows",
+      "name": "piece-level unique keys",
+      "passed": true
+    },
+    {
+      "detail": "observed 10 methods",
+      "name": "bt_gtzan_seed0: method coverage",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__direct.pieces.csv",
+      "name": "bt_gtzan_seed0/direct: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/direct: piece count",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__casm_full.pieces.csv",
+      "name": "bt_gtzan_seed0/casm_full: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/casm_full: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/casm_full: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__local_target_fixed.pieces.csv",
+      "name": "bt_gtzan_seed0/local_target_fixed: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/local_target_fixed: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/local_target_fixed: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__strength_only.pieces.csv",
+      "name": "bt_gtzan_seed0/strength_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/strength_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/strength_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__width_only.pieces.csv",
+      "name": "bt_gtzan_seed0/width_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/width_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/width_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__one_sided.pieces.csv",
+      "name": "bt_gtzan_seed0/one_sided: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/one_sided: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/one_sided: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__no_safeguard.pieces.csv",
+      "name": "bt_gtzan_seed0/no_safeguard: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/no_safeguard: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/no_safeguard: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__dbn_default.pieces.csv",
+      "name": "bt_gtzan_seed0/dbn_default: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/dbn_default: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/dbn_default: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__dbn_matched_30_300.pieces.csv",
+      "name": "bt_gtzan_seed0/dbn_matched_30_300: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/dbn_matched_30_300: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/dbn_matched_30_300: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_gtzan_seed0__plpdp.pieces.csv",
+      "name": "bt_gtzan_seed0/plpdp: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "bt_gtzan_seed0/plpdp: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_gtzan_seed0/plpdp: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "9930 rows",
+      "name": "bt_gtzan_seed0: all-piece export count",
+      "passed": true
+    },
+    {
+      "detail": "observed 10 methods",
+      "name": "bt_smc_oof: method coverage",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__direct.pieces.csv",
+      "name": "bt_smc_oof/direct: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/direct: piece count",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__casm_full.pieces.csv",
+      "name": "bt_smc_oof/casm_full: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/casm_full: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/casm_full: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__local_target_fixed.pieces.csv",
+      "name": "bt_smc_oof/local_target_fixed: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/local_target_fixed: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/local_target_fixed: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__strength_only.pieces.csv",
+      "name": "bt_smc_oof/strength_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/strength_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/strength_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__width_only.pieces.csv",
+      "name": "bt_smc_oof/width_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/width_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/width_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__one_sided.pieces.csv",
+      "name": "bt_smc_oof/one_sided: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/one_sided: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/one_sided: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__no_safeguard.pieces.csv",
+      "name": "bt_smc_oof/no_safeguard: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/no_safeguard: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/no_safeguard: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__dbn_default.pieces.csv",
+      "name": "bt_smc_oof/dbn_default: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/dbn_default: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/dbn_default: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__dbn_matched_30_300.pieces.csv",
+      "name": "bt_smc_oof/dbn_matched_30_300: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/dbn_matched_30_300: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/dbn_matched_30_300: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "bt_smc_oof__plpdp.pieces.csv",
+      "name": "bt_smc_oof/plpdp: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "bt_smc_oof/plpdp: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "bt_smc_oof/plpdp: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "2170 rows",
+      "name": "bt_smc_oof: all-piece export count",
+      "passed": true
+    },
+    {
+      "detail": "observed 10 methods",
+      "name": "mscnn_gtzan: method coverage",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__direct.pieces.csv",
+      "name": "mscnn_gtzan/direct: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/direct: piece count",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__casm_full.pieces.csv",
+      "name": "mscnn_gtzan/casm_full: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/casm_full: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/casm_full: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__local_target_fixed.pieces.csv",
+      "name": "mscnn_gtzan/local_target_fixed: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/local_target_fixed: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/local_target_fixed: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__strength_only.pieces.csv",
+      "name": "mscnn_gtzan/strength_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/strength_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/strength_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__width_only.pieces.csv",
+      "name": "mscnn_gtzan/width_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/width_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/width_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__one_sided.pieces.csv",
+      "name": "mscnn_gtzan/one_sided: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/one_sided: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/one_sided: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__no_safeguard.pieces.csv",
+      "name": "mscnn_gtzan/no_safeguard: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/no_safeguard: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/no_safeguard: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__dbn_default.pieces.csv",
+      "name": "mscnn_gtzan/dbn_default: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/dbn_default: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/dbn_default: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__dbn_matched_30_300.pieces.csv",
+      "name": "mscnn_gtzan/dbn_matched_30_300: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/dbn_matched_30_300: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/dbn_matched_30_300: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_gtzan__plpdp.pieces.csv",
+      "name": "mscnn_gtzan/plpdp: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=993, unique pieces=993, expected=993",
+      "name": "mscnn_gtzan/plpdp: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_gtzan/plpdp: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "9930 rows",
+      "name": "mscnn_gtzan: all-piece export count",
+      "passed": true
+    },
+    {
+      "detail": "observed 10 methods",
+      "name": "mscnn_smc_oof: method coverage",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__direct.pieces.csv",
+      "name": "mscnn_smc_oof/direct: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/direct: piece count",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__casm_full.pieces.csv",
+      "name": "mscnn_smc_oof/casm_full: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/casm_full: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/casm_full: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__local_target_fixed.pieces.csv",
+      "name": "mscnn_smc_oof/local_target_fixed: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/local_target_fixed: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/local_target_fixed: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__strength_only.pieces.csv",
+      "name": "mscnn_smc_oof/strength_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/strength_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/strength_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__width_only.pieces.csv",
+      "name": "mscnn_smc_oof/width_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/width_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/width_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__one_sided.pieces.csv",
+      "name": "mscnn_smc_oof/one_sided: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/one_sided: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/one_sided: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__no_safeguard.pieces.csv",
+      "name": "mscnn_smc_oof/no_safeguard: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/no_safeguard: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/no_safeguard: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__dbn_default.pieces.csv",
+      "name": "mscnn_smc_oof/dbn_default: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/dbn_default: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/dbn_default: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__dbn_matched_30_300.pieces.csv",
+      "name": "mscnn_smc_oof/dbn_matched_30_300: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/dbn_matched_30_300: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/dbn_matched_30_300: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "mscnn_smc_oof__plpdp.pieces.csv",
+      "name": "mscnn_smc_oof/plpdp: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "mscnn_smc_oof/plpdp: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "mscnn_smc_oof/plpdp: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "2170 rows",
+      "name": "mscnn_smc_oof: all-piece export count",
+      "passed": true
+    },
+    {
+      "detail": "observed 10 methods",
+      "name": "tcn_smc_final0: method coverage",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__direct.pieces.csv",
+      "name": "tcn_smc_final0/direct: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/direct: piece count",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__casm_full.pieces.csv",
+      "name": "tcn_smc_final0/casm_full: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/casm_full: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/casm_full: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__local_target_fixed.pieces.csv",
+      "name": "tcn_smc_final0/local_target_fixed: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/local_target_fixed: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/local_target_fixed: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__strength_only.pieces.csv",
+      "name": "tcn_smc_final0/strength_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/strength_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/strength_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__width_only.pieces.csv",
+      "name": "tcn_smc_final0/width_only: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/width_only: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/width_only: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__one_sided.pieces.csv",
+      "name": "tcn_smc_final0/one_sided: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/one_sided: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/one_sided: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__no_safeguard.pieces.csv",
+      "name": "tcn_smc_final0/no_safeguard: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/no_safeguard: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/no_safeguard: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__dbn_default.pieces.csv",
+      "name": "tcn_smc_final0/dbn_default: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/dbn_default: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/dbn_default: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__dbn_matched_30_300.pieces.csv",
+      "name": "tcn_smc_final0/dbn_matched_30_300: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/dbn_matched_30_300: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/dbn_matched_30_300: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "tcn_smc_final0__plpdp.pieces.csv",
+      "name": "tcn_smc_final0/plpdp: raw file",
+      "passed": true
+    },
+    {
+      "detail": "rows=217, unique pieces=217, expected=217",
+      "name": "tcn_smc_final0/plpdp: piece count",
+      "passed": true
+    },
+    {
+      "detail": "piece identifiers match Direct panel exactly",
+      "name": "tcn_smc_final0/plpdp: identical panel",
+      "passed": true
+    },
+    {
+      "detail": "2170 rows",
+      "name": "tcn_smc_final0: all-piece export count",
+      "passed": true
+    },
+    {
+      "detail": "validated 50 raw files",
+      "name": "raw file inventory",
+      "passed": true
+    },
+    {
+      "detail": "maximum absolute discrepancy=1.110e-16",
+      "name": "aggregate recomputation",
+      "passed": true
+    },
+    {
+      "detail": "all defined metrics are finite and in [0,1]; downbeat metrics are missing exactly for SMC",
+      "name": "metric bounds",
+      "passed": true
+    },
+    {
+      "detail": "2637 unique panel/piece rows; expected 2637",
+      "name": "mechanism summary coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=993, candidates=993, edges=993",
+      "name": "bt_gtzan_seed0: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=217, candidates=217, edges=217",
+      "name": "bt_smc_oof: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=993, candidates=993, edges=991",
+      "name": "mscnn_gtzan: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=217, candidates=217, edges=214",
+      "name": "mscnn_smc_oof: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=217, candidates=217, edges=210",
+      "name": "tcn_smc_final0: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "max sigma error=1.159e-08; coefficient error=3.245e-06 (float32 confidence storage)",
+      "name": "candidate response-law closure",
+      "passed": true
+    },
+    {
+      "detail": "max sigma error=1.665e-16; coefficient error=7.105e-15",
+      "name": "edge response-law closure",
+      "passed": true
+    },
+    {
+      "detail": "confidence, tempo, sigma, and cost coefficient are valid",
+      "name": "candidate domains",
+      "passed": true
+    },
+    {
+      "detail": "confidence, tempo, interval, sigma, and cost coefficient are valid",
+      "name": "edge domains",
+      "passed": true
+    },
+    {
+      "detail": "maximum absolute discrepancy=4.441e-16",
+      "name": "duration-cost closure",
+      "passed": true
+    },
+    {
+      "detail": "confidence, agreement, and fallback flags are valid",
+      "name": "piece diagnostic domains",
+      "passed": true
+    },
+    {
+      "detail": "candidate/edge count mismatches=0",
+      "name": "mechanism count reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "maximum delta discrepancy=3.123e-16",
+      "name": "mechanism metric reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "maximum discrepancy from piece-level paired means=9.628e-17",
+      "name": "bootstrap paired means",
+      "passed": true
+    },
+    {
+      "detail": "5,000 paired resamples; seed fixed; means lie inside reported intervals",
+      "name": "bootstrap protocol",
+      "passed": true
+    },
+    {
+      "detail": "validated 8 trace files; metadata mismatches=0",
+      "name": "representative trace provenance",
+      "passed": true
+    },
+    {
+      "detail": "structured beats absent from retained maxima=0",
+      "name": "CASM event anchoring",
+      "passed": true
+    }
+  ],
+  "checks_passed": 179,
+  "checks_total": 179,
+  "empirical_operating_range": {
+    "edge_coefficient_max": 15.473075739196124,
+    "edge_coefficient_median": 0.9505074615935746,
+    "edge_coefficient_q995": 4.6231024714077,
+    "edge_count": 147000,
+    "edge_margin_max": 0.6023972630500793,
+    "edge_margin_median": 0.1080366947602749,
+    "edge_margin_q90": 0.17780968363306415,
+    "edge_margin_q995": 0.34049832558837145,
+    "theoretical_coefficient_at_c1": 138.88888888888889
+  },
+  "failures": [],
+  "input_sha256": {
+    "aggregate_metrics.csv": "874c028d764bede243e82c5e201e6d2d87090e9dfe40f128733cd15c212df797",
+    "all_piece_metrics.csv.gz": "d1e43ace4248d14b4ebfab8d803b2dd89e8c297c2742d9577a7dc50e468fb252",
+    "mechanism_candidates.csv.gz": "01d494618b9d8be442c94b8a5fd072a530fb1ab7c565914ddcf9eff0fde59f9e",
+    "mechanism_edges.csv.gz": "cb9d80f9016049a2c4a2ebd327fab6eacd387ba60a231bb1183117db89ef343f",
+    "mechanism_piece_summary.csv": "061f33aeb644bf78333797bc51dab8dd1b90f40f7669206e7d4b165591f26f0e",
+    "paired_bootstrap.csv": "691eebc699ee4ee4df60f37bc0130c880fc2a6e88eb8ebdb384157c7ec3fab0f",
+    "protocol.json": "3a20b42e826c2f221f2f66ff5961383b4029343aa1ce49f6db7e19ed31057e9f",
+    "representatives.json": "d397d220acc1edbd0801b3a3f0596a5aa76ee0956f6d38724270b8afcdd26ca7"
+  },
+  "status": "PASS"
+}
