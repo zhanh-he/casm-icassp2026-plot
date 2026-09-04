@@ -1,0 +1,113 @@
+{
+  "candidate_hash": "c9952582d3dabe1b57629d4380a4e726a439e0fd5cb402fab4512172b7d5f71c",
+  "completed_at": "2026-09-04T16:49:48.285135+10:00",
+  "context": {
+    "code_hashes": {
+      "decoders": "f66e7dfb09b208882749fe6d212d8363b28b7a2da397b4ba297b93df1825eaed",
+      "evaluation": "a47a422ba7c70092203d9fea21b3e2ae64d01b5bcefb64c5a4ef1b8b22230962",
+      "sealed_driver": "2f7d607dadd69292db11fe48567830290dff9b7c3bfe248d811bd2db64a99550",
+      "supplemental_driver": "acededd7e4a8114028a3302113964094619eee643e145ffc304105a6da272682"
+    },
+    "input_fingerprint": "f32d29123db8e7c6ce37310c40b8bfbd24aa1ff69b5fe3f2acd79183f293cee4",
+    "protocol_hash": "f84b0330afe7d76cd05365e880270d7066d404c97fc7e2cfbafe7da4e6b93a22",
+    "protocol_version": "casm-ranked-fold-v1-2026-08-31",
+    "trim_seconds": 5.0
+  },
+  "context_hash": "8b74d9ee3ab1b065ab33b4e18e2a1095fbe31fcc17c658dc37a2bf92cf2d25da",
+  "decoder": "casm",
+  "elapsed_seconds": 0.9090791151393205,
+  "parameters": {
+    "bar_reward": 0.0,
+    "candidate_threshold": 0.03,
+    "downbeat_agreement_threshold": 0.6,
+    "downbeat_agreement_tolerance": 0.07,
+    "downbeat_mode": "meter",
+    "downbeat_temperature": 4.0,
+    "duration_sigma": 0.18,
+    "duration_weight": 4.0,
+    "fallback_maximal_ratio": 1.8,
+    "fallback_minimal_ratio": 0.9,
+    "fps": 50.0,
+    "local_window_seconds": 8.0,
+    "logit_clip": 6.0,
+    "max_bpm": 300.0,
+    "meter_change_penalty": 3.0,
+    "meters": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "min_bpm": 30.0,
+    "temperature": 2.0,
+    "tempo_bias": 0.15,
+    "uncertain_sigma": 0.2
+  },
+  "partition_stats": {
+    "seed0": {
+      "datasets": {
+        "gtzan": {
+          "piece_count": 993,
+          "stats": {
+            "beat_amlt": {
+              "count": 993,
+              "sum": 899.8424945397213
+            },
+            "beat_cmlt": {
+              "count": 993,
+              "sum": 795.3833445070887
+            },
+            "beat_fmeasure": {
+              "count": 993,
+              "sum": 886.4265120332318
+            },
+            "downbeat_amlt": {
+              "count": 993,
+              "sum": 848.9759102450784
+            },
+            "downbeat_cmlt": {
+              "count": 993,
+              "sum": 693.0524775945294
+            },
+            "downbeat_fmeasure": {
+              "count": 993,
+              "sum": 784.4510117883358
+            }
+          }
+        }
+      },
+      "overall": {
+        "beat_amlt": {
+          "count": 993,
+          "sum": 899.8424945397213
+        },
+        "beat_cmlt": {
+          "count": 993,
+          "sum": 795.3833445070887
+        },
+        "beat_fmeasure": {
+          "count": 993,
+          "sum": 886.4265120332318
+        },
+        "downbeat_amlt": {
+          "count": 993,
+          "sum": 848.9759102450784
+        },
+        "downbeat_cmlt": {
+          "count": 993,
+          "sum": 693.0524775945294
+        },
+        "downbeat_fmeasure": {
+          "count": 993,
+          "sum": 784.4510117883358
+        }
+      },
+      "piece_count": 993
+    }
+  },
+  "piece_count": 993,
+  "rows_path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260904_casm_final0_exhaustive_combinations_v1/candidate_cache/gtzan_final0/c9952582d3dabe1b57629d4380a4e726a439e0fd5cb402fab4512172b7d5f71c.pieces.csv.gz",
+  "rows_sha256": "c636a1021630808c5eb61ecc3573d0a1827c793e89c2bc02122310e60ac07a93"
+}

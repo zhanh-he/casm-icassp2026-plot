@@ -1,0 +1,55 @@
+{
+  "aggregation": "unweighted macro mean over pieces",
+  "code": {
+    "files": {
+      "decoders": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/decoders.py",
+        "sha256": "f66e7dfb09b208882749fe6d212d8363b28b7a2da397b4ba297b93df1825eaed"
+      },
+      "evaluation": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/evaluation.py",
+        "sha256": "a47a422ba7c70092203d9fea21b3e2ae64d01b5bcefb64c5a4ef1b8b22230962"
+      },
+      "sealed_driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/run_driver/run_casm_ranked_protocol.py",
+        "sha256": "2f7d607dadd69292db11fe48567830290dff9b7c3bfe248d811bd2db64a99550"
+      },
+      "supplemental_driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/evaluate_locked_combinations_final0.py",
+        "sha256": "acededd7e4a8114028a3302113964094619eee643e145ffc304105a6da272682"
+      }
+    },
+    "host": "mengh-8625",
+    "python": "3.11.9 | packaged by conda-forge | (main, Apr 19 2024, 18:36:13) [GCC 12.3.0]"
+  },
+  "combination_count": 64,
+  "development_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "gtzan_checkpoint": "Beat This final0",
+  "gtzan_inventory_fingerprint": "f32d29123db8e7c6ce37310c40b8bfbd24aa1ff69b5fe3f2acd79183f293cee4",
+  "gtzan_piece_count": 993,
+  "metrics": [
+    "beat_fmeasure",
+    "beat_cmlt",
+    "beat_amlt",
+    "downbeat_fmeasure",
+    "downbeat_cmlt",
+    "downbeat_amlt"
+  ],
+  "permanently_held_out_smc_fold": 0,
+  "protocol_hash": "f84b0330afe7d76cd05365e880270d7066d404c97fc7e2cfbafe7da4e6b93a22",
+  "question": "Evaluate the 64 configurations selected on SMC folds 1..7 on GTZAN final0",
+  "schema": "structbeat.casm.locked-combinations-final0.v1",
+  "selection_source_sha256": "2a710ea97794ecbee79ab0b7363f37debfd76fe85a2a5bd82fb6a7e2818345f6",
+  "selection_visibility": "all 64 configurations fixed before GTZAN final0 inventory or scores",
+  "trim_seconds": 5.0,
+  "unique_configuration_count": 22,
+  "workers": 12
+}

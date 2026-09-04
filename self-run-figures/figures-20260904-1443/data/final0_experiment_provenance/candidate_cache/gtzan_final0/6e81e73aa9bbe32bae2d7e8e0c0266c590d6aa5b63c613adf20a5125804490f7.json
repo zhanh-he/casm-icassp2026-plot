@@ -1,0 +1,85 @@
+{
+  "candidate_hash": "6e81e73aa9bbe32bae2d7e8e0c0266c590d6aa5b63c613adf20a5125804490f7",
+  "completed_at": "2026-09-04T16:49:44.635893+10:00",
+  "context": {
+    "code_hashes": {
+      "decoders": "f66e7dfb09b208882749fe6d212d8363b28b7a2da397b4ba297b93df1825eaed",
+      "evaluation": "a47a422ba7c70092203d9fea21b3e2ae64d01b5bcefb64c5a4ef1b8b22230962",
+      "sealed_driver": "2f7d607dadd69292db11fe48567830290dff9b7c3bfe248d811bd2db64a99550",
+      "supplemental_driver": "acededd7e4a8114028a3302113964094619eee643e145ffc304105a6da272682"
+    },
+    "input_fingerprint": "f32d29123db8e7c6ce37310c40b8bfbd24aa1ff69b5fe3f2acd79183f293cee4",
+    "protocol_hash": "f84b0330afe7d76cd05365e880270d7066d404c97fc7e2cfbafe7da4e6b93a22",
+    "protocol_version": "casm-ranked-fold-v1-2026-08-31",
+    "trim_seconds": 5.0
+  },
+  "context_hash": "8b74d9ee3ab1b065ab33b4e18e2a1095fbe31fcc17c658dc37a2bf92cf2d25da",
+  "decoder": "minimal",
+  "elapsed_seconds": 0.5235736479517072,
+  "parameters": {},
+  "partition_stats": {
+    "seed0": {
+      "datasets": {
+        "gtzan": {
+          "piece_count": 993,
+          "stats": {
+            "beat_amlt": {
+              "count": 993,
+              "sum": 896.3382804102409
+            },
+            "beat_cmlt": {
+              "count": 993,
+              "sum": 792.6402437831883
+            },
+            "beat_fmeasure": {
+              "count": 993,
+              "sum": 885.9097306408366
+            },
+            "downbeat_amlt": {
+              "count": 993,
+              "sum": 793.4088414196567
+            },
+            "downbeat_cmlt": {
+              "count": 993,
+              "sum": 672.9152241001259
+            },
+            "downbeat_fmeasure": {
+              "count": 993,
+              "sum": 781.5769870681333
+            }
+          }
+        }
+      },
+      "overall": {
+        "beat_amlt": {
+          "count": 993,
+          "sum": 896.3382804102409
+        },
+        "beat_cmlt": {
+          "count": 993,
+          "sum": 792.6402437831883
+        },
+        "beat_fmeasure": {
+          "count": 993,
+          "sum": 885.9097306408366
+        },
+        "downbeat_amlt": {
+          "count": 993,
+          "sum": 793.4088414196567
+        },
+        "downbeat_cmlt": {
+          "count": 993,
+          "sum": 672.9152241001259
+        },
+        "downbeat_fmeasure": {
+          "count": 993,
+          "sum": 781.5769870681333
+        }
+      },
+      "piece_count": 993
+    }
+  },
+  "piece_count": 993,
+  "rows_path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260904_casm_final0_exhaustive_combinations_v1/candidate_cache/gtzan_final0/6e81e73aa9bbe32bae2d7e8e0c0266c590d6aa5b63c613adf20a5125804490f7.pieces.csv.gz",
+  "rows_sha256": "6b68e78a00ba114b08ae761db03f8b492173e59ef1b71cb7a1a9df4bca0aaa3b"
+}

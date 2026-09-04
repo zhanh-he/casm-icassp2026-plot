@@ -1,0 +1,202 @@
+# CASM mechanism-evidence QA
+
+**Status: PASS (188/188 checks passed).**
+
+## Checks
+
+- **PASS — complete marker:** experiment runner emitted COMPLETE
+- **PASS — aggregate grid:** 50 rows for 5 panels x 10 methods
+- **PASS — piece-level unique keys:** 26370 unique panel/method/piece rows
+- **PASS — bt_gtzan_seed0: method coverage:** observed 10 methods
+- **PASS — bt_gtzan_seed0/direct: raw file:** bt_gtzan_seed0__direct.pieces.csv
+- **PASS — bt_gtzan_seed0/direct: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/casm_full: raw file:** bt_gtzan_seed0__casm_full.pieces.csv
+- **PASS — bt_gtzan_seed0/casm_full: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/casm_full: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/local_target_fixed: raw file:** bt_gtzan_seed0__local_target_fixed.pieces.csv
+- **PASS — bt_gtzan_seed0/local_target_fixed: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/local_target_fixed: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/strength_only: raw file:** bt_gtzan_seed0__strength_only.pieces.csv
+- **PASS — bt_gtzan_seed0/strength_only: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/strength_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/width_only: raw file:** bt_gtzan_seed0__width_only.pieces.csv
+- **PASS — bt_gtzan_seed0/width_only: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/width_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/one_sided: raw file:** bt_gtzan_seed0__one_sided.pieces.csv
+- **PASS — bt_gtzan_seed0/one_sided: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/one_sided: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/no_safeguard: raw file:** bt_gtzan_seed0__no_safeguard.pieces.csv
+- **PASS — bt_gtzan_seed0/no_safeguard: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/no_safeguard: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/dbn_default: raw file:** bt_gtzan_seed0__dbn_default.pieces.csv
+- **PASS — bt_gtzan_seed0/dbn_default: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/dbn_default: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/dbn_matched_30_300: raw file:** bt_gtzan_seed0__dbn_matched_30_300.pieces.csv
+- **PASS — bt_gtzan_seed0/dbn_matched_30_300: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/dbn_matched_30_300: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0/plpdp: raw file:** bt_gtzan_seed0__plpdp.pieces.csv
+- **PASS — bt_gtzan_seed0/plpdp: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — bt_gtzan_seed0/plpdp: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_gtzan_seed0: all-piece export count:** 9930 rows
+- **PASS — bt_smc_oof: method coverage:** observed 10 methods
+- **PASS — bt_smc_oof/direct: raw file:** bt_smc_oof__direct.pieces.csv
+- **PASS — bt_smc_oof/direct: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/casm_full: raw file:** bt_smc_oof__casm_full.pieces.csv
+- **PASS — bt_smc_oof/casm_full: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/casm_full: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/local_target_fixed: raw file:** bt_smc_oof__local_target_fixed.pieces.csv
+- **PASS — bt_smc_oof/local_target_fixed: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/local_target_fixed: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/strength_only: raw file:** bt_smc_oof__strength_only.pieces.csv
+- **PASS — bt_smc_oof/strength_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/strength_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/width_only: raw file:** bt_smc_oof__width_only.pieces.csv
+- **PASS — bt_smc_oof/width_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/width_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/one_sided: raw file:** bt_smc_oof__one_sided.pieces.csv
+- **PASS — bt_smc_oof/one_sided: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/one_sided: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/no_safeguard: raw file:** bt_smc_oof__no_safeguard.pieces.csv
+- **PASS — bt_smc_oof/no_safeguard: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/no_safeguard: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/dbn_default: raw file:** bt_smc_oof__dbn_default.pieces.csv
+- **PASS — bt_smc_oof/dbn_default: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/dbn_default: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/dbn_matched_30_300: raw file:** bt_smc_oof__dbn_matched_30_300.pieces.csv
+- **PASS — bt_smc_oof/dbn_matched_30_300: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/dbn_matched_30_300: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof/plpdp: raw file:** bt_smc_oof__plpdp.pieces.csv
+- **PASS — bt_smc_oof/plpdp: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — bt_smc_oof/plpdp: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — bt_smc_oof: all-piece export count:** 2170 rows
+- **PASS — mscnn_gtzan: method coverage:** observed 10 methods
+- **PASS — mscnn_gtzan/direct: raw file:** mscnn_gtzan__direct.pieces.csv
+- **PASS — mscnn_gtzan/direct: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/casm_full: raw file:** mscnn_gtzan__casm_full.pieces.csv
+- **PASS — mscnn_gtzan/casm_full: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/casm_full: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/local_target_fixed: raw file:** mscnn_gtzan__local_target_fixed.pieces.csv
+- **PASS — mscnn_gtzan/local_target_fixed: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/local_target_fixed: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/strength_only: raw file:** mscnn_gtzan__strength_only.pieces.csv
+- **PASS — mscnn_gtzan/strength_only: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/strength_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/width_only: raw file:** mscnn_gtzan__width_only.pieces.csv
+- **PASS — mscnn_gtzan/width_only: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/width_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/one_sided: raw file:** mscnn_gtzan__one_sided.pieces.csv
+- **PASS — mscnn_gtzan/one_sided: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/one_sided: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/no_safeguard: raw file:** mscnn_gtzan__no_safeguard.pieces.csv
+- **PASS — mscnn_gtzan/no_safeguard: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/no_safeguard: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/dbn_default: raw file:** mscnn_gtzan__dbn_default.pieces.csv
+- **PASS — mscnn_gtzan/dbn_default: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/dbn_default: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/dbn_matched_30_300: raw file:** mscnn_gtzan__dbn_matched_30_300.pieces.csv
+- **PASS — mscnn_gtzan/dbn_matched_30_300: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/dbn_matched_30_300: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan/plpdp: raw file:** mscnn_gtzan__plpdp.pieces.csv
+- **PASS — mscnn_gtzan/plpdp: piece count:** rows=993, unique pieces=993, expected=993
+- **PASS — mscnn_gtzan/plpdp: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_gtzan: all-piece export count:** 9930 rows
+- **PASS — mscnn_smc_oof: method coverage:** observed 10 methods
+- **PASS — mscnn_smc_oof/direct: raw file:** mscnn_smc_oof__direct.pieces.csv
+- **PASS — mscnn_smc_oof/direct: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/casm_full: raw file:** mscnn_smc_oof__casm_full.pieces.csv
+- **PASS — mscnn_smc_oof/casm_full: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/casm_full: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/local_target_fixed: raw file:** mscnn_smc_oof__local_target_fixed.pieces.csv
+- **PASS — mscnn_smc_oof/local_target_fixed: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/local_target_fixed: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/strength_only: raw file:** mscnn_smc_oof__strength_only.pieces.csv
+- **PASS — mscnn_smc_oof/strength_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/strength_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/width_only: raw file:** mscnn_smc_oof__width_only.pieces.csv
+- **PASS — mscnn_smc_oof/width_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/width_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/one_sided: raw file:** mscnn_smc_oof__one_sided.pieces.csv
+- **PASS — mscnn_smc_oof/one_sided: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/one_sided: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/no_safeguard: raw file:** mscnn_smc_oof__no_safeguard.pieces.csv
+- **PASS — mscnn_smc_oof/no_safeguard: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/no_safeguard: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/dbn_default: raw file:** mscnn_smc_oof__dbn_default.pieces.csv
+- **PASS — mscnn_smc_oof/dbn_default: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/dbn_default: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/dbn_matched_30_300: raw file:** mscnn_smc_oof__dbn_matched_30_300.pieces.csv
+- **PASS — mscnn_smc_oof/dbn_matched_30_300: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/dbn_matched_30_300: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof/plpdp: raw file:** mscnn_smc_oof__plpdp.pieces.csv
+- **PASS — mscnn_smc_oof/plpdp: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — mscnn_smc_oof/plpdp: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — mscnn_smc_oof: all-piece export count:** 2170 rows
+- **PASS — tcn_smc_final0: method coverage:** observed 10 methods
+- **PASS — tcn_smc_final0/direct: raw file:** tcn_smc_final0__direct.pieces.csv
+- **PASS — tcn_smc_final0/direct: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/casm_full: raw file:** tcn_smc_final0__casm_full.pieces.csv
+- **PASS — tcn_smc_final0/casm_full: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/casm_full: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/local_target_fixed: raw file:** tcn_smc_final0__local_target_fixed.pieces.csv
+- **PASS — tcn_smc_final0/local_target_fixed: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/local_target_fixed: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/strength_only: raw file:** tcn_smc_final0__strength_only.pieces.csv
+- **PASS — tcn_smc_final0/strength_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/strength_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/width_only: raw file:** tcn_smc_final0__width_only.pieces.csv
+- **PASS — tcn_smc_final0/width_only: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/width_only: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/one_sided: raw file:** tcn_smc_final0__one_sided.pieces.csv
+- **PASS — tcn_smc_final0/one_sided: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/one_sided: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/no_safeguard: raw file:** tcn_smc_final0__no_safeguard.pieces.csv
+- **PASS — tcn_smc_final0/no_safeguard: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/no_safeguard: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/dbn_default: raw file:** tcn_smc_final0__dbn_default.pieces.csv
+- **PASS — tcn_smc_final0/dbn_default: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/dbn_default: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/dbn_matched_30_300: raw file:** tcn_smc_final0__dbn_matched_30_300.pieces.csv
+- **PASS — tcn_smc_final0/dbn_matched_30_300: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/dbn_matched_30_300: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0/plpdp: raw file:** tcn_smc_final0__plpdp.pieces.csv
+- **PASS — tcn_smc_final0/plpdp: piece count:** rows=217, unique pieces=217, expected=217
+- **PASS — tcn_smc_final0/plpdp: identical panel:** piece identifiers match Direct panel exactly
+- **PASS — tcn_smc_final0: all-piece export count:** 2170 rows
+- **PASS — raw file inventory:** validated 50 raw files
+- **PASS — aggregate recomputation:** maximum absolute discrepancy=1.110e-16
+- **PASS — metric bounds:** all defined metrics are finite and in [0,1]; downbeat metrics are missing exactly for SMC
+- **PASS — final0 calibration grid:** rows=65; selected family counts={'exhaustive_4f': 35, 'exhaustive_2f': 21, 'exhaustive_1f': 7, 'exhaustive_7f': 1}
+- **PASS — final0 calibration selection isolation:** all selected configurations use the stated number of folds from SMC folds 1--7; fold0 is excluded
+- **PASS — final0 calibration configuration count:** 22 unique locked configurations across 64 selections
+- **PASS — final0 calibration panel coverage and metric bounds:** every result uses fixed SMC fold0 (27 tracks) and GTZAN final0 (993 tracks); metrics are finite and bounded
+- **PASS — final0 calibration summary panels:** observed panels=['gtzan_final0', 'smc_fold0']
+- **PASS — final0 calibration summary recomputation:** max mean error=2.220e-16; max population-SD error=9.628e-17; singleton SDs undefined
+- **PASS — final0 Direct crosscheck:** GTZAN-final0 Direct metrics agree with the independent mechanism panel; max error=1.332e-15
+- **PASS — final0 evaluation provenance:** archived lock, protocol, output hashes, and upstream QA identify Beat This final0 and a pre-evaluation selection freeze
+- **PASS — independent final0 result crosscheck:** 4 overlapping configurations; maximum metric discrepancy=0.000e+00
+- **PASS — mechanism summary coverage:** 2637 unique panel/piece rows; expected 2637
+- **PASS — bt_gtzan_seed0: mechanism piece coverage:** summary=993, candidates=993, edges=993
+- **PASS — bt_smc_oof: mechanism piece coverage:** summary=217, candidates=217, edges=217
+- **PASS — mscnn_gtzan: mechanism piece coverage:** summary=993, candidates=993, edges=991
+- **PASS — mscnn_smc_oof: mechanism piece coverage:** summary=217, candidates=217, edges=214
+- **PASS — tcn_smc_final0: mechanism piece coverage:** summary=217, candidates=217, edges=210
+- **PASS — candidate response-law closure:** max sigma error=1.159e-08; coefficient error=3.245e-06 (float32 confidence storage)
+- **PASS — edge response-law closure:** max sigma error=1.665e-16; coefficient error=7.105e-15
+- **PASS — candidate domains:** confidence, tempo, sigma, and cost coefficient are valid
+- **PASS — edge domains:** confidence, tempo, interval, sigma, and cost coefficient are valid
+- **PASS — duration-cost closure:** maximum absolute discrepancy=4.441e-16
+- **PASS — piece diagnostic domains:** confidence, agreement, and fallback flags are valid
+- **PASS — mechanism count reconciliation:** candidate/edge count mismatches=0
+- **PASS — mechanism metric reconciliation:** maximum delta discrepancy=3.123e-16
+- **PASS — bootstrap paired means:** maximum discrepancy from piece-level paired means=9.628e-17
+- **PASS — bootstrap protocol:** 5,000 paired resamples; seed fixed; means lie inside reported intervals
+- **PASS — representative trace provenance:** validated 8 trace files; metadata mismatches=0
+- **PASS — CASM event anchoring:** structured beats absent from retained maxima=0
+
+## Empirical operating range
+
+Across 147,000 decoded CASM edges, the median margin is 0.108, the 99.5th percentile is 0.340, and the maximum is 0.602.
+
+The median effective duration coefficient is 0.951; the observed maximum is 15.473. The response law would reach 138.889 at c=1, which was not approached by these real edges.
+
+The QA checks integrity and algebraic consistency. It does not turn post-hoc representative windows into independent performance evidence, and the TCN final0 panel remains exploratory rather than OOF.

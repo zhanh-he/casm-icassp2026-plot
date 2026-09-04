@@ -1,0 +1,5 @@
+# Exact environment used to render the reference figures on lab5090.
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.9.2
+seaborn==0.13.2

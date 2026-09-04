@@ -1,0 +1,27 @@
+{
+  "gtzan_final0_piece_count": 993,
+  "locked_combination_count": 64,
+  "protocol_hash": "f84b0330afe7d76cd05365e880270d7066d404c97fc7e2cfbafe7da4e6b93a22",
+  "qa": {
+    "checks": {
+      "combination_count_64": true,
+      "gtzan_final0_piece_count_993": true,
+      "gtzan_metrics_finite_and_bounded": true,
+      "independent_existing_final0_crosscheck": true,
+      "row_count_65": true,
+      "smc_values_unchanged": true,
+      "unique_configuration_count_22": true
+    },
+    "crosscheck_max_absolute_error": 0.0,
+    "crosschecked_unique_configurations": 4,
+    "elapsed_seconds": 29.251814032904804,
+    "output_sha256": {
+      "calibration_fixed_panel_final0.csv": "906e8979fc6998a6fef2c3f214a43d153f9ac7fb586d1bb27e5d56b6e1cf6286",
+      "calibration_summary_final0.csv": "71bc9dbc4493ff8fad29a120f6e0bc41e8d26c0132b9cbbddd8298ea3c9c819e"
+    },
+    "smc_source_max_absolute_error": 0.0,
+    "status": "PASS"
+  },
+  "status": "COMPLETE",
+  "unique_configuration_count": 22
+}
