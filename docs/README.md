@@ -1,6 +1,13 @@
 # CASM Decoder Listening Demo
 
-Static GitHub Pages demo for the finalized SMC 221/117 decoder-contrast figure.
+## Public site
+
+**https://zhanh-he.github.io/casm-icassp2026-plot/**
+
+This is the public GitHub Pages demo. It can be opened directly without
+cloning the repository or starting a local server.
+
+The site presents the finalized SMC 221/117 decoder-contrast figure.
 
 The page preserves the exact D3 visualization and adds synchronized Web Audio
 audition for GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
@@ -10,13 +17,18 @@ SMC waveform audio is not redistributed. Visitors can load an authorized local
 audio file, which remains in the browser and can be mixed with any click path.
 Without a waveform, every event path remains audible as a click-only track.
 
-Rebuild generated data and the wrapped visualization from the source bundle:
+## Rebuild generated assets
+
+Rebuild the data and wrapped visualization from the source bundle:
 
 ```bash
 python self-run-figures/figure1-20260902-1210/tools/build_github_demo.py
 ```
 
-Serve locally:
+## Optional local preview
+
+The following commands are only for development and are not needed to use the
+public demo:
 
 ```bash
 python -m http.server 8765 --directory docs
