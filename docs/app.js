@@ -484,7 +484,7 @@ function bindFigureControls() {
 
 async function initialize() {
   try {
-    const response = await fetch("data/cases.json");
+    const response = await fetch("data/cases.json?v=20260905-3");
     if (!response.ok) throw new Error(`Case data returned ${response.status}.`);
     cases = await response.json();
     void loadBundledAudio();

@@ -29,6 +29,11 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def versioned_asset(relative_path: str) -> str:
+    path = DOCS_ROOT / relative_path
+    return f"{relative_path}?v={sha256(path)[:12]}" if path.is_file() else relative_path
+
+
 audio_config = json.loads(AUDIO_CONFIG_PATH.read_text(encoding="utf-8"))
 cases = []
 for case, label, rank, summary in (
@@ -56,7 +61,7 @@ for case, label, rank, summary in (
             "summary": summary,
             "public_audio": (
                 {
-                    "url": f"audio/{audio_selection['output_file']}",
+                    "url": versioned_asset(f"audio/{audio_selection['output_file']}"),
                     "start_seconds": audio_selection["start_seconds"],
                     "duration_seconds": audio_selection["duration_seconds"],
                     "source_file": audio_selection["source_file"],

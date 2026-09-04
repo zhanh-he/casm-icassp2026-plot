@@ -1,7 +1,7 @@
 {
   "source_figure_fragment": "self-run-figures/figure1-20260902-1210/reference/real-decoder-contrast.html",
   "source_figure_sha256": "c9c1b6d120386d4104ed6d74acfa68921ca1eb8d75fbc4458ea3e46454f75e34",
-  "case_data_sha256": "125662c09762ddcac28981db146b663fac9dcd50486b987284dffe2d737f6595",
+  "case_data_sha256": "701d3c645ea0f09898f7726384156a279ccc7a812daa23d95f1cfb12552e1dae",
   "visualization_sha256": "4b70d66ea8b2f2277d029e708db35bda3320984febe9ba101a4d5478bc77f14b",
   "case_count": 2,
   "audio_source": "http://smc.inescporto.pt/data/SMC_MIREX.zip",
