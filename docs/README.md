@@ -13,9 +13,13 @@ The page preserves the exact D3 visualization and adds synchronized Web Audio
 audition for GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
 Clicks are synthesized from the frozen event arrays in `data/cases.json`.
 
-SMC waveform audio is not redistributed. Visitors can load an authorized local
-audio file, which remains in the browser and can be mixed with any click path.
-Without a waveform, every event path remains audible as a click-only track.
+Each case includes a selected 18-second SMC MIREX performance excerpt. Original
+plays the music alone; GroundTruth and every decoder overlay their events on
+exactly the same recording. Visitors may replace the built-in excerpt with an
+authorized local file, which remains in the browser and is not uploaded.
+
+The published clips and their provenance are documented in
+[`audio/ATTRIBUTION.md`](audio/ATTRIBUTION.md).
 
 ## Rebuild generated assets
 

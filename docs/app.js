@@ -33,6 +33,9 @@ let selectedSource = "reference";
 let audioContext = null;
 let audioBuffer = null;
 let audioFileName = "";
+let audioBufferStart = 0;
+let audioOrigin = "none";
+let audioLoadGeneration = 0;
 let activeNodes = [];
 let playbackStart = 0;
 let playbackDuration = 0;
@@ -47,6 +50,10 @@ function setStatus(message, state = "ready") {
 
 function currentCase() {
   return cases[activeCaseIndex]?.data;
+}
+
+function currentCaseRecord() {
+  return cases[activeCaseIndex];
 }
 
 function sourceDefinition(id = selectedSource) {
@@ -86,7 +93,9 @@ function selectSource(source) {
   selectedSource = source;
   renderSourceButtons();
   const label = sourceDefinition().label;
-  const mode = source === "original" ? "original audio" : "synthesized click track";
+  const mode = source === "original"
+    ? "real performance"
+    : (ui.mixAudio.checked && audioBuffer ? "real performance + synthesized clicks" : "synthesized click track");
   setStatus(`${label} selected: ${mode} follows the visible window.`);
 }
 
@@ -143,8 +152,7 @@ function scheduleMusic(context, when, duration) {
   if (!audioBuffer) return duration;
   const source = context.createBufferSource();
   const gain = context.createGain();
-  const canUseAbsoluteOffset = audioBuffer.duration >= windowStart + duration - 0.05;
-  const offset = canUseAbsoluteOffset ? windowStart : 0;
+  const offset = Math.max(0, windowStart - audioBufferStart);
   const available = Math.max(0, audioBuffer.duration - offset);
   const actualDuration = Math.min(duration, available);
   if (actualDuration <= 0) return 0;
@@ -156,11 +164,26 @@ function scheduleMusic(context, when, duration) {
   return actualDuration;
 }
 
+function audioCoversVisibleWindow() {
+  if (!audioBuffer) return false;
+  const data = currentCase();
+  const end = Math.min(data.duration_seconds, windowStart + windowDuration);
+  const audioEnd = audioBufferStart + audioBuffer.duration;
+  return windowStart >= audioBufferStart - 0.05 && end <= audioEnd + 0.05;
+}
+
 async function playSelection() {
   const data = currentCase();
   if (!data) return;
   if (selectedSource === "original" && !audioBuffer) {
     setStatus("Load an authorized local recording before playing Original.", "error");
+    return;
+  }
+  const shouldPlayMusic = selectedSource === "original" || (ui.mixAudio.checked && audioBuffer);
+  if (shouldPlayMusic && !audioCoversVisibleWindow()) {
+    const start = audioBufferStart.toFixed(2);
+    const end = (audioBufferStart + (audioBuffer?.duration || 0)).toFixed(2);
+    setStatus(`Music covers ${start}-${end} s. Return the figure window to that interval or load the full local recording.`, "error");
     return;
   }
 
@@ -170,7 +193,6 @@ async function playSelection() {
     const now = context.currentTime + 0.06;
     const windowEnd = Math.min(data.duration_seconds, windowStart + windowDuration);
     let duration = windowEnd - windowStart;
-    const shouldPlayMusic = selectedSource === "original" || (ui.mixAudio.checked && audioBuffer);
     if (shouldPlayMusic) {
       const musicDuration = scheduleMusic(context, now, duration);
       if (selectedSource === "original") duration = musicDuration;
@@ -192,7 +214,8 @@ async function playSelection() {
     ui.play.disabled = true;
     ui.stop.disabled = false;
     ui.progress.value = 0;
-    setStatus(`${sourceDefinition().label} playing from ${windowStart.toFixed(2)} s.`, "playing");
+    const playbackMode = shouldPlayMusic ? " with the real performance" : " as clicks only";
+    setStatus(`${sourceDefinition().label} playing${playbackMode} from ${windowStart.toFixed(2)} s.`, "playing");
     stopTimer = window.setTimeout(() => stopPlayback(true), (duration + 0.15) * 1000);
     updatePlaybackProgress();
   } catch (error) {
@@ -266,6 +289,7 @@ function drawPlayhead(time) {
 
 async function loadLocalAudio(file) {
   if (!file) return;
+  audioLoadGeneration += 1;
   stopPlayback();
   setStatus(`Decoding ${file.name}...`);
   try {
@@ -273,17 +297,19 @@ async function loadLocalAudio(file) {
     const bytes = await file.arrayBuffer();
     audioBuffer = await context.decodeAudioData(bytes.slice(0));
     audioFileName = file.name;
+    audioOrigin = "local";
+    audioBufferStart = audioBuffer.duration >= currentCase().duration_seconds - 0.5 ? 0 : windowStart;
     ui.mixAudio.disabled = false;
     ui.mixAudio.checked = true;
     ui.musicVolume.disabled = false;
     renderSourceButtons();
-    const alignment = audioBuffer.duration >= windowStart + windowDuration - 0.05
-      ? "full-track timing"
-      : "window-excerpt timing";
+    const alignment = audioBufferStart === 0 ? "full-track timing" : `excerpt timing from ${audioBufferStart.toFixed(2)} s`;
     setStatus(`${file.name} loaded (${audioBuffer.duration.toFixed(2)} s, ${alignment}); audio stays in this browser.`);
   } catch (error) {
     audioBuffer = null;
     audioFileName = "";
+    audioOrigin = "none";
+    audioBufferStart = 0;
     ui.mixAudio.checked = false;
     ui.mixAudio.disabled = true;
     ui.musicVolume.disabled = true;
@@ -292,16 +318,57 @@ async function loadLocalAudio(file) {
   }
 }
 
-function resetAudioForCaseChange() {
-  if (!audioBuffer) return;
+function clearAudio() {
+  audioLoadGeneration += 1;
   audioBuffer = null;
   audioFileName = "";
+  audioOrigin = "none";
+  audioBufferStart = 0;
   ui.audioFile.value = "";
   ui.mixAudio.checked = false;
   ui.mixAudio.disabled = true;
   ui.musicVolume.disabled = true;
   if (selectedSource === "original") selectedSource = "reference";
   renderSourceButtons();
+}
+
+async function loadBundledAudio() {
+  const record = currentCaseRecord();
+  const bundled = record?.public_audio;
+  const generation = ++audioLoadGeneration;
+  if (!bundled) {
+    clearAudio();
+    setStatus("No bundled performance is available for this case. Load an authorized local recording.", "error");
+    return;
+  }
+
+  audioBuffer = null;
+  audioFileName = "";
+  audioOrigin = "none";
+  renderSourceButtons();
+  setStatus(`Loading the ${record.label} performance excerpt...`);
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) throw new Error("This browser does not support Web Audio playback.");
+    if (!audioContext) audioContext = new AudioContextClass();
+    const response = await fetch(bundled.url);
+    if (!response.ok) throw new Error(`Audio returned ${response.status}.`);
+    const decoded = await audioContext.decodeAudioData(await response.arrayBuffer());
+    if (generation !== audioLoadGeneration || record !== currentCaseRecord()) return;
+    audioBuffer = decoded;
+    audioBufferStart = Number(bundled.start_seconds);
+    audioFileName = bundled.source_file;
+    audioOrigin = "bundled";
+    ui.mixAudio.disabled = false;
+    ui.mixAudio.checked = true;
+    ui.musicVolume.disabled = false;
+    renderSourceButtons();
+    setStatus(`${record.label} real performance loaded; every decoder is mixed against the same audio excerpt.`);
+  } catch (error) {
+    if (generation !== audioLoadGeneration) return;
+    clearAudio();
+    setStatus(`Could not load the performance excerpt: ${error.message}`, "error");
+  }
 }
 
 function syncFromFigure(caseChanged = false) {
@@ -313,15 +380,19 @@ function syncFromFigure(caseChanged = false) {
   if (caseChanged || nextCase !== activeCaseIndex) {
     stopPlayback();
     activeCaseIndex = nextCase;
-    resetAudioForCaseChange();
+    clearAudio();
+    void loadBundledAudio();
   }
   windowStart = Number(slider.value);
   windowDuration = Number(currentCase().window_seconds);
   const end = Math.min(currentCase().duration_seconds, windowStart + windowDuration);
   ui.windowLabel.textContent = `${cases[activeCaseIndex].label} · ${windowStart.toFixed(2)}-${end.toFixed(2)} s`;
   ui.playTime.textContent = `${formatTime(0)} / ${formatTime(end - windowStart)}`;
-  if (!audioBuffer) {
+  if (!audioBuffer && audioOrigin !== "bundled") {
     setStatus("Click-only audition is ready. Load authorized local audio to hear music with the clicks.");
+  } else if (!audioCoversVisibleWindow()) {
+    const audioEnd = audioBufferStart + audioBuffer.duration;
+    setStatus(`Built-in music covers ${audioBufferStart.toFixed(2)}-${audioEnd.toFixed(2)} s. Return to that window or load the full local recording.`, "error");
   } else {
     setStatus(`${audioFileName} loaded; playback follows ${windowStart.toFixed(2)}-${end.toFixed(2)} s.`);
   }
@@ -357,6 +428,7 @@ async function initialize() {
     if (!response.ok) throw new Error(`Case data returned ${response.status}.`);
     cases = await response.json();
     renderSourceButtons();
+    void loadBundledAudio();
     if (window.lucide) window.lucide.createIcons();
     ui.frame.addEventListener("load", bindFigureControls, { once: true });
     if (ui.frame.contentDocument?.readyState === "complete") bindFigureControls();

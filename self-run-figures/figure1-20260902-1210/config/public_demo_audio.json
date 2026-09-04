@@ -1,0 +1,21 @@
+{
+  "dataset": "SMC MIREX",
+  "source_archive_url": "http://smc.inescporto.pt/data/SMC_MIREX.zip",
+  "download_mirror_url": "https://bit.ly/33SlutJ",
+  "download_script_url": "https://github.com/nicolaus625/CMI-bench/blob/main/data/SMC/download_smc.sh",
+  "citation": "Holzapfel et al., Selective Sampling for Beat Tracking Evaluation, IEEE TASLP 20(9), 2012.",
+  "cases": {
+    "smc-221": {
+      "source_file": "SMC_221.wav",
+      "output_file": "smc-221.mp3",
+      "start_seconds": 6.14,
+      "duration_seconds": 18.0
+    },
+    "smc-117": {
+      "source_file": "SMC_117.wav",
+      "output_file": "smc-117.mp3",
+      "start_seconds": 21.48,
+      "duration_seconds": 18.0
+    }
+  }
+}

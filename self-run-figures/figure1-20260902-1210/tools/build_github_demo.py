@@ -12,6 +12,7 @@ from pathlib import Path
 FIGURE_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DOCS_ROOT = REPO_ROOT / "docs"
+AUDIO_CONFIG_PATH = FIGURE_ROOT / "config" / "public_demo_audio.json"
 
 
 def sanitize(value):
@@ -28,6 +29,7 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+audio_config = json.loads(AUDIO_CONFIG_PATH.read_text(encoding="utf-8"))
 cases = []
 for case, label, rank, summary in (
     (
@@ -44,12 +46,24 @@ for case, label, rank, summary in (
     ),
 ):
     payload_path = FIGURE_ROOT / "data" / "figure_payloads" / f"{case}.json"
+    case_id = case.replace("_", "-")
+    audio_selection = audio_config["cases"].get(case_id)
     cases.append(
         {
-            "id": case.replace("_", "-"),
+            "id": case_id,
             "label": label,
             "screen_rank": rank,
             "summary": summary,
+            "public_audio": (
+                {
+                    "url": f"audio/{audio_selection['output_file']}",
+                    "start_seconds": audio_selection["start_seconds"],
+                    "duration_seconds": audio_selection["duration_seconds"],
+                    "source_file": audio_selection["source_file"],
+                }
+                if audio_selection
+                else None
+            ),
             "data": sanitize(json.loads(payload_path.read_text(encoding="utf-8"))),
         }
     )
@@ -123,10 +137,16 @@ manifest = {
     "case_data_sha256": sha256(data_path),
     "visualization_sha256": sha256(visualization_path),
     "case_count": len(cases),
-    "audio_policy": (
-        "No SMC waveform is redistributed. Event clicks are synthesized in-browser; "
-        "authorized local audio can be loaded without upload."
-    ),
+    "audio_source": audio_config["source_archive_url"],
+    "audio_download_mirror": audio_config["download_mirror_url"],
+    "audio_download_script": audio_config["download_script_url"],
+    "audio_citation": audio_config["citation"],
+    "audio_policy": "Only the selected short listening-demo excerpts are published; full SMC waveforms are not redistributed.",
+    "audio_files": {
+        selection["output_file"]: sha256(DOCS_ROOT / "audio" / selection["output_file"])
+        for selection in audio_config["cases"].values()
+        if (DOCS_ROOT / "audio" / selection["output_file"]).is_file()
+    },
 }
 (DOCS_ROOT / "data" / "manifest.json").write_text(
     json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
