@@ -57,17 +57,25 @@
 
 ## Figure 5 — calibration scale stability
 
-- Question: does selecting on more SMC folds improve the point estimate, or
-  mainly reduce dependence on fold composition?
-- Takeaway: the cross-combination spread contracts from 1F to 4F, while mean
-  performance is metric-dependent and not monotonic.
-- Form: box/strip distributions across all fold combinations, faceted by
-  target panel and metric.
+- Question: under matched calibration splits and fixed evaluation panels, how
+  sensitive are automatically selected CASM and DBN decoders to calibration
+  size and fold composition?
+- Takeaway: CASM occupies a much narrower fixed-panel operating range across
+  fold subsets. DBN's selected global rigidity varies substantially with fold
+  composition; increasing calibration scale improves its GTZAN transfer but
+  does not monotonically improve the held-out SMC fold.
+- Form: paired box/strip distributions for CASM and DBN across every fold
+  combination, faceted by fixed panel and beat metric, with Direct as a common
+  reference.
 - Data: 7 one-fold, 21 two-fold, 35 four-fold selections plus one seven-fold
-  configuration, all evaluated on fixed SMC-fold0 and Beat This
-  GTZAN-final0 panels. All 64 selections were locked before final0 evaluation.
+  configuration per decoder, all evaluated on fixed SMC-fold0 and Beat This
+  GTZAN-final0 panels. The frontend, fold subsets, primary selection metric,
+  macro-piece aggregation, and lock order are matched. DBN searches a
+  preregistered 52-point grid over minimum tempo, maximum tempo, and transition
+  strength; all 64 choices were locked before either fixed panel was scored.
 - Renderer/output: static Matplotlib; PNG/PDF/SVG; final QA on PNG.
-- Palette: blue scale progression with charcoal Direct reference.
+- Palette: blue circles for CASM, orange triangles for DBN, and a charcoal
+  dashed Direct reference; marker shapes preserve grayscale legibility.
 
 ## Figure 6 — gain versus regression risk
 

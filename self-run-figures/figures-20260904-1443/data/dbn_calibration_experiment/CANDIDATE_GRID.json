@@ -1,0 +1,820 @@
+{
+  "candidate_count": 52,
+  "candidates": [
+    {
+      "parameter_hash": "e3a19082c2203608dc0564465286f1ccbf3fa2d2a3f0d85eee4e9e523f3b9889",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 1.0
+      }
+    },
+    {
+      "parameter_hash": "cbc632249ab01e1f8d92f9fe7fbd9d7260433a057c980a924352d3ba4809abc7",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      }
+    },
+    {
+      "parameter_hash": "f97c133c00a817925dfc461e65fafda121871565f5bc8de77f7770cb05d2bf2d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      }
+    },
+    {
+      "parameter_hash": "3956b36319dcf5145c8c8472b048110c0e0d9b5c97a426a4f91046d12efa408c",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 5.0
+      }
+    },
+    {
+      "parameter_hash": "e2beab259374a945324f1e7d2056d14d038b13753d2b3de6fffa2b64674f8a24",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      }
+    },
+    {
+      "parameter_hash": "89c0f29f0aba26312faccdb8cd8c0fa2de2c4f0575f338f890220bc5440365c3",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      }
+    },
+    {
+      "parameter_hash": "fb430c710395467c6d7f3757adc35e0ed327a2f9b9e9cabc74696d7a37b417ef",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      }
+    },
+    {
+      "parameter_hash": "85d2f8d8fae9b1f160db4d12af8415b69a5c0391c9b2c354f793658470c3f19f",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      }
+    },
+    {
+      "parameter_hash": "433c6ac2157a2014f9519ac8dc09e55542947ebd8287b041f4d0d76ea2d326c9",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      }
+    },
+    {
+      "parameter_hash": "7d4c41e27faf3f46de739edbb9d5c98476bb233945d4076fdc6c1e15573ebf88",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 100.0
+      }
+    },
+    {
+      "parameter_hash": "f87a2372e95adb409be514a16c5fe6e52c19239479e79048540c440e6b3e35a3",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 150.0
+      }
+    },
+    {
+      "parameter_hash": "315f6035512736cb11e3f686f5eeb008502c1f939b88d31e01eab90a13196517",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 300.0
+      }
+    },
+    {
+      "parameter_hash": "1a986de02e5136ae87c2862fe4b42326cc3a4e8ef51953a0e89671ad8915da22",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 500.0
+      }
+    },
+    {
+      "parameter_hash": "ea91510a12462aac6675da60f12816b0e9637f6eafa0cc9c55f889d353040b65",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 1.0
+      }
+    },
+    {
+      "parameter_hash": "112952426acd48a417860c26e07ae2cf58aa842dbcced86b06efb0d10c75995a",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      }
+    },
+    {
+      "parameter_hash": "06155b3ad31c028a27cabbbb8ee064842019f8a022c434d9619b00e30734c83d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      }
+    },
+    {
+      "parameter_hash": "54dd7c2cc8664da84f6527be70568eda8477b1ae94367386c33e11acc95f8304",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 5.0
+      }
+    },
+    {
+      "parameter_hash": "88402660a7bd38272ead76c40546b23559a99880337e95d072b7d83035088f85",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      }
+    },
+    {
+      "parameter_hash": "53b3189b54253656e8a8b924543921004f7628ea6e04529f0b94d259c4dd0937",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      }
+    },
+    {
+      "parameter_hash": "a177cdfaeb24403fca3656b2eba86826bfdd1e1b2c681a4e5b75f576158d64dc",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      }
+    },
+    {
+      "parameter_hash": "90ec7d59cc995f6e44dcfefe2b02de2a88ccebca83147ac34cb384ed295c4cbf",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      }
+    },
+    {
+      "parameter_hash": "59c06e1efc87f39c1df0e81c8f9a9a41b2075641c18746fe3280586c5ad02902",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      }
+    },
+    {
+      "parameter_hash": "5d5938b5624e57901ee42731500a4dab42da3093ce8bca2fd629fa373d8f748d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 100.0
+      }
+    },
+    {
+      "parameter_hash": "1bbe765abaacf2894d8b891b7bf4e8d2b86f2f0c10111ad5813c9c992b32baf4",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 150.0
+      }
+    },
+    {
+      "parameter_hash": "c8e535f8132a7ba1638807896aa6756eb36edcc847dab83fa8fb9cdfa18513d9",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 300.0
+      }
+    },
+    {
+      "parameter_hash": "2e09a5c2dd08d6fab23c5949706a531d7a7f59e94d4a6cea57b37166f5110bbf",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 500.0
+      }
+    },
+    {
+      "parameter_hash": "cab75b62dab2e2e7b7af5b50d201146abf319f491439c16c916fd8df29bba72d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 1.0
+      }
+    },
+    {
+      "parameter_hash": "99caf7e68ecf43fbcb7ec7d51b6908ce4de6774c35926ed5686132c601da1cf2",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      }
+    },
+    {
+      "parameter_hash": "411b58ce10d9e5302d2cb36b2e0e60d8903bbed6122eb98e2837c23314b73be7",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      }
+    },
+    {
+      "parameter_hash": "725e648d83c050c9e9b7130d0fb36f77a2b4faff462f612149e4b8bc814d5ceb",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 5.0
+      }
+    },
+    {
+      "parameter_hash": "38859bc29424b925a3873d864121e46ee248ccf1ba7fe0ec78063f2e34c3b6e3",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      }
+    },
+    {
+      "parameter_hash": "2124d04e4907fe0b19c887b92f3886d072be14d62c3c9b2b4d1bd233159ad711",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      }
+    },
+    {
+      "parameter_hash": "8e3449838321d2026081f831d7785f6dea159361d6aa432a219fa173113c0a14",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      }
+    },
+    {
+      "parameter_hash": "feeada37d3f29d221e6f9820fcd48cdc4a7b607e6cbda6ec398d6c11a2d40940",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      }
+    },
+    {
+      "parameter_hash": "dbb72d11e336706f1742ae58c56be9f77bd1301af1064fad45af374bab5f2f68",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      }
+    },
+    {
+      "parameter_hash": "b92972b2e54b7790053fd08b63cca2a8b04a71bdb9bd9f42f13f76748ee0db4d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 100.0
+      }
+    },
+    {
+      "parameter_hash": "20bae089611a1022f2a8ca658df6669c6b553a6a106182ab2fb631a84e2d7bec",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 150.0
+      }
+    },
+    {
+      "parameter_hash": "48aaea640347c8bfc398b012177e9598a6ce2330c5dc5acd256685f5d65c166d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 300.0
+      }
+    },
+    {
+      "parameter_hash": "5907fc2ae11cc379e38b41f0826c9dab9d9c75872a50759727ced010e80dcdfe",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 500.0
+      }
+    },
+    {
+      "parameter_hash": "20746ea0a51fdeb8546cfa8f99729fcf8f95ac2ac6c0f5d11e6e71f58aa5f40c",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 1.0
+      }
+    },
+    {
+      "parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      }
+    },
+    {
+      "parameter_hash": "fdf631944523cf80880116ae50fe543413c63a3d0e011a6ca67453a4887bcb5a",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      }
+    },
+    {
+      "parameter_hash": "e05e14676eebc7acd401f931261f5e4a71c0492cc987abc7d4167e2928d07fbd",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 5.0
+      }
+    },
+    {
+      "parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      }
+    },
+    {
+      "parameter_hash": "97db1256cb519c62e6240f28f27c2d2a80f5e087d64a0b8f7834fed8cdf1e2c9",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      }
+    },
+    {
+      "parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      }
+    },
+    {
+      "parameter_hash": "31608b32f04c5bc32335033216d1c86b866bd6b92b38e8d02ff1721279a2d533",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      }
+    },
+    {
+      "parameter_hash": "a1b8d71153efad399063279d900423d3283677e42cd9691d1d4a973a463992ce",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      }
+    },
+    {
+      "parameter_hash": "ee7a53e0fa5c062f3e8eec1e1b8fc8c5714655153452eadfacd0a17bbbb67b8c",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 100.0
+      }
+    },
+    {
+      "parameter_hash": "02a3fdfe16992d99a07cca7d6adb095cb6f08743328ea4e027d67e6c580469c9",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 150.0
+      }
+    },
+    {
+      "parameter_hash": "3407a8dd669c8b2da15faf214f943ffa50d8fb37a111ef19317f98fd25453899",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 300.0
+      }
+    },
+    {
+      "parameter_hash": "b921fcfb19cca02c37712c4cfaecaf5c808383aaeacef75c5adac5d6038752cc",
+      "parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 500.0
+      }
+    }
+  ],
+  "decoder": "joint DBNDownBeatTrackingProcessor wrapper",
+  "fixed_parameters": {
+    "beats_per_bar": [
+      3,
+      4
+    ],
+    "fps": 50.0,
+    "observation_lambda": 16.0,
+    "threshold": 0.05
+  },
+  "varied_parameters": {
+    "max_bpm": [
+      215.0,
+      300.0
+    ],
+    "min_bpm": [
+      30.0,
+      55.0
+    ],
+    "transition_lambda": [
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      10.0,
+      20.0,
+      30.0,
+      50.0,
+      70.0,
+      100.0,
+      150.0,
+      300.0,
+      500.0
+    ]
+  }
+}

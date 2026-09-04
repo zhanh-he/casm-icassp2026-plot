@@ -1,0 +1,73 @@
+{
+  "candidate_count": 52,
+  "checks": [
+    {
+      "detail": "52 unique configurations",
+      "name": "candidate grid",
+      "passed": true
+    },
+    {
+      "detail": "64 locked choices",
+      "name": "combination design",
+      "passed": true
+    },
+    {
+      "detail": "all selection folds are in 1..7",
+      "name": "development excludes fold0",
+      "passed": true
+    },
+    {
+      "detail": "190 SMC pieces",
+      "name": "development panel",
+      "passed": true
+    },
+    {
+      "detail": "27 pieces",
+      "name": "SMC fixed panel",
+      "passed": true
+    },
+    {
+      "detail": "993 pieces, Beat This final0",
+      "name": "GTZAN fixed panel",
+      "passed": true
+    },
+    {
+      "detail": "selection lock predates GTZAN inventory",
+      "name": "lock order",
+      "passed": true
+    },
+    {
+      "detail": "19 unique DBN configurations",
+      "name": "unique selected configurations",
+      "passed": true
+    },
+    {
+      "detail": "65 rows including Direct",
+      "name": "output rows",
+      "passed": true
+    },
+    {
+      "detail": "all SMC fold0 and GTZAN final0 beat metrics are finite",
+      "name": "finite beat metrics",
+      "passed": true
+    },
+    {
+      "detail": "maximum absolute discrepancy 0",
+      "name": "Direct cross-check",
+      "passed": true
+    }
+  ],
+  "combination_count": 64,
+  "created_at": "2026-09-05T03:21:06.945071+10:00",
+  "elapsed_seconds": 320.89849928207695,
+  "output_sha256": {
+    "CANDIDATE_GRID.json": "a6817b5563c33c28a0bcfac2a157cf95d8b98816b1fd7f21f10a18ce7a1db27a",
+    "LOCKED_CONFIGURATIONS.json": "f47435d443749a253b433d45ea05bd5c0ed1d802a339aa3e1f0616e7cb61c775",
+    "PREREGISTERED_PROTOCOL.json": "5357eafd8a60f8976c04f0f1aac254a7cc30636ba034b5637b64fc5cf8e8ed7f",
+    "dbn_calibration_fixed_panel.csv": "e1a8c442265c8df19219fa070000c0c91a2644a7a731574d38d548d470b6d152",
+    "dbn_calibration_summary.csv": "00928675be3231c1a09fc90f5f8f063a1d8f74eb199a3e5da8d8b014a9cb6836",
+    "selection_audit.csv": "529ce56282860f816fbeef1c0eb4157ba017403fa6dd5e3d9169822609fa1d24"
+  },
+  "status": "pass",
+  "unique_selected_configuration_count": 19
+}

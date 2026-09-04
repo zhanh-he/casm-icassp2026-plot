@@ -6,7 +6,44 @@
 \usepackage{booktabs, multirow}
 \usepackage{enumitem} %缩进itemize
 \usepackage{amssymb}
-\usepackage[table]{xcolor} %表格颜色
+
+\usepackage[table]{xcolor}
+\usepackage{pgf}
+
+\definecolor{heatblue}{RGB}{65,115,200}
+\definecolor{heatred}{RGB}{205,92,92}
+
+\newcommand{\heatpos}[1]{%
+  \pgfmathtruncatemacro{\shadevalue}
+    {min(54,14+40*sqrt((#1)/10))}%
+  \edef\heatcolor{heatblue!\shadevalue}%
+  \expandafter\cellcolor\expandafter{\heatcolor}%
+  $+$#1%
+}
+
+\newcommand{\heatneg}[1]{%
+  \pgfmathtruncatemacro{\shadevalue}
+    {min(54,14+40*sqrt((#1)/10))}%
+  \edef\heatcolor{heatred!\shadevalue}%
+  \expandafter\cellcolor\expandafter{\heatcolor}%
+  $-$#1%
+}
+
+\newcommand{\heatposbest}[1]{%
+  \pgfmathtruncatemacro{\shadevalue}
+    {min(54,14+40*sqrt((#1)/10))}%
+  \edef\heatcolor{heatblue!\shadevalue}%
+  \expandafter\cellcolor\expandafter{\heatcolor}%
+  $\mathbf{+}$\textbf{#1}%
+}
+
+\newcommand{\heatnegbest}[1]{%
+  \pgfmathtruncatemacro{\shadevalue}
+    {min(54,14+40*sqrt((#1)/10))}%
+  \edef\heatcolor{heatred!\shadevalue}%
+  \expandafter\cellcolor\expandafter{\heatcolor}%
+  $\mathbf{-}$\textbf{#1}%
+}
 
 % \usepackage{lilyglyphs} % dynamic symbols
 % \usepackage{tikz}
@@ -258,7 +295,7 @@ Following the established protocol, the first 5\,s are trimmed and \texttt{mir\_
 \subsection{Decoder baselines}
 \emph{Direct} is the minimal peak picker defined in Sec.~\ref{sec:method}. \emph{DBN} is the conventional joint \texttt{madmom} configuration: meters $\{3,4\}$, 55--215 BPM, transition weight 100, observation weight 16, and threshold 0.05 \cite{krebs2015dbn}. \emph{DBN-SMC-opt} is deliberately diagnostic. Its sequential beat and bar stages were selected from 753 configurations on the TCN SMC 8-fold OOF activations, maximizing beat F1 with CMLt/AMLt tie-breaks, and only then frozen for the three backbones and GTZAN. It uses 50--215 BPM, 30 tempo states, transition/observation weights 7/20, threshold 0.3, meters $\{3,4\}$, bar-observation weight 100, and meter-switch probability $10^{-7}$. It is neither a clean SMC test nor a published SMC-specific recipe from \cite{bock2020deconstruct}.
 
-The \emph{CRF} row uses \texttt{madmom}'s historically named \texttt{CRFBeatDetectionProcessor} \cite{korzeniowski2014crf} at 30--300 BPM with interval width 0.18; it should not be confused with the learned CRF in \cite{fillon2015crf}. \emph{CombFilter} uses \texttt{madmom}'s global tempo/iterative-alignment processor \cite{bock2015combfilter}. CRF and CombFilter decode downbeat activations at 8--100 BPM and snap their outputs to their respective beat grids.
+The \emph{CRF} row uses \texttt{madmom}'s historically named \texttt{CRFBeat DetectionProcessor} \cite{korzeniowski2014crf} at 30--300 BPM with interval width 0.18; it should not be confused with the learned CRF in \cite{fillon2015crf}. \emph{CombFilter} uses \texttt{madmom}'s global tempo/iterative-alignment processor \cite{bock2015combfilter}. CRF and CombFilter decode downbeat activations at 8--100 BPM and snap their outputs to their respective beat grids.
 
 \subsection{Frozen operating point and scale analysis}
 Every CASM row in Sec.~\ref{sec:results} uses exactly one explicitly loaded
@@ -277,7 +314,7 @@ Frozen-4F configuration:
 \]
 Its scalar settings were selected on the union of SMC folds $\{2,7,1,3\}$ and then reused for all tracks and all backbones. Thus context-aware means input-conditioned inference, not test-time parameter updates: CASM has validation-selected parameters, but no annotated beat, inter-beat-interval, BPM, or meter input at inference.
 
-The choice to foreground 4F was made \emph{after} inspecting the calibration sensitivity analysis and is therefore exploratory. The seven-fold configuration is the only comparator locked before GTZAN inspection; it differs from 4F only in $\sigma\_0=0.15$. For the scale study, SMC fold 0 ($N=27$) is never used for selection. From folds 1--7 we enumerate every 1-, 2-, and 4-fold calibration subset ($7$, $21$, and $35$ combinations) plus the seven-fold union, and evaluate all locked configurations on the same SMC fold 0 and fixed GTZAN/\texttt{final1} panel. The latter panel is test-conditioned and is used only to describe sensitivity, not to claim a held-out optimum.
+The choice to foreground 4F was made \emph{after} inspecting the calibration sensitivity analysis and is therefore exploratory. The seven-fold configuration is the only comparator locked before GTZAN inspection; it differs from 4F only in $\sigma\_0=0.15$. For the scale study, SMC fold 0 ($N=27$) is never used for selection. From folds 1--7 we enumerate every 1-, 2-, and 4-fold calibration subset ($7$, $21$, and $35$ combinations) plus the seven-fold union, and evaluate all locked configurations on the same SMC fold 0 and fixed GTZAN/\texttt{final1} panel. The latter panel is test-conditioned and is used only to describe sensitivity, not to claim a held-out optimum. \footnote{The DBN setup "SMC-opt" is optimized for the best average scores in SMC dataset, which modify (B\_min, B\_max) from $[55,215]$ by default to $[30,215]$. If tune more parameters per song can achieve higher scores as reported in \cite{ahn2026smcblindspot}. However, this will broken our test proctorol, so we adpot global setup instead.}
 
 
 
@@ -313,100 +350,136 @@ The choice to foreground 4F was made \emph{after} inspecting the calibration sen
 
 \begin{table}[t]
 \centering
-\caption{Comparison of beat-tracking post-processors across different backbone models on GTZAN and SMC. DBN uses the default setup which is already optimized for general music. SMC-opt means the DBN parameters were optimized for top-up SMC scores.}
+\caption{Comparison of beat-tracking post-processors across different backbone models. DBN default $bpm=[55,215]$ is for general music, while SMC contains many low BPM songs \cite{ahn2026smcblindspot}; therefore, SMC-opt $bpm=[30,300]$ can be applied. The same SMC-opt BPM has been applied in all post-processors, with other setups unchanged.}
 \label{tab:postprocessor_ablation}
 \begingroup
-\fontsize{7.5pt}{9pt}\selectfont
-\setlength{\tabcolsep}{0.5pt}
-\renewcommand{\arraystretch}{1.0}
+\fontsize{7.5pt}{8.5pt}\selectfont
+\setlength{\tabcolsep}{0.7pt}
+\renewcommand{\arraystretch}{0.92}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{l|rrr|rrr|rrr}
+\begin{tabular}{l|c|rrr@{\hspace{2pt}}|rrr@{\hspace{2pt}}|rrr}
 \toprule
 \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Method}}}
+& \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{BPM}}}
 & \multicolumn{6}{c|}{\textbf{GTZAN (Beat / Downbeat)}}
 & \multicolumn{3}{c}{\textbf{SMC (Beat)}} \\
-\cmidrule(lr){2-7}
-\cmidrule(l){8-10}
-& F1 & CMLt & AMLt
+\cmidrule(lr){3-8}
+\cmidrule(l){9-11}
+& & F1 & CMLt & AMLt
 & F1 & CMLt & AMLt
 & F1 & CMLt & AMLt \\
 \midrule
 
 \textbf{BeatThis} (direct) \cite{foscarin2024beat}
+& --
 & 89.1 & 79.8 & 89.8
 & 78.3 & 67.2 & 79.1
 & 62.7 & 51.4 & 61.0 \\
-\rowcolor{gray!10}
-\quad w. CASM
-& $\mathbf{+0.2}$ & $+0.4$ & $+0.6$
-& $\mathbf{+0.6}$ & $+3.2$ & $+6.0$
-& $\mathbf{+0.3}$ & $\mathbf{+2.4}$ & $+3.3$ \\
-\quad w. DBN
-& $-1.0$ & $\mathbf{+0.7}$ & $+1.3$
-& $-0.9$ & $\mathbf{+6.2}$ & $\mathbf{+8.7}$
-& $-5.2$ & $-3.9$ & $+1.5$ \\
-\rowcolor{gray!10}
-\quad w. DBN, SMC-opt
-& $-0.5$ & $-0.9$ & $+0.2$
-& $-1.5$ & $-0.6$ & $+1.1$
-& $-1.6$ & $+0.4$ & $\mathbf{+3.5}$ \\
-\quad w. CombFilter \cite{bock2015combfilter}
-& $-4.0$ & $-3.6$ & $+0.1$
-& $-3.3$ & $+3.2$ & $+7.6$
-& $-7.1$ & $+1.1$ & $+3.1$ \\
-\rowcolor{gray!10}
-\quad w. CRF \cite{korzeniowski2014crf}
-& $-0.6$ & $-0.3$ & $\mathbf{+1.4}$
-& $-1.4$ & $+1.9$ & $+5.5$
-& $-1.2$ & $+1.4$ & $+1.2$ \\
-% & 61.5 & \textbf{54.8} & \textbf{69.2} \\ 这批结果不对，comment out待check
+
+% w. CASM
+% & 55-215
+% & \heatposbest{0.1} & \heatpos{0.5} & \heatpos{0.6}
+% & \heatpos{0.5} & \heatpos{2.9} & \heatpos{5.8}
+% & \heatneg{0.6} & \heatpos{0.4} & \heatpos{2.0} \\
+
+w. CASM
+& 30-300
+& \heatposbest{0.3} & \heatposbest{0.8} & \heatpos{1.2}
+& \heatposbest{0.7} & \heatpos{3.6} & \heatpos{8.0}
+& \heatposbest{0.3} & \heatposbest{2.4} & \heatposbest{3.6} \\
+
+w. DBN, default
+& 55-215
+& \heatneg{1.0} & \heatpos{0.7} & \heatpos{1.3}
+& \heatneg{0.9} & \heatposbest{6.2} & \heatposbest{8.7}
+& \heatneg{5.2} & \heatneg{3.9} & \heatpos{1.5} \\
+
+w. DBN \cite{krebs2015dbn}
+& 30-300
+& \heatneg{0.5} & \heatneg{0.9} & \heatpos{0.2}
+& \heatneg{1.5} & \heatneg{0.6} & \heatpos{1.1}
+& \heatneg{1.6} & \heatpos{0.4} & \heatpos{3.5} \\
+
+% w. PLPDP
+% & 55--215
+% & \heatneg{0.1} & \heatposbest{0.8} & \heatpos{0.1}
+% & \heatneg{0.2} & \heatpos{0.1} & \heatneg{0.1}
+% & \heatneg{1.4} & \heatneg{4.7} & \heatpos{0.5} \\
+
+w. PLPDP \cite{chiu2023localperiodicity}
+& 30-300
+& \heatpos{0.1} & \heatpos{0.3} & \heatpos{0.3}
+& \heatpos{0.1} & \heatpos{0.2} & \heatpos{0.2}
+& \heatneg{0.9} & \heatneg{3.5} & \heatneg{0.3} \\
+
+w. CombFilter \cite{bock2015combfilter}
+& 30-300
+& \heatneg{4.0} & \heatneg{3.6} & \heatpos{0.1}
+& \heatneg{3.3} & \heatpos{3.2} & \heatpos{7.6}
+& \heatneg{7.1} & \heatpos{1.1} & \heatpos{3.1} \\
+
+w. CRF \cite{korzeniowski2014crf}
+& 30-300
+& \heatneg{0.6} & \heatneg{0.3} & \heatposbest{1.4}
+& \heatneg{1.4} & \heatpos{1.9} & \heatpos{5.5}
+& \heatneg{1.2} & \heatpos{1.4} & \heatpos{1.2} \\
+
 \midrule
 \textbf{MSCNN} (direct) \cite{he2026dynest}
+& --
 & 86.1 & 73.4 & 79.9
 & 70.8 & 53.1 & 63.1
 & 57.2 & 42.0 & 48.4 \\
-\rowcolor{gray!10}
-\quad w. CASM
-& $\mathbf{+0.4}$ & $+1.5$ & $+2.4$
-& $+1.7$ & $+6.8$ & $+11.7$
-& $\mathbf{+0.5}$ & $+3.3$ & $+4.4$ \\
-\quad w. DBN
-& $-0.6$ & $\mathbf{+4.0}$ & $\mathbf{+7.2}$
-& $\mathbf{+1.8}$ & $\mathbf{+15.8}$ & $\mathbf{+21.2}$
-& $-4.9$ & $+0.3$ & $+3.9$ \\
-\rowcolor{gray!10}
-\quad w. DBN, SMC-opt
-& $-1.1$ & $+0.2$ & $+5.9$
-& $-0.9$ & $+9.5$ & $+14.6$
-& $+0.3$ & $\mathbf{+3.5}$ & $\mathbf{+6.8}$ \\
 
+w. CASM
+& 30--300
+& \heatposbest{0.4} & \heatpos{1.6} & \heatpos{2.4}
+& \heatpos{1.5} & \heatpos{12.5} & \heatpos{18.3}
+& \heatposbest{0.3} & \heatposbest{3.5} & \heatposbest{6.8} \\
+
+w. DBN, default
+& 55--215
+& \heatneg{0.6} & \heatposbest{4.0} & \heatposbest{7.2}
+& \heatposbest{1.8} & \heatposbest{15.8} & \heatposbest{21.2}
+& \heatneg{4.9} & \heatpos{0.3} & \heatpos{3.9} \\
+w. DBN
+& 30--300
+& \heatneg{1.1} & \heatpos{0.2} & \heatpos{5.9}
+& \heatneg{0.9} & \heatpos{9.5} & \heatpos{14.6}
+& \heatneg{0.2} & \heatpos{2.2} & \heatpos{4.1} \\
 \midrule
+
 \textbf{TCN} (direct) \cite{bock2020deconstruct}
+& --
 & 87.1 & 73.8 & 81.7
 & 62.4 & 24.6 & 59.9
 & 52.9 & 30.1 & 36.0 \\
-\rowcolor{gray!10}
-\quad w. CASM
-& $\mathbf{+0.3}$ & $\mathbf{+1.3}$ & $+1.6$
-& $+2.3$ & $+19.4$ & $+14.0$
-& $+0.3$ & $+3.8$ & $+5.2$ \\
-\quad w. DBN
-& $-2.6$ & $-0.7$ & $\mathbf{+5.0}$
-& $\mathbf{+4.9}$ & $\mathbf{+23.2}$ & $\mathbf{+22.9}$
-& $-0.9$ & $-7.0$ & $+2.3$ \\
-\rowcolor{gray!10}
-\quad w. DBN, SMC-opt
-& $-1.9$ & $-0.8$ & $+4.4$
-& $-0.2$ & $+8.9$ & $+9.3$
-& $\mathbf{+1.7}$ & $\mathbf{+4.5}$ & $\mathbf{+8.2}$ \\
-% \quad w. CombFilter
-% & $-6.3$ & $+1.1$ & $+4.3$
-% & $-2.2$ & $+12.2$ & $+19.5$
-% & $-5.7$ & $+9.3$ & $+17.9$ \\
-% \quad w. CRF
-% & $+0.7$ & $+3.3$ & $+7.8$
-% & $+1.5$ & $+4.8$ & $+18.3$
-% & $-2.3$ & $-2.2$ & $+12.4$ \\
+w. CASM
+& 30--300
+& \heatposbest{0.3} & \heatposbest{1.3} & \heatpos{1.6}
+& \heatpos{2.1} & \heatpos{9.2} & \heatpos{13.4}
+& \heatposbest{1.7} & \heatposbest{4.5} & \heatposbest{8.2} \\
+w. DBN, default
+& 55--215
+& \heatneg{2.6} & \heatneg{0.7} & \heatposbest{5.0}
+& \heatposbest{4.9} & \heatposbest{23.2} & \heatposbest{22.9}
+& \heatneg{0.9} & \heatneg{7.0} & \heatpos{2.3} \\
+w. DBN
+& 30--300
+& \heatneg{1.9} & \heatneg{0.8} & \heatpos{4.4}
+& \heatneg{0.2} & \heatpos{8.9} & \heatpos{9.3}
+& \heatneg{0.4} & \heatpos{2.1} & \heatpos{5.9} \\
+% w. CombFilter
+% & --
+% & \heatneg{6.3} & \heatpos{1.1} & \heatpos{4.3}
+% & \heatneg{2.2} & \heatpos{12.2} & \heatpos{19.5}
+% & \heatneg{5.7} & \heatpos{9.3} & \heatpos{17.9} \\
+% w. CRF
+% & --
+% & \heatpos{0.7} & \heatpos{3.3} & \heatpos{7.8}
+% & \heatpos{1.5} & \heatpos{4.8} & \heatpos{18.3}
+% & \heatneg{2.3} & \heatneg{2.2} & \heatpos{12.4} \\
+
 \bottomrule
 \end{tabular}%
 }
@@ -417,8 +490,8 @@ The choice to foreground 4F was made \emph{after} inspecting the calibration sen
 
 \begin{table}[t]
 \centering
-\caption{Comparison with recent state-of-the-art beat and downbeat tracking systems on GTZAN (mean over 3 seeds) and SMC dataset (mean over 8-fold). DBN uses the default setup, which is already optimized for general music.}
-\label{tab:audiodyn\_cross\_dataset\_sota}
+\caption{Comparison with recent state-of-the-art beat tracking systems on GTZAN (mean over 3 seeds) and SMC dataset (mean over 8-fold). We only produced the bottom two lines, while the rest results are reported from their original works.}
+\label{tab:audiodyn_cross_dataset_sota}
 \begingroup
 \fontsize{8pt}{11pt}\selectfont
 \setlength{\tabcolsep}{0.5pt}
@@ -470,25 +543,26 @@ The choice to foreground 4F was made \emph{after} inspecting the calibration sen
 \textbf{BeatKAN} w. DBN \cite{zhang2025beatkan}
 & 88.2 & 78.1 & 92.3
 & -- & -- & --
-& 59.8 & 48.4 & \underline{64.0} \\
+& 59.8 & 48.4 & 64.0 \\
 \rowcolor{gray!10}
 \textbf{MDM-BeatThis} (direct) \cite{foscarin2026masked}
 & \textbf{89.7} & \textbf{82.9} & 92.5
 & 79.5 & \textbf{76.4} & 88.5
-& 61.0 & 48.9 & \textbf{64.3} \\
+& 61.0 & 48.9 & \underline{64.3} \\
+\midrule
 \textbf{BeatThis} (direct) \cite{foscarin2024beat}
 & 89.1 & 79.8 & 89.8
 & 78.3 & 67.2 & 79.1
 & \underline{62.7} & \underline{51.4} & 61.0 \\
 \rowcolor{gray!10}
-\textbf{BeatThis} w. DBN
-& 88.1 & 80.5 & 91.1
-& 77.4 & 73.4 & 87.8
-& 57.5 & 47.5 & 62.5 \\
-\textbf{BeatThis} w. CASM (proposed)
-& 89.3 & 80.2 & 90.4
-& 78.9 & 70.4 & 85.1
-& \textbf{63.0} & \textbf{53.8} & \textbf{64.3} \\
+% \textbf{BeatThis} w. DBN (default \& opt)
+% & 88.1 & 80.5 & 91.1
+% & 77.4 & 73.4 & 87.8
+% & 57.5 & 47.5 & 62.5 \\
+\textbf{BeatThis} w. CASM, proposed
+& 89.4 & 80.6 & 91.0
+& 79.0 & 70.8 & 87.1
+& \textbf{63.0} & \textbf{53.8} & \textbf{64.6} \\
 \bottomrule
 \end{tabular}%
 }

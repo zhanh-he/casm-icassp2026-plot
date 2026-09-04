@@ -1,0 +1,273 @@
+{
+  "allow_repeated_pieces_across_partitions": false,
+  "created_at": "2026-08-31T22:30:19.250752+10:00",
+  "dataset_counts": {
+    "smc": 27
+  },
+  "directories": {
+    "fold0": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val",
+    "fold1": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold1_val",
+    "fold2": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold2_val",
+    "fold3": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold3_val",
+    "fold4": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold4_val",
+    "fold5": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold5_val",
+    "fold6": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold6_val",
+    "fold7": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold7_val"
+  },
+  "entries": [
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685362509600,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_005__track.npy.npz",
+      "piece": "smc/smc_005/track.npy",
+      "size": 18117
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685377557900,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_011__track.npy.npz",
+      "piece": "smc/smc_011/track.npy",
+      "size": 18349
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685393372800,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_022__track.npy.npz",
+      "piece": "smc/smc_022/track.npy",
+      "size": 18237
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685408997400,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_042__track.npy.npz",
+      "piece": "smc/smc_042/track.npy",
+      "size": 18149
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685424200900,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_044__track.npy.npz",
+      "piece": "smc/smc_044/track.npy",
+      "size": 18293
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685439276000,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_054__track.npy.npz",
+      "piece": "smc/smc_054/track.npy",
+      "size": 18181
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685454384900,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_055__track.npy.npz",
+      "piece": "smc/smc_055/track.npy",
+      "size": 18261
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685469484300,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_067__track.npy.npz",
+      "piece": "smc/smc_067/track.npy",
+      "size": 18357
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685484653600,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_088__track.npy.npz",
+      "piece": "smc/smc_088/track.npy",
+      "size": 18213
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685501691900,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_099__track.npy.npz",
+      "piece": "smc/smc_099/track.npy",
+      "size": 18205
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685516874600,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_103__track.npy.npz",
+      "piece": "smc/smc_103/track.npy",
+      "size": 18397
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685532001100,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_135__track.npy.npz",
+      "piece": "smc/smc_135/track.npy",
+      "size": 18309
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685547923500,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_150__track.npy.npz",
+      "piece": "smc/smc_150/track.npy",
+      "size": 18477
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685563008300,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_168__track.npy.npz",
+      "piece": "smc/smc_168/track.npy",
+      "size": 18077
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685578126000,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_171__track.npy.npz",
+      "piece": "smc/smc_171/track.npy",
+      "size": 18173
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685593257200,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_179__track.npy.npz",
+      "piece": "smc/smc_179/track.npy",
+      "size": 18101
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685609069900,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_188__track.npy.npz",
+      "piece": "smc/smc_188/track.npy",
+      "size": 18157
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685624187000,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_190__track.npy.npz",
+      "piece": "smc/smc_190/track.npy",
+      "size": 18181
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685640593800,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_197__track.npy.npz",
+      "piece": "smc/smc_197/track.npy",
+      "size": 18093
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685655995800,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_208__track.npy.npz",
+      "piece": "smc/smc_208/track.npy",
+      "size": 18181
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685671099000,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_212__track.npy.npz",
+      "piece": "smc/smc_212/track.npy",
+      "size": 18109
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685686236500,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_237__track.npy.npz",
+      "piece": "smc/smc_237/track.npy",
+      "size": 18237
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685702383200,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_241__track.npy.npz",
+      "piece": "smc/smc_241/track.npy",
+      "size": 18285
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685717626400,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_260__track.npy.npz",
+      "piece": "smc/smc_260/track.npy",
+      "size": 18389
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685733069700,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_274__track.npy.npz",
+      "piece": "smc/smc_274/track.npy",
+      "size": 18645
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685749344300,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_286__track.npy.npz",
+      "piece": "smc/smc_286/track.npy",
+      "size": 18373
+    },
+    {
+      "dataset": "smc",
+      "has_downbeats": false,
+      "mtime_ns": 1785473685765294300,
+      "partition": "fold0",
+      "path": "/media/mengh/SharedData/zhanh/auto_structbeat/caches/8fold/beat_this_fold0_val/smc__smc_289__track.npy.npz",
+      "piece": "smc/smc_289/track.npy",
+      "size": 18429
+    }
+  ],
+  "fingerprint": "f885649ccb00bcda5b8e03ece325f42c6b9f47ece90a8ac1e2989f36539cff3b",
+  "full_piece_count_before_mock": 4556,
+  "mock": false,
+  "partition_counts": {
+    "fold0": 27
+  },
+  "piece_count": 27,
+  "subset_dataset": "smc",
+  "subset_partitions": [
+    "fold0"
+  ]
+}

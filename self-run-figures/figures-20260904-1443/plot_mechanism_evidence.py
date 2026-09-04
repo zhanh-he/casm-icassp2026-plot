@@ -504,9 +504,17 @@ def figure_operating_points(data: Path, figures: Path) -> None:
 
 
 def figure_calibration_scale(data: Path, figures: Path) -> None:
-    table = pd.read_csv(data / "calibration_fixed_panel.csv")
-    selected = table[table.tuning_size.isin([1, 2, 4, 7])].copy()
-    selected["scale"] = selected.tuning_size.astype(int).astype(str) + "F"
+    casm_table = pd.read_csv(data / "calibration_fixed_panel.csv")
+    dbn_table = pd.read_csv(data / "dbn_calibration_fixed_panel.csv")
+    casm = casm_table[casm_table.tuning_size.isin([1, 2, 4, 7])].copy()
+    dbn = dbn_table[dbn_table.tuning_size.isin([1, 2, 4, 7])].copy()
+    for frame in (casm, dbn):
+        frame["scale"] = frame.tuning_size.astype(int).astype(str) + "F"
+    comparison_keys = ["label", "family", "tuning_size", "tuning_folds"]
+    if not casm[comparison_keys].reset_index(drop=True).equals(
+        dbn[comparison_keys].reset_index(drop=True)
+    ):
+        raise RuntimeError("CASM and DBN calibration rows do not use identical fold combinations")
     order = ["1F", "2F", "4F", "7F"]
     metric_specs = [
         ("beat_fmeasure", "Beat F1"),
@@ -514,48 +522,78 @@ def figure_calibration_scale(data: Path, figures: Path) -> None:
         ("beat_amlt", "AMLt"),
     ]
     panels = [("smc", "SMC fold0"), ("gtzan", "GTZAN final0")]
-    direct = table[table.family == "direct"].iloc[0]
-    fig, axes = plt.subplots(2, 3, figsize=(7.15, 4.05), sharex=True)
-    fig.subplots_adjust(wspace=0.24, hspace=0.34, top=0.82, bottom=0.16)
+    direct = casm_table[casm_table.family == "direct"].iloc[0]
+    dbn_direct = dbn_table[dbn_table.family == "direct"].iloc[0]
+    direct_columns = [f"{prefix}_{metric}" for prefix, _ in panels for metric, _ in metric_specs]
+    if not np.allclose(
+        direct[direct_columns].to_numpy(float),
+        dbn_direct[direct_columns].to_numpy(float),
+        rtol=0.0,
+        atol=1e-12,
+    ):
+        raise RuntimeError("CASM and DBN experiments do not share the same Direct fixed panels")
+    methods = [
+        ("CASM", casm, -0.17, BLUE, BLUE_LIGHT, "o"),
+        ("DBN", dbn, 0.17, ORANGE, ORANGE, "^"),
+    ]
+    fig, axes = plt.subplots(2, 3, figsize=(7.15, 4.12), sharex=True)
+    fig.subplots_adjust(wspace=0.24, hspace=0.34, top=0.78, bottom=0.17)
     rng = np.random.default_rng(20260904)
     for row_index, (prefix, panel_label) in enumerate(panels):
         for column_index, (metric, metric_label) in enumerate(metric_specs):
             ax = axes[row_index, column_index]
             column = f"{prefix}_{metric}"
             direct_value = 100 * float(direct[column])
-            ax.axhline(direct_value, color=GREY, lw=0.9, ls="--", label="Direct")
-            values_by_scale = []
-            for position, scale in enumerate(order):
-                values = 100 * selected.loc[selected.scale == scale, column].dropna().to_numpy()
-                values_by_scale.append(values)
-                jitter = rng.uniform(-0.12, 0.12, size=len(values))
-                ax.scatter(np.full(len(values), position) + jitter, values, s=9, facecolor="white", edgecolor=BLUE, linewidth=0.55, alpha=0.9)
-            ax.boxplot(
-                values_by_scale,
-                positions=np.arange(len(order)),
-                widths=0.5,
-                showfliers=False,
-                patch_artist=True,
-                medianprops={"color": CHARCOAL, "lw": 0.9},
-                whiskerprops={"color": GREY, "lw": 0.6},
-                capprops={"color": GREY, "lw": 0.6},
-                boxprops={"facecolor": BLUE_LIGHT, "edgecolor": BLUE, "alpha": 0.35, "lw": 0.7},
-            )
+            ax.axhline(direct_value, color=GREY, lw=0.9, ls="--")
+            for method_label, frame, offset, color, fill, marker in methods:
+                values_by_scale = []
+                positions = np.arange(len(order), dtype=float) + offset
+                for position, scale in zip(positions, order):
+                    values = 100 * frame.loc[frame.scale == scale, column].dropna().to_numpy()
+                    values_by_scale.append(values)
+                    jitter = rng.uniform(-0.055, 0.055, size=len(values))
+                    ax.scatter(
+                        np.full(len(values), position) + jitter,
+                        values,
+                        s=10 if marker == "o" else 12,
+                        marker=marker,
+                        facecolor="white",
+                        edgecolor=color,
+                        linewidth=0.55,
+                        alpha=0.9,
+                        zorder=3,
+                    )
+                ax.boxplot(
+                    values_by_scale,
+                    positions=positions,
+                    widths=0.28,
+                    showfliers=False,
+                    patch_artist=True,
+                    manage_ticks=False,
+                    medianprops={"color": CHARCOAL, "lw": 0.85},
+                    whiskerprops={"color": color, "lw": 0.6},
+                    capprops={"color": color, "lw": 0.6},
+                    boxprops={"facecolor": fill, "edgecolor": color, "alpha": 0.28 if method_label == "CASM" else 0.17, "lw": 0.7},
+                )
             ax.set_xticks(np.arange(len(order)), order)
             if row_index == 0:
                 ax.set_title(f"({chr(97+column_index)}) {metric_label}", loc="left", fontweight="bold")
             if column_index == 0:
                 ax.set_ylabel(f"{panel_label}\nScore (%)")
             ax.grid(axis="y")
-            if row_index == 0 and column_index == 2:
-                ax.legend(frameon=False, loc="best")
-    fig.suptitle("Calibration-fold scale and sensitivity to fold composition", x=0.02, ha="left", fontweight="bold")
+    legend_handles = [
+        Line2D([0], [0], marker="o", color=BLUE, markerfacecolor="white", markersize=4.2, lw=1.2, label="CASM"),
+        Line2D([0], [0], marker="^", color=ORANGE, markerfacecolor="white", markersize=4.5, lw=1.2, label="DBN"),
+        Line2D([0], [0], color=GREY, lw=0.9, ls="--", label="Direct"),
+    ]
+    fig.legend(handles=legend_handles, frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 0.895))
+    fig.suptitle("Calibration-fold scale: CASM and DBN", x=0.02, ha="left", fontweight="bold")
     fig.text(
         0.02,
         0.02,
-        "Each point is one selected configuration: 7 one-fold, 21 two-fold, 35 four-fold, and one seven-fold result. "
-        "All configurations are evaluated on the same fixed panels; distributions are descriptive.",
-        fontsize=6.4,
+        "Focused, panel-specific y-axes. Each method is auto-selected on the same 7/21/35/1 subsets, then frozen on identical panels. "
+        "DBN grid: 52 global tempo/transition settings; distributions are descriptive.",
+        fontsize=6.2,
         color=GREY,
     )
     save_all(fig, figures, "fig05_calibration_scale")

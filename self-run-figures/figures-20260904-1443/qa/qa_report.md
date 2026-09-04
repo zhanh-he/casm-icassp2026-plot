@@ -1,6 +1,6 @@
 # CASM mechanism-evidence QA
 
-**Status: PASS (188/188 checks passed).**
+**Status: PASS (196/196 checks passed).**
 
 ## Checks
 
@@ -174,6 +174,14 @@
 - **PASS — final0 Direct crosscheck:** GTZAN-final0 Direct metrics agree with the independent mechanism panel; max error=1.332e-15
 - **PASS — final0 evaluation provenance:** archived lock, protocol, output hashes, and upstream QA identify Beat This final0 and a pre-evaluation selection freeze
 - **PASS — independent final0 result crosscheck:** 4 overlapping configurations; maximum metric discrepancy=0.000e+00
+- **PASS — matched DBN calibration grid:** rows=65; selected family counts={'exhaustive_4f': 35, 'exhaustive_2f': 21, 'exhaustive_1f': 7, 'exhaustive_7f': 1}
+- **PASS — CASM/DBN matched fold combinations:** both decoders use the same 7 one-fold, 21 two-fold, 35 four-fold, and one seven-fold subsets
+- **PASS — DBN selection isolation:** all DBN selections use only SMC folds 1--7 with the stated subset size
+- **PASS — DBN fixed-panel coverage and metric bounds:** every DBN choice is evaluated on SMC fold0 (27 tracks) and Beat This GTZAN final0 (993 tracks)
+- **PASS — CASM/DBN identical Direct panels:** maximum Direct metric discrepancy=0.000e+00
+- **PASS — DBN calibration summary recomputation:** max mean error=2.220e-16; max population-SD error=9.714e-17
+- **PASS — DBN selection-audit completeness:** 3328 rows; 52 candidates; one choice for each of 64 subsets
+- **PASS — DBN calibration provenance:** fresh DBN grid, selection audit, lock, fixed-panel protocol, hashes, and upstream QA agree
 - **PASS — mechanism summary coverage:** 2637 unique panel/piece rows; expected 2637
 - **PASS — bt_gtzan_seed0: mechanism piece coverage:** summary=993, candidates=993, edges=993
 - **PASS — bt_smc_oof: mechanism piece coverage:** summary=217, candidates=217, edges=217

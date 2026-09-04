@@ -20,6 +20,7 @@ PRIMARY_METRICS = [
     "downbeat_cmlt",
     "downbeat_amlt",
 ]
+BEAT_METRICS = PRIMARY_METRICS[:3]
 
 
 def sha256(path: Path) -> str:
@@ -58,11 +59,20 @@ def main() -> None:
     bootstrap = pd.read_csv(data_dir / "paired_bootstrap.csv")
     calibration = pd.read_csv(data_dir / "calibration_fixed_panel.csv")
     calibration_summary = pd.read_csv(data_dir / "calibration_summary.csv")
+    dbn_calibration = pd.read_csv(data_dir / "dbn_calibration_fixed_panel.csv")
+    dbn_calibration_summary = pd.read_csv(data_dir / "dbn_calibration_summary.csv")
     final0_provenance = data_dir / "final0_experiment_provenance"
     final0_qa = json.loads((final0_provenance / "QA_REPORT.json").read_text())
     final0_protocol = json.loads((final0_provenance / "PREREGISTERED_PROTOCOL.json").read_text())
     final0_lock = json.loads((final0_provenance / "LOCKED_CONFIGURATIONS.json").read_text())
     final0_crosscheck = pd.read_csv(final0_provenance / "independent_final0_crosscheck.csv")
+    dbn_provenance = data_dir / "dbn_calibration_experiment"
+    dbn_qa = json.loads((dbn_provenance / "qa_report.json").read_text())
+    dbn_grid = json.loads((dbn_provenance / "CANDIDATE_GRID.json").read_text())
+    dbn_preregistered = json.loads((dbn_provenance / "PREREGISTERED_PROTOCOL.json").read_text())
+    dbn_fixed_protocol = json.loads((dbn_provenance / "FIXED_EVALUATION_PROTOCOL.json").read_text())
+    dbn_lock = json.loads((dbn_provenance / "LOCKED_CONFIGURATIONS.json").read_text())
+    dbn_selection_audit = pd.read_csv(dbn_provenance / "selection_audit.csv")
 
     check(
         "complete marker",
@@ -268,6 +278,129 @@ def main() -> None:
         f"{len(crosscheck_hashes)} overlapping configurations; maximum metric discrepancy={crosscheck_error:.3e}",
     )
 
+    dbn_selected = dbn_calibration[dbn_calibration.family != "direct"].copy()
+    dbn_observed_family_counts = dbn_selected.family.value_counts().to_dict()
+    check(
+        "matched DBN calibration grid",
+        len(dbn_calibration) == 65
+        and len(dbn_calibration[dbn_calibration.family == "direct"]) == 1
+        and dbn_observed_family_counts == expected_family_counts,
+        f"rows={len(dbn_calibration)}; selected family counts={dbn_observed_family_counts}",
+    )
+    comparison_keys = ["label", "family", "tuning_size", "tuning_folds"]
+    casm_keys = calibration_selected[comparison_keys].fillna("").astype(str).reset_index(drop=True)
+    dbn_keys = dbn_selected[comparison_keys].fillna("").astype(str).reset_index(drop=True)
+    check(
+        "CASM/DBN matched fold combinations",
+        casm_keys.equals(dbn_keys),
+        "both decoders use the same 7 one-fold, 21 two-fold, 35 four-fold, and one seven-fold subsets",
+    )
+    dbn_folds_valid = True
+    for row in dbn_selected.itertuples(index=False):
+        folds = [int(value) for value in str(row.tuning_folds).split(",")]
+        dbn_folds_valid = (
+            dbn_folds_valid
+            and len(folds) == int(row.tuning_size)
+            and 0 not in folds
+            and set(folds) <= set(range(1, 8))
+        )
+    check(
+        "DBN selection isolation",
+        dbn_folds_valid,
+        "all DBN selections use only SMC folds 1--7 with the stated subset size",
+    )
+    dbn_metric_columns = [
+        column
+        for column in dbn_calibration.columns
+        if column.startswith(("smc_beat_", "gtzan_beat_", "gtzan_downbeat_"))
+    ]
+    dbn_values = dbn_calibration[dbn_metric_columns].to_numpy(float)
+    check(
+        "DBN fixed-panel coverage and metric bounds",
+        (dbn_calibration.smc_piece_count == 27).all()
+        and (dbn_calibration.gtzan_piece_count == 993).all()
+        and np.isfinite(dbn_values).all()
+        and (dbn_values >= 0.0).all()
+        and (dbn_values <= 1.0).all(),
+        "every DBN choice is evaluated on SMC fold0 (27 tracks) and Beat This GTZAN final0 (993 tracks)",
+    )
+    dbn_direct = dbn_calibration[dbn_calibration.family == "direct"].iloc[0]
+    matched_direct_error = max(
+        abs(float(dbn_direct[f"{panel}_{metric}"]) - float(calibration_direct[f"{panel}_{metric}"]))
+        for panel in ("smc", "gtzan")
+        for metric in (BEAT_METRICS if panel == "smc" else PRIMARY_METRICS)
+    )
+    check(
+        "CASM/DBN identical Direct panels",
+        matched_direct_error < 1e-12,
+        f"maximum Direct metric discrepancy={matched_direct_error:.3e}",
+    )
+    dbn_summary_mean_error = 0.0
+    dbn_summary_sd_error = 0.0
+    dbn_summary_singleton_sd_ok = True
+    for row in dbn_calibration_summary.itertuples(index=False):
+        group = dbn_selected[dbn_selected.family == row.family]
+        values = group[f"{panel_prefix[row.panel]}_{row.metric}"].to_numpy(float)
+        dbn_summary_mean_error = max(
+            dbn_summary_mean_error, abs(float(np.mean(values)) - float(row.mean))
+        )
+        if len(values) == 1:
+            dbn_summary_singleton_sd_ok = dbn_summary_singleton_sd_ok and pd.isna(row.population_sd)
+        else:
+            dbn_summary_sd_error = max(
+                dbn_summary_sd_error,
+                abs(float(np.std(values, ddof=0)) - float(row.population_sd)),
+            )
+    check(
+        "DBN calibration summary recomputation",
+        set(dbn_calibration_summary.panel) == {"smc_fold0", "gtzan_final0"}
+        and dbn_summary_mean_error < 1e-12
+        and dbn_summary_sd_error < 1e-12
+        and dbn_summary_singleton_sd_ok,
+        f"max mean error={dbn_summary_mean_error:.3e}; max population-SD error={dbn_summary_sd_error:.3e}",
+    )
+    selected_flags = dbn_selection_audit.selected.astype(str).str.lower().eq("true")
+    selected_per_combination = (
+        dbn_selection_audit.assign(_selected=selected_flags)
+        .groupby("label")["_selected"]
+        .sum()
+    )
+    check(
+        "DBN selection-audit completeness",
+        len(dbn_selection_audit) == 64 * 52
+        and dbn_selection_audit.parameter_hash.nunique() == 52
+        and len(selected_per_combination) == 64
+        and (selected_per_combination == 1).all(),
+        f"{len(dbn_selection_audit)} rows; {dbn_selection_audit.parameter_hash.nunique()} candidates; one choice for each of {len(selected_per_combination)} subsets",
+    )
+    dbn_hashes_match = (
+        sha256(data_dir / "dbn_calibration_fixed_panel.csv")
+        == dbn_qa["output_sha256"]["dbn_calibration_fixed_panel.csv"]
+        and sha256(data_dir / "dbn_calibration_summary.csv")
+        == dbn_qa["output_sha256"]["dbn_calibration_summary.csv"]
+        and sha256(dbn_provenance / "CANDIDATE_GRID.json")
+        == dbn_qa["output_sha256"]["CANDIDATE_GRID.json"]
+        and sha256(dbn_provenance / "LOCKED_CONFIGURATIONS.json")
+        == dbn_qa["output_sha256"]["LOCKED_CONFIGURATIONS.json"]
+    )
+    check(
+        "DBN calibration provenance",
+        dbn_qa["status"] == "pass"
+        and all(item["passed"] for item in dbn_qa["checks"])
+        and dbn_hashes_match
+        and int(dbn_grid["candidate_count"]) == 52
+        and int(dbn_preregistered["candidate_count"]) == 52
+        and dbn_preregistered["development_fold_universe"] == list(range(1, 8))
+        and int(dbn_preregistered["permanently_held_out_smc_fold"]) == 0
+        and dbn_fixed_protocol["gtzan_checkpoint"] == "Beat This final0"
+        and int(dbn_fixed_protocol["gtzan_final0_piece_count"]) == 993
+        and bool(dbn_lock["locked_before_fixed_panel_inventory"])
+        and int(dbn_lock["combination_count"]) == 64
+        and int(dbn_lock["unique_configuration_count"])
+        == dbn_selected.selected_candidate_hash.nunique(),
+        "fresh DBN grid, selection audit, lock, fixed-panel protocol, hashes, and upstream QA agree",
+    )
+
     expected_mechanism_count = sum(int(v["piece_count"]) for v in expected_panels.values())
     check(
         "mechanism summary coverage",
@@ -460,7 +593,14 @@ def main() -> None:
             "representatives.json",
             "calibration_fixed_panel.csv",
             "calibration_summary.csv",
+            "dbn_calibration_fixed_panel.csv",
+            "dbn_calibration_summary.csv",
             "final0_experiment_provenance/independent_final0_crosscheck.csv",
+            "dbn_calibration_experiment/CANDIDATE_GRID.json",
+            "dbn_calibration_experiment/PREREGISTERED_PROTOCOL.json",
+            "dbn_calibration_experiment/FIXED_EVALUATION_PROTOCOL.json",
+            "dbn_calibration_experiment/LOCKED_CONFIGURATIONS.json",
+            "dbn_calibration_experiment/selection_audit.csv",
         ]
     }
     report = {

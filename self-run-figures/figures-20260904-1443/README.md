@@ -53,8 +53,10 @@ PYTHON=/home/mengh/miniconda3/envs/auto-structbeat/bin/python \
 - Main function: `figure_calibration_scale()` in
   `plot_mechanism_evidence.py`.
 - Shared font, line, grid, and export settings: `setup_style()`.
-- Source rows: `data/calibration_fixed_panel.csv`.
-- Aggregated audit table: `data/calibration_summary.csv`.
+- CASM source rows: `data/calibration_fixed_panel.csv`.
+- Matched DBN source rows: `data/dbn_calibration_fixed_panel.csv`.
+- Aggregated audit tables: `data/calibration_summary.csv` and
+  `data/dbn_calibration_summary.csv`.
 - Reference output: `reference_figures/fig05_calibration_scale.*`.
 
 The jitter and bootstrap random generators use the fixed seed `20260904`, and
@@ -73,10 +75,12 @@ the environment is pinned in `requirements.txt`.
 ├── run_mechanism_ablation.py       # upstream experiment runner
 ├── evaluate_locked_combinations_final0.py
 │                                     # locked GTZAN-final0 evaluation runner
+├── run_dbn_calibration_scale.py    # matched 1F/2F/4F/7F DBN experiment
 ├── chart_contracts.md
 ├── mechanism_evidence_report.md
 ├── data/                           # exact figure inputs + raw audit exports
-│   └── final0_experiment_provenance/ # lock, protocol, inventory, QA, outputs
+│   ├── final0_experiment_provenance/ # CASM lock, protocol, inventory, QA
+│   └── dbn_calibration_experiment/   # DBN grid, lock, audit, QA, outputs
 ├── reference_figures/              # shipped 2026-09-04 render
 ├── qa_reference/                   # QA result for the shipped inputs
 ├── figures/                        # newly regenerated figures
@@ -131,15 +135,56 @@ python evaluate_locked_combinations_final0.py \
 The output directory must be new: the runner refuses to overwrite a completed
 experiment.
 
+### E. Re-run the matched DBN calibration-scale experiment
+
+`run_dbn_calibration_scale.py` performs a fresh, leakage-controlled DBN
+comparison for Figure 5. It uses the identical Beat This SMC fold universe and
+the identical 7/21/35/1 subsets as CASM. For each subset, it automatically
+selects among 52 global DBN timing configurations using a 0.0005 absolute Beat
+F1 equivalence band followed by CMLt and AMLt tie-breaks. All 64 choices are
+written to `LOCKED_CONFIGURATIONS.json` before SMC fold0 or GTZAN final0 is
+inventoried or scored.
+
+The matched properties are the frontend, SMC development folds, fold subsets,
+primary metric and equivalence band, fixed evaluation panels, macro-piece
+aggregation, and lock order. The raw search-space sizes are deliberately not
+claimed to be equal: CASM and DBN expose different parameters. The DBN grid
+varies its three main global timing controls (`min_bpm`, `max_bpm`, and
+`transition_lambda`) while retaining the documented observation and meter
+defaults. Figure 5 therefore compares the two stated automatic-selection
+protocols; it is not an exhaustive theorem over every possible DBN grid.
+
+The exact command used for the archived run is:
+
+```bash
+python run_dbn_calibration_scale.py \
+  --project-root /media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot \
+  --sealed-driver /media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/run_driver/run_casm_ranked_protocol.py \
+  --source-oof-inventory /media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/protocol/input_inventory.json \
+  --gtzan-final0-cache /media/mengh/SharedData/zhanh/auto_structbeat/caches/pilot/beat_this_final0_gtzan \
+  --casm-fixed-panel data/calibration_fixed_panel.csv \
+  --output /media/mengh/SharedData/zhanh/auto_structbeat/runs/FRESH_OUTPUT_DIRECTORY \
+  --workers 12 --trim-seconds 5 --verify-result-hashes
+```
+
+The compact upstream evidence is archived under
+`data/dbn_calibration_experiment/`: candidate manifest, preregistered protocol,
+development and fixed-panel inventories, all 3,328 candidate/subset selection
+rows, the pre-evaluation lock, output tables, hashes, and QA. The bulky
+per-candidate decode cache is intentionally omitted; the command above
+recreates it from the recorded activation caches.
+
 ## Validation and provenance
 
 After every render, `validate_mechanism_evidence.py` checks that all methods use
 identical piece panels, reconstructs aggregate metrics from raw rows, verifies
 the confidence-to-duration-cost algebra, confirms CASM events remain on
 retained maxima, checks the paired-bootstrap metadata, and audits the Figure 5
-final0 lock, panel size, summaries, hashes, and checkpoint identity. See
-`qa_reference/qa_report.md` for the reference run, which passes **188/188
-checks**.
+final0 lock, panel size, summaries, hashes, and checkpoint identity. It also
+checks that CASM and DBN use identical fold combinations and Direct panels,
+reconstructs the DBN summaries, and verifies the DBN grid, selection audit,
+lock, output hashes, and checkpoint. See `qa_reference/qa_report.md` for the
+reference run, which passes **196/196 checks**.
 
 The final0 evaluation was also cross-checked against an older, independently
 run final0 experiment for the four overlapping configurations; every reported

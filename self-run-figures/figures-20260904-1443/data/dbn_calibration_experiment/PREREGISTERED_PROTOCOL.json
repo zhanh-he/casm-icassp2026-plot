@@ -1,0 +1,57 @@
+{
+  "aggregation": "unweighted macro mean over pieces",
+  "candidate_count": 52,
+  "candidate_grid_sha256": "a6817b5563c33c28a0bcfac2a157cf95d8b98816b1fd7f21f10a18ce7a1db27a",
+  "code": {
+    "files": {
+      "decoders": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/decoders.py",
+        "sha256": "f66e7dfb09b208882749fe6d212d8363b28b7a2da397b4ba297b93df1825eaed"
+      },
+      "evaluation": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/structbeat/evaluation.py",
+        "sha256": "a47a422ba7c70092203d9fea21b3e2ae64d01b5bcefb64c5a4ef1b8b22230962"
+      },
+      "experiment_driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260905_dbn_calibration_scale_final0_v1/code/run_dbn_calibration_scale.py",
+        "sha256": "b15802dc56d6d292689bd56a8a28f0ca11643dea08adb05948c30a8e66212ae3"
+      },
+      "sealed_driver": {
+        "path": "/media/mengh/SharedData/zhanh/auto_structbeat/runs/20260831_casm_ranked_frozen_v1/code_snapshot/run_driver/run_casm_ranked_protocol.py",
+        "sha256": "2f7d607dadd69292db11fe48567830290dff9b7c3bfe248d811bd2db64a99550"
+      }
+    },
+    "host": "mengh-8625",
+    "python": "3.11.9 | packaged by conda-forge | (main, Apr 19 2024, 18:36:13) [GCC 12.3.0]"
+  },
+  "combination_counts": {
+    "1f": 7,
+    "2f": 21,
+    "4f": 35,
+    "7f": 1
+  },
+  "created_at": "2026-09-05T03:15:45.905954+10:00",
+  "development_fold_universe": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "f1_equivalence_absolute_0_to_1": 0.0005,
+  "fixed_panels_hidden_until_lock": [
+    "SMC fold0",
+    "Beat This GTZAN final0"
+  ],
+  "front_end": "Beat This eight-fold OOF activations",
+  "permanently_held_out_smc_fold": 0,
+  "protocol_hash": "2314a47dfef1c4c485a7185d36f1fec6975f537be3bb13cd1a5ad0677d00b3e6",
+  "question": "How does automatically selected DBN performance vary with SMC calibration-fold scale and composition?",
+  "schema": "structbeat.dbn.calibration-scale.v1",
+  "selection_piece_count": 190,
+  "selection_population": "SMC folds 1..7 only",
+  "selection_rule": "maximize SMC Beat F1; retain candidates within 0.0005 absolute; maximize CMLt; maximize AMLt; prefer default-nearer configuration then hash",
+  "trim_seconds": 5.0
+}

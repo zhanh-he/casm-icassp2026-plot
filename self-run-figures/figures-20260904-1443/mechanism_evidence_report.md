@@ -16,7 +16,7 @@ At the same time, the evidence rules out several overclaims. Real CASM edges mos
 - Ten decoders on identical cached activations: Direct, full CASM, fixed-precision local target, strength-only ambiguity, width-only ambiguity, one-endpoint context, CASM without safeguards, default DBN, DBN with CASM-matched 30--300 BPM support, and PLPDP.
 - Total output: 2,637 panel-track instances, 26,370 method-track metric rows, 321,617 retained candidates, and 147,000 decoded CASM edges.
 - Statistics: paired per-track differences and 5,000 paired bootstrap resamples with seed 20260904.
-- Integrity: 188/188 independent checks pass, covering exact panel matching, aggregate reconstruction, response-law closure, duration-cost closure, event anchoring to retained maxima, trace provenance, and the separately locked GTZAN-final0 calibration-scale evaluation.
+- Integrity: 196/196 independent checks pass, covering exact panel matching, aggregate reconstruction, response-law closure, duration-cost closure, event anchoring to retained maxima, trace provenance, and the separately locked CASM/DBN GTZAN-final0 calibration-scale evaluations.
 
 SMC has no downbeat annotations; its downbeat fields are intentionally undefined. The GTZAN seed0 and TCN final0 panels are mechanism panels, not substitutes for the paper's formal multi-seed/OOF estimates.
 
@@ -86,11 +86,17 @@ This is exactly the argument we need, stated carefully. A wider tempo range is n
 
 ### Figure 5: calibration-fold scale
 
-The exhaustive 1F/2F/4F distributions show that more calibration data generally reduces sensitivity to which folds were chosen. Four-fold calibration raises the SMC fixed-panel mean and narrows the spread relative to 1F and 2F. The corrected external panel uses the standard Beat This **final0** checkpoint on all 993 GTZAN tracks. Its Beat-F1 means are 89.251, 89.254, and 89.261 for 1F, 2F, and 4F, respectively, versus 89.215 for Direct. All 64 selections were fixed from SMC folds 1--7 before final0 was inspected. However, the single 7F configuration is not a distribution and is often numerically highest on SMC. Therefore, the defensible claim is not “4F is universally optimal.” It is:
+Figure 5 now places CASM beside a fresh DBN calibration experiment rather than an unmatched published or TCN-derived result. Both methods use the same Beat This frontend, the same 7/21/35/1 subsets of SMC folds 1--7, the same primary 0.0005 Beat-F1 equivalence band followed by CMLt and AMLt tie-breaks, the same macro-piece aggregation, and the same fixed SMC-fold0 and Beat This **GTZAN-final0** panels. For DBN, 52 preregistered global settings vary minimum tempo, maximum tempo, and transition strength. Its 64 choices reduce to 19 configurations and are locked before either fixed panel is inventoried or scored. Direct scores reproduce the CASM experiment exactly.
 
-> Four folds provide a practical compromise between calibration context, fold-composition stability, and the ability to assess selection variability; the one available 7F point cannot establish a general optimum.
+The main result is a difference in selection sensitivity, not a generic “more data is worse” story. Across SMC-fold0 selections, the 1F population standard deviations for CASM are 0.30/0.91/0.83 points in Beat F1/CMLt/AMLt; the corresponding DBN deviations are 1.72/6.82/7.34 points. At 4F they are 0.19/0.45/0.30 for CASM versus 1.62/6.47/5.85 for DBN. The same ordering holds on GTZAN final0: at 4F, DBN's standard deviations are 0.39/0.82/1.15 points, versus 0.01/0.06/0.05 for CASM. The figure therefore supplies direct empirical support for the claim that the frozen CASM policy is less dependent on which labelled folds happened to calibrate it under these stated search spaces.
 
-That wording is statistically safer and more interesting than “machine learning is not always better with more data,” which this plot by itself does not prove.
+The means expose a second, musically useful point. DBN's GTZAN transfer improves steadily from 1F to 7F, but its held-out SMC Beat F1 and CMLt do not: the 7F choice reaches 58.00 F1 and 44.16 CMLt on SMC fold0, while reaching 89.18 and 81.58 on GTZAN final0. A single global tempo/transition setting can therefore transfer differently across corpora even when selected automatically. CASM's tighter clustering is consistent with its design: fixed constants govern an activation-conditioned response rather than choosing one effective rigidity for every excerpt. This experiment supports that mechanism-level interpretation but does not by itself prove causality.
+
+The defensible conclusion is consequently:
+
+> Under matched calibration folds and fixed evaluation panels, CASM is markedly less sensitive than a 52-setting DBN global-timing sweep to fold composition. Increasing the calibration set does not guarantee monotonic held-out improvement for either decoder, and the single 7F point cannot establish a universal optimum.
+
+The caveat matters: the raw search spaces are not identical because the decoders expose different controls. This experiment covers the DBN's central global timing axes and should not be described as an exhaustive result over every possible observation model or meter inventory.
 
 ### Figure 6: correction gain versus regression risk
 

@@ -851,6 +851,46 @@
       "passed": true
     },
     {
+      "detail": "rows=65; selected family counts={'exhaustive_4f': 35, 'exhaustive_2f': 21, 'exhaustive_1f': 7, 'exhaustive_7f': 1}",
+      "name": "matched DBN calibration grid",
+      "passed": true
+    },
+    {
+      "detail": "both decoders use the same 7 one-fold, 21 two-fold, 35 four-fold, and one seven-fold subsets",
+      "name": "CASM/DBN matched fold combinations",
+      "passed": true
+    },
+    {
+      "detail": "all DBN selections use only SMC folds 1--7 with the stated subset size",
+      "name": "DBN selection isolation",
+      "passed": true
+    },
+    {
+      "detail": "every DBN choice is evaluated on SMC fold0 (27 tracks) and Beat This GTZAN final0 (993 tracks)",
+      "name": "DBN fixed-panel coverage and metric bounds",
+      "passed": true
+    },
+    {
+      "detail": "maximum Direct metric discrepancy=0.000e+00",
+      "name": "CASM/DBN identical Direct panels",
+      "passed": true
+    },
+    {
+      "detail": "max mean error=2.220e-16; max population-SD error=9.714e-17",
+      "name": "DBN calibration summary recomputation",
+      "passed": true
+    },
+    {
+      "detail": "3328 rows; 52 candidates; one choice for each of 64 subsets",
+      "name": "DBN selection-audit completeness",
+      "passed": true
+    },
+    {
+      "detail": "fresh DBN grid, selection audit, lock, fixed-panel protocol, hashes, and upstream QA agree",
+      "name": "DBN calibration provenance",
+      "passed": true
+    },
+    {
       "detail": "2637 unique panel/piece rows; expected 2637",
       "name": "mechanism summary coverage",
       "passed": true
@@ -941,8 +981,8 @@
       "passed": true
     }
   ],
-  "checks_passed": 188,
-  "checks_total": 188,
+  "checks_passed": 196,
+  "checks_total": 196,
   "empirical_operating_range": {
     "edge_coefficient_max": 15.473075739196124,
     "edge_coefficient_median": 0.9505074615935746,
@@ -960,6 +1000,13 @@
     "all_piece_metrics.csv.gz": "d1e43ace4248d14b4ebfab8d803b2dd89e8c297c2742d9577a7dc50e468fb252",
     "calibration_fixed_panel.csv": "906e8979fc6998a6fef2c3f214a43d153f9ac7fb586d1bb27e5d56b6e1cf6286",
     "calibration_summary.csv": "71bc9dbc4493ff8fad29a120f6e0bc41e8d26c0132b9cbbddd8298ea3c9c819e",
+    "dbn_calibration_experiment/CANDIDATE_GRID.json": "a6817b5563c33c28a0bcfac2a157cf95d8b98816b1fd7f21f10a18ce7a1db27a",
+    "dbn_calibration_experiment/FIXED_EVALUATION_PROTOCOL.json": "7b7d3373bfd97db6eb5e33b04d3949fc6fd5a72d8a1f1267063a90e667dfe900",
+    "dbn_calibration_experiment/LOCKED_CONFIGURATIONS.json": "f47435d443749a253b433d45ea05bd5c0ed1d802a339aa3e1f0616e7cb61c775",
+    "dbn_calibration_experiment/PREREGISTERED_PROTOCOL.json": "5357eafd8a60f8976c04f0f1aac254a7cc30636ba034b5637b64fc5cf8e8ed7f",
+    "dbn_calibration_experiment/selection_audit.csv": "529ce56282860f816fbeef1c0eb4157ba017403fa6dd5e3d9169822609fa1d24",
+    "dbn_calibration_fixed_panel.csv": "e1a8c442265c8df19219fa070000c0c91a2644a7a731574d38d548d470b6d152",
+    "dbn_calibration_summary.csv": "00928675be3231c1a09fc90f5f8f063a1d8f74eb199a3e5da8d8b014a9cb6836",
     "final0_experiment_provenance/independent_final0_crosscheck.csv": "bad658e83e88b8a4b7cf4305410538327015b51d2278fce5991274e1b2532c53",
     "mechanism_candidates.csv.gz": "01d494618b9d8be442c94b8a5fd072a530fb1ab7c565914ddcf9eff0fde59f9e",
     "mechanism_edges.csv.gz": "cb9d80f9016049a2c4a2ebd327fab6eacd387ba60a231bb1183117db89ef343f",

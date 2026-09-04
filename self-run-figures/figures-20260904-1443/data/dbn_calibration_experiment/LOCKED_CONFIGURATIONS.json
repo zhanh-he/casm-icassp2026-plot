@@ -1,0 +1,1680 @@
+{
+  "candidate_grid_sha256": "a6817b5563c33c28a0bcfac2a157cf95d8b98816b1fd7f21f10a18ce7a1db27a",
+  "combination_count": 64,
+  "created_at": "2026-09-05T03:18:10.311022+10:00",
+  "development_inventory_fingerprint": "d652bcebca816ce7828b506e7f26b3b3ae51905d4335f6eaab49df78a5ef5c41",
+  "family_counts": {
+    "exhaustive_1f": 7,
+    "exhaustive_2f": 21,
+    "exhaustive_4f": 35,
+    "exhaustive_7f": 1
+  },
+  "locked_before_fixed_panel_inventory": true,
+  "rows": [
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6364239619691028,
+        "beat_cmlt": 0.471641956152352,
+        "beat_fmeasure": 0.6081320248401105
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_1",
+      "selected_dev_cache_hash": "803b7add863012e211311c8f53e25a10a71374047f685b3b6225a5b2798ffe0e",
+      "selected_parameter_hash": "feeada37d3f29d221e6f9820fcd48cdc4a7b607e6cbda6ec398d6c11a2d40940",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "1",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5670714929990041,
+        "beat_cmlt": 0.47387802827144554,
+        "beat_fmeasure": 0.5750481204951554
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_2",
+      "selected_dev_cache_hash": "60ab57fab41f8b8680a3cdc813d75788006aea999babbb8e2e66505f3f64162a",
+      "selected_parameter_hash": "06155b3ad31c028a27cabbbb8ee064842019f8a022c434d9619b00e30734c83d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "2",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6543383359940195,
+        "beat_cmlt": 0.5656626928706002,
+        "beat_fmeasure": 0.6102290569183991
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_3",
+      "selected_dev_cache_hash": "cb3db138da9ac71d0051dd151ce7116942a6a15de411b373895e7334b41d42c3",
+      "selected_parameter_hash": "90ec7d59cc995f6e44dcfefe2b02de2a88ccebca83147ac34cb384ed295c4cbf",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "3",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6460848328196155,
+        "beat_cmlt": 0.5796702637080074,
+        "beat_fmeasure": 0.6535916626424181
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_4",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "4",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.46948303092423727,
+        "beat_cmlt": 0.4260447098315371,
+        "beat_fmeasure": 0.5962754756529856
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_5",
+      "selected_dev_cache_hash": "07e783ecbb2a754bbd287f8156db162265d12df50d5b25681f5a0adbdc0bdd45",
+      "selected_parameter_hash": "cbc632249ab01e1f8d92f9fe7fbd9d7260433a057c980a924352d3ba4809abc7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "5",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.7715345441421207,
+        "beat_cmlt": 0.6848459197864365,
+        "beat_fmeasure": 0.6814803528089958
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_6",
+      "selected_dev_cache_hash": "68dbaede71f5e0e7f2c0e7873707eda3a39fe4a67cbc98777547c215626de737",
+      "selected_parameter_hash": "433c6ac2157a2014f9519ac8dc09e55542947ebd8287b041f4d0d76ea2d326c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      },
+      "selection_piece_count": 27,
+      "tuning_folds": "6",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.563352148310194,
+        "beat_cmlt": 0.3969563070759547,
+        "beat_fmeasure": 0.5715628794968796
+      },
+      "family": "exhaustive_1f",
+      "label": "1f_7",
+      "selected_dev_cache_hash": "be9995f90b65b683b1ac224442008f401474dd83ad6e85844d5afbef17d9a0c9",
+      "selected_parameter_hash": "38859bc29424b925a3873d864121e46ee248ccf1ba7fe0ec78063f2e34c3b6e3",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 28,
+      "tuning_folds": "7",
+      "tuning_size": 1
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.533864327309512,
+        "beat_cmlt": 0.4466414689273976,
+        "beat_fmeasure": 0.587596796810259
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_2",
+      "selected_dev_cache_hash": "60ab57fab41f8b8680a3cdc813d75788006aea999babbb8e2e66505f3f64162a",
+      "selected_parameter_hash": "06155b3ad31c028a27cabbbb8ee064842019f8a022c434d9619b00e30734c83d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "1,2",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5899065543951165,
+        "beat_cmlt": 0.5007215663779169,
+        "beat_fmeasure": 0.6058685614285771
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_3",
+      "selected_dev_cache_hash": "c4b37000bc6788d41ad3f7eacdc661e33346651fa728d28aa76beb8d4e8f125c",
+      "selected_parameter_hash": "53b3189b54253656e8a8b924543921004f7628ea6e04529f0b94d259c4dd0937",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "1,3",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6320865381702797,
+        "beat_cmlt": 0.5194100924200727,
+        "beat_fmeasure": 0.6292001496898437
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_4",
+      "selected_dev_cache_hash": "d08a7b416f83c345b2cedbddfb2efdde7ca277fa78c6ec832d685a8668ce97ed",
+      "selected_parameter_hash": "8e3449838321d2026081f831d7785f6dea159361d6aa432a219fa173113c0a14",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "1,4",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.48537337160606847,
+        "beat_cmlt": 0.42440323161960714,
+        "beat_fmeasure": 0.5969023350355364
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_5",
+      "selected_dev_cache_hash": "252191025d78fbfa234b7116fbbcfe75311ab66b22145ea64d6b5b2080bcf576",
+      "selected_parameter_hash": "f97c133c00a817925dfc461e65fafda121871565f5bc8de77f7770cb05d2bf2d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "1,5",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6419217216389141,
+        "beat_cmlt": 0.5603631740707633,
+        "beat_fmeasure": 0.6339036255451449
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_6",
+      "selected_dev_cache_hash": "9c79af33edaeec620854c15d496c1f20bedf5028b679a12d3a49ba74b40d560f",
+      "selected_parameter_hash": "fb430c710395467c6d7f3757adc35e0ed327a2f9b9e9cabc74696d7a37b417ef",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "1,6",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5718625424484084,
+        "beat_cmlt": 0.42166229777884806,
+        "beat_fmeasure": 0.5887542987974649
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_1_7",
+      "selected_dev_cache_hash": "be9995f90b65b683b1ac224442008f401474dd83ad6e85844d5afbef17d9a0c9",
+      "selected_parameter_hash": "38859bc29424b925a3873d864121e46ee248ccf1ba7fe0ec78063f2e34c3b6e3",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "1,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6118033447375621,
+        "beat_cmlt": 0.5169951115281681,
+        "beat_fmeasure": 0.5862634078751405
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_2_3",
+      "selected_dev_cache_hash": "c4b37000bc6788d41ad3f7eacdc661e33346651fa728d28aa76beb8d4e8f125c",
+      "selected_parameter_hash": "53b3189b54253656e8a8b924543921004f7628ea6e04529f0b94d259c4dd0937",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "2,3",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6392738740212193,
+        "beat_cmlt": 0.5261876976524573,
+        "beat_fmeasure": 0.608323430288152
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_2_4",
+      "selected_dev_cache_hash": "d08a7b416f83c345b2cedbddfb2efdde7ca277fa78c6ec832d685a8668ce97ed",
+      "selected_parameter_hash": "8e3449838321d2026081f831d7785f6dea159361d6aa432a219fa173113c0a14",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "2,4",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5137574676177716,
+        "beat_cmlt": 0.4465370319172692,
+        "beat_fmeasure": 0.5843391532029055
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_2_5",
+      "selected_dev_cache_hash": "07e783ecbb2a754bbd287f8156db162265d12df50d5b25681f5a0adbdc0bdd45",
+      "selected_parameter_hash": "cbc632249ab01e1f8d92f9fe7fbd9d7260433a057c980a924352d3ba4809abc7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "2,5",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.7242958513749227,
+        "beat_cmlt": 0.5966848291061687,
+        "beat_fmeasure": 0.6194172528044851
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_2_6",
+      "selected_dev_cache_hash": "5e237a7c761a150e9f2dc9e15d6945ff203245463703b521b553c0ae072765e7",
+      "selected_parameter_hash": "7d4c41e27faf3f46de739edbb9d5c98476bb233945d4076fdc6c1e15573ebf88",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 100.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "2,6",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5964975823876528,
+        "beat_cmlt": 0.43339453526096733,
+        "beat_fmeasure": 0.5661336424005465
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_2_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "2,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6572123679039836,
+        "beat_cmlt": 0.5548664876569648,
+        "beat_fmeasure": 0.625794455001923
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_3_4",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "3,4",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6149272922855054,
+        "beat_cmlt": 0.5159958781523113,
+        "beat_fmeasure": 0.5962466313948864
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_3_5",
+      "selected_dev_cache_hash": "a702a52dfb07de5f0976b64878c730acacb520771b87090a395b3b44a96479d6",
+      "selected_parameter_hash": "a177cdfaeb24403fca3656b2eba86826bfdd1e1b2c681a4e5b75f576158d64dc",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "3,5",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6987342124741089,
+        "beat_cmlt": 0.620852730514189,
+        "beat_fmeasure": 0.6410156033850813
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_3_6",
+      "selected_dev_cache_hash": "cb3db138da9ac71d0051dd151ce7116942a6a15de411b373895e7334b41d42c3",
+      "selected_parameter_hash": "90ec7d59cc995f6e44dcfefe2b02de2a88ccebca83147ac34cb384ed295c4cbf",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "3,6",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.606412427577885,
+        "beat_cmlt": 0.45664394379517714,
+        "beat_fmeasure": 0.5851085350924718
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_3_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "3,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.537078779086946,
+        "beat_cmlt": 0.46453938496217123,
+        "beat_fmeasure": 0.6139575771878698
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_4_5",
+      "selected_dev_cache_hash": "30f907c28d6e31de4e8b69af3b594147ac5cd66863d353176200a9758e7d51c6",
+      "selected_parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "4,5",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6725486156458731,
+        "beat_cmlt": 0.5856345640444532,
+        "beat_fmeasure": 0.6555502587823612
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_4_6",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "4,6",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5819829488227461,
+        "beat_cmlt": 0.46852387271430546,
+        "beat_fmeasure": 0.6047749498401297
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_4_7",
+      "selected_dev_cache_hash": "be9995f90b65b683b1ac224442008f401474dd83ad6e85844d5afbef17d9a0c9",
+      "selected_parameter_hash": "38859bc29424b925a3873d864121e46ee248ccf1ba7fe0ec78063f2e34c3b6e3",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "4,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.7006265028550233,
+        "beat_cmlt": 0.5756935948137526,
+        "beat_fmeasure": 0.6277769036680103
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_5_6",
+      "selected_dev_cache_hash": "68dbaede71f5e0e7f2c0e7873707eda3a39fe4a67cbc98777547c215626de737",
+      "selected_parameter_hash": "433c6ac2157a2014f9519ac8dc09e55542947ebd8287b041f4d0d76ea2d326c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 70.0
+      },
+      "selection_piece_count": 54,
+      "tuning_folds": "5,6",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5119275484593192,
+        "beat_cmlt": 0.3901052236089597,
+        "beat_fmeasure": 0.5807866864282109
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_5_7",
+      "selected_dev_cache_hash": "8e1929b7debf98c16168a0318f54a10244c2ad77906fd5ccdd4e9ec047557f60",
+      "selected_parameter_hash": "411b58ce10d9e5302d2cb36b2e0e60d8903bbed6122eb98e2837c23314b73be7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "5,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6212505342253866,
+        "beat_cmlt": 0.49268057360610557,
+        "beat_fmeasure": 0.6142579710301875
+      },
+      "family": "exhaustive_2f",
+      "label": "2f_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 55,
+      "tuning_folds": "6,7",
+      "tuning_size": 2
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6412439736379335,
+        "beat_cmlt": 0.5103970070107438,
+        "beat_fmeasure": 0.6052811511948598
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_3_4",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,3,4",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5196862491334072,
+        "beat_cmlt": 0.4526160849491645,
+        "beat_fmeasure": 0.5906702169588209
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_3_5",
+      "selected_dev_cache_hash": "60ab57fab41f8b8680a3cdc813d75788006aea999babbb8e2e66505f3f64162a",
+      "selected_parameter_hash": "06155b3ad31c028a27cabbbb8ee064842019f8a022c434d9619b00e30734c83d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,3,5",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6235424833660709,
+        "beat_cmlt": 0.5370749866655538,
+        "beat_fmeasure": 0.6099371328503855
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_3_6",
+      "selected_dev_cache_hash": "c4b37000bc6788d41ad3f7eacdc661e33346651fa728d28aa76beb8d4e8f125c",
+      "selected_parameter_hash": "53b3189b54253656e8a8b924543921004f7628ea6e04529f0b94d259c4dd0937",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,3,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6049590885922191,
+        "beat_cmlt": 0.45873350910673477,
+        "beat_fmeasure": 0.5846905879235484
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_3_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,2,3,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6062638486731912,
+        "beat_cmlt": 0.47545642527472354,
+        "beat_fmeasure": 0.5985057662062471
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_4_5",
+      "selected_dev_cache_hash": "d08a7b416f83c345b2cedbddfb2efdde7ca277fa78c6ec832d685a8668ce97ed",
+      "selected_parameter_hash": "8e3449838321d2026081f831d7785f6dea159361d6aa432a219fa173113c0a14",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,4,5",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6489120975088782,
+        "beat_cmlt": 0.525781045204488,
+        "beat_fmeasure": 0.6199500705720241
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_4_6",
+      "selected_dev_cache_hash": "d08a7b416f83c345b2cedbddfb2efdde7ca277fa78c6ec832d685a8668ce97ed",
+      "selected_parameter_hash": "8e3449838321d2026081f831d7785f6dea159361d6aa432a219fa173113c0a14",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,4,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.592961756146752,
+        "beat_cmlt": 0.46398958030001664,
+        "beat_fmeasure": 0.5944624853963482
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_4_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,2,4,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5446741251360712,
+        "beat_cmlt": 0.47977488249295236,
+        "beat_fmeasure": 0.6056587793774371
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_5_6",
+      "selected_dev_cache_hash": "60ab57fab41f8b8680a3cdc813d75788006aea999babbb8e2e66505f3f64162a",
+      "selected_parameter_hash": "06155b3ad31c028a27cabbbb8ee064842019f8a022c434d9619b00e30734c83d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,2,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5243594458617404,
+        "beat_cmlt": 0.407220817325314,
+        "beat_fmeasure": 0.5801874922725763
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_5_7",
+      "selected_dev_cache_hash": "30f907c28d6e31de4e8b69af3b594147ac5cd66863d353176200a9758e7d51c6",
+      "selected_parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,2,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6124462066253622,
+        "beat_cmlt": 0.4769171296535335,
+        "beat_fmeasure": 0.5993990189012948
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_2_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,2,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6152330956145734,
+        "beat_cmlt": 0.48979582027697727,
+        "beat_fmeasure": 0.6072412785631326
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_4_5",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,3,4,5",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6578813444502606,
+        "beat_cmlt": 0.5401204402067418,
+        "beat_fmeasure": 0.6286855829289096
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_4_6",
+      "selected_dev_cache_hash": "e0f31ca8368108e58ffd6b38d66e322d32a18b4a6ccf5a983fb2db98ce6c442e",
+      "selected_parameter_hash": "db116886c31b2505438d0ff4accfa01d26209a5d2ae83d67eeff9138e778909f",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 30.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,3,4,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5979646596831076,
+        "beat_cmlt": 0.47572093323012254,
+        "beat_fmeasure": 0.6040369725344756
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_4_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,3,4,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6156511690897081,
+        "beat_cmlt": 0.5280201484254577,
+        "beat_fmeasure": 0.6140910090035692
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_5_6",
+      "selected_dev_cache_hash": "c4b37000bc6788d41ad3f7eacdc661e33346651fa728d28aa76beb8d4e8f125c",
+      "selected_parameter_hash": "53b3189b54253656e8a8b924543921004f7628ea6e04529f0b94d259c4dd0937",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,3,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5749102742510624,
+        "beat_cmlt": 0.439430875128967,
+        "beat_fmeasure": 0.5866601963700119
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_5_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,3,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6174491101617179,
+        "beat_cmlt": 0.48864848258363935,
+        "beat_fmeasure": 0.6089735060394222
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_3_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,3,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6333059701262338,
+        "beat_cmlt": 0.5065374310976012,
+        "beat_fmeasure": 0.6216257138171052
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_4_5_6",
+      "selected_dev_cache_hash": "15c92f293d6a9ad8adf257ec8fa7b09793b35c04f8c3ec21964822ceab5f0546",
+      "selected_parameter_hash": "31608b32f04c5bc32335033216d1c86b866bd6b92b38e8d02ff1721279a2d533",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "1,4,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5238932540074391,
+        "beat_cmlt": 0.4255218091730391,
+        "beat_fmeasure": 0.5983888610984527
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_4_5_7",
+      "selected_dev_cache_hash": "30f907c28d6e31de4e8b69af3b594147ac5cd66863d353176200a9758e7d51c6",
+      "selected_parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,4,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6054517777162506,
+        "beat_cmlt": 0.4939045537769213,
+        "beat_fmeasure": 0.6187454035122221
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_4_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,4,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.538124045189603,
+        "beat_cmlt": 0.43615574381451033,
+        "beat_fmeasure": 0.602117059469221
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_1_5_6_7",
+      "selected_dev_cache_hash": "8e1929b7debf98c16168a0318f54a10244c2ad77906fd5ccdd4e9ec047557f60",
+      "selected_parameter_hash": "411b58ce10d9e5302d2cb36b2e0e60d8903bbed6122eb98e2837c23314b73be7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "1,5,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6139760844558011,
+        "beat_cmlt": 0.4872084282395446,
+        "beat_fmeasure": 0.5976733738512198
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_4_5",
+      "selected_dev_cache_hash": "b34dfe1e43d06a260fbeeea019694300d921ae229f6a5d8ed6e6ed62a321770c",
+      "selected_parameter_hash": "97db1256cb519c62e6240f28f27c2d2a80f5e087d64a0b8f7834fed8cdf1e2c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "2,3,4,5",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6543760497373446,
+        "beat_cmlt": 0.5387740403733273,
+        "beat_fmeasure": 0.61949538151624
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_4_6",
+      "selected_dev_cache_hash": "b34dfe1e43d06a260fbeeea019694300d921ae229f6a5d8ed6e6ed62a321770c",
+      "selected_parameter_hash": "97db1256cb519c62e6240f28f27c2d2a80f5e087d64a0b8f7834fed8cdf1e2c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "2,3,4,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6099478658659274,
+        "beat_cmlt": 0.48168334324063805,
+        "beat_fmeasure": 0.5924912817487106
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_4_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,3,4,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6601167351273047,
+        "beat_cmlt": 0.5434450105313209,
+        "beat_fmeasure": 0.604200980010654
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_5_6",
+      "selected_dev_cache_hash": "cb3db138da9ac71d0051dd151ce7116942a6a15de411b373895e7334b41d42c3",
+      "selected_parameter_hash": "90ec7d59cc995f6e44dcfefe2b02de2a88ccebca83147ac34cb384ed295c4cbf",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "2,3,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5428857620049933,
+        "beat_cmlt": 0.42711295437065894,
+        "beat_fmeasure": 0.5781585873905887
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_5_7",
+      "selected_dev_cache_hash": "30f907c28d6e31de4e8b69af3b594147ac5cd66863d353176200a9758e7d51c6",
+      "selected_parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,3,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6294323163445377,
+        "beat_cmlt": 0.4946108925941549,
+        "beat_fmeasure": 0.5974278152536573
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_3_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,3,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6193147123343308,
+        "beat_cmlt": 0.5035133722962507,
+        "beat_fmeasure": 0.6124341564687784
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_4_5_6",
+      "selected_dev_cache_hash": "b34dfe1e43d06a260fbeeea019694300d921ae229f6a5d8ed6e6ed62a321770c",
+      "selected_parameter_hash": "97db1256cb519c62e6240f28f27c2d2a80f5e087d64a0b8f7834fed8cdf1e2c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "2,4,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.545221636257591,
+        "beat_cmlt": 0.4366274731635425,
+        "beat_fmeasure": 0.5892720874869739
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_4_5_7",
+      "selected_dev_cache_hash": "cfb0cb775c444ea2afe03f188fbb49ab20fa7d5759646abd51e15fde6669588b",
+      "selected_parameter_hash": "99caf7e68ecf43fbcb7ec7d51b6908ce4de6774c35926ed5686132c601da1cf2",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,4,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6174349838990705,
+        "beat_cmlt": 0.4998669637874368,
+        "beat_fmeasure": 0.6071997127264569
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_4_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,4,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5534915087075882,
+        "beat_cmlt": 0.4392034355008561,
+        "beat_fmeasure": 0.5937426945718516
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_2_5_6_7",
+      "selected_dev_cache_hash": "cfb0cb775c444ea2afe03f188fbb49ab20fa7d5759646abd51e15fde6669588b",
+      "selected_parameter_hash": "99caf7e68ecf43fbcb7ec7d51b6908ce4de6774c35926ed5686132c601da1cf2",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "2,5,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6529305067695665,
+        "beat_cmlt": 0.5607636714658506,
+        "beat_fmeasure": 0.6231034877570671
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_3_4_5_6",
+      "selected_dev_cache_hash": "cb3db138da9ac71d0051dd151ce7116942a6a15de411b373895e7334b41d42c3",
+      "selected_parameter_hash": "90ec7d59cc995f6e44dcfefe2b02de2a88ccebca83147ac34cb384ed295c4cbf",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 30.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 50.0
+      },
+      "selection_piece_count": 108,
+      "tuning_folds": "3,4,5,6",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5424195701506919,
+        "beat_cmlt": 0.44541394621838387,
+        "beat_fmeasure": 0.5963599562164651
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_3_4_5_7",
+      "selected_dev_cache_hash": "30f907c28d6e31de4e8b69af3b594147ac5cd66863d353176200a9758e7d51c6",
+      "selected_parameter_hash": "2746be1d1ff9d8983f34645cd9b8db6cfeae2b4de13fdd3c34a0e4a255dfdb9d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 2.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "3,4,5,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.622437887435426,
+        "beat_cmlt": 0.5115983167175426,
+        "beat_fmeasure": 0.6167741998645845
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_3_4_6_7",
+      "selected_dev_cache_hash": "4c7bf701a6f0d82bb8fa916cc76606a0d6ca176ef7fcdef4c7f3cc3a5ed19c65",
+      "selected_parameter_hash": "a4389a006201a46cb60e71143087c7d8a626a8d793b4c7e42d729639c591c79d",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 10.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "3,4,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5606571256703377,
+        "beat_cmlt": 0.45477105099266885,
+        "beat_fmeasure": 0.5999362068235344
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_3_5_6_7",
+      "selected_dev_cache_hash": "8e1929b7debf98c16168a0318f54a10244c2ad77906fd5ccdd4e9ec047557f60",
+      "selected_parameter_hash": "411b58ce10d9e5302d2cb36b2e0e60d8903bbed6122eb98e2837c23314b73be7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "3,5,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.5608483728275384,
+        "beat_cmlt": 0.4658993080333232,
+        "beat_fmeasure": 0.6117195765231053
+      },
+      "family": "exhaustive_4f",
+      "label": "4f_4_5_6_7",
+      "selected_dev_cache_hash": "8e1929b7debf98c16168a0318f54a10244c2ad77906fd5ccdd4e9ec047557f60",
+      "selected_parameter_hash": "411b58ce10d9e5302d2cb36b2e0e60d8903bbed6122eb98e2837c23314b73be7",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 215.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 3.0
+      },
+      "selection_piece_count": 109,
+      "tuning_folds": "4,5,6,7",
+      "tuning_size": 4
+    },
+    {
+      "development_metrics": {
+        "beat_amlt": 0.6200944131148717,
+        "beat_cmlt": 0.4836391771776184,
+        "beat_fmeasure": 0.6006506055552072
+      },
+      "family": "exhaustive_7f",
+      "label": "7f_1_2_3_4_5_6_7",
+      "selected_dev_cache_hash": "b34dfe1e43d06a260fbeeea019694300d921ae229f6a5d8ed6e6ed62a321770c",
+      "selected_parameter_hash": "97db1256cb519c62e6240f28f27c2d2a80f5e087d64a0b8f7834fed8cdf1e2c9",
+      "selected_parameters": {
+        "beats_per_bar": [
+          3,
+          4
+        ],
+        "fps": 50.0,
+        "max_bpm": 300.0,
+        "min_bpm": 55.0,
+        "observation_lambda": 16.0,
+        "threshold": 0.05,
+        "transition_lambda": 20.0
+      },
+      "selection_piece_count": 190,
+      "tuning_folds": "1,2,3,4,5,6,7",
+      "tuning_size": 7
+    }
+  ],
+  "unique_configuration_count": 19
+}
