@@ -503,24 +503,132 @@ def figure_operating_points(data: Path, figures: Path) -> None:
     save_all(fig, figures, "fig04_decoder_operating_points")
 
 
-def figure_calibration_scale(data: Path, figures: Path) -> None:
-    casm_table = pd.read_csv(data / "calibration_fixed_panel.csv")
-    dbn_table = pd.read_csv(data / "dbn_calibration_fixed_panel.csv")
-    casm = casm_table[casm_table.tuning_size.isin([1, 2, 4, 7])].copy()
-    dbn = dbn_table[dbn_table.tuning_size.isin([1, 2, 4, 7])].copy()
-    for frame in (casm, dbn):
-        frame["scale"] = frame.tuning_size.astype(int).astype(str) + "F"
-    comparison_keys = ["label", "family", "tuning_size", "tuning_folds"]
-    if not casm[comparison_keys].reset_index(drop=True).equals(
-        dbn[comparison_keys].reset_index(drop=True)
-    ):
-        raise RuntimeError("CASM and DBN calibration rows do not use identical fold combinations")
+def _figure_calibration_method(
+    table: pd.DataFrame,
+    *,
+    method_label: str,
+    color: str,
+    fill: str,
+    marker: str,
+    seed: int,
+    output_stem: str,
+    footer: str,
+    figures: Path,
+) -> None:
     order = ["1F", "2F", "4F", "7F"]
     metric_specs = [
         ("beat_fmeasure", "Beat F1"),
         ("beat_cmlt", "CMLt"),
         ("beat_amlt", "AMLt"),
     ]
+    panels = [("smc", "SMC\nfold0"), ("gtzan", "GTZAN\nfinal0")]
+    selected = table[table.tuning_size.isin([1, 2, 4, 7])].copy()
+    selected["scale"] = selected.tuning_size.astype(int).astype(str) + "F"
+    direct = table[table.family == "direct"]
+    if len(direct) != 1:
+        raise RuntimeError(f"{method_label} table must contain exactly one Direct row")
+    direct = direct.iloc[0]
+
+    fig, axes = plt.subplots(3, 4, figsize=(7.15, 5.05), sharey="row")
+    fig.subplots_adjust(wspace=0.13, hspace=0.22, top=0.84, bottom=0.17, left=0.10, right=0.985)
+    rng = np.random.default_rng(seed)
+    for row_index, (metric, metric_label) in enumerate(metric_specs):
+        for column_index, scale in enumerate(order):
+            ax = axes[row_index, column_index]
+            scale_rows = selected[selected.scale == scale]
+            for position, (prefix, _) in enumerate(panels):
+                column = f"{prefix}_{metric}"
+                values = 100 * scale_rows[column].dropna().to_numpy()
+                if len(values) == 0:
+                    raise RuntimeError(f"{method_label} has no {scale} values for {column}")
+                if len(values) > 1:
+                    ax.boxplot(
+                        [values],
+                        positions=[position],
+                        widths=0.48,
+                        showfliers=False,
+                        patch_artist=True,
+                        manage_ticks=False,
+                        medianprops={"color": CHARCOAL, "lw": 0.85},
+                        whiskerprops={"color": color, "lw": 0.65},
+                        capprops={"color": color, "lw": 0.65},
+                        boxprops={"facecolor": fill, "edgecolor": color, "alpha": 0.24, "lw": 0.75},
+                    )
+                jitter = rng.uniform(-0.10, 0.10, size=len(values))
+                ax.scatter(
+                    np.full(len(values), position) + jitter,
+                    values,
+                    s=11 if marker == "o" else 13,
+                    marker=marker,
+                    facecolor="white",
+                    edgecolor=color,
+                    linewidth=0.6,
+                    alpha=0.92,
+                    zorder=3,
+                )
+                direct_value = 100 * float(direct[column])
+                ax.hlines(
+                    direct_value,
+                    position - 0.28,
+                    position + 0.28,
+                    color=GREY,
+                    lw=0.9,
+                    ls="--",
+                    zorder=2,
+                )
+            ax.set_xlim(-0.48, 1.48)
+            ax.set_xticks([0, 1])
+            if row_index == len(metric_specs) - 1:
+                ax.set_xticklabels([label for _, label in panels])
+            else:
+                ax.set_xticklabels([])
+            if row_index == 0:
+                ax.set_title(f"({chr(97 + column_index)}) {scale}", loc="left", fontweight="bold")
+            if column_index == 0:
+                ax.set_ylabel(f"{metric_label}\nScore (%)")
+            ax.grid(axis="y")
+
+    marker_handle = Line2D(
+        [0],
+        [0],
+        marker=marker,
+        color=color,
+        markerfacecolor="white",
+        markersize=4.4,
+        lw=1.1,
+        label=f"{method_label} selections",
+    )
+    direct_handle = Line2D([0], [0], color=GREY, lw=0.9, ls="--", label="Direct")
+    fig.legend(
+        handles=[marker_handle, direct_handle],
+        frameon=False,
+        ncol=2,
+        loc="upper right",
+        bbox_to_anchor=(0.985, 0.945),
+    )
+    fig.suptitle(f"{method_label} calibration-fold sensitivity", x=0.02, ha="left", fontweight="bold")
+    fig.text(
+        0.02,
+        0.022,
+        "Columns are calibration sizes; rows are metrics. SMC fold0 and GTZAN final0 are separate within every cell.\n"
+        + footer,
+        fontsize=6.2,
+        color=GREY,
+    )
+    save_all(fig, figures, output_stem)
+
+
+def figure_calibration_scale(data: Path, figures: Path) -> None:
+    casm_table = pd.read_csv(data / "calibration_fixed_panel.csv")
+    dbn_table = pd.read_csv(data / "dbn_calibration_fixed_panel.csv")
+    casm = casm_table[casm_table.tuning_size.isin([1, 2, 4, 7])].copy()
+    dbn = dbn_table[dbn_table.tuning_size.isin([1, 2, 4, 7])].copy()
+    comparison_keys = ["label", "family", "tuning_size", "tuning_folds"]
+    if not casm[comparison_keys].reset_index(drop=True).equals(
+        dbn[comparison_keys].reset_index(drop=True)
+    ):
+        raise RuntimeError("CASM and DBN calibration rows do not use identical fold combinations")
+    metric_specs = [("beat_fmeasure", "Beat F1"), ("beat_cmlt", "CMLt"), ("beat_amlt", "AMLt")]
     panels = [("smc", "SMC fold0"), ("gtzan", "GTZAN final0")]
     direct = casm_table[casm_table.family == "direct"].iloc[0]
     dbn_direct = dbn_table[dbn_table.family == "direct"].iloc[0]
@@ -532,71 +640,28 @@ def figure_calibration_scale(data: Path, figures: Path) -> None:
         atol=1e-12,
     ):
         raise RuntimeError("CASM and DBN experiments do not share the same Direct fixed panels")
-    methods = [
-        ("CASM", casm, -0.17, BLUE, BLUE_LIGHT, "o"),
-        ("DBN", dbn, 0.17, ORANGE, ORANGE, "^"),
-    ]
-    fig, axes = plt.subplots(2, 3, figsize=(7.15, 4.12), sharex=True)
-    fig.subplots_adjust(wspace=0.24, hspace=0.34, top=0.78, bottom=0.17)
-    rng = np.random.default_rng(20260904)
-    for row_index, (prefix, panel_label) in enumerate(panels):
-        for column_index, (metric, metric_label) in enumerate(metric_specs):
-            ax = axes[row_index, column_index]
-            column = f"{prefix}_{metric}"
-            direct_value = 100 * float(direct[column])
-            ax.axhline(direct_value, color=GREY, lw=0.9, ls="--")
-            for method_label, frame, offset, color, fill, marker in methods:
-                values_by_scale = []
-                positions = np.arange(len(order), dtype=float) + offset
-                for position, scale in zip(positions, order):
-                    values = 100 * frame.loc[frame.scale == scale, column].dropna().to_numpy()
-                    values_by_scale.append(values)
-                    jitter = rng.uniform(-0.055, 0.055, size=len(values))
-                    ax.scatter(
-                        np.full(len(values), position) + jitter,
-                        values,
-                        s=10 if marker == "o" else 12,
-                        marker=marker,
-                        facecolor="white",
-                        edgecolor=color,
-                        linewidth=0.55,
-                        alpha=0.9,
-                        zorder=3,
-                    )
-                ax.boxplot(
-                    values_by_scale,
-                    positions=positions,
-                    widths=0.28,
-                    showfliers=False,
-                    patch_artist=True,
-                    manage_ticks=False,
-                    medianprops={"color": CHARCOAL, "lw": 0.85},
-                    whiskerprops={"color": color, "lw": 0.6},
-                    capprops={"color": color, "lw": 0.6},
-                    boxprops={"facecolor": fill, "edgecolor": color, "alpha": 0.28 if method_label == "CASM" else 0.17, "lw": 0.7},
-                )
-            ax.set_xticks(np.arange(len(order)), order)
-            if row_index == 0:
-                ax.set_title(f"({chr(97+column_index)}) {metric_label}", loc="left", fontweight="bold")
-            if column_index == 0:
-                ax.set_ylabel(f"{panel_label}\nScore (%)")
-            ax.grid(axis="y")
-    legend_handles = [
-        Line2D([0], [0], marker="o", color=BLUE, markerfacecolor="white", markersize=4.2, lw=1.2, label="CASM"),
-        Line2D([0], [0], marker="^", color=ORANGE, markerfacecolor="white", markersize=4.5, lw=1.2, label="DBN"),
-        Line2D([0], [0], color=GREY, lw=0.9, ls="--", label="Direct"),
-    ]
-    fig.legend(handles=legend_handles, frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 0.895))
-    fig.suptitle("Calibration-fold scale: CASM and DBN", x=0.02, ha="left", fontweight="bold")
-    fig.text(
-        0.02,
-        0.02,
-        "Focused, panel-specific y-axes. Each method is auto-selected on the same 7/21/35/1 subsets, then frozen on identical panels. "
-        "DBN grid: 52 global tempo/transition settings; distributions are descriptive.",
-        fontsize=6.2,
-        color=GREY,
+    _figure_calibration_method(
+        casm_table,
+        method_label="CASM",
+        color=BLUE,
+        fill=BLUE_LIGHT,
+        marker="o",
+        seed=20260904,
+        output_stem="fig05_calibration_scale",
+        footer="Each point is one locked CASM selection; dashed segments are Direct.",
+        figures=figures,
     )
-    save_all(fig, figures, "fig05_calibration_scale")
+    _figure_calibration_method(
+        dbn_table,
+        method_label="DBN",
+        color=ORANGE,
+        fill=ORANGE,
+        marker="^",
+        seed=20260905,
+        output_stem="fig05b_dbn_calibration_scale",
+        footer="Each point is one locked selection from the 52-setting DBN grid; dashed segments are Direct.",
+        figures=figures,
+    )
 
 
 def figure_gain_risk(data: Path, figures: Path) -> None:

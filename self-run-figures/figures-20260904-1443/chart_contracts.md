@@ -64,9 +64,10 @@
   fold subsets. DBN's selected global rigidity varies substantially with fold
   composition; increasing calibration scale improves its GTZAN transfer but
   does not monotonically improve the held-out SMC fold.
-- Form: paired box/strip distributions for CASM and DBN across every fold
-  combination, faceted by fixed panel and beat metric, with Direct as a common
-  reference.
+- Form: two matched 3-by-4 box/strip figures, one for CASM and one for DBN.
+  Rows are Beat F1/CMLt/AMLt and columns are 1F/2F/4F/7F. Within each cell,
+  SMC fold0 and GTZAN final0 occupy separate categorical positions; short
+  dashed segments show their corresponding Direct scores.
 - Data: 7 one-fold, 21 two-fold, 35 four-fold selections plus one seven-fold
   configuration per decoder, all evaluated on fixed SMC-fold0 and Beat This
   GTZAN-final0 panels. The frontend, fold subsets, primary selection metric,
@@ -74,8 +75,9 @@
   preregistered 52-point grid over minimum tempo, maximum tempo, and transition
   strength; all 64 choices were locked before either fixed panel was scored.
 - Renderer/output: static Matplotlib; PNG/PDF/SVG; final QA on PNG.
-- Palette: blue circles for CASM, orange triangles for DBN, and a charcoal
-  dashed Direct reference; marker shapes preserve grayscale legibility.
+- Palette: blue circles in the CASM figure, orange triangles in the DBN figure,
+  and a charcoal dashed Direct reference; marker shapes preserve grayscale
+  legibility across the two files.
 
 ## Figure 6 — gain versus regression risk
 

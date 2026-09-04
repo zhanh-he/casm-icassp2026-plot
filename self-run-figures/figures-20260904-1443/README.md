@@ -1,13 +1,15 @@
 # CASM figures — reproducible bundle (2026-09-04 14:43)
 
-This directory contains the exact source data and plotting code for the six
-CASM mechanism figures. It is designed for repeated paper revisions: rendering
-does not require the original activation caches, the CASM repository, Kaya, or
-Gadi.
+This directory contains the exact source data and plotting code for six
+numbered mechanism figures, with Figure 5 exported as separate CASM and DBN
+files. It is designed for repeated paper revisions: rendering does not require
+the original activation caches, the CASM repository, Kaya, or Gadi.
 
 ## Fastest way to redraw Figure 5
 
-Figure 5 is the 1F/2F/4F/7F calibration-scale figure.
+Figure 5 is exported as two matched 3-by-4 figures: CASM and DBN are kept in
+separate files, while both use metric rows (Beat F1/CMLt/AMLt) and calibration-
+size columns (1F/2F/4F/7F).
 
 ```bash
 cd /Users/jollibear/Documents/icassp2027casm/self-run-figures/figures-20260904-1443
@@ -27,9 +29,13 @@ The regenerated files appear as:
 figures/fig05_calibration_scale.png
 figures/fig05_calibration_scale.pdf
 figures/fig05_calibration_scale.svg
+figures/fig05b_dbn_calibration_scale.png
+figures/fig05b_dbn_calibration_scale.pdf
+figures/fig05b_dbn_calibration_scale.svg
 ```
 
-To render all six figures:
+To render all six numbered figures (seven output stems because Figure 5 is
+split):
 
 ```bash
 ./render_and_validate.sh
@@ -57,10 +63,12 @@ PYTHON=/home/mengh/miniconda3/envs/auto-structbeat/bin/python \
 - Matched DBN source rows: `data/dbn_calibration_fixed_panel.csv`.
 - Aggregated audit tables: `data/calibration_summary.csv` and
   `data/dbn_calibration_summary.csv`.
-- Reference output: `reference_figures/fig05_calibration_scale.*`.
+- Reference outputs: `reference_figures/fig05_calibration_scale.*` (CASM) and
+  `reference_figures/fig05b_dbn_calibration_scale.*` (DBN).
 
-The jitter and bootstrap random generators use the fixed seed `20260904`, and
-the environment is pinned in `requirements.txt`.
+The CASM jitter and bootstrap random generators use the fixed seed `20260904`;
+the DBN jitter uses `20260905`. The environment is pinned in
+`requirements.txt`.
 
 ## Directory map
 
@@ -70,7 +78,7 @@ the environment is pinned in `requirements.txt`.
 ├── requirements.txt
 ├── setup_and_render.sh             # create a local venv, then render
 ├── render_and_validate.sh          # render with an existing environment
-├── plot_mechanism_evidence.py      # all six figures; supports --only
+├── plot_mechanism_evidence.py      # six numbered figures; supports --only
 ├── validate_mechanism_evidence.py  # data/provenance checks
 ├── run_mechanism_ablation.py       # upstream experiment runner
 ├── evaluate_locked_combinations_final0.py
@@ -199,7 +207,9 @@ metric rows, 321,617 retained candidates, and 147,000 decoded CASM edges.
 2. `fig02_real_track_mechanism`
 3. `fig03_ablation_matrix`
 4. `fig04_decoder_operating_points`
-5. `fig05_calibration_scale`
+5. Figure 5:
+   - `fig05_calibration_scale` (CASM 3-by-4 matrix)
+   - `fig05b_dbn_calibration_scale` (DBN 3-by-4 matrix)
 6. `fig06_gain_risk`
 
 Every figure is exported to PNG (320 dpi), vector PDF, and SVG.
