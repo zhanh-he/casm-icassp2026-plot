@@ -1,12 +1,12 @@
 # SMC MIREX listening excerpts
 
-The demo contains two 18-second mono MP3 excerpts from the publicly released
+The demo contains two complete 40-second mono MP3 examples from the publicly released
 SMC MIREX beat-tracking dataset:
 
 | Demo case | Source file | Source interval |
 |---|---|---:|
-| SMC 221 | `SMC_221.wav` | 6.14-24.14 s |
-| SMC 117 | `SMC_117.wav` | 21.48-39.48 s |
+| SMC 221 | `SMC_221.wav` | 0.00-40.00 s |
+| SMC 117 | `SMC_117.wav` | 0.00-40.00 s |
 
 Dataset citation:
 
@@ -24,5 +24,6 @@ Public author mirror used for recovery:
 The maintained download recipe is available in
 [`nicolaus625/CMI-bench`](https://github.com/nicolaus625/CMI-bench/blob/main/data/SMC/download_smc.sh).
 
-Only the selected short windows are included in this research listening demo;
-the complete source recordings and full dataset are not mirrored here.
+The visualization initially opens on selected 18-second analysis windows, but
+the complete audio for these two examples supports playback after moving the
+slider. The remainder of the SMC dataset is not mirrored here.

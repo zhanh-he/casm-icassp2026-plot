@@ -13,10 +13,10 @@ The page preserves the exact D3 visualization and adds synchronized Web Audio
 audition for GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
 Clicks are synthesized from the frozen event arrays in `data/cases.json`.
 
-Each case includes a selected 18-second SMC MIREX performance excerpt. Original
-plays the music alone; GroundTruth and every decoder overlay their events on
-exactly the same recording. Visitors may replace the built-in excerpt with an
-authorized local file, which remains in the browser and is not uploaded.
+Each case includes its complete 40-second SMC MIREX performance. Original plays
+the music alone; GroundTruth and every decoder overlay their events on exactly
+the same recording. The figure opens on the selected 18-second analysis window,
+and the slider can audition every valid interval in either case.
 
 The published clips and their provenance are documented in
 [`audio/ATTRIBUTION.md`](audio/ATTRIBUTION.md).

@@ -8,14 +8,14 @@
     "smc-221": {
       "source_file": "SMC_221.wav",
       "output_file": "smc-221.mp3",
-      "start_seconds": 6.14,
-      "duration_seconds": 18.0
+      "start_seconds": 0.0,
+      "duration_seconds": 40.0
     },
     "smc-117": {
       "source_file": "SMC_117.wav",
       "output_file": "smc-117.mp3",
-      "start_seconds": 21.48,
-      "duration_seconds": 18.0
+      "start_seconds": 0.0,
+      "duration_seconds": 40.0
     }
   }
 }

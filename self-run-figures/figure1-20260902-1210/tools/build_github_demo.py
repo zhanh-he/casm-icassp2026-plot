@@ -141,7 +141,7 @@ manifest = {
     "audio_download_mirror": audio_config["download_mirror_url"],
     "audio_download_script": audio_config["download_script_url"],
     "audio_citation": audio_config["citation"],
-    "audio_policy": "Only the selected short listening-demo excerpts are published; full SMC waveforms are not redistributed.",
+    "audio_policy": "Only the two selected 40-second SMC examples are published; the remainder of the dataset is not mirrored.",
     "audio_files": {
         selection["output_file"]: sha256(DOCS_ROOT / "audio" / selection["output_file"])
         for selection in audio_config["cases"].values()

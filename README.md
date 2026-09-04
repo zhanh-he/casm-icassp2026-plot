@@ -10,10 +10,10 @@ No clone, download, or local web server is required. The public demo includes
 the SMC 221/117 visualization and synchronized click-track audition for
 GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
 
-Each public case includes a selected 18-second SMC MIREX performance excerpt.
-Original plays the music alone; GroundTruth and every decoder overlay their
-events on exactly the same recording. Visitors may replace the built-in excerpt
-with an authorized local file, which remains in the browser and is not uploaded.
+Each public case includes its complete 40-second SMC MIREX performance. Original
+plays the music alone; GroundTruth and every decoder overlay their events on
+exactly the same recording. The figure still opens on the selected 18-second
+analysis window, while the slider can audition any valid interval in either case.
 
 ## Source layout
 
@@ -23,7 +23,7 @@ with an authorized local file, which remains in the browser and is not uploaded.
 
 Local development instructions are in [`docs/README.md`](docs/README.md).
 
-To change the published listening windows, edit
+To change the published audio coverage, edit
 `self-run-figures/figure1-20260902-1210/config/public_demo_audio.json`, then run:
 
 ```bash

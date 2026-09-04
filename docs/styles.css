@@ -92,8 +92,7 @@ h2 {
 
 .github-link,
 .command,
-.icon-command,
-.upload-command {
+.icon-command {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -112,13 +111,11 @@ h2 {
 
 .github-link:hover,
 .command:hover,
-.icon-command:hover,
-.upload-command:hover { border-color: #aeb6bd; background: var(--soft); }
+.icon-command:hover { border-color: #aeb6bd; background: var(--soft); }
 
 .github-link svg,
 .command svg,
-.icon-command svg,
-.upload-command svg {
+.icon-command svg {
   width: 18px;
   height: 18px;
 }
@@ -257,21 +254,6 @@ progress::-moz-progress-bar { background: var(--activation); }
   align-items: center;
   gap: 12px 22px;
   margin-top: 17px;
-}
-
-.upload-command {
-  min-height: 36px;
-  padding: 0 12px;
-  font-size: 12px;
-}
-
-#audioFile {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
 }
 
 .toggle-control,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract the selected SMC listening-demo windows from authorized WAV files."""
+"""Build compressed full-example SMC audio for the public listening demo."""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     if not shutil.which("ffmpeg"):
-        raise SystemExit("ffmpeg is required to build the public demo excerpts.")
+        raise SystemExit("ffmpeg is required to build the public demo audio.")
 
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     output_root = REPO_ROOT / "docs" / "audio"

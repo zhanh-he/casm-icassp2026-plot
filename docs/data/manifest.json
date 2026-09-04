@@ -1,16 +1,16 @@
 {
   "source_figure_fragment": "self-run-figures/figure1-20260902-1210/reference/real-decoder-contrast.html",
   "source_figure_sha256": "c9c1b6d120386d4104ed6d74acfa68921ca1eb8d75fbc4458ea3e46454f75e34",
-  "case_data_sha256": "d424b5c7037ddf0ad4190a12a6d1adfb1208d8388dc1db4c70565b03583d4e04",
+  "case_data_sha256": "125662c09762ddcac28981db146b663fac9dcd50486b987284dffe2d737f6595",
   "visualization_sha256": "4b70d66ea8b2f2277d029e708db35bda3320984febe9ba101a4d5478bc77f14b",
   "case_count": 2,
   "audio_source": "http://smc.inescporto.pt/data/SMC_MIREX.zip",
   "audio_download_mirror": "https://bit.ly/33SlutJ",
   "audio_download_script": "https://github.com/nicolaus625/CMI-bench/blob/main/data/SMC/download_smc.sh",
   "audio_citation": "Holzapfel et al., Selective Sampling for Beat Tracking Evaluation, IEEE TASLP 20(9), 2012.",
-  "audio_policy": "Only the selected short listening-demo excerpts are published; full SMC waveforms are not redistributed.",
+  "audio_policy": "Only the two selected 40-second SMC examples are published; the remainder of the dataset is not mirrored.",
   "audio_files": {
-    "smc-221.mp3": "e3439b120380276e1a5026749efcbb49e59fe74d9b291ff2b61c40d5dd026330",
-    "smc-117.mp3": "b548484c12df39604d281d552d86ea823fd93af5c7e66b7a1b85293f4e90db67"
+    "smc-221.mp3": "b7c1cdbd1cc9eee112b4bcad28a633f6050852fb3c9acedce0f0d908569361d8",
+    "smc-117.mp3": "7eb10d22690f4d3df7d72e97330fb26c78a325c874bbbe9a6819a5e63367703a"
   }
 }
