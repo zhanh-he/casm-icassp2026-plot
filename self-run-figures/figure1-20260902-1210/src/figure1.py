@@ -13,12 +13,19 @@ import numpy as np
 from matplotlib.lines import Line2D
 
 
-CASES = ("smc_221", "smc_117")
-METHODS = ("direct", "fixed_semimarkov", "dbn", "casm")
+CASES = (
+    "smc_117",
+    "smc_221",
+    "gtzan_blues_00023",
+    "gtzan_metal_00026",
+    "gtzan_pop_00053",
+)
+METHODS = ("direct", "fixed_semimarkov", "dbn", "plpdp", "casm")
 METHOD_LABELS = {
     "direct": "Direct",
     "fixed_semimarkov": "Fixed Semi-Markov",
-    "dbn": "DBN (adjusted)",
+    "dbn": "DBN",
+    "plpdp": "PLPDP (30-300 BPM)",
     "casm": "CASM",
 }
 COLORS = {
@@ -26,6 +33,7 @@ COLORS = {
     "direct": "#409eff",
     "fixed_semimarkov": "#ff7a3d",
     "dbn": "#59c879",
+    "plpdp": "#d89b31",
     "casm": "#9270ed",
     "groundtruth": "#242629",
     "grid": "#d9dde2",
@@ -35,7 +43,41 @@ MARKERS = {
     "direct": "D",
     "fixed_semimarkov": "s",
     "dbn": "^",
+    "plpdp": "*",
     "casm": "o",
+}
+
+CASE_FILES = {
+    "smc_117": {
+        "cache": "smc_117_beat_this_oof.npz",
+        "payload": "smc_117.json",
+        "spectrogram": "smc_117_spectrogram.npy",
+        "label": "SMC 117",
+    },
+    "smc_221": {
+        "cache": "smc_221_beat_this_oof.npz",
+        "payload": "smc_221.json",
+        "spectrogram": "smc_221_spectrogram.npy",
+        "label": "SMC 221",
+    },
+    "gtzan_blues_00023": {
+        "cache": "gtzan_blues_00023_beat_this_final0.npz",
+        "payload": "gtzan_blues_00023.json",
+        "spectrogram": "gtzan_blues_00023_spectrogram.npy",
+        "label": "GTZAN - Blues 00023",
+    },
+    "gtzan_metal_00026": {
+        "cache": "gtzan_metal_00026_beat_this_final0.npz",
+        "payload": "gtzan_metal_00026.json",
+        "spectrogram": "gtzan_metal_00026_spectrogram.npy",
+        "label": "GTZAN - Metal 00026",
+    },
+    "gtzan_pop_00053": {
+        "cache": "gtzan_pop_00053_beat_this_final0.npz",
+        "payload": "gtzan_pop_00053.json",
+        "spectrogram": "gtzan_pop_00053_spectrogram.npy",
+        "label": "GTZAN - Pop 00053",
+    },
 }
 
 
@@ -52,10 +94,14 @@ def sigmoid(values: np.ndarray) -> np.ndarray:
 def _paths(root: Path, case: str) -> dict[str, Path]:
     if case not in CASES:
         raise ValueError(f"Unknown case {case!r}; choose one of {CASES}.")
+    files = CASE_FILES[case]
     return {
-        "cache": root / "data" / "raw_cache" / f"{case}_beat_this_oof.npz",
-        "payload": root / "data" / "figure_payloads" / f"{case}.json",
-        "spectrogram": root / "data" / "spectrograms" / f"{case}_spectrogram.npy",
+        key: root / "data" / directory / files[key]
+        for key, directory in (
+            ("cache", "raw_cache"),
+            ("payload", "figure_payloads"),
+            ("spectrogram", "spectrograms"),
+        )
     }
 
 
@@ -221,11 +267,11 @@ def plot_figure(
     last = min(probability.size - 1, int(np.ceil(end * fps)))
     frame_times = np.arange(first, last + 1) / fps
 
-    fig = plt.figure(figsize=(15, 18), constrained_layout=False, facecolor="white")
+    fig = plt.figure(figsize=(15, 20), constrained_layout=False, facecolor="white")
     grid = fig.add_gridspec(
-        8,
+        9,
         1,
-        height_ratios=(1.55, 2.1, 1.85, 1, 1, 1, 1, 1),
+        height_ratios=(1.70, 2.1, 2.05, 1, 1, 1, 1, 1, 1),
         hspace=0.10,
         left=0.13,
         right=0.97,
@@ -235,11 +281,11 @@ def plot_figure(
     ax_table = fig.add_subplot(grid[0])
     ax_activation = fig.add_subplot(grid[1])
     ax_events = fig.add_subplot(grid[2], sharex=ax_activation)
-    ibi_axes = [fig.add_subplot(grid[index], sharex=ax_activation) for index in range(3, 8)]
+    ibi_axes = [fig.add_subplot(grid[index], sharex=ax_activation) for index in range(3, 9)]
 
-    case_label = bundle["case"].replace("smc_", "SMC ")
+    case_label = CASE_FILES[bundle["case"]]["label"]
     fig.suptitle(
-        "Real case: four beat decoders diverge on the same activation",
+        "Real case: five beat decoders diverge on the same activation",
         x=0.03,
         y=0.989,
         ha="left",
@@ -249,7 +295,7 @@ def plot_figure(
     )
     subtitle = (
         f"{case_label} | {payload['protocol']['role']} | Beat This "
-        f"{payload['protocol']['fold']} OOF | {payload['duration_seconds']:.2f} s"
+        f"{payload['protocol']['fold']} | {payload['duration_seconds']:.2f} s"
     )
     fig.text(0.03, 0.968, subtitle, ha="left", fontsize=11, color=COLORS["muted"])
 
@@ -321,7 +367,7 @@ def plot_figure(
             )
 
     lane_keys = ("groundtruth", *METHODS)
-    lane_y = {key: 4 - index for index, key in enumerate(lane_keys)}
+    lane_y = {key: len(lane_keys) - 1 - index for index, key in enumerate(lane_keys)}
     for key in lane_keys:
         ax_events.axhline(lane_y[key], color="#e5e7ea", linewidth=0.8, zorder=0)
 
@@ -361,7 +407,7 @@ def plot_figure(
                     linewidths=1.2,
                     zorder=3,
                 )
-    ax_events.set_ylim(-0.55, 4.55)
+    ax_events.set_ylim(-0.55, len(lane_keys) - 0.45)
     ax_events.set_yticks([lane_y[key] for key in lane_keys])
     ax_events.set_yticklabels(
         ["GroundTruth", *[METHOD_LABELS[key] for key in METHODS]], fontsize=9.5
@@ -382,12 +428,20 @@ def plot_figure(
     pad = max(0.12, (high - low) * 0.12)
     limits = (max(0, low - pad), high + pad)
 
-    labels = ("GroundTruth IBI", "Direct", "Fixed Semi-Markov", "DBN", "CASM")
+    labels = (
+        "GroundTruth IBI",
+        "Direct",
+        "Fixed Semi-Markov",
+        "DBN",
+        "PLPDP",
+        "CASM",
+    )
     row_sets = (
         data["reference_intervals"],
         data["method_intervals"]["direct"],
         data["method_intervals"]["fixed_semimarkov"],
         data["method_intervals"]["dbn"],
+        data["method_intervals"]["plpdp"],
         data["method_intervals"]["casm"],
     )
     row_colors = (
@@ -395,9 +449,10 @@ def plot_figure(
         COLORS["direct"],
         COLORS["fixed_semimarkov"],
         COLORS["dbn"],
+        COLORS["plpdp"],
         COLORS["casm"],
     )
-    row_markers = ("o", "D", "s", "^", "o")
+    row_markers = ("o", "D", "s", "^", "*", "o")
     for index, (axis, label, rows, color, marker) in enumerate(
         zip(ibi_axes, labels, row_sets, row_colors, row_markers)
     ):
@@ -406,7 +461,13 @@ def plot_figure(
         axis.tick_params(axis="x", labelbottom=index == len(ibi_axes) - 1)
         axis.tick_params(axis="y", labelsize=8)
         if rows.size:
-            axis.plot(rows[:, 0], rows[:, 1], color=color, linewidth=1, alpha=0.72)
+            axis.plot(
+                rows[:, 0],
+                rows[:, 1],
+                color=color,
+                linewidth=0.8 if index == 0 else 1,
+                alpha=0.2 if index == 0 else 0.72,
+            )
             axis.scatter(rows[:, 0], rows[:, 1], color=color, marker=marker, s=28, zorder=3)
         if index > 0:
             method = METHODS[index - 1]
@@ -438,18 +499,18 @@ def plot_figure(
         fontsize=9,
     )
     if show_local_tau and data["local_prior"].size:
-        ibi_axes[4].plot(
+        ibi_axes[5].plot(
             data["local_prior"][:, 0],
             data["local_prior"][:, 1],
             color=COLORS["casm"],
             linestyle=(0, (4, 3)),
             linewidth=1.7,
         )
-        ibi_axes[4].text(
+        ibi_axes[5].text(
             0.008,
             0.82,
             "local tau(t), dashed",
-            transform=ibi_axes[4].transAxes,
+            transform=ibi_axes[5].transAxes,
             color=COLORS["casm"],
             fontsize=9,
         )
@@ -480,12 +541,17 @@ def plot_figure(
         columnspacing=1.1,
     )
 
-    params = payload["dbn_tuning"]["parameters"]
+    params = payload.get("dbn_tuning", payload.get("dbn_configuration"))["parameters"]
+    dbn_scope = (
+        "shared illustration setting"
+        if "dbn_tuning" in payload
+        else "matched benchmark setting"
+    )
     fig.text(
         0.03,
         0.012,
         "Illustration-only selection. Fixed Semi-Markov is a global-period mechanism replay. "
-        "DBN uses the shared illustration setting: "
+        f"DBN uses the {dbn_scope}: "
         f"min/max BPM {params['min_bpm']:.0f}/{params['max_bpm']:.0f}, "
         f"transition lambda {params['transition_lambda']:.0f}, observation lambda "
         f"{params['observation_lambda']:.0f}, threshold {params['threshold']:.2f}. "
@@ -562,13 +628,16 @@ def export_case_tables(bundle: dict, output_dir: str | Path) -> list[Path]:
 
     events_path = output_dir / f"{case}_events.csv"
     with events_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(("case", "source", "event_type", "time_seconds"))
         for time in payload["truth"]["beat_times"]:
             writer.writerow((case, "GroundTruth", "beat", f"{time:.9f}"))
         for time in payload["truth"]["downbeat_times"]:
             writer.writerow((case, "GroundTruth", "downbeat", f"{time:.9f}"))
-        for method in (*METHODS, "dbn_original"):
+        export_methods = list(METHODS)
+        if "dbn_original" in payload["decoders"]:
+            export_methods.append("dbn_original")
+        for method in export_methods:
             for event_type in ("beat", "downbeat"):
                 for time in payload["decoders"][method][f"{event_type}_times"]:
                     writer.writerow((case, METHOD_LABELS.get(method, "DBN original"), event_type, f"{time:.9f}"))
@@ -576,13 +645,14 @@ def export_case_tables(bundle: dict, output_dir: str | Path) -> list[Path]:
 
     ibi_path = output_dir / f"{case}_ibi.csv"
     with ibi_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(("case", "source", "midpoint_seconds", "ibi_seconds"))
         event_sets = {"GroundTruth": payload["truth"]["beat_times"]}
         event_sets.update(
             {METHOD_LABELS[method]: payload["decoders"][method]["beat_times"] for method in METHODS}
         )
-        event_sets["DBN original"] = payload["decoders"]["dbn_original"]["beat_times"]
+        if "dbn_original" in payload["decoders"]:
+            event_sets["DBN original"] = payload["decoders"]["dbn_original"]["beat_times"]
         for source, events in event_sets.items():
             events = np.asarray(events, dtype=float)
             if events.size < 2:
@@ -593,7 +663,7 @@ def export_case_tables(bundle: dict, output_dir: str | Path) -> list[Path]:
 
     prior_path = output_dir / f"{case}_priors.csv"
     with prior_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(("case", "time_seconds", "casm_local_tau_seconds", "tempo_bpm", "reliability_proxy", "fixed_global_tau_seconds"))
         analysis = payload["casm_analysis"]
         for row in zip(
@@ -637,19 +707,14 @@ def build_manifest(root: str | Path) -> dict:
     manifest = {
         "bundle": "StructBeat Figure 1 exact-data reproduction",
         "cases": cases,
-        "dbn_configuration": {
-            "min_bpm": 35.0,
-            "max_bpm": 160.0,
-            "transition_lambda": 50.0,
-            "observation_lambda": 8.0,
-            "threshold": 0.03,
-            "beats_per_bar": [3, 4],
-            "warning": "Illustration-tuned on the displayed cases; not an aggregate benchmark setting.",
-        },
+        "decoder_note": (
+            "SMC uses a shared illustration-tuned DBN; GTZAN uses the matched "
+            "30-300 BPM benchmark DBN. PLPDP uses the released 30-300 BPM default."
+        ),
         "audio": {
             "bundled_waveform": False,
-            "reason": "The Beat This distribution used here provides precomputed spectrograms and annotations, not redistributable SMC waveform audio.",
-            "override": "Set AUDIO_OVERRIDE in the notebook to an authorized local WAV/FLAC/OGG file.",
+            "reason": "The numerical reproduction bundle does not embed waveform audio; public demo audio is generated separately from licensed source files.",
+            "override": "Set AUDIO_OVERRIDE in the notebook or use the local_audio files when available.",
         },
         "files": files,
     }

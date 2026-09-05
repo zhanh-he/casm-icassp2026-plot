@@ -1,0 +1,379 @@
+case,source,event_type,time_seconds
+gtzan_blues_00023,GroundTruth,beat,0.150000000
+gtzan_blues_00023,GroundTruth,beat,0.794000000
+gtzan_blues_00023,GroundTruth,beat,1.415000000
+gtzan_blues_00023,GroundTruth,beat,2.030000000
+gtzan_blues_00023,GroundTruth,beat,2.651000000
+gtzan_blues_00023,GroundTruth,beat,3.273000000
+gtzan_blues_00023,GroundTruth,beat,3.888000000
+gtzan_blues_00023,GroundTruth,beat,4.515000000
+gtzan_blues_00023,GroundTruth,beat,5.130000000
+gtzan_blues_00023,GroundTruth,beat,5.740000000
+gtzan_blues_00023,GroundTruth,beat,6.355000000
+gtzan_blues_00023,GroundTruth,beat,6.970000000
+gtzan_blues_00023,GroundTruth,beat,7.545000000
+gtzan_blues_00023,GroundTruth,beat,8.155000000
+gtzan_blues_00023,GroundTruth,beat,8.776000000
+gtzan_blues_00023,GroundTruth,beat,9.403000000
+gtzan_blues_00023,GroundTruth,beat,10.030000000
+gtzan_blues_00023,GroundTruth,beat,10.651000000
+gtzan_blues_00023,GroundTruth,beat,11.278000000
+gtzan_blues_00023,GroundTruth,beat,11.905000000
+gtzan_blues_00023,GroundTruth,beat,12.508000000
+gtzan_blues_00023,GroundTruth,beat,13.100000000
+gtzan_blues_00023,GroundTruth,beat,13.716000000
+gtzan_blues_00023,GroundTruth,beat,14.331000000
+gtzan_blues_00023,GroundTruth,beat,14.952000000
+gtzan_blues_00023,GroundTruth,beat,15.573000000
+gtzan_blues_00023,GroundTruth,beat,16.189000000
+gtzan_blues_00023,GroundTruth,beat,16.746000000
+gtzan_blues_00023,GroundTruth,beat,17.361000000
+gtzan_blues_00023,GroundTruth,beat,17.994000000
+gtzan_blues_00023,GroundTruth,beat,18.615000000
+gtzan_blues_00023,GroundTruth,beat,19.236000000
+gtzan_blues_00023,GroundTruth,beat,19.857000000
+gtzan_blues_00023,GroundTruth,beat,20.473000000
+gtzan_blues_00023,GroundTruth,beat,21.094000000
+gtzan_blues_00023,GroundTruth,beat,21.721000000
+gtzan_blues_00023,GroundTruth,beat,22.383000000
+gtzan_blues_00023,GroundTruth,beat,23.085000000
+gtzan_blues_00023,GroundTruth,beat,23.706000000
+gtzan_blues_00023,GroundTruth,beat,24.327000000
+gtzan_blues_00023,GroundTruth,beat,24.948000000
+gtzan_blues_00023,GroundTruth,beat,25.575000000
+gtzan_blues_00023,GroundTruth,beat,26.202000000
+gtzan_blues_00023,GroundTruth,beat,26.823000000
+gtzan_blues_00023,GroundTruth,beat,27.439000000
+gtzan_blues_00023,GroundTruth,beat,28.066000000
+gtzan_blues_00023,GroundTruth,beat,28.698000000
+gtzan_blues_00023,GroundTruth,beat,29.320000000
+gtzan_blues_00023,GroundTruth,beat,29.929000000
+gtzan_blues_00023,GroundTruth,downbeat,0.794000000
+gtzan_blues_00023,GroundTruth,downbeat,3.273000000
+gtzan_blues_00023,GroundTruth,downbeat,5.740000000
+gtzan_blues_00023,GroundTruth,downbeat,8.155000000
+gtzan_blues_00023,GroundTruth,downbeat,10.651000000
+gtzan_blues_00023,GroundTruth,downbeat,13.100000000
+gtzan_blues_00023,GroundTruth,downbeat,15.573000000
+gtzan_blues_00023,GroundTruth,downbeat,17.994000000
+gtzan_blues_00023,GroundTruth,downbeat,20.473000000
+gtzan_blues_00023,GroundTruth,downbeat,23.085000000
+gtzan_blues_00023,GroundTruth,downbeat,25.575000000
+gtzan_blues_00023,GroundTruth,downbeat,28.066000000
+gtzan_blues_00023,Direct,beat,0.200000000
+gtzan_blues_00023,Direct,beat,0.800000000
+gtzan_blues_00023,Direct,beat,1.400000000
+gtzan_blues_00023,Direct,beat,2.020000000
+gtzan_blues_00023,Direct,beat,2.640000000
+gtzan_blues_00023,Direct,beat,3.260000000
+gtzan_blues_00023,Direct,beat,3.880000000
+gtzan_blues_00023,Direct,beat,4.520000000
+gtzan_blues_00023,Direct,beat,5.140000000
+gtzan_blues_00023,Direct,beat,5.740000000
+gtzan_blues_00023,Direct,beat,6.360000000
+gtzan_blues_00023,Direct,beat,6.980000000
+gtzan_blues_00023,Direct,beat,7.600000000
+gtzan_blues_00023,Direct,beat,8.220000000
+gtzan_blues_00023,Direct,beat,8.840000000
+gtzan_blues_00023,Direct,beat,9.440000000
+gtzan_blues_00023,Direct,beat,10.040000000
+gtzan_blues_00023,Direct,beat,10.640000000
+gtzan_blues_00023,Direct,beat,11.260000000
+gtzan_blues_00023,Direct,beat,11.860000000
+gtzan_blues_00023,Direct,beat,12.500000000
+gtzan_blues_00023,Direct,beat,13.120000000
+gtzan_blues_00023,Direct,beat,13.760000000
+gtzan_blues_00023,Direct,beat,14.400000000
+gtzan_blues_00023,Direct,beat,15.000000000
+gtzan_blues_00023,Direct,beat,15.620000000
+gtzan_blues_00023,Direct,beat,16.200000000
+gtzan_blues_00023,Direct,beat,16.820000000
+gtzan_blues_00023,Direct,beat,17.440000000
+gtzan_blues_00023,Direct,beat,18.040000000
+gtzan_blues_00023,Direct,beat,18.660000000
+gtzan_blues_00023,Direct,beat,19.260000000
+gtzan_blues_00023,Direct,beat,19.860000000
+gtzan_blues_00023,Direct,beat,20.460000000
+gtzan_blues_00023,Direct,beat,21.080000000
+gtzan_blues_00023,Direct,beat,21.700000000
+gtzan_blues_00023,Direct,beat,22.340000000
+gtzan_blues_00023,Direct,beat,22.960000000
+gtzan_blues_00023,Direct,beat,23.580000000
+gtzan_blues_00023,Direct,beat,24.200000000
+gtzan_blues_00023,Direct,beat,24.800000000
+gtzan_blues_00023,Direct,beat,25.420000000
+gtzan_blues_00023,Direct,beat,26.020000000
+gtzan_blues_00023,Direct,beat,26.320000000
+gtzan_blues_00023,Direct,beat,26.620000000
+gtzan_blues_00023,Direct,beat,26.920000000
+gtzan_blues_00023,Direct,beat,27.220000000
+gtzan_blues_00023,Direct,beat,27.540000000
+gtzan_blues_00023,Direct,beat,28.140000000
+gtzan_blues_00023,Direct,beat,28.440000000
+gtzan_blues_00023,Direct,beat,28.760000000
+gtzan_blues_00023,Direct,beat,29.340000000
+gtzan_blues_00023,Direct,beat,29.960000000
+gtzan_blues_00023,Direct,downbeat,0.800000000
+gtzan_blues_00023,Direct,downbeat,3.260000000
+gtzan_blues_00023,Direct,downbeat,5.740000000
+gtzan_blues_00023,Direct,downbeat,8.220000000
+gtzan_blues_00023,Direct,downbeat,10.640000000
+gtzan_blues_00023,Direct,downbeat,13.120000000
+gtzan_blues_00023,Direct,downbeat,15.620000000
+gtzan_blues_00023,Direct,downbeat,18.040000000
+gtzan_blues_00023,Direct,downbeat,20.460000000
+gtzan_blues_00023,Direct,downbeat,22.960000000
+gtzan_blues_00023,Direct,downbeat,24.800000000
+gtzan_blues_00023,Direct,downbeat,25.420000000
+gtzan_blues_00023,Direct,downbeat,26.920000000
+gtzan_blues_00023,Direct,downbeat,27.220000000
+gtzan_blues_00023,Direct,downbeat,27.540000000
+gtzan_blues_00023,Direct,downbeat,28.440000000
+gtzan_blues_00023,Direct,downbeat,28.760000000
+gtzan_blues_00023,Direct,downbeat,29.340000000
+gtzan_blues_00023,Direct,downbeat,29.960000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,0.200000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,0.800000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,1.400000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,2.020000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,2.640000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,3.260000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,3.880000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,4.520000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,5.140000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,5.740000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,6.360000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,6.980000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,7.600000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,8.220000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,8.840000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,9.440000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,10.040000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,10.640000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,11.260000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,11.860000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,12.500000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,13.120000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,13.760000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,14.400000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,15.000000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,15.620000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,16.200000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,16.820000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,17.440000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,18.040000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,18.660000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,19.260000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,19.860000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,20.460000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,21.080000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,21.700000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,22.340000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,22.960000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,23.580000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,24.200000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,24.800000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,25.420000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,26.020000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,26.620000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,27.220000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,27.840000000
+gtzan_blues_00023,Fixed Semi-Markov,beat,28.440000000
+gtzan_blues_00023,DBN,beat,0.200000000
+gtzan_blues_00023,DBN,beat,0.800000000
+gtzan_blues_00023,DBN,beat,1.400000000
+gtzan_blues_00023,DBN,beat,2.020000000
+gtzan_blues_00023,DBN,beat,2.640000000
+gtzan_blues_00023,DBN,beat,3.260000000
+gtzan_blues_00023,DBN,beat,3.880000000
+gtzan_blues_00023,DBN,beat,4.520000000
+gtzan_blues_00023,DBN,beat,5.140000000
+gtzan_blues_00023,DBN,beat,5.740000000
+gtzan_blues_00023,DBN,beat,6.360000000
+gtzan_blues_00023,DBN,beat,7.000000000
+gtzan_blues_00023,DBN,beat,7.600000000
+gtzan_blues_00023,DBN,beat,8.220000000
+gtzan_blues_00023,DBN,beat,8.840000000
+gtzan_blues_00023,DBN,beat,9.420000000
+gtzan_blues_00023,DBN,beat,10.040000000
+gtzan_blues_00023,DBN,beat,10.640000000
+gtzan_blues_00023,DBN,beat,11.240000000
+gtzan_blues_00023,DBN,beat,11.880000000
+gtzan_blues_00023,DBN,beat,12.500000000
+gtzan_blues_00023,DBN,beat,13.120000000
+gtzan_blues_00023,DBN,beat,13.760000000
+gtzan_blues_00023,DBN,beat,14.380000000
+gtzan_blues_00023,DBN,beat,15.000000000
+gtzan_blues_00023,DBN,beat,15.620000000
+gtzan_blues_00023,DBN,beat,16.200000000
+gtzan_blues_00023,DBN,beat,16.840000000
+gtzan_blues_00023,DBN,beat,17.440000000
+gtzan_blues_00023,DBN,beat,18.040000000
+gtzan_blues_00023,DBN,beat,18.640000000
+gtzan_blues_00023,DBN,beat,19.240000000
+gtzan_blues_00023,DBN,beat,19.860000000
+gtzan_blues_00023,DBN,beat,20.460000000
+gtzan_blues_00023,DBN,beat,21.080000000
+gtzan_blues_00023,DBN,beat,21.700000000
+gtzan_blues_00023,DBN,beat,22.320000000
+gtzan_blues_00023,DBN,beat,22.960000000
+gtzan_blues_00023,DBN,beat,23.560000000
+gtzan_blues_00023,DBN,beat,24.180000000
+gtzan_blues_00023,DBN,beat,24.800000000
+gtzan_blues_00023,DBN,beat,25.420000000
+gtzan_blues_00023,DBN,beat,26.000000000
+gtzan_blues_00023,DBN,beat,26.620000000
+gtzan_blues_00023,DBN,beat,27.220000000
+gtzan_blues_00023,DBN,beat,27.840000000
+gtzan_blues_00023,DBN,beat,28.440000000
+gtzan_blues_00023,DBN,beat,29.060000000
+gtzan_blues_00023,DBN,beat,29.680000000
+gtzan_blues_00023,DBN,downbeat,0.800000000
+gtzan_blues_00023,DBN,downbeat,3.260000000
+gtzan_blues_00023,DBN,downbeat,5.740000000
+gtzan_blues_00023,DBN,downbeat,8.220000000
+gtzan_blues_00023,DBN,downbeat,10.640000000
+gtzan_blues_00023,DBN,downbeat,13.120000000
+gtzan_blues_00023,DBN,downbeat,15.620000000
+gtzan_blues_00023,DBN,downbeat,18.040000000
+gtzan_blues_00023,DBN,downbeat,20.460000000
+gtzan_blues_00023,DBN,downbeat,22.960000000
+gtzan_blues_00023,DBN,downbeat,25.420000000
+gtzan_blues_00023,DBN,downbeat,27.840000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,0.200000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,0.790000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,1.400000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,2.020000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,2.640000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,3.260000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,3.880000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,4.520000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,5.140000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,5.740000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,6.360000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,6.980000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,7.600000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,8.220000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,8.840000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,9.440000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,10.040000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,10.640000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,11.250000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,11.860000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,12.500000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,13.120000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,13.760000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,14.400000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,15.000000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,15.610000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,16.210000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,16.820000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,17.440000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,18.040000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,18.660000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,19.260000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,19.860000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,20.460000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,21.080000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,21.700000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,22.340000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,22.960000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,23.580000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,24.200000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,24.800000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,25.420000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,25.720000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,26.020000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,26.320000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,26.620000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,26.920000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,27.220000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,27.540000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,27.840000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,28.140000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,28.440000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,28.760000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,29.060000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,29.340000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,29.640000000
+gtzan_blues_00023,PLPDP (30-300 BPM),beat,29.950000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,0.790000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,3.260000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,5.740000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,8.220000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,10.640000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,13.120000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,15.610000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,18.040000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,20.460000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,22.960000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,24.800000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,25.420000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,26.920000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,27.220000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,27.540000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,28.440000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,28.760000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,29.640000000
+gtzan_blues_00023,PLPDP (30-300 BPM),downbeat,29.950000000
+gtzan_blues_00023,CASM,beat,0.200000000
+gtzan_blues_00023,CASM,beat,0.800000000
+gtzan_blues_00023,CASM,beat,1.400000000
+gtzan_blues_00023,CASM,beat,2.020000000
+gtzan_blues_00023,CASM,beat,2.640000000
+gtzan_blues_00023,CASM,beat,3.260000000
+gtzan_blues_00023,CASM,beat,3.880000000
+gtzan_blues_00023,CASM,beat,4.520000000
+gtzan_blues_00023,CASM,beat,5.140000000
+gtzan_blues_00023,CASM,beat,5.740000000
+gtzan_blues_00023,CASM,beat,6.360000000
+gtzan_blues_00023,CASM,beat,6.980000000
+gtzan_blues_00023,CASM,beat,7.600000000
+gtzan_blues_00023,CASM,beat,8.220000000
+gtzan_blues_00023,CASM,beat,8.840000000
+gtzan_blues_00023,CASM,beat,9.440000000
+gtzan_blues_00023,CASM,beat,10.040000000
+gtzan_blues_00023,CASM,beat,10.640000000
+gtzan_blues_00023,CASM,beat,11.260000000
+gtzan_blues_00023,CASM,beat,11.860000000
+gtzan_blues_00023,CASM,beat,12.500000000
+gtzan_blues_00023,CASM,beat,13.120000000
+gtzan_blues_00023,CASM,beat,13.760000000
+gtzan_blues_00023,CASM,beat,14.400000000
+gtzan_blues_00023,CASM,beat,15.000000000
+gtzan_blues_00023,CASM,beat,15.620000000
+gtzan_blues_00023,CASM,beat,16.200000000
+gtzan_blues_00023,CASM,beat,16.820000000
+gtzan_blues_00023,CASM,beat,17.440000000
+gtzan_blues_00023,CASM,beat,18.040000000
+gtzan_blues_00023,CASM,beat,18.660000000
+gtzan_blues_00023,CASM,beat,19.260000000
+gtzan_blues_00023,CASM,beat,19.860000000
+gtzan_blues_00023,CASM,beat,20.460000000
+gtzan_blues_00023,CASM,beat,21.080000000
+gtzan_blues_00023,CASM,beat,21.700000000
+gtzan_blues_00023,CASM,beat,22.340000000
+gtzan_blues_00023,CASM,beat,22.960000000
+gtzan_blues_00023,CASM,beat,23.580000000
+gtzan_blues_00023,CASM,beat,24.200000000
+gtzan_blues_00023,CASM,beat,24.800000000
+gtzan_blues_00023,CASM,beat,25.420000000
+gtzan_blues_00023,CASM,beat,26.020000000
+gtzan_blues_00023,CASM,beat,26.620000000
+gtzan_blues_00023,CASM,beat,27.540000000
+gtzan_blues_00023,CASM,beat,28.140000000
+gtzan_blues_00023,CASM,beat,28.760000000
+gtzan_blues_00023,CASM,beat,29.340000000
+gtzan_blues_00023,CASM,beat,29.960000000
+gtzan_blues_00023,CASM,downbeat,0.800000000
+gtzan_blues_00023,CASM,downbeat,3.260000000
+gtzan_blues_00023,CASM,downbeat,5.740000000
+gtzan_blues_00023,CASM,downbeat,8.220000000
+gtzan_blues_00023,CASM,downbeat,10.640000000
+gtzan_blues_00023,CASM,downbeat,13.120000000
+gtzan_blues_00023,CASM,downbeat,15.620000000
+gtzan_blues_00023,CASM,downbeat,18.040000000
+gtzan_blues_00023,CASM,downbeat,20.460000000
+gtzan_blues_00023,CASM,downbeat,22.960000000
+gtzan_blues_00023,CASM,downbeat,25.420000000
+gtzan_blues_00023,CASM,downbeat,28.140000000

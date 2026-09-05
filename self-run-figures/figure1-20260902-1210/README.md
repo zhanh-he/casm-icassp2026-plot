@@ -1,8 +1,8 @@
 # StructBeat Figure 1 Reproduction Bundle
 
-This directory reproduces the two finalized real-case panels for SMC 221 and
-SMC 117. It preserves the exact Beat This held-out OOF logits, unaugmented
-input spectrograms, ground truth, Direct/Fixed Semi-Markov/adjusted DBN/CASM
+This directory reproduces finalized real-case panels for SMC 117/221 and three
+selected GTZAN tracks. It preserves exact held-out Beat This logits, unaugmented
+input spectrograms, ground truth, Direct/Fixed Semi-Markov/DBN/PLPDP/CASM
 event outputs, downbeat outputs, IBI tables, CASM local duration priors,
 reliability proxies, metrics, and the original browser figure.
 
@@ -10,7 +10,7 @@ reliability proxies, metrics, and the original browser figure.
 
 Open and run `figure1_reproduction.ipynb`. The first parameter cell controls:
 
-- `CASE_NAME`: `smc_221` or `smc_117`
+- `CASE_NAME`: one of the five entries in `figure1.CASES`
 - `WINDOW_START`: visible segment start in seconds
 - `WINDOW_SECONDS`: visible segment duration
 - `PROBABILITY_SOURCE`: `payload` for pixel-faithful replay or `raw_logits`
@@ -32,10 +32,13 @@ The original D3 rendering is preserved at
 python reference/build_decoder_contrast_visualization.py \
   --smc221 data/figure_payloads/smc_221.json \
   --smc117 data/figure_payloads/smc_117.json \
+  --gtzan-blues data/figure_payloads/gtzan_blues_00023.json \
+  --gtzan-metal data/figure_payloads/gtzan_metal_00026.json \
+  --gtzan-pop data/figure_payloads/gtzan_pop_00053.json \
   --output outputs/real-decoder-contrast.html
 ```
 
-The notebook also exports static PNG/PDF figures for both cases. The D3 replay
+The notebook also exports static PNG/PDF figures for all five cases. The D3 replay
 uses five-decimal probabilities embedded in the payload; the raw logits are
 retained in `data/raw_cache/` and differ after sigmoid only by JSON rounding.
 
@@ -71,7 +74,16 @@ jupyter lab figure1_reproduction.ipynb
 
 ## Scientific warning
 
-These cases were selected for mechanism explanation. The adjusted DBN setting
-was selected on the displayed examples and must not be reported as an unbiased
-aggregate DBN benchmark. Window IBI MAE is phase-insensitive and explanatory;
+These cases were selected for mechanism explanation. The SMC adjusted DBN
+setting was selected on the displayed examples and must not be reported as an
+unbiased aggregate DBN benchmark. GTZAN uses the matched 30-300 BPM DBN, while
+PLPDP uses its released 30-300 BPM default. Window IBI MAE is explanatory;
 standard event F1/CMLt/AMLt remain the benchmark metrics.
+
+## PLPDP provenance
+
+The PLPDP rows use the released `plpdp4beat` implementation with its default
+30-300 BPM limits. The exact integration wrapper is
+`remote_edit/auto_structbeat/structbeat/decoders.py` in the local research
+workspace; `reference/build_extended_demo_cases.py` records the frozen decoder
+settings and rebuilds the five-method payloads from the raw activation caches.

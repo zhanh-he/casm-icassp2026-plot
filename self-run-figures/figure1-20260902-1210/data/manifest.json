@@ -1,6 +1,24 @@
 {
   "bundle": "StructBeat Figure 1 exact-data reproduction",
   "cases": {
+    "smc_117": {
+      "piece": "smc/smc_117/track.npy",
+      "fold": "fold 5",
+      "fps": 50.0,
+      "duration_seconds": 40.02,
+      "recommended_window_start": 21.48,
+      "recommended_window_seconds": 18.0,
+      "logit_frames": 2001,
+      "spectrogram_shape": [
+        2001,
+        128
+      ],
+      "spectrogram_dtype": "float16",
+      "probability_rounding_error": {
+        "beat_probability_max_abs": 4.994251965331764e-06,
+        "downbeat_probability_max_abs": 4.994251965331764e-06
+      }
+    },
     "smc_221": {
       "piece": "smc/smc_221/track.npy",
       "fold": "fold 6",
@@ -19,41 +37,66 @@
         "downbeat_probability_max_abs": 4.9946725688698734e-06
       }
     },
-    "smc_117": {
-      "piece": "smc/smc_117/track.npy",
-      "fold": "fold 5",
+    "gtzan_blues_00023": {
+      "piece": "gtzan/gtzan_blues_00023/track.npy",
+      "fold": "final0",
       "fps": 50.0,
-      "duration_seconds": 40.02,
-      "recommended_window_start": 21.48,
+      "duration_seconds": 30.02,
+      "recommended_window_start": 11.94,
       "recommended_window_seconds": 18.0,
-      "logit_frames": 2001,
+      "logit_frames": 1501,
       "spectrogram_shape": [
-        2001,
+        1501,
         128
       ],
       "spectrogram_dtype": "float16",
       "probability_rounding_error": {
-        "beat_probability_max_abs": 4.994251965331764e-06,
-        "downbeat_probability_max_abs": 4.994251965331764e-06
+        "beat_probability_max_abs": 4.9998232263840856e-06,
+        "downbeat_probability_max_abs": 4.9946725688698734e-06
+      }
+    },
+    "gtzan_metal_00026": {
+      "piece": "gtzan/gtzan_metal_00026/track.npy",
+      "fold": "final0",
+      "fps": 50.0,
+      "duration_seconds": 30.02,
+      "recommended_window_start": 3.0,
+      "recommended_window_seconds": 18.0,
+      "logit_frames": 1501,
+      "spectrogram_shape": [
+        1501,
+        128
+      ],
+      "spectrogram_dtype": "float16",
+      "probability_rounding_error": {
+        "beat_probability_max_abs": 4.993114799067833e-06,
+        "downbeat_probability_max_abs": 4.991703254930615e-06
+      }
+    },
+    "gtzan_pop_00053": {
+      "piece": "gtzan/gtzan_pop_00053/track.npy",
+      "fold": "final0",
+      "fps": 50.0,
+      "duration_seconds": 30.02,
+      "recommended_window_start": 3.0,
+      "recommended_window_seconds": 18.0,
+      "logit_frames": 1501,
+      "spectrogram_shape": [
+        1501,
+        128
+      ],
+      "spectrogram_dtype": "float16",
+      "probability_rounding_error": {
+        "beat_probability_max_abs": 4.998792028532151e-06,
+        "downbeat_probability_max_abs": 4.998792028532151e-06
       }
     }
   },
-  "dbn_configuration": {
-    "min_bpm": 35.0,
-    "max_bpm": 160.0,
-    "transition_lambda": 50.0,
-    "observation_lambda": 8.0,
-    "threshold": 0.03,
-    "beats_per_bar": [
-      3,
-      4
-    ],
-    "warning": "Illustration-tuned on the displayed cases; not an aggregate benchmark setting."
-  },
+  "decoder_note": "SMC uses a shared illustration-tuned DBN; GTZAN uses the matched 30-300 BPM benchmark DBN. PLPDP uses the released 30-300 BPM default.",
   "audio": {
     "bundled_waveform": false,
-    "reason": "The Beat This distribution used here provides precomputed spectrograms and annotations, not redistributable SMC waveform audio.",
-    "override": "Set AUDIO_OVERRIDE in the notebook to an authorized local WAV/FLAC/OGG file."
+    "reason": "The numerical reproduction bundle does not embed waveform audio; public demo audio is generated separately from licensed source files.",
+    "override": "Set AUDIO_OVERRIDE in the notebook or use the local_audio files when available."
   },
   "files": [
     {
@@ -62,14 +105,44 @@
       "sha256": "850bd0bbdb17e61019dfb442cc95b60dd65aa14ac7c03d94c8bd5b77fb528e7a"
     },
     {
+      "path": "data/figure_payloads/gtzan_blues_00023.json",
+      "bytes": 48495,
+      "sha256": "56b3edb93224d9d9143db2b9b0b697c7badfa1783dbd65b3a150c000cbce5886"
+    },
+    {
+      "path": "data/figure_payloads/gtzan_metal_00026.json",
+      "bytes": 64167,
+      "sha256": "623860e355b4f2859a5dfe244c972512f1cfa985ed0aba50cbd6fde124c169c7"
+    },
+    {
+      "path": "data/figure_payloads/gtzan_pop_00053.json",
+      "bytes": 58845,
+      "sha256": "dc1b82e21339557fb933ca5a7056b9ec6901acd6522d999bf66ac206e15fd85a"
+    },
+    {
       "path": "data/figure_payloads/smc_117.json",
-      "bytes": 73096,
-      "sha256": "fd6292bb5e94ab88c1149999aa92361b9288e5fc9f586a1e9ad52016036a1d7c"
+      "bytes": 74750,
+      "sha256": "7d044548d886ffd4b6bc9ee081bb40eac80a23fcfc23859f3ef74cf8f617f00f"
     },
     {
       "path": "data/figure_payloads/smc_221.json",
-      "bytes": 68412,
-      "sha256": "0af73fed851dd3bb5445f204fd750789b2fb2832f637554709fdedf71e621b49"
+      "bytes": 70049,
+      "sha256": "b327cd1b2bb8234ff1082b114873e626f7352da605eb3f152fb43f57ebabd03b"
+    },
+    {
+      "path": "data/raw_cache/gtzan_blues_00023_beat_this_final0.npz",
+      "bytes": 14445,
+      "sha256": "73def5cdae1fd6d63501e4b2e30f2359ded49e7c3b7483bf0d89968f7fd3433b"
+    },
+    {
+      "path": "data/raw_cache/gtzan_metal_00026_beat_this_final0.npz",
+      "bytes": 15213,
+      "sha256": "5e33b88f5cf81600714d057e0a0325f3a1d8788088db20def05a4330a327e840"
+    },
+    {
+      "path": "data/raw_cache/gtzan_pop_00053_beat_this_final0.npz",
+      "bytes": 14277,
+      "sha256": "4cabc41c2f1e36ae8dd2f3fe8841fbcd75806d6f932f176a8a6c8a0e84cf31f5"
     },
     {
       "path": "data/raw_cache/smc_117_beat_this_oof.npz",
@@ -82,6 +155,21 @@
       "sha256": "680db63a77c1a2ba4050c47b5cdd56887998f409abd663096483135d1a25ac40"
     },
     {
+      "path": "data/spectrograms/gtzan_blues_00023_spectrogram.npy",
+      "bytes": 384384,
+      "sha256": "5875583653fd319117c9022172d0645537fa12b1329b87773887ff25d00a479a"
+    },
+    {
+      "path": "data/spectrograms/gtzan_metal_00026_spectrogram.npy",
+      "bytes": 384384,
+      "sha256": "a2ce70afbb340c2d8ea515183d99c2f52c59cbd43d8347bb3955fa1204476955"
+    },
+    {
+      "path": "data/spectrograms/gtzan_pop_00053_spectrogram.npy",
+      "bytes": 384384,
+      "sha256": "99b997c386bf7fa09f6c7b465b2e61922e8fe6ecd2a4c85978921b7018cda93f"
+    },
+    {
       "path": "data/spectrograms/smc_117_spectrogram.npy",
       "bytes": 512384,
       "sha256": "6d32f66a873d0d165384f12cb76949c26955fa6fdffdfacaa69d94195f8fabe6"
@@ -92,34 +180,79 @@
       "sha256": "7d2c40fbd7baedab25f0b3512d5968d5e2dd568405237c6421d8bfd407312d9d"
     },
     {
+      "path": "data/tables/gtzan_blues_00023_events.csv",
+      "bytes": 17899,
+      "sha256": "7a755a1611a8a9e76db1a672d3082890b1051a249aa83b48a261bd94e00e6a12"
+    },
+    {
+      "path": "data/tables/gtzan_blues_00023_ibi.csv",
+      "bytes": 16023,
+      "sha256": "c386d69772763b284a2022fe356479a448ad17ef7447542420eafcea73581c0b"
+    },
+    {
+      "path": "data/tables/gtzan_blues_00023_priors.csv",
+      "bytes": 4807,
+      "sha256": "088c8eb53be13e127fdb3edb3013ec4df3f5950658c0ccc514950532fdce0c5a"
+    },
+    {
+      "path": "data/tables/gtzan_metal_00026_events.csv",
+      "bytes": 40480,
+      "sha256": "a91ec2758d78a4161a2c6fa53d458e22751dc93b339369e39022fe7e8b56340b"
+    },
+    {
+      "path": "data/tables/gtzan_metal_00026_ibi.csv",
+      "bytes": 37659,
+      "sha256": "e40cf98e33423252bcb20de5eb4f9827419c478b0899e1eb544c030833173eb1"
+    },
+    {
+      "path": "data/tables/gtzan_metal_00026_priors.csv",
+      "bytes": 13332,
+      "sha256": "d84af216ea777c53dd23e6969c31b8022f0636c9e6b66cc4db8b3dabde813d63"
+    },
+    {
+      "path": "data/tables/gtzan_pop_00053_events.csv",
+      "bytes": 14742,
+      "sha256": "3bb92f836a4e5b86b985d46431a6f4dc40ae6635e294c3c9abc988c6f26d5276"
+    },
+    {
+      "path": "data/tables/gtzan_pop_00053_ibi.csv",
+      "bytes": 12658,
+      "sha256": "76e03eeae55f2901279094662ae063a5757a9b2ccd61f74c92e8f2f92eca6102"
+    },
+    {
+      "path": "data/tables/gtzan_pop_00053_priors.csv",
+      "bytes": 15827,
+      "sha256": "7196d50bead9a689febf7de1ef9975ca57335bfae61a68a5499683035741a366"
+    },
+    {
       "path": "data/tables/smc_117_events.csv",
-      "bytes": 13803,
-      "sha256": "a532d7c0b9750e164dcf383fd6f08a0b718ee5caa207e0095f6a8e5b56be4fab"
+      "bytes": 15941,
+      "sha256": "f37b94122aa27c1eb80e98002b0ee75a088b7d727e089b95db685bcf28841b69"
     },
     {
       "path": "data/tables/smc_117_ibi.csv",
-      "bytes": 12554,
-      "sha256": "f8b06ec0c24e8a4fe805e3510f217f720839f1533f4567ee02923c4d28f543a7"
+      "bytes": 14321,
+      "sha256": "7cbee756771cfff01c19eef1ccc4f11296b3c7a77a6988e194719294a22d3390"
     },
     {
       "path": "data/tables/smc_117_priors.csv",
-      "bytes": 17262,
-      "sha256": "dd23e9b90a70e6ab2b81ab46e7afcfd55dcb0395b016c3c4c7723a5763264231"
+      "bytes": 17019,
+      "sha256": "f1cab8af244c20b9d62578e5943d902f4089d41f982df8bd6654b34336e2bdf0"
     },
     {
       "path": "data/tables/smc_221_events.csv",
-      "bytes": 11631,
-      "sha256": "8aba876dc655360839c89dd6f8def718151f68015daadbeff381d148de6fac38"
+      "bytes": 13903,
+      "sha256": "5536c3725655b351da32811d8e061dc0bb64dcb06d6efa75685858e5641b283a"
     },
     {
       "path": "data/tables/smc_221_ibi.csv",
-      "bytes": 10593,
-      "sha256": "a266d6eaca1dd650a3305d23551e4f9d73a3600298587c7e26d9b0c533c3ce11"
+      "bytes": 12540,
+      "sha256": "0ba8093c6bcae83e4c0a5f28d075e60a4c008528e1c784c382fb9173dced322e"
     },
     {
       "path": "data/tables/smc_221_priors.csv",
-      "bytes": 12875,
-      "sha256": "3bf3877ac770bf103f728eee460158dd2c317c9cf75b8f4423d51ea2177024bd"
+      "bytes": 12693,
+      "sha256": "5cf75ebf68d21287fd1e6329b0849115047ed42da58e293ad274b8b64c7201a7"
     }
   ]
 }

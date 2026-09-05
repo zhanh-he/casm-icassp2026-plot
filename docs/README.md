@@ -7,20 +7,20 @@
 This is the public GitHub Pages demo. It can be opened directly without
 cloning the repository or starting a local server.
 
-The site presents the finalized SMC 221/117 decoder-contrast figure.
+The site presents finalized SMC 117/221 examples and three selected GTZAN cases.
 
 The page preserves the exact D3 visualization and adds synchronized Web Audio
-audition for GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
+audition for GroundTruth, Direct, Fixed Semi-Markov, DBN, PLPDP, and CASM.
 Clicks are synthesized from the frozen event arrays in `data/cases.json`.
 
 One-click audition buttons sit directly below the decoder score table. Music is
 streamed through the browser's native MP3 player; the click and music gains are
 fixed, so the public interface only exposes the controls needed for comparison.
 
-Each case includes its complete 40-second SMC MIREX performance. Original plays
+Each case includes its complete 30- or 40-second performance. Original plays
 the music alone; GroundTruth and every decoder overlay their events on exactly
 the same recording. The figure opens on the selected 18-second analysis window,
-and the slider can audition every valid interval in either case.
+and the slider can audition every valid interval in each case.
 
 The published clips and their provenance are documented in
 [`audio/ATTRIBUTION.md`](audio/ATTRIBUTION.md).

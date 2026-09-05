@@ -1,16 +1,22 @@
 {
   "source_figure_fragment": "self-run-figures/figure1-20260902-1210/reference/real-decoder-contrast.html",
-  "source_figure_sha256": "c9c1b6d120386d4104ed6d74acfa68921ca1eb8d75fbc4458ea3e46454f75e34",
-  "case_data_sha256": "701d3c645ea0f09898f7726384156a279ccc7a812daa23d95f1cfb12552e1dae",
-  "visualization_sha256": "4b70d66ea8b2f2277d029e708db35bda3320984febe9ba101a4d5478bc77f14b",
-  "case_count": 2,
+  "source_figure_sha256": "c1526a47a7b632c7208f17d5dd07289eccb0eae5c81fb482550b198ebd1a3ba6",
+  "case_data_sha256": "da73532d49a19d39b0233606194d07a01d9a3c1380e21c3d326d505d020e292f",
+  "visualization_sha256": "aa447b004d0193a73d81ccbdd8a4fbaca5f96837e14d5bd29f3b4c4abd8fe99d",
+  "case_count": 5,
   "audio_source": "http://smc.inescporto.pt/data/SMC_MIREX.zip",
   "audio_download_mirror": "https://bit.ly/33SlutJ",
   "audio_download_script": "https://github.com/nicolaus625/CMI-bench/blob/main/data/SMC/download_smc.sh",
   "audio_citation": "Holzapfel et al., Selective Sampling for Beat Tracking Evaluation, IEEE TASLP 20(9), 2012.",
-  "audio_policy": "Only the two selected 40-second SMC examples are published; the remainder of the dataset is not mirrored.",
+  "gtzan_audio_source": "http://marsyas.info/downloads/datasets.html",
+  "gtzan_audio_download_mirror": "https://huggingface.co/datasets/m-a-p/GTZAN",
+  "gtzan_audio_citation": "Tzanetakis and Cook, Musical Genre Classification of Audio Signals, IEEE TSAP 10(5), 2002.",
+  "audio_policy": "Only the two selected SMC examples and three selected GTZAN examples are published; neither complete dataset is mirrored.",
   "audio_files": {
+    "smc-117.mp3": "7eb10d22690f4d3df7d72e97330fb26c78a325c874bbbe9a6819a5e63367703a",
     "smc-221.mp3": "b7c1cdbd1cc9eee112b4bcad28a633f6050852fb3c9acedce0f0d908569361d8",
-    "smc-117.mp3": "7eb10d22690f4d3df7d72e97330fb26c78a325c874bbbe9a6819a5e63367703a"
+    "gtzan-blues-00023.mp3": "4502e23eb9020532ae7a1e61e6e1b7f091c68d0eae3899f14cedaaa71910a487",
+    "gtzan-metal-00026.mp3": "e3d8a75a56a5d6e98430c80f479fb374b74d5c4ed80679a74f89a081cbdce262",
+    "gtzan-pop-00053.mp3": "52bc7f761a33a4d1868a6eb8dfa054ef15b93ea9599cc41cff4db85d8ae8e94c"
   }
 }

@@ -38,16 +38,34 @@ audio_config = json.loads(AUDIO_CONFIG_PATH.read_text(encoding="utf-8"))
 cases = []
 for case, label, rank, summary in (
     (
+        "smc_117",
+        "SMC 117",
+        234,
+        "Adjusted DBN reduces dense-path failures, yet unstable IBI transitions remain; CASM follows the local intervals.",
+    ),
+    (
         "smc_221",
         "SMC 221",
         301,
         "Adjusted DBN recovers a plausible variable-tempo path but remains less continuous than CASM.",
     ),
     (
-        "smc_117",
-        "SMC 117",
-        234,
-        "Adjusted DBN reduces dense-path failures, yet unstable IBI transitions remain; CASM follows the local intervals.",
+        "gtzan_blues_00023",
+        "GTZAN · Blues 00023",
+        None,
+        "CASM improves both event accuracy and metrical continuity over all four comparison decoders on this clean held-out track.",
+    ),
+    (
+        "gtzan_metal_00026",
+        "GTZAN · Metal 00026",
+        None,
+        "Direct and PLPDP are already strong, while CASM still recovers the most accurate and continuous beat path.",
+    ),
+    (
+        "gtzan_pop_00053",
+        "GTZAN · Pop 00053",
+        None,
+        "A difficult track for every decoder: CASM remains clearly ahead in F1 and continuity without changing the shared front-end.",
     ),
 ):
     payload_path = FIGURE_ROOT / "data" / "figure_payloads" / f"{case}.json"
@@ -93,6 +111,7 @@ base_style = """
   --viz-series-1: #409eff;
   --viz-series-2: #ff7a3d;
   --viz-series-3: #59c879;
+  --viz-series-4: #d89b31;
   --viz-series-5: #9270ed;
   --viz-series-6: #2bb8b2;
   --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -146,7 +165,10 @@ manifest = {
     "audio_download_mirror": audio_config["download_mirror_url"],
     "audio_download_script": audio_config["download_script_url"],
     "audio_citation": audio_config["citation"],
-    "audio_policy": "Only the two selected 40-second SMC examples are published; the remainder of the dataset is not mirrored.",
+    "gtzan_audio_source": audio_config["gtzan_source_url"],
+    "gtzan_audio_download_mirror": audio_config["gtzan_download_mirror_url"],
+    "gtzan_audio_citation": audio_config["gtzan_citation"],
+    "audio_policy": "Only the two selected SMC examples and three selected GTZAN examples are published; neither complete dataset is mirrored.",
     "audio_files": {
         selection["output_file"]: sha256(DOCS_ROOT / "audio" / selection["output_file"])
         for selection in audio_config["cases"].values()

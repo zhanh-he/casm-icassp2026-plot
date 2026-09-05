@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build compressed full-example SMC audio for the public listening demo."""
+"""Build compressed full-example audio for the public listening demo."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "audio_root",
         type=Path,
-        help="Directory containing the original SMC_MIREX_Audio WAV files.",
+        help="Directory containing the configured source WAV files.",
     )
     return parser.parse_args()
 

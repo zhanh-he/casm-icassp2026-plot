@@ -31,8 +31,8 @@ notebook.cells = [
     nbf.v4.new_markdown_cell(
         """# StructBeat Figure 1: exact-data reproduction
 
-**TL;DR.** This notebook replays the finalized SMC 221 and SMC 117 decoder-
-contrast figure from the exact Beat This held-out OOF logits and spectrograms.
+**TL;DR.** This notebook replays the finalized SMC 117/221 and selected GTZAN
+decoder-contrast figures from exact held-out Beat This logits and spectrograms.
 It verifies the frozen figure payload, derives every IBI from event times,
 exports inspectable CSVs, and keeps one parameter cell for segment selection.
 
@@ -79,16 +79,16 @@ plt.rcParams.update({
         """## Parameters
 
 Edit this single cell to move the visible/audio window. `AUDIO_OVERRIDE` may
-point to an authorized WAV, FLAC, or OGG file matching the chosen SMC item."""
+point to an authorized WAV, FLAC, MP3, or OGG file matching the chosen item."""
     ),
     code(
         """
-CASE_NAME = "smc_221"       # "smc_221" or "smc_117"
+CASE_NAME = "smc_117"       # See CASES for SMC and selected GTZAN options
 WINDOW_START = None          # None uses the frozen recommended window
 WINDOW_SECONDS = 18.0
 PROBABILITY_SOURCE = "payload"  # "payload" or "raw_logits"
 SHOW_LOCAL_TAU = True
-AUDIO_OVERRIDE = None        # e.g. Path("/authorized/path/smc_221.wav")
+AUDIO_OVERRIDE = None        # e.g. Path("/authorized/path/smc_117.wav")
 EXPORT_AUDIO_CLIP = False
 
 assert CASE_NAME in CASES
@@ -147,8 +147,8 @@ print("Window IBI MAE:", json.dumps(selected["window_mae"], indent=2))
     nbf.v4.new_markdown_cell(
         """## Inspect the exact model input
 
-This is the unaugmented 2,001-frame, 128-bin Beat This input. It shares the
-same 50 fps clock and selected time window as Figure 1."""
+This is the unaugmented 128-bin Beat This input. SMC cases contain 2,001 frames
+and GTZAN cases 1,501 frames; both use the same 50 fps clock as Figure 1."""
     ),
     code(
         """
@@ -160,8 +160,8 @@ plt.close(spec_figure)
     nbf.v4.new_markdown_cell(
         """## Optional waveform playback and clip export
 
-The experiment copy contains spectrograms, not redistributable SMC waveform
-audio. Set `AUDIO_OVERRIDE` to a matching authorized local file; this cell then
+The numerical bundle contains spectrograms rather than waveform audio. Set
+`AUDIO_OVERRIDE` to a matching authorized local file; this cell then
 plays exactly `[WINDOW_START, WINDOW_START + WINDOW_SECONDS]` and can export it."""
     ),
     code(
@@ -220,24 +220,27 @@ subprocess.run(
         str(ROOT / "reference" / "build_decoder_contrast_visualization.py"),
         "--smc221", str(ROOT / "data" / "figure_payloads" / "smc_221.json"),
         "--smc117", str(ROOT / "data" / "figure_payloads" / "smc_117.json"),
+        "--gtzan-blues", str(ROOT / "data" / "figure_payloads" / "gtzan_blues_00023.json"),
+        "--gtzan-metal", str(ROOT / "data" / "figure_payloads" / "gtzan_metal_00026.json"),
+        "--gtzan-pop", str(ROOT / "data" / "figure_payloads" / "gtzan_pop_00053.json"),
         "--output", str(browser_output),
     ],
     check=True,
 )
 print("Wrote", browser_output)
-display(IFrame(src="outputs/real-decoder-contrast.html", width="100%", height=900))
+display(IFrame(src="outputs/real-decoder-contrast.html", width="100%", height=1100))
 """
     ),
     nbf.v4.new_markdown_cell(
         """## Validation notes
 
 - SMC has beat annotations but no reference downbeat labels in this protocol;
-  therefore the SMC GroundTruth diamonds are hollow. The filled-diamond legend
-  is retained so the same plotting code remains valid for downbeat-annotated data.
-- Adjusted DBN uses min/max BPM 35/160, transition lambda 50, observation
-  lambda 8, threshold 0.03, and meter hypotheses 3/4.
-- This DBN configuration and both displayed cases are explanatory selections.
-  They are not unbiased aggregate benchmark results.
+  its GroundTruth diamonds are hollow. GTZAN also shows filled downbeat diamonds.
+- PLPDP is the released algorithm with its default 30-300 BPM range.
+- The two SMC examples use the shared illustration-tuned DBN. GTZAN uses the
+  matched 30-300 BPM benchmark configuration.
+- All displayed cases are post-hoc mechanism illustrations, not an unbiased
+  estimate of aggregate benchmark performance.
 - IBI curves compare local spacings and can look close despite phase-shifted or
   inserted/deleted beat events. Use F1/CMLt/AMLt for formal evaluation."""
     ),

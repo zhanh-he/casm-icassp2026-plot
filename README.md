@@ -7,17 +7,17 @@ Open the public GitHub Pages site directly in any modern browser:
 **https://zhanh-he.github.io/casm-icassp2026-plot/**
 
 No clone, download, or local web server is required. The public demo includes
-the SMC 221/117 visualization and synchronized click-track audition for
-GroundTruth, Direct, Fixed Semi-Markov, adjusted DBN, and CASM.
+SMC 117/221 plus three selected GTZAN visualizations and synchronized click-
+track audition for GroundTruth, Direct, Fixed Semi-Markov, DBN, PLPDP, and CASM.
 
 One-click audition buttons sit directly below the decoder score table. Music is
 played by the browser's native MP3 player, while beat and downbeat clicks remain
 synchronized to the frozen event arrays.
 
-Each public case includes its complete 40-second SMC MIREX performance. Original
+Each public case includes its complete 30- or 40-second performance. Original
 plays the music alone; GroundTruth and every decoder overlay their events on
 exactly the same recording. The figure still opens on the selected 18-second
-analysis window, while the slider can audition any valid interval in either case.
+analysis window, while the slider can audition any valid interval in every case.
 
 ## Source layout
 

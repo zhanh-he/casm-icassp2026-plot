@@ -1,21 +1,42 @@
 {
-  "dataset": "SMC MIREX",
+  "dataset": "SMC MIREX and GTZAN",
   "source_archive_url": "http://smc.inescporto.pt/data/SMC_MIREX.zip",
   "download_mirror_url": "https://bit.ly/33SlutJ",
   "download_script_url": "https://github.com/nicolaus625/CMI-bench/blob/main/data/SMC/download_smc.sh",
   "citation": "Holzapfel et al., Selective Sampling for Beat Tracking Evaluation, IEEE TASLP 20(9), 2012.",
+  "gtzan_source_url": "http://marsyas.info/downloads/datasets.html",
+  "gtzan_download_mirror_url": "https://huggingface.co/datasets/m-a-p/GTZAN",
+  "gtzan_citation": "Tzanetakis and Cook, Musical Genre Classification of Audio Signals, IEEE TSAP 10(5), 2002.",
   "cases": {
+    "smc-117": {
+      "source_file": "SMC_117.wav",
+      "output_file": "smc-117.mp3",
+      "start_seconds": 0.0,
+      "duration_seconds": 40.0
+    },
     "smc-221": {
       "source_file": "SMC_221.wav",
       "output_file": "smc-221.mp3",
       "start_seconds": 0.0,
       "duration_seconds": 40.0
     },
-    "smc-117": {
-      "source_file": "SMC_117.wav",
-      "output_file": "smc-117.mp3",
+    "gtzan-blues-00023": {
+      "source_file": "GTZAN_blues_00023.wav",
+      "output_file": "gtzan-blues-00023.mp3",
       "start_seconds": 0.0,
-      "duration_seconds": 40.0
+      "duration_seconds": 30.0
+    },
+    "gtzan-metal-00026": {
+      "source_file": "GTZAN_metal_00026.wav",
+      "output_file": "gtzan-metal-00026.mp3",
+      "start_seconds": 0.0,
+      "duration_seconds": 30.0
+    },
+    "gtzan-pop-00053": {
+      "source_file": "GTZAN_pop_00053.wav",
+      "output_file": "gtzan-pop-00053.mp3",
+      "start_seconds": 0.0,
+      "duration_seconds": 30.0
     }
   }
 }

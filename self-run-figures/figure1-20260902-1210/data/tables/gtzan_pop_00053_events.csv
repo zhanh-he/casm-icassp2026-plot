@@ -1,0 +1,323 @@
+case,source,event_type,time_seconds
+gtzan_pop_00053,GroundTruth,beat,0.039000000
+gtzan_pop_00053,GroundTruth,beat,0.994000000
+gtzan_pop_00053,GroundTruth,beat,1.942000000
+gtzan_pop_00053,GroundTruth,beat,2.892000000
+gtzan_pop_00053,GroundTruth,beat,3.842000000
+gtzan_pop_00053,GroundTruth,beat,4.783000000
+gtzan_pop_00053,GroundTruth,beat,5.725000000
+gtzan_pop_00053,GroundTruth,beat,6.672000000
+gtzan_pop_00053,GroundTruth,beat,7.618000000
+gtzan_pop_00053,GroundTruth,beat,8.563000000
+gtzan_pop_00053,GroundTruth,beat,9.507000000
+gtzan_pop_00053,GroundTruth,beat,10.445000000
+gtzan_pop_00053,GroundTruth,beat,11.382000000
+gtzan_pop_00053,GroundTruth,beat,12.317000000
+gtzan_pop_00053,GroundTruth,beat,13.251000000
+gtzan_pop_00053,GroundTruth,beat,14.198000000
+gtzan_pop_00053,GroundTruth,beat,15.144000000
+gtzan_pop_00053,GroundTruth,beat,16.058000000
+gtzan_pop_00053,GroundTruth,beat,16.972000000
+gtzan_pop_00053,GroundTruth,beat,17.887000000
+gtzan_pop_00053,GroundTruth,beat,18.801000000
+gtzan_pop_00053,GroundTruth,beat,19.715000000
+gtzan_pop_00053,GroundTruth,beat,20.630000000
+gtzan_pop_00053,GroundTruth,beat,21.574000000
+gtzan_pop_00053,GroundTruth,beat,22.519000000
+gtzan_pop_00053,GroundTruth,beat,23.429000000
+gtzan_pop_00053,GroundTruth,beat,24.339000000
+gtzan_pop_00053,GroundTruth,beat,25.279000000
+gtzan_pop_00053,GroundTruth,beat,26.220000000
+gtzan_pop_00053,GroundTruth,beat,27.160000000
+gtzan_pop_00053,GroundTruth,beat,28.101000000
+gtzan_pop_00053,GroundTruth,beat,28.989000000
+gtzan_pop_00053,GroundTruth,beat,29.877000000
+gtzan_pop_00053,GroundTruth,downbeat,0.994000000
+gtzan_pop_00053,GroundTruth,downbeat,4.783000000
+gtzan_pop_00053,GroundTruth,downbeat,8.563000000
+gtzan_pop_00053,GroundTruth,downbeat,12.317000000
+gtzan_pop_00053,GroundTruth,downbeat,16.058000000
+gtzan_pop_00053,GroundTruth,downbeat,19.715000000
+gtzan_pop_00053,GroundTruth,downbeat,23.429000000
+gtzan_pop_00053,GroundTruth,downbeat,27.160000000
+gtzan_pop_00053,Direct,beat,0.000000000
+gtzan_pop_00053,Direct,beat,1.800000000
+gtzan_pop_00053,Direct,beat,2.520000000
+gtzan_pop_00053,Direct,beat,2.860000000
+gtzan_pop_00053,Direct,beat,3.660000000
+gtzan_pop_00053,Direct,beat,5.640000000
+gtzan_pop_00053,Direct,beat,6.380000000
+gtzan_pop_00053,Direct,beat,7.100000000
+gtzan_pop_00053,Direct,beat,7.520000000
+gtzan_pop_00053,Direct,beat,8.500000000
+gtzan_pop_00053,Direct,beat,9.160000000
+gtzan_pop_00053,Direct,beat,9.780000000
+gtzan_pop_00053,Direct,beat,10.420000000
+gtzan_pop_00053,Direct,beat,10.780000000
+gtzan_pop_00053,Direct,beat,11.120000000
+gtzan_pop_00053,Direct,beat,12.280000000
+gtzan_pop_00053,Direct,beat,13.900000000
+gtzan_pop_00053,Direct,beat,14.220000000
+gtzan_pop_00053,Direct,beat,14.580000000
+gtzan_pop_00053,Direct,beat,16.080000000
+gtzan_pop_00053,Direct,beat,17.880000000
+gtzan_pop_00053,Direct,beat,18.620000000
+gtzan_pop_00053,Direct,beat,19.980000000
+gtzan_pop_00053,Direct,beat,20.740000000
+gtzan_pop_00053,Direct,beat,21.400000000
+gtzan_pop_00053,Direct,beat,21.720000000
+gtzan_pop_00053,Direct,beat,22.140000000
+gtzan_pop_00053,Direct,beat,23.740000000
+gtzan_pop_00053,Direct,beat,24.500000000
+gtzan_pop_00053,Direct,beat,25.180000000
+gtzan_pop_00053,Direct,beat,25.800000000
+gtzan_pop_00053,Direct,beat,26.520000000
+gtzan_pop_00053,Direct,beat,27.560000000
+gtzan_pop_00053,Direct,beat,27.920000000
+gtzan_pop_00053,Direct,beat,28.560000000
+gtzan_pop_00053,Direct,beat,29.280000000
+gtzan_pop_00053,Direct,downbeat,0.000000000
+gtzan_pop_00053,Direct,downbeat,1.800000000
+gtzan_pop_00053,Direct,downbeat,2.520000000
+gtzan_pop_00053,Direct,downbeat,2.860000000
+gtzan_pop_00053,Direct,downbeat,5.640000000
+gtzan_pop_00053,Direct,downbeat,8.500000000
+gtzan_pop_00053,Direct,downbeat,10.780000000
+gtzan_pop_00053,Direct,downbeat,11.120000000
+gtzan_pop_00053,Direct,downbeat,12.280000000
+gtzan_pop_00053,Direct,downbeat,13.900000000
+gtzan_pop_00053,Direct,downbeat,14.220000000
+gtzan_pop_00053,Direct,downbeat,14.580000000
+gtzan_pop_00053,Direct,downbeat,17.880000000
+gtzan_pop_00053,Direct,downbeat,20.740000000
+gtzan_pop_00053,Direct,downbeat,23.740000000
+gtzan_pop_00053,Direct,downbeat,26.520000000
+gtzan_pop_00053,Direct,downbeat,27.560000000
+gtzan_pop_00053,Direct,downbeat,29.280000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,1.960000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,2.680000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,3.380000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,4.140000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,4.920000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,5.640000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,6.380000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,7.100000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,7.780000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,8.440000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,9.100000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,9.780000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,10.420000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,11.120000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,11.860000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,12.560000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,13.220000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,13.900000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,14.580000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,15.320000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,16.020000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,16.700000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,17.320000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,18.000000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,18.620000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,19.280000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,19.980000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,20.740000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,21.400000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,22.140000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,22.900000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,23.740000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,24.500000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,25.180000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,25.880000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,26.520000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,27.180000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,27.920000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,28.560000000
+gtzan_pop_00053,Fixed Semi-Markov,beat,29.280000000
+gtzan_pop_00053,DBN,beat,0.000000000
+gtzan_pop_00053,DBN,beat,0.740000000
+gtzan_pop_00053,DBN,beat,1.440000000
+gtzan_pop_00053,DBN,beat,2.160000000
+gtzan_pop_00053,DBN,beat,2.880000000
+gtzan_pop_00053,DBN,beat,3.600000000
+gtzan_pop_00053,DBN,beat,4.260000000
+gtzan_pop_00053,DBN,beat,5.000000000
+gtzan_pop_00053,DBN,beat,5.660000000
+gtzan_pop_00053,DBN,beat,6.380000000
+gtzan_pop_00053,DBN,beat,7.100000000
+gtzan_pop_00053,DBN,beat,7.780000000
+gtzan_pop_00053,DBN,beat,8.480000000
+gtzan_pop_00053,DBN,beat,9.140000000
+gtzan_pop_00053,DBN,beat,9.780000000
+gtzan_pop_00053,DBN,beat,10.420000000
+gtzan_pop_00053,DBN,beat,11.120000000
+gtzan_pop_00053,DBN,beat,11.880000000
+gtzan_pop_00053,DBN,beat,12.680000000
+gtzan_pop_00053,DBN,beat,13.460000000
+gtzan_pop_00053,DBN,beat,14.220000000
+gtzan_pop_00053,DBN,beat,15.060000000
+gtzan_pop_00053,DBN,beat,15.940000000
+gtzan_pop_00053,DBN,beat,16.760000000
+gtzan_pop_00053,DBN,beat,17.600000000
+gtzan_pop_00053,DBN,beat,18.440000000
+gtzan_pop_00053,DBN,beat,19.260000000
+gtzan_pop_00053,DBN,beat,19.960000000
+gtzan_pop_00053,DBN,beat,20.740000000
+gtzan_pop_00053,DBN,beat,21.440000000
+gtzan_pop_00053,DBN,beat,22.180000000
+gtzan_pop_00053,DBN,beat,22.940000000
+gtzan_pop_00053,DBN,beat,23.740000000
+gtzan_pop_00053,DBN,beat,24.500000000
+gtzan_pop_00053,DBN,beat,25.180000000
+gtzan_pop_00053,DBN,beat,25.820000000
+gtzan_pop_00053,DBN,beat,26.520000000
+gtzan_pop_00053,DBN,beat,27.180000000
+gtzan_pop_00053,DBN,beat,27.920000000
+gtzan_pop_00053,DBN,beat,28.580000000
+gtzan_pop_00053,DBN,beat,29.280000000
+gtzan_pop_00053,DBN,downbeat,0.000000000
+gtzan_pop_00053,DBN,downbeat,2.880000000
+gtzan_pop_00053,DBN,downbeat,5.660000000
+gtzan_pop_00053,DBN,downbeat,8.480000000
+gtzan_pop_00053,DBN,downbeat,11.120000000
+gtzan_pop_00053,DBN,downbeat,14.220000000
+gtzan_pop_00053,DBN,downbeat,17.600000000
+gtzan_pop_00053,DBN,downbeat,20.740000000
+gtzan_pop_00053,DBN,downbeat,23.740000000
+gtzan_pop_00053,DBN,downbeat,26.520000000
+gtzan_pop_00053,DBN,downbeat,29.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,0.000000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,0.940000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,1.800000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,2.520000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,2.880000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,3.660000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,4.320000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,5.020000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,5.640000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,6.380000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,7.100000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,7.520000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,7.840000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,8.180000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,8.500000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,9.160000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,9.780000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,10.090000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,10.420000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,10.780000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,11.120000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,11.480000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,11.860000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,12.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,12.620000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,12.920000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,13.220000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,13.540000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,13.900000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,14.220000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,14.580000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,14.940000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,15.300000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,15.620000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,16.080000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,16.760000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,17.880000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,18.620000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,19.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,19.980000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,20.740000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,21.400000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,22.140000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,22.900000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,23.740000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,24.500000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,25.180000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,25.800000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,26.520000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,27.180000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,27.560000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,27.920000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,28.300000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,28.580000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,28.940000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,29.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,29.660000000
+gtzan_pop_00053,PLPDP (30-300 BPM),beat,30.010000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,0.000000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,1.800000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,2.520000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,2.880000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,5.640000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,8.180000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,8.500000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,10.780000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,11.120000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,12.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,13.900000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,14.220000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,14.580000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,17.880000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,20.740000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,23.740000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,26.520000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,27.560000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,29.280000000
+gtzan_pop_00053,PLPDP (30-300 BPM),downbeat,30.010000000
+gtzan_pop_00053,CASM,beat,0.000000000
+gtzan_pop_00053,CASM,beat,1.800000000
+gtzan_pop_00053,CASM,beat,2.520000000
+gtzan_pop_00053,CASM,beat,3.660000000
+gtzan_pop_00053,CASM,beat,5.640000000
+gtzan_pop_00053,CASM,beat,6.380000000
+gtzan_pop_00053,CASM,beat,7.100000000
+gtzan_pop_00053,CASM,beat,7.840000000
+gtzan_pop_00053,CASM,beat,8.500000000
+gtzan_pop_00053,CASM,beat,9.160000000
+gtzan_pop_00053,CASM,beat,9.780000000
+gtzan_pop_00053,CASM,beat,10.420000000
+gtzan_pop_00053,CASM,beat,10.780000000
+gtzan_pop_00053,CASM,beat,11.120000000
+gtzan_pop_00053,CASM,beat,11.480000000
+gtzan_pop_00053,CASM,beat,12.280000000
+gtzan_pop_00053,CASM,beat,12.920000000
+gtzan_pop_00053,CASM,beat,13.900000000
+gtzan_pop_00053,CASM,beat,14.220000000
+gtzan_pop_00053,CASM,beat,14.580000000
+gtzan_pop_00053,CASM,beat,15.320000000
+gtzan_pop_00053,CASM,beat,16.080000000
+gtzan_pop_00053,CASM,beat,17.000000000
+gtzan_pop_00053,CASM,beat,17.880000000
+gtzan_pop_00053,CASM,beat,18.620000000
+gtzan_pop_00053,CASM,beat,19.280000000
+gtzan_pop_00053,CASM,beat,19.980000000
+gtzan_pop_00053,CASM,beat,20.740000000
+gtzan_pop_00053,CASM,beat,21.400000000
+gtzan_pop_00053,CASM,beat,22.140000000
+gtzan_pop_00053,CASM,beat,22.900000000
+gtzan_pop_00053,CASM,beat,23.740000000
+gtzan_pop_00053,CASM,beat,24.500000000
+gtzan_pop_00053,CASM,beat,25.180000000
+gtzan_pop_00053,CASM,beat,25.800000000
+gtzan_pop_00053,CASM,beat,26.520000000
+gtzan_pop_00053,CASM,beat,27.180000000
+gtzan_pop_00053,CASM,beat,27.920000000
+gtzan_pop_00053,CASM,beat,28.560000000
+gtzan_pop_00053,CASM,beat,29.280000000
+gtzan_pop_00053,CASM,downbeat,0.000000000
+gtzan_pop_00053,CASM,downbeat,1.800000000
+gtzan_pop_00053,CASM,downbeat,2.520000000
+gtzan_pop_00053,CASM,downbeat,5.640000000
+gtzan_pop_00053,CASM,downbeat,8.500000000
+gtzan_pop_00053,CASM,downbeat,10.780000000
+gtzan_pop_00053,CASM,downbeat,11.120000000
+gtzan_pop_00053,CASM,downbeat,12.280000000
+gtzan_pop_00053,CASM,downbeat,13.900000000
+gtzan_pop_00053,CASM,downbeat,14.220000000
+gtzan_pop_00053,CASM,downbeat,14.580000000
+gtzan_pop_00053,CASM,downbeat,17.880000000
+gtzan_pop_00053,CASM,downbeat,20.740000000
+gtzan_pop_00053,CASM,downbeat,23.740000000
+gtzan_pop_00053,CASM,downbeat,26.520000000
+gtzan_pop_00053,CASM,downbeat,27.920000000
+gtzan_pop_00053,CASM,downbeat,29.280000000

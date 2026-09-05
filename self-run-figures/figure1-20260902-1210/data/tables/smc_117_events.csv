@@ -140,75 +140,146 @@ smc_117,Fixed Semi-Markov,beat,35.260000000
 smc_117,Fixed Semi-Markov,beat,36.200000000
 smc_117,Fixed Semi-Markov,beat,37.080000000
 smc_117,Fixed Semi-Markov,beat,38.080000000
-smc_117,DBN (adjusted),beat,0.460000000
-smc_117,DBN (adjusted),beat,1.080000000
-smc_117,DBN (adjusted),beat,1.700000000
-smc_117,DBN (adjusted),beat,2.420000000
-smc_117,DBN (adjusted),beat,3.140000000
-smc_117,DBN (adjusted),beat,3.900000000
-smc_117,DBN (adjusted),beat,4.600000000
-smc_117,DBN (adjusted),beat,5.080000000
-smc_117,DBN (adjusted),beat,5.640000000
-smc_117,DBN (adjusted),beat,6.220000000
-smc_117,DBN (adjusted),beat,6.700000000
-smc_117,DBN (adjusted),beat,7.260000000
-smc_117,DBN (adjusted),beat,7.780000000
-smc_117,DBN (adjusted),beat,8.340000000
-smc_117,DBN (adjusted),beat,8.940000000
-smc_117,DBN (adjusted),beat,9.500000000
-smc_117,DBN (adjusted),beat,10.040000000
-smc_117,DBN (adjusted),beat,10.600000000
-smc_117,DBN (adjusted),beat,11.100000000
-smc_117,DBN (adjusted),beat,11.620000000
-smc_117,DBN (adjusted),beat,12.120000000
-smc_117,DBN (adjusted),beat,12.580000000
-smc_117,DBN (adjusted),beat,13.120000000
-smc_117,DBN (adjusted),beat,13.560000000
-smc_117,DBN (adjusted),beat,14.080000000
-smc_117,DBN (adjusted),beat,14.620000000
-smc_117,DBN (adjusted),beat,15.100000000
-smc_117,DBN (adjusted),beat,15.600000000
-smc_117,DBN (adjusted),beat,16.000000000
-smc_117,DBN (adjusted),beat,16.460000000
-smc_117,DBN (adjusted),beat,16.940000000
-smc_117,DBN (adjusted),beat,17.440000000
-smc_117,DBN (adjusted),beat,18.200000000
-smc_117,DBN (adjusted),beat,19.020000000
-smc_117,DBN (adjusted),beat,19.920000000
-smc_117,DBN (adjusted),beat,20.760000000
-smc_117,DBN (adjusted),beat,21.600000000
-smc_117,DBN (adjusted),beat,22.400000000
-smc_117,DBN (adjusted),beat,23.380000000
-smc_117,DBN (adjusted),beat,24.460000000
-smc_117,DBN (adjusted),beat,25.400000000
-smc_117,DBN (adjusted),beat,26.320000000
-smc_117,DBN (adjusted),beat,27.400000000
-smc_117,DBN (adjusted),beat,28.280000000
-smc_117,DBN (adjusted),beat,29.240000000
-smc_117,DBN (adjusted),beat,30.140000000
-smc_117,DBN (adjusted),beat,30.940000000
-smc_117,DBN (adjusted),beat,32.080000000
-smc_117,DBN (adjusted),beat,33.360000000
-smc_117,DBN (adjusted),beat,34.420000000
-smc_117,DBN (adjusted),beat,35.620000000
-smc_117,DBN (adjusted),beat,36.540000000
-smc_117,DBN (adjusted),beat,37.620000000
-smc_117,DBN (adjusted),beat,38.560000000
-smc_117,DBN (adjusted),beat,39.460000000
-smc_117,DBN (adjusted),downbeat,0.460000000
-smc_117,DBN (adjusted),downbeat,3.140000000
-smc_117,DBN (adjusted),downbeat,5.640000000
-smc_117,DBN (adjusted),downbeat,7.780000000
-smc_117,DBN (adjusted),downbeat,10.040000000
-smc_117,DBN (adjusted),downbeat,12.120000000
-smc_117,DBN (adjusted),downbeat,14.080000000
-smc_117,DBN (adjusted),downbeat,16.000000000
-smc_117,DBN (adjusted),downbeat,18.200000000
-smc_117,DBN (adjusted),downbeat,21.600000000
-smc_117,DBN (adjusted),downbeat,25.400000000
-smc_117,DBN (adjusted),downbeat,29.240000000
-smc_117,DBN (adjusted),downbeat,33.360000000
-smc_117,DBN (adjusted),downbeat,37.620000000
+smc_117,DBN,beat,0.460000000
+smc_117,DBN,beat,1.080000000
+smc_117,DBN,beat,1.700000000
+smc_117,DBN,beat,2.420000000
+smc_117,DBN,beat,3.140000000
+smc_117,DBN,beat,3.900000000
+smc_117,DBN,beat,4.600000000
+smc_117,DBN,beat,5.080000000
+smc_117,DBN,beat,5.640000000
+smc_117,DBN,beat,6.220000000
+smc_117,DBN,beat,6.700000000
+smc_117,DBN,beat,7.260000000
+smc_117,DBN,beat,7.780000000
+smc_117,DBN,beat,8.340000000
+smc_117,DBN,beat,8.940000000
+smc_117,DBN,beat,9.500000000
+smc_117,DBN,beat,10.040000000
+smc_117,DBN,beat,10.600000000
+smc_117,DBN,beat,11.100000000
+smc_117,DBN,beat,11.620000000
+smc_117,DBN,beat,12.120000000
+smc_117,DBN,beat,12.580000000
+smc_117,DBN,beat,13.120000000
+smc_117,DBN,beat,13.560000000
+smc_117,DBN,beat,14.080000000
+smc_117,DBN,beat,14.620000000
+smc_117,DBN,beat,15.100000000
+smc_117,DBN,beat,15.600000000
+smc_117,DBN,beat,16.000000000
+smc_117,DBN,beat,16.460000000
+smc_117,DBN,beat,16.940000000
+smc_117,DBN,beat,17.440000000
+smc_117,DBN,beat,18.200000000
+smc_117,DBN,beat,19.020000000
+smc_117,DBN,beat,19.920000000
+smc_117,DBN,beat,20.760000000
+smc_117,DBN,beat,21.600000000
+smc_117,DBN,beat,22.400000000
+smc_117,DBN,beat,23.380000000
+smc_117,DBN,beat,24.460000000
+smc_117,DBN,beat,25.400000000
+smc_117,DBN,beat,26.320000000
+smc_117,DBN,beat,27.400000000
+smc_117,DBN,beat,28.280000000
+smc_117,DBN,beat,29.240000000
+smc_117,DBN,beat,30.140000000
+smc_117,DBN,beat,30.940000000
+smc_117,DBN,beat,32.080000000
+smc_117,DBN,beat,33.360000000
+smc_117,DBN,beat,34.420000000
+smc_117,DBN,beat,35.620000000
+smc_117,DBN,beat,36.540000000
+smc_117,DBN,beat,37.620000000
+smc_117,DBN,beat,38.560000000
+smc_117,DBN,beat,39.460000000
+smc_117,DBN,downbeat,0.460000000
+smc_117,DBN,downbeat,3.140000000
+smc_117,DBN,downbeat,5.640000000
+smc_117,DBN,downbeat,7.780000000
+smc_117,DBN,downbeat,10.040000000
+smc_117,DBN,downbeat,12.120000000
+smc_117,DBN,downbeat,14.080000000
+smc_117,DBN,downbeat,16.000000000
+smc_117,DBN,downbeat,18.200000000
+smc_117,DBN,downbeat,21.600000000
+smc_117,DBN,downbeat,25.400000000
+smc_117,DBN,downbeat,29.240000000
+smc_117,DBN,downbeat,33.360000000
+smc_117,DBN,downbeat,37.620000000
+smc_117,PLPDP (30-300 BPM),beat,0.000000000
+smc_117,PLPDP (30-300 BPM),beat,0.460000000
+smc_117,PLPDP (30-300 BPM),beat,1.180000000
+smc_117,PLPDP (30-300 BPM),beat,1.700000000
+smc_117,PLPDP (30-300 BPM),beat,2.420000000
+smc_117,PLPDP (30-300 BPM),beat,3.140000000
+smc_117,PLPDP (30-300 BPM),beat,3.960000000
+smc_117,PLPDP (30-300 BPM),beat,4.720000000
+smc_117,PLPDP (30-300 BPM),beat,5.640000000
+smc_117,PLPDP (30-300 BPM),beat,6.320000000
+smc_117,PLPDP (30-300 BPM),beat,7.020000000
+smc_117,PLPDP (30-300 BPM),beat,7.720000000
+smc_117,PLPDP (30-300 BPM),beat,8.340000000
+smc_117,PLPDP (30-300 BPM),beat,8.940000000
+smc_117,PLPDP (30-300 BPM),beat,9.500000000
+smc_117,PLPDP (30-300 BPM),beat,10.040000000
+smc_117,PLPDP (30-300 BPM),beat,11.090000000
+smc_117,PLPDP (30-300 BPM),beat,11.860000000
+smc_117,PLPDP (30-300 BPM),beat,12.380000000
+smc_117,PLPDP (30-300 BPM),beat,12.920000000
+smc_117,PLPDP (30-300 BPM),beat,14.080000000
+smc_117,PLPDP (30-300 BPM),beat,15.100000000
+smc_117,PLPDP (30-300 BPM),beat,16.020000000
+smc_117,PLPDP (30-300 BPM),beat,16.940000000
+smc_117,PLPDP (30-300 BPM),beat,17.860000000
+smc_117,PLPDP (30-300 BPM),beat,19.020000000
+smc_117,PLPDP (30-300 BPM),beat,19.920000000
+smc_117,PLPDP (30-300 BPM),beat,20.760000000
+smc_117,PLPDP (30-300 BPM),beat,21.620000000
+smc_117,PLPDP (30-300 BPM),beat,22.380000000
+smc_117,PLPDP (30-300 BPM),beat,22.880000000
+smc_117,PLPDP (30-300 BPM),beat,23.380000000
+smc_117,PLPDP (30-300 BPM),beat,23.860000000
+smc_117,PLPDP (30-300 BPM),beat,24.540000000
+smc_117,PLPDP (30-300 BPM),beat,25.400000000
+smc_117,PLPDP (30-300 BPM),beat,26.320000000
+smc_117,PLPDP (30-300 BPM),beat,27.100000000
+smc_117,PLPDP (30-300 BPM),beat,27.400000000
+smc_117,PLPDP (30-300 BPM),beat,28.300000000
+smc_117,PLPDP (30-300 BPM),beat,29.240000000
+smc_117,PLPDP (30-300 BPM),beat,30.180000000
+smc_117,PLPDP (30-300 BPM),beat,30.940000000
+smc_117,PLPDP (30-300 BPM),beat,31.760000000
+smc_117,PLPDP (30-300 BPM),beat,32.440000000
+smc_117,PLPDP (30-300 BPM),beat,33.360000000
+smc_117,PLPDP (30-300 BPM),beat,34.360000000
+smc_117,PLPDP (30-300 BPM),beat,35.260000000
+smc_117,PLPDP (30-300 BPM),beat,36.540000000
+smc_117,PLPDP (30-300 BPM),beat,37.620000000
+smc_117,PLPDP (30-300 BPM),beat,38.560000000
+smc_117,PLPDP (30-300 BPM),beat,39.440000000
+smc_117,PLPDP (30-300 BPM),beat,40.010000000
+smc_117,PLPDP (30-300 BPM),downbeat,0.460000000
+smc_117,PLPDP (30-300 BPM),downbeat,3.140000000
+smc_117,PLPDP (30-300 BPM),downbeat,5.640000000
+smc_117,PLPDP (30-300 BPM),downbeat,7.720000000
+smc_117,PLPDP (30-300 BPM),downbeat,10.040000000
+smc_117,PLPDP (30-300 BPM),downbeat,11.860000000
+smc_117,PLPDP (30-300 BPM),downbeat,14.080000000
+smc_117,PLPDP (30-300 BPM),downbeat,16.020000000
+smc_117,PLPDP (30-300 BPM),downbeat,17.860000000
+smc_117,PLPDP (30-300 BPM),downbeat,19.920000000
+smc_117,PLPDP (30-300 BPM),downbeat,21.620000000
+smc_117,PLPDP (30-300 BPM),downbeat,23.860000000
+smc_117,PLPDP (30-300 BPM),downbeat,25.400000000
+smc_117,PLPDP (30-300 BPM),downbeat,29.240000000
+smc_117,PLPDP (30-300 BPM),downbeat,31.760000000
+smc_117,PLPDP (30-300 BPM),downbeat,33.360000000
+smc_117,PLPDP (30-300 BPM),downbeat,35.260000000
+smc_117,PLPDP (30-300 BPM),downbeat,37.620000000
+smc_117,PLPDP (30-300 BPM),downbeat,39.440000000
 smc_117,CASM,beat,0.460000000
 smc_117,CASM,beat,1.080000000
 smc_117,CASM,beat,1.700000000
