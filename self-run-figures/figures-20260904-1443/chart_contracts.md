@@ -64,10 +64,10 @@
   fold subsets. DBN's selected global rigidity varies substantially with fold
   composition; increasing calibration scale improves its GTZAN transfer but
   does not monotonically improve the held-out SMC fold.
-- Form: two matched 3-by-4 box/strip figures, one for CASM and one for DBN.
-  Rows are Beat F1/CMLt/AMLt and columns are 1F/2F/4F/7F. Within each cell,
-  SMC fold0 and GTZAN final0 occupy separate categorical positions; short
-  dashed segments show their corresponding Direct scores.
+- Form: two matched box/strip figures, one for CASM and one for DBN, preserving
+  the original Figure 5 design. Rows are the fixed SMC-fold0 and GTZAN-final0
+  panels; columns are Beat F1/CMLt/AMLt; every x-axis contains
+  1F/2F/4F/7F. A dashed horizontal line shows Direct in each panel.
 - Data: 7 one-fold, 21 two-fold, 35 four-fold selections plus one seven-fold
   configuration per decoder, all evaluated on fixed SMC-fold0 and Beat This
   GTZAN-final0 panels. The frontend, fold subsets, primary selection metric,

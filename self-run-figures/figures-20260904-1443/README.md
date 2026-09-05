@@ -7,9 +7,9 @@ the original activation caches, the CASM repository, Kaya, or Gadi.
 
 ## Fastest way to redraw Figure 5
 
-Figure 5 is exported as two matched 3-by-4 figures: CASM and DBN are kept in
-separate files, while both use metric rows (Beat F1/CMLt/AMLt) and calibration-
-size columns (1F/2F/4F/7F).
+Figure 5 is exported as two matched figures: CASM and DBN are kept in separate
+files. Both retain the original design with dataset rows (SMC fold0 and GTZAN
+final0), metric columns (Beat F1/CMLt/AMLt), and 1F/2F/4F/7F on every x-axis.
 
 ```bash
 cd /Users/jollibear/Documents/icassp2027casm/self-run-figures/figures-20260904-1443
@@ -208,8 +208,8 @@ metric rows, 321,617 retained candidates, and 147,000 decoded CASM edges.
 3. `fig03_ablation_matrix`
 4. `fig04_decoder_operating_points`
 5. Figure 5:
-   - `fig05_calibration_scale` (CASM 3-by-4 matrix)
-   - `fig05b_dbn_calibration_scale` (DBN 3-by-4 matrix)
+   - `fig05_calibration_scale` (original CASM design)
+   - `fig05b_dbn_calibration_scale` (matched DBN companion)
 6. `fig06_gain_risk`
 
 Every figure is exported to PNG (320 dpi), vector PDF, and SVG.

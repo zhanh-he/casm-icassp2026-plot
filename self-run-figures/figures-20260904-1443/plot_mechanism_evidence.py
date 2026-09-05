@@ -512,7 +512,6 @@ def _figure_calibration_method(
     marker: str,
     seed: int,
     output_stem: str,
-    footer: str,
     figures: Path,
 ) -> None:
     order = ["1F", "2F", "4F", "7F"]
@@ -521,7 +520,7 @@ def _figure_calibration_method(
         ("beat_cmlt", "CMLt"),
         ("beat_amlt", "AMLt"),
     ]
-    panels = [("smc", "SMC\nfold0"), ("gtzan", "GTZAN\nfinal0")]
+    panels = [("smc", "SMC fold0"), ("gtzan", "GTZAN final0")]
     selected = table[table.tuning_size.isin([1, 2, 4, 7])].copy()
     selected["scale"] = selected.tuning_size.astype(int).astype(str) + "F"
     direct = table[table.family == "direct"]
@@ -529,90 +528,64 @@ def _figure_calibration_method(
         raise RuntimeError(f"{method_label} table must contain exactly one Direct row")
     direct = direct.iloc[0]
 
-    fig, axes = plt.subplots(3, 4, figsize=(7.15, 5.05), sharey="row")
-    fig.subplots_adjust(wspace=0.13, hspace=0.22, top=0.84, bottom=0.17, left=0.10, right=0.985)
+    fig, axes = plt.subplots(2, 3, figsize=(7.15, 4.05), sharex=True)
+    fig.subplots_adjust(wspace=0.24, hspace=0.34, top=0.82, bottom=0.16)
     rng = np.random.default_rng(seed)
-    for row_index, (metric, metric_label) in enumerate(metric_specs):
-        for column_index, scale in enumerate(order):
+    for row_index, (prefix, panel_label) in enumerate(panels):
+        for column_index, (metric, metric_label) in enumerate(metric_specs):
             ax = axes[row_index, column_index]
-            scale_rows = selected[selected.scale == scale]
-            for position, (prefix, _) in enumerate(panels):
-                column = f"{prefix}_{metric}"
-                values = 100 * scale_rows[column].dropna().to_numpy()
+            column = f"{prefix}_{metric}"
+            direct_value = 100 * float(direct[column])
+            ax.axhline(direct_value, color=GREY, lw=0.9, ls="--", label="Direct")
+            values_by_scale = []
+            for position, scale in enumerate(order):
+                values = 100 * selected.loc[selected.scale == scale, column].dropna().to_numpy()
                 if len(values) == 0:
                     raise RuntimeError(f"{method_label} has no {scale} values for {column}")
-                if len(values) > 1:
-                    ax.boxplot(
-                        [values],
-                        positions=[position],
-                        widths=0.48,
-                        showfliers=False,
-                        patch_artist=True,
-                        manage_ticks=False,
-                        medianprops={"color": CHARCOAL, "lw": 0.85},
-                        whiskerprops={"color": color, "lw": 0.65},
-                        capprops={"color": color, "lw": 0.65},
-                        boxprops={"facecolor": fill, "edgecolor": color, "alpha": 0.24, "lw": 0.75},
-                    )
-                jitter = rng.uniform(-0.10, 0.10, size=len(values))
+                values_by_scale.append(values)
+                jitter = rng.uniform(-0.12, 0.12, size=len(values))
                 ax.scatter(
                     np.full(len(values), position) + jitter,
                     values,
-                    s=11 if marker == "o" else 13,
+                    s=9 if marker == "o" else 11,
                     marker=marker,
                     facecolor="white",
                     edgecolor=color,
-                    linewidth=0.6,
-                    alpha=0.92,
-                    zorder=3,
+                    linewidth=0.55,
+                    alpha=0.9,
                 )
-                direct_value = 100 * float(direct[column])
-                ax.hlines(
-                    direct_value,
-                    position - 0.28,
-                    position + 0.28,
-                    color=GREY,
-                    lw=0.9,
-                    ls="--",
-                    zorder=2,
-                )
-            ax.set_xlim(-0.48, 1.48)
-            ax.set_xticks([0, 1])
-            if row_index == len(metric_specs) - 1:
-                ax.set_xticklabels([label for _, label in panels])
-            else:
-                ax.set_xticklabels([])
+            ax.boxplot(
+                values_by_scale,
+                positions=np.arange(len(order)),
+                widths=0.5,
+                showfliers=False,
+                patch_artist=True,
+                medianprops={"color": CHARCOAL, "lw": 0.9},
+                whiskerprops={"color": GREY, "lw": 0.6},
+                capprops={"color": GREY, "lw": 0.6},
+                boxprops={"facecolor": fill, "edgecolor": color, "alpha": 0.35, "lw": 0.7},
+            )
+            ax.set_xticks(np.arange(len(order)), order)
             if row_index == 0:
-                ax.set_title(f"({chr(97 + column_index)}) {scale}", loc="left", fontweight="bold")
+                ax.set_title(f"({chr(97 + column_index)}) {metric_label}", loc="left", fontweight="bold")
             if column_index == 0:
-                ax.set_ylabel(f"{metric_label}\nScore (%)")
+                ax.set_ylabel(f"{panel_label}\nScore (%)")
             ax.grid(axis="y")
-
-    marker_handle = Line2D(
-        [0],
-        [0],
-        marker=marker,
-        color=color,
-        markerfacecolor="white",
-        markersize=4.4,
-        lw=1.1,
-        label=f"{method_label} selections",
+            if row_index == 0 and column_index == 2:
+                ax.legend(frameon=False, loc="best")
+    title_prefix = "" if method_label == "CASM" else f"{method_label}: "
+    fig.suptitle(
+        f"{title_prefix}Calibration-fold scale and sensitivity to fold composition",
+        x=0.02,
+        ha="left",
+        fontweight="bold",
     )
-    direct_handle = Line2D([0], [0], color=GREY, lw=0.9, ls="--", label="Direct")
-    fig.legend(
-        handles=[marker_handle, direct_handle],
-        frameon=False,
-        ncol=2,
-        loc="upper right",
-        bbox_to_anchor=(0.985, 0.945),
-    )
-    fig.suptitle(f"{method_label} calibration-fold sensitivity", x=0.02, ha="left", fontweight="bold")
     fig.text(
         0.02,
-        0.022,
-        "Columns are calibration sizes; rows are metrics. SMC fold0 and GTZAN final0 are separate within every cell.\n"
-        + footer,
-        fontsize=6.2,
+        0.02,
+        "Each point is one selected configuration: 7 one-fold, 21 two-fold, 35 four-fold, and one seven-fold result. "
+        "All configurations are evaluated on the same fixed panels; distributions are descriptive.",
+        fontsize=6.4,
         color=GREY,
     )
     save_all(fig, figures, output_stem)
@@ -648,7 +621,6 @@ def figure_calibration_scale(data: Path, figures: Path) -> None:
         marker="o",
         seed=20260904,
         output_stem="fig05_calibration_scale",
-        footer="Each point is one locked CASM selection; dashed segments are Direct.",
         figures=figures,
     )
     _figure_calibration_method(
@@ -659,7 +631,6 @@ def figure_calibration_scale(data: Path, figures: Path) -> None:
         marker="^",
         seed=20260905,
         output_stem="fig05b_dbn_calibration_scale",
-        footer="Each point is one locked selection from the 52-setting DBN grid; dashed segments are Direct.",
         figures=figures,
     )
 
