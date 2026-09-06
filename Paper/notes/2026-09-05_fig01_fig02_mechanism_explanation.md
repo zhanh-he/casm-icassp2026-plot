@@ -1,6 +1,7 @@
 # Figure 1 与 Figure 2 到底在解释什么？——CASM 机制图的完整读法
 
 **日期：** 2026-09-05  
+**最近复核：** 2026-09-06
 **性质：** 论文写作说明、实验审计与 caption 备忘  
 **适用图片：** [Fig. 1 — input-conditioned stiffness](../../gpt-figures/figures-20260904-1443/fig01_input_conditioned_stiffness.png)；[Fig. 2 — real-track mechanism traces](../../gpt-figures/figures-20260904-1443/fig02_real_track_mechanism.png)
 
@@ -18,6 +19,24 @@
 > CASM 并非 parameter-free。它的全局超参数定义一条冻结的 evidence-to-constraint policy；真正作用在每条 transition 上的 period target 与 duration precision，则由当前 activation 自动产生。贡献不是“没有旋钮”，而是把最重要的旋钮调节从逐数据集、逐曲目的人工选择，移到输入条件化的推断过程之中。
 
 但两张图都不能单独证明 CASM “更准确”“比 DBN 更好”或“完全不需要 calibration”。Fig. 1 证明的是机制确实在运行；Fig. 2 解释机制怎样运行。平均性能、因果贡献和 calibration burden 分别还要由 aggregate results、ablation 以及 calibration-sensitivity experiment 支撑。
+
+### 30 秒读图路线
+
+如果不看公式，只按下面这条链记忆即可：
+
+```text
+beat activation
+    → 保留 activation local maxima 作为候选点
+    → 每个候选点估计局部周期 τ_i 与周期分离度 c_i
+    → 每条候选边得到目标时长 τ_ij 与刚性系数 w(c_ij)
+    → 动态规划在“峰有多像 beat”和“相邻 beat 是否符合局部周期”之间取舍
+    → 若结构路径的事件数明显失常，再用 count-ratio fallback 回到 Direct
+```
+
+- **Fig. 1 看中间三步的总体分布：**同一套固定规则，在不同输入上实际给出了多大的结构刚性？
+- **Fig. 2 看完整链条的两个具体运行状态：**什么时候结构证据足以补回弱峰，什么时候周期歧义使结构项退让？
+
+一句更生活化、但仍然准确的比喻是：全局超参数固定了“自动变速箱的换挡逻辑”；activation 决定当前局部挂几挡；fallback 是发现输出数量异常时的第二道保险。它不是每首歌重新训练一台变速箱。
 
 ---
 
@@ -111,6 +130,14 @@ Fig. 1 的逻辑顺序是：**先给出固定规则，再给出真实输入落�
 
 曲线的非线性非常重要：margin 上升不仅线性增加 amplitude，还会通过缩小 $\sigma$ 再次增强精度。因此 CASM 不是一个固定 transition penalty 乘以一点 confidence，而是 confidence 同时控制 penalty 的强度和容忍宽度。
 
+还要区分 **coefficient** 和 **实际付出的 cost**。Fig. 1(a) 画的是 $w(c)$，也就是 duration cost 对 log-duration error 的局部“刚性”或曲率；一条 edge 真正被扣多少分仍然是
+
+\[
+D_{ij}=w(c_{ij})\,[\log(\Delta_{ij}/\tau_{ij})]^2.
+\]
+
+所以 $w$ 很大但 $\Delta_{ij}\approx\tau_{ij}$ 时，实际 cost 仍接近 0；反过来，不能把纵轴数值直接读成“这条边被扣了多少分”。
+
 蓝色阴影覆盖 $c\le0.340$，即本实验全部真实 edges 的 99.5%。这告诉我们一个必须诚实写出的事实：虽然理论曲线在 $c=1$ 时达到 138.89，真实解码几乎都运行在曲线左侧的柔和区域。观测到的 $w$ 中位数、99.5th percentile 和最大值分别为 0.951、4.623 和 15.473。
 
 所以本 panel 的正确结论不是“CASM 经常施加强到 139 的节拍刚性”，而是：
@@ -136,6 +163,8 @@ Fig. 1 的逻辑顺序是：**先给出固定规则，再给出真实输入落�
 但这里不能偷换成“margin 越高，模型质量越好”。较高 margin 只表示局部 periodic hypothesis 更占优势；这个 hypothesis 仍可能落在错误的 octave、half-tempo 或 double-tempo。Fig. 2 右侧正是为什么还需要 ambiguity-aware restraint 的例子。
 
 还要注意，panel (b) 是 **edge-weighted** ECDF：edge 较多或曲目较长的实例贡献更多点。它适合说明 CASM 实际处理过的 transition evidence，却不是每首曲目等权的性能统计。panel (c) 因此改用 per-piece summary。
+
+另外，这 147,000 条不是候选图里所有 admissible edges，而是 **动态规划选出的 provisional structured paths 上的相邻 edges**。因此该分布同时受输入证据和 path selection 影响。它足以回答“CASM 最终实际在哪些刚性区间工作”，却不能被解释成“所有候选 transition 的原始 uncertainty 分布”。
 
 ### (c) Input-specific operating points：每首曲子最后“挂了几挡”？
 
@@ -201,7 +230,7 @@ Fig. 2 使用的不是合成 toy signal，而是 Beat This 在 SMC validation fo
 | DBN 30--300 | 11 | 10 |
 | PLPDP | 11 | 10 |
 
-Direct 基本只保留约每两拍出现一次的高 activation peaks，形成明显的 half-tempo / skipped-beat pattern。CASM 在约 53.6 BPM 的局部 target 支持下，不是凭空移动事件位置，而是从原来已保留的较弱 local maxima 中补出中间拍，同时舍弃不适合形成连续路径的其他 candidates。窗口中所有 Direct 和 CASM 事件都与 retained candidate 精确重合。
+Direct 基本只保留约每两拍出现一次的高 activation peaks，形成明显的 half-tempo / skipped-beat pattern。CASM 在窗口中心的补拍区段（约 18.9--24.2 s）得到 53.6 BPM 的局部 target；窗口边缘的 target 还出现 30.0、30.3 和 44.8 BPM，因此不能把整段简化成一条固定的 53.6 BPM 网格。动态规划综合所有 candidate 的 node score 与 edge cost，从原来已保留的较弱 local maxima 中补出中间拍，同时舍弃不适合形成连续路径的其他 candidates。窗口中所有 Direct 和 CASM 事件都与 retained candidate 精确重合。
 
 该窗口的 14 个 candidates 中，$c_i$ 中位数为 0.160，$w(c_i)$ 中位数为 1.54；窗口末端 margin 上升时 $w(c_i)$ 最高约 5.43。也就是说，成功案例用的是中等、随时间变化的软约束，而不是曲线理论极值附近的强制节拍网格。
 
@@ -226,7 +255,7 @@ DBN 与 PLPDP 被画出只是提供 cadence context。它们在这个 post-hoc w
 
 这正是“自动挡”比“固定刚性平滑器”更值得推销的行为：不是时时刻刻纠正，而是根据当前 evidence 决定纠正力度。安全 fallback 是第二道刹车；右图展示的是第一道、分级的软退让机制。
 
-还要避免把这个案例推广成数学恒等式。即使 $w(c)$ 很小，CASM 的 candidate topology、30--300 BPM interval support 与动态规划仍然存在，所以低 margin 并不保证 CASM 在每首曲子上都逐点等于 Direct；\`smc_287\` 的完全相同是本次真实输入上观察到的结果。
+还要避免把这个案例推广成数学恒等式。即使 $w(c)$ 很小，CASM 的 candidate topology、30--300 BPM interval support 与动态规划仍然存在，所以低 margin 并不保证 CASM 在每首曲子上都逐点等于 Direct；`smc_287` 的完全相同是本次真实输入上观察到的结果。
 
 ---
 
@@ -281,6 +310,7 @@ Fig. 2 非常直观，也很有音乐意义，但经过明确的 post-hoc track/
 - “Fig. 2 proves a general performance improvement”——错误；曲目和窗口均为 post hoc。
 - “CASM always defers through fallback”——错误；`smc_287` 没有触发 fallback，退让来自 $w(c)$ 变小。
 - “CASM moves beats onto a cleaner grid”——容易误导；当前 beat path 始终选择 retained activation maxima，它选择/跳过候选，不把事件任意平移到网格位置。
+- “A large $w(c)$ means that edge paid a large penalty”——错误；实际 cost 还乘以 squared log-duration error，target-aligned edge 即使 $w$ 大也可几乎不受罚。
 - “TCN / SMC is OOF evidence”——错误；Fig. 1 中该 panel 是 exploratory final0，只有 Beat This / SMC 和 MSCNN-lite / SMC 明确为 OOF。
 
 ---
@@ -312,6 +342,8 @@ Fig. 2 非常直观，也很有音乐意义，但经过明确的 post-hoc track/
 - [representative metadata](../../self-run-figures/figures-20260904-1443/data/representatives.json) 与 [完整 trace 目录](../../self-run-figures/figures-20260904-1443/data/representative_traces)：本文重新执行了相同的 12 s window selection，并核对事件数、70 ms matches、candidate anchoring 与 Direct--CASM equality。
 - [实验总报告](../../self-run-figures/figures-20260904-1443/mechanism_evidence_report.md) 与 [图表 contracts](../../self-run-figures/figures-20260904-1443/chart_contracts.md)：用于核对每张图原定的 scientific question 与证据边界。
 - [QA report](../../self-run-figures/figures-20260904-1443/qa_reference/qa_report.md)：归档运行通过 196/196 checks，包括 panel identity、公式闭合、duration-cost 重算、representative provenance 和“CASM events 均位于 retained maxima”。
+
+2026-09-06 又在当前 clone 上独立执行了一次 validator，仍为 **PASS (196/196)**。同时直接从 CSV/NPZ 重算了本说明使用的 Fig. 1 分位数、五个 panel 的 boxplot 统计、两个 12 s 窗口、70 ms event matches、candidate anchoring、Direct--CASM equality 和 fallback 状态，均与文中数字一致。按数据验证口径，这份说明可作为 **ready to share 的机制解释**；需要一直随文保留的 caveat 是：Fig. 2 为 post-hoc illustrative selection，TCN/SMC 为 exploratory final0，Fig. 1 的 path-edge 分布不是性能或因果证据。
 
 数据规模是 2,637 个 panel--track instances，而不是 2,637 首互不重复的歌曲；同一 corpus track 可因 backbone 不同而成为不同实例。Fig. 1 的 147,000 条 edges 来自 fallback 判定之前的 provisional structured paths。SMC 没有 downbeat annotations，因此这两张图只讨论 beat mechanism。
 
