@@ -1,8 +1,13 @@
 # Figure 1 与 Figure 2 到底在解释什么？——CASM 机制图的完整读法
 
-**日期：** 2026-09-05  
-**最近复核：** 2026-09-06
-**性质：** 论文写作说明、实验审计与 caption 备忘  
+**日期：** 2026-09-05
+
+**最近复核：** 2026-09-07
+
+**Fig. 1 单栏版更新：** 2026-09-07
+
+**性质：** 论文写作说明、实验审计与 caption 备忘
+
 **适用图片：** [Fig. 1 — input-conditioned stiffness](../../gpt-figures/figures-20260904-1443/fig01_input_conditioned_stiffness.png)；[Fig. 2 — real-track mechanism traces](../../gpt-figures/figures-20260904-1443/fig02_real_track_mechanism.png)
 
 ## 结论先行
@@ -11,7 +16,7 @@
 
 | 图 | 回答的问题 | 证据层级 | 最核心的一句话 |
 |---|---|---|---|
-| Fig. 1 | 一套完全相同的 Frozen-4F 全局参数，是否真的会因输入而产生不同的结构约束？ | 2,637 个 panel--track 实例、147,000 条 structured-path edges 的总体机制证据 | **固定的是 response law，不是每首曲子实际承受的 duration stiffness。** |
+| Fig. 1 | 一套完全相同的 Frozen-4F 全局参数，是否真的会因输入而产生不同的结构约束？ | 3,630 个 panel--track 实例、204,943 条 structured-path edges 的总体机制证据 | **固定的是 response law，不是每首曲子实际承受的 duration stiffness。** |
 | Fig. 2 | 这种 input conditioning 在真实 activation 上究竟怎样改变输出？证据含糊时又会怎样？ | 两首 Beat This / SMC OOF 曲目的可审计案例 | **周期证据清楚时补回有音乐连续性的弱峰；周期证据含糊时让结构项自动变弱，并在当前案例中保留 observation-driven 结果。** |
 
 它们共同服务于 CASM 最难、也最值得讲清楚的主张：
@@ -138,7 +143,7 @@ D_{ij}=w(c_{ij})\,[\log(\Delta_{ij}/\tau_{ij})]^2.
 
 所以 $w$ 很大但 $\Delta_{ij}\approx\tau_{ij}$ 时，实际 cost 仍接近 0；反过来，不能把纵轴数值直接读成“这条边被扣了多少分”。
 
-蓝色阴影覆盖 $c\le0.340$，即本实验全部真实 edges 的 99.5%。这告诉我们一个必须诚实写出的事实：虽然理论曲线在 $c=1$ 时达到 138.89，真实解码几乎都运行在曲线左侧的柔和区域。观测到的 $w$ 中位数、99.5th percentile 和最大值分别为 0.951、4.623 和 15.473。
+蓝色阴影覆盖 $c\le0.319$，即本实验六个机制 panels 全部真实 edges 的 99.5%。这告诉我们一个必须诚实写出的事实：虽然理论曲线在 $c=1$ 时达到 138.89，真实解码几乎都运行在曲线左侧的柔和区域。观测到的 $w$ 中位数、99.5th percentile 和最大值分别为 0.901、4.146 和 15.473。
 
 所以本 panel 的正确结论不是“CASM 经常施加强到 139 的节拍刚性”，而是：
 
@@ -157,14 +162,15 @@ D_{ij}=w(c_{ij})\,[\log(\Delta_{ij}/\tau_{ij})]^2.
 | TCN / SMC final0 | 12,149 | 0.069 | 0.142 |
 | Beat This / GTZAN seed0 | 58,409 | 0.115 | 0.188 |
 | MSCNN-lite / GTZAN | 55,701 | 0.106 | 0.151 |
+| TCN / GTZAN final0 | 57,943 | 0.097 | 0.131 |
 
-因此 Beat This / SMC 的周期证据在这些 panels 中相对更有区分度，TCN / SMC final0 最含糊，其余介于二者之间。同样的 $(\lambda,\sigma_0,\sigma_u)$ 并没有让所有 backbone 和 corpus 承受相同 rigidity；activation 的周期结构决定它们落在 response law 的哪一段。
+因此 Beat This / SMC 的周期证据在这些 panels 中相对更有区分度，TCN / SMC final0 最含糊；新增 TCN / GTZAN final0 也位于相对柔和的一侧。同样的 $(\lambda,\sigma_0,\sigma_u)$ 并没有让所有 backbone 和 corpus 承受相同 rigidity；activation 的周期结构决定它们落在 response law 的哪一段。
 
 但这里不能偷换成“margin 越高，模型质量越好”。较高 margin 只表示局部 periodic hypothesis 更占优势；这个 hypothesis 仍可能落在错误的 octave、half-tempo 或 double-tempo。Fig. 2 右侧正是为什么还需要 ambiguity-aware restraint 的例子。
 
 还要注意，panel (b) 是 **edge-weighted** ECDF：edge 较多或曲目较长的实例贡献更多点。它适合说明 CASM 实际处理过的 transition evidence，却不是每首曲目等权的性能统计。panel (c) 因此改用 per-piece summary。
 
-另外，这 147,000 条不是候选图里所有 admissible edges，而是 **动态规划选出的 provisional structured paths 上的相邻 edges**。因此该分布同时受输入证据和 path selection 影响。它足以回答“CASM 最终实际在哪些刚性区间工作”，却不能被解释成“所有候选 transition 的原始 uncertainty 分布”。
+另外，这 204,943 条不是候选图里所有 admissible edges，而是 **动态规划选出的 provisional structured paths 上的相邻 edges**。因此该分布同时受输入证据和 path selection 影响。它足以回答“CASM 最终实际在哪些刚性区间工作”，却不能被解释成“所有候选 transition 的原始 uncertainty 分布”。
 
 ### (c) Input-specific operating points：每首曲子最后“挂了几挡”？
 
@@ -177,6 +183,16 @@ D_{ij}=w(c_{ij})\,[\log(\Delta_{ij}/\tau_{ij})]^2.
 | TCN / SMC final0 | 0.333 | 0.556 | 0.868 | 21.7% |
 | Beat This / GTZAN seed0 | 0.827 | 1.064 | 1.370 | 3.7% |
 | MSCNN-lite / GTZAN | 0.814 | 0.928 | 1.029 | 12.4% |
+| TCN / GTZAN final0 | 0.721 | 0.844 | 0.915 | 15.0% |
+
+### 单栏版的视觉编码
+
+新版将 (a)、(b)、(c) **从上到下竖排**，画布宽度为 3.45 inch，可直接放入 ICASSP 的单栏。内容逻辑没有改变，只调整了空间组织并补齐 TCN / GTZAN：
+
+- BeatThis 始终用蓝色；MSCNN 始终用金黄色；TCN 始终用橄榄绿色；
+- SMC 在 (b) 使用实线，GTZAN 使用虚线；
+- (c) 沿用同一颜色，并以实线/虚线 box outline 对应 SMC/GTZAN；
+- 因此颜色只回答“哪个 backbone”，线型只回答“哪个 corpus”，不会再让颜色同时承担两个语义。
 
 box 的位置差异说明跨 corpus/backbone 的 operating point 不同；box 自身的宽度说明即使在同一个 panel 内，不同曲目也会得到不同的实际 stiffness。这里最直接支持的是 **input-conditioned inference**，而不是 parameter count 变少。
 
@@ -311,7 +327,7 @@ Fig. 2 非常直观，也很有音乐意义，但经过明确的 post-hoc track/
 - “CASM always defers through fallback”——错误；`smc_287` 没有触发 fallback，退让来自 $w(c)$ 变小。
 - “CASM moves beats onto a cleaner grid”——容易误导；当前 beat path 始终选择 retained activation maxima，它选择/跳过候选，不把事件任意平移到网格位置。
 - “A large $w(c)$ means that edge paid a large penalty”——错误；实际 cost 还乘以 squared log-duration error，target-aligned edge 即使 $w$ 大也可几乎不受罚。
-- “TCN / SMC is OOF evidence”——错误；Fig. 1 中该 panel 是 exploratory final0，只有 Beat This / SMC 和 MSCNN-lite / SMC 明确为 OOF。
+- “The TCN panels are OOF evidence”——错误；Fig. 1 中 TCN / SMC 与 TCN / GTZAN 都是 exploratory final0 mechanism panels。只有 Beat This / SMC 和 MSCNN-lite / SMC 明确为 OOF。
 
 ---
 
@@ -341,16 +357,16 @@ Fig. 2 非常直观，也很有音乐意义，但经过明确的 post-hoc track/
 - [edge-level 数据 `mechanism_edges.csv.gz`](../../self-run-figures/figures-20260904-1443/data/mechanism_edges.csv.gz) 与 [piece-level 数据 `mechanism_piece_summary.csv`](../../self-run-figures/figures-20260904-1443/data/mechanism_piece_summary.csv)：本文重新计算了各 panel 的 margin、coefficient quantiles 与 fallback rates。
 - [representative metadata](../../self-run-figures/figures-20260904-1443/data/representatives.json) 与 [完整 trace 目录](../../self-run-figures/figures-20260904-1443/data/representative_traces)：本文重新执行了相同的 12 s window selection，并核对事件数、70 ms matches、candidate anchoring 与 Direct--CASM equality。
 - [实验总报告](../../self-run-figures/figures-20260904-1443/mechanism_evidence_report.md) 与 [图表 contracts](../../self-run-figures/figures-20260904-1443/chart_contracts.md)：用于核对每张图原定的 scientific question 与证据边界。
-- [QA report](../../self-run-figures/figures-20260904-1443/qa_reference/qa_report.md)：归档运行通过 196/196 checks，包括 panel identity、公式闭合、duration-cost 重算、representative provenance 和“CASM events 均位于 retained maxima”。
+- [QA report](../../self-run-figures/figures-20260904-1443/qa_reference/qa_report.md)：归档运行通过 198/198 checks，包括 panel identity、公式闭合、duration-cost 重算、TCN/GTZAN extension provenance、representative provenance 和“CASM events 均位于 retained maxima”。
 
-2026-09-06 又在当前 clone 上独立执行了一次 validator，仍为 **PASS (196/196)**。同时直接从 CSV/NPZ 重算了本说明使用的 Fig. 1 分位数、五个 panel 的 boxplot 统计、两个 12 s 窗口、70 ms event matches、candidate anchoring、Direct--CASM equality 和 fallback 状态，均与文中数字一致。按数据验证口径，这份说明可作为 **ready to share 的机制解释**；需要一直随文保留的 caveat 是：Fig. 2 为 post-hoc illustrative selection，TCN/SMC 为 exploratory final0，Fig. 1 的 path-edge 分布不是性能或因果证据。
+2026-09-07 加入 TCN / GTZAN 后再次执行 validator，为 **PASS (198/198)**。同时直接从 CSV/NPZ 重算了本说明使用的 Fig. 1 分位数、六个 panel 的 boxplot 统计、两个 12 s 窗口、70 ms event matches、candidate anchoring、Direct--CASM equality 和 fallback 状态，均与文中数字一致。按数据验证口径，这份说明可作为 **ready to share 的机制解释**；需要一直随文保留的 caveat 是：Fig. 2 为 post-hoc illustrative selection，两个 TCN panel 均为 exploratory final0，Fig. 1 的 path-edge 分布不是性能或因果证据。
 
-数据规模是 2,637 个 panel--track instances，而不是 2,637 首互不重复的歌曲；同一 corpus track 可因 backbone 不同而成为不同实例。Fig. 1 的 147,000 条 edges 来自 fallback 判定之前的 provisional structured paths。SMC 没有 downbeat annotations，因此这两张图只讨论 beat mechanism。
+Fig. 1 的数据规模是 3,630 个 panel--track instances，而不是 3,630 首互不重复的歌曲；同一 corpus track 可因 backbone 不同而成为不同实例。其中原五-panel performance experiment 有 2,637 个实例，新增的 TCN / GTZAN final0 是 993-track mechanism-only extension，不进入 Fig. 3--6 的五-panel performance/ablation grid。Fig. 1 的 204,943 条 edges 来自 fallback 判定之前的 provisional structured paths。SMC 没有 downbeat annotations，因此这两张图只讨论 beat mechanism。
 
 复现说明见 [README](../../self-run-figures/figures-20260904-1443/README.md)。归档 PNG 的 SHA-256 分别为：
 
 ```text
-64f06c6e0c358f1fe22d969aac0525734d9dac7dbbad5401178407e8d631f942  fig01_input_conditioned_stiffness.png
+40c4cfbeb3aba4511547688195fa9f14205f5e5afc5e13501f88bd37e4abb938  fig01_input_conditioned_stiffness.png
 96f4ef1992016a96532c2da9382d83174a4b2da8fdbf122de3b881720f726390  fig02_real_track_mechanism.png
 ```
 

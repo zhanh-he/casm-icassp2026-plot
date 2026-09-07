@@ -891,7 +891,7 @@
       "passed": true
     },
     {
-      "detail": "2637 unique panel/piece rows; expected 2637",
+      "detail": "3630 unique panel/piece rows; expected 3630",
       "name": "mechanism summary coverage",
       "passed": true
     },
@@ -913,6 +913,11 @@
     {
       "detail": "summary=217, candidates=217, edges=214",
       "name": "mscnn_smc_oof: mechanism piece coverage",
+      "passed": true
+    },
+    {
+      "detail": "summary=993, candidates=993, edges=991",
+      "name": "tcn_gtzan_final0: mechanism piece coverage",
       "passed": true
     },
     {
@@ -941,7 +946,7 @@
       "passed": true
     },
     {
-      "detail": "maximum absolute discrepancy=4.441e-16",
+      "detail": "maximum absolute discrepancy=4.996e-16",
       "name": "duration-cost closure",
       "passed": true
     },
@@ -958,6 +963,11 @@
     {
       "detail": "maximum delta discrepancy=3.123e-16",
       "name": "mechanism metric reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "993-track final0 mechanism panel, frozen-parameter provenance, and merged-table hashes agree",
+      "name": "Fig. 1 TCN/GTZAN extension provenance",
       "passed": true
     },
     {
@@ -981,17 +991,17 @@
       "passed": true
     }
   ],
-  "checks_passed": 196,
-  "checks_total": 196,
+  "checks_passed": 198,
+  "checks_total": 198,
   "empirical_operating_range": {
     "edge_coefficient_max": 15.473075739196124,
-    "edge_coefficient_median": 0.9505074615935746,
-    "edge_coefficient_q995": 4.6231024714077,
-    "edge_count": 147000,
+    "edge_coefficient_median": 0.9005639452878177,
+    "edge_coefficient_q995": 4.145668507609684,
+    "edge_count": 204943,
     "edge_margin_max": 0.6023972630500793,
-    "edge_margin_median": 0.1080366947602749,
-    "edge_margin_q90": 0.17780968363306415,
-    "edge_margin_q995": 0.34049832558837145,
+    "edge_margin_median": 0.1031935159162066,
+    "edge_margin_q90": 0.1659414867123865,
+    "edge_margin_q995": 0.3191032156579124,
     "theoretical_coefficient_at_c1": 138.88888888888889
   },
   "failures": [],
@@ -1007,12 +1017,13 @@
     "dbn_calibration_experiment/selection_audit.csv": "529ce56282860f816fbeef1c0eb4157ba017403fa6dd5e3d9169822609fa1d24",
     "dbn_calibration_fixed_panel.csv": "e1a8c442265c8df19219fa070000c0c91a2644a7a731574d38d548d470b6d152",
     "dbn_calibration_summary.csv": "00928675be3231c1a09fc90f5f8f063a1d8f74eb199a3e5da8d8b014a9cb6836",
+    "fig01_tcn_gtzan_manifest.json": "53375ca11dbf09f9972cd63fbcf3959e7b5de44ab90aafa3cd0c3da7aef36c3a",
     "final0_experiment_provenance/independent_final0_crosscheck.csv": "bad658e83e88b8a4b7cf4305410538327015b51d2278fce5991274e1b2532c53",
-    "mechanism_candidates.csv.gz": "01d494618b9d8be442c94b8a5fd072a530fb1ab7c565914ddcf9eff0fde59f9e",
-    "mechanism_edges.csv.gz": "cb9d80f9016049a2c4a2ebd327fab6eacd387ba60a231bb1183117db89ef343f",
-    "mechanism_piece_summary.csv": "061f33aeb644bf78333797bc51dab8dd1b90f40f7669206e7d4b165591f26f0e",
+    "mechanism_candidates.csv.gz": "77ec17c4a2db1635837906ffd62de36a398296893c1afaf10a8d033ee8179c10",
+    "mechanism_edges.csv.gz": "019bfa09d916ce1a72bf25c7b731b618736b3c42df3e2b2cdccdbe5b32e3da31",
+    "mechanism_piece_summary.csv": "df9ab5a5c0201ccea338fb67234f423628d0f027321e4341cb9a45eff014d0ae",
     "paired_bootstrap.csv": "691eebc699ee4ee4df60f37bc0130c880fc2a6e88eb8ebdb384157c7ec3fab0f",
-    "protocol.json": "3a20b42e826c2f221f2f66ff5961383b4029343aa1ce49f6db7e19ed31057e9f",
+    "protocol.json": "bc1442d8f2326132d082ce031d1147a6aaaba0c39b60c3752ae7528b47ed95a4",
     "representatives.json": "d397d220acc1edbd0801b3a3f0596a5aa76ee0956f6d38724270b8afcdd26ca7"
   },
   "status": "PASS"

@@ -7,12 +7,16 @@
 - Takeaway: the deterministic response curve is fixed, but real edge margins
   occupy different ranges across datasets/backbones and produce a broad range
   of effective duration coefficients.
-- Form: three-panel research figure: response curve, empirical edge-margin
-  ECDF, and per-piece effective-coefficient distribution.
-- Data: every structured-path edge from 2,637 cached tracks across five panels.
+- Form: one-column, three-row research figure: response curve, empirical
+  edge-margin ECDF, and per-piece effective-coefficient distribution.
+- Data: every structured-path edge from 3,630 panel-track instances across a
+  balanced 3-backbone x 2-corpus mechanism panel. SMC contains 217 tracks per
+  backbone; GTZAN contains 993 tracks per backbone. Both TCN panels are
+  exploratory final0 mechanism evidence rather than OOF estimates.
 - Renderer/output: static Matplotlib; PNG/PDF/SVG; final QA on PNG.
-- Palette: one blue root for CASM, gold/orange for SMC comparators, greys for
-  references; line style and direct labels supplement color.
+- Palette: backbone identity is fixed across corpora—BeatThis blue, MSCNN
+  gold, and TCN olive-green. SMC uses solid lines/box outlines and GTZAN uses
+  dashed lines/box outlines, so corpus identity does not rely on color.
 
 ## Figure 2 — real-track mechanism traces
 

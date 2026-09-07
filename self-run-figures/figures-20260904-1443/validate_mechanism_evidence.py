@@ -50,6 +50,7 @@ def main() -> None:
 
     protocol = json.loads((data_dir / "protocol.json").read_text())
     expected_panels = protocol["panels"]
+    mechanism_panels = protocol.get("mechanism_panels", expected_panels)
     expected_methods = protocol["methods"]
     aggregate = pd.read_csv(data_dir / "aggregate_metrics.csv")
     pieces = pd.read_csv(data_dir / "all_piece_metrics.csv.gz")
@@ -401,14 +402,14 @@ def main() -> None:
         "fresh DBN grid, selection audit, lock, fixed-panel protocol, hashes, and upstream QA agree",
     )
 
-    expected_mechanism_count = sum(int(v["piece_count"]) for v in expected_panels.values())
+    expected_mechanism_count = sum(int(v["piece_count"]) for v in mechanism_panels.values())
     check(
         "mechanism summary coverage",
         len(mechanism) == expected_mechanism_count
         and not mechanism.duplicated(["panel", "piece"]).any(),
         f"{len(mechanism)} unique panel/piece rows; expected {expected_mechanism_count}",
     )
-    for panel, panel_spec in expected_panels.items():
+    for panel, panel_spec in mechanism_panels.items():
         expected_piece_count = int(panel_spec["piece_count"])
         summary_set = set(mechanism.loc[mechanism.panel == panel, "piece"].astype(str))
         candidate_set = set(candidates.loc[candidates.panel == panel, "piece"].astype(str))
@@ -494,16 +495,20 @@ def main() -> None:
         count_mismatch += int(len(c) != int(row.candidate_count))
         count_mismatch += int(len(e) != max(int(row.structured_count) - 1, 0))
         pm = pieces[(pieces.panel == row.panel) & (pieces.piece == row.piece)]
-        direct = pm[pm.method == "direct"].iloc[0]
-        casm = pm[pm.method == "casm_full"].iloc[0]
         for metric, summary_name in [
             ("beat_fmeasure", "delta_fmeasure"),
             ("beat_cmlt", "delta_cmlt"),
             ("beat_amlt", "delta_amlt"),
         ]:
+            if {"direct", "casm_full"} <= set(pm.method.astype(str)):
+                direct_value = float(pm[pm.method == "direct"].iloc[0][metric])
+                casm_value = float(pm[pm.method == "casm_full"].iloc[0][metric])
+            else:
+                direct_value = float(getattr(row, f"direct_{metric}"))
+                casm_value = float(getattr(row, f"casm_{metric}"))
             metric_mismatch = max(
                 metric_mismatch,
-                abs(float(getattr(row, summary_name)) - (float(casm[metric]) - float(direct[metric]))),
+                abs(float(getattr(row, summary_name)) - (casm_value - direct_value)),
             )
     check(
         "mechanism count reconciliation",
@@ -515,6 +520,33 @@ def main() -> None:
         metric_mismatch < 1e-12,
         f"maximum delta discrepancy={metric_mismatch:.3e}",
     )
+
+    extension_manifest_path = data_dir / "fig01_tcn_gtzan_manifest.json"
+    if "tcn_gtzan_final0" in mechanism_panels:
+        extension_manifest = json.loads(extension_manifest_path.read_text())
+        extension_hashes = extension_manifest["output_sha256"]
+        extension_files_match = all(
+            sha256(data_dir / name) == expected
+            for name, expected in extension_hashes.items()
+            if name in {
+                "mechanism_candidates.csv.gz",
+                "mechanism_edges.csv.gz",
+                "mechanism_piece_summary.csv",
+                "protocol.json",
+            }
+        )
+        extension = protocol.get("fig01_extension", {})
+        check(
+            "Fig. 1 TCN/GTZAN extension provenance",
+            extension_manifest_path.exists()
+            and extension_manifest["status"] == "COMPLETE"
+            and extension_manifest["panel"] == "tcn_gtzan_final0"
+            and int(extension_manifest["piece_count"]) == 993
+            and extension.get("panel") == "tcn_gtzan_final0"
+            and int(extension.get("cache_piece_count", 0)) == 993
+            and extension_files_match,
+            "993-track final0 mechanism panel, frozen-parameter provenance, and merged-table hashes agree",
+        )
 
     bootstrap_mean_error = 0.0
     for row in bootstrap.itertuples(index=False):
@@ -601,6 +633,7 @@ def main() -> None:
             "dbn_calibration_experiment/FIXED_EVALUATION_PROTOCOL.json",
             "dbn_calibration_experiment/LOCKED_CONFIGURATIONS.json",
             "dbn_calibration_experiment/selection_audit.csv",
+            "fig01_tcn_gtzan_manifest.json",
         ]
     }
     report = {
@@ -638,7 +671,7 @@ def main() -> None:
             f"the observed maximum is {empirical['edge_coefficient_max']:.3f}. The response law would reach "
             f"{empirical['theoretical_coefficient_at_c1']:.3f} at c=1, which was not approached by these real edges.",
             "",
-            "The QA checks integrity and algebraic consistency. It does not turn post-hoc representative windows into independent performance evidence, and the TCN final0 panel remains exploratory rather than OOF.",
+            "The QA checks integrity and algebraic consistency. It does not turn post-hoc representative windows into independent performance evidence, and both TCN final0 mechanism panels remain exploratory rather than OOF.",
         ]
     )
     (report_dir / "qa_report.md").write_text("\n".join(markdown) + "\n")

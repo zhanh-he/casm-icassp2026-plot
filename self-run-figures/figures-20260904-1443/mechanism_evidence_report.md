@@ -13,10 +13,11 @@ At the same time, the evidence rules out several overclaims. Real CASM edges mos
 - Compute: `lab5090` (RTX 5090); Kaya and Gadi were checked, but the 5090 host already held the required activation caches and gave the shortest turnaround.
 - Frozen CASM configuration: the pre-existing Frozen-4F parameter file, SHA-256 `251c96b23223b2e4ddef7f4ab85592663a1c27fcd6d62b1a5d1ef5625ed01f71`.
 - Five fixed activation panels: Beat This/SMC OOF (217 tracks), MSCNN-lite/SMC OOF (217), Beat This/GTZAN seed0 (993), MSCNN-lite/GTZAN (993), and an explicitly exploratory TCN/SMC final0 panel (217).
+- Figure 1 mechanism-only extension: TCN/GTZAN final0 (993 tracks), decoded with the identical Frozen-4F payload. It balances the mechanism display at three backbones by two corpora but is not added to the five-panel ablation/performance grid.
 - Ten decoders on identical cached activations: Direct, full CASM, fixed-precision local target, strength-only ambiguity, width-only ambiguity, one-endpoint context, CASM without safeguards, default DBN, DBN with CASM-matched 30--300 BPM support, and PLPDP.
-- Total output: 2,637 panel-track instances, 26,370 method-track metric rows, 321,617 retained candidates, and 147,000 decoded CASM edges.
+- Total output: 2,637 performance panel-track instances, 26,370 method-track metric rows, and 3,630 mechanism panel-track instances containing 432,382 retained candidates and 204,943 decoded CASM edges.
 - Statistics: paired per-track differences and 5,000 paired bootstrap resamples with seed 20260904.
-- Integrity: 196/196 independent checks pass, covering exact panel matching, aggregate reconstruction, response-law closure, duration-cost closure, event anchoring to retained maxima, trace provenance, and the separately locked CASM/DBN GTZAN-final0 calibration-scale evaluations.
+- Integrity: 198/198 independent checks pass, covering exact panel matching, aggregate reconstruction, response-law closure, duration-cost closure, event anchoring to retained maxima, trace provenance, the TCN/GTZAN extension manifest, and the separately locked CASM/DBN GTZAN-final0 calibration-scale evaluations.
 
 SMC has no downbeat annotations; its downbeat fields are intentionally undefined. The GTZAN seed0 and TCN final0 panels are mechanism panels, not substitutes for the paper's formal multi-seed/OOF estimates.
 
@@ -34,7 +35,14 @@ w(c)=\frac{\lambda c}{2\sigma(c)^2},
 
 with \(\sigma_0=0.12\), \(\sigma_u=0.4\), and \(\lambda=4\). The global parameters fix the response curve, but every edge receives its own \(c_{ij}\), hence its own \(\sigma_{ij}\) and \(w_{ij}\).
 
-Across 147,000 real decoded edges, median \(c_{ij}=0.108\), the 90th percentile is 0.178, the 99.5th percentile is 0.340, and the maximum is 0.602. The theoretical coefficient is 138.89 at \(c=1\), but the empirical median, 99.5th percentile, and maximum are only 0.951, 4.623, and 15.473. CASM therefore behaves mainly as a **graded soft constraint**, not as a frequently activated hard metronome.
+Across 204,943 real decoded edges, median \(c_{ij}=0.103\), the 90th percentile is 0.166, the 99.5th percentile is 0.319, and the maximum is 0.602. The theoretical coefficient is 138.89 at \(c=1\), but the empirical median, 99.5th percentile, and maximum are only 0.901, 4.146, and 15.473. CASM therefore behaves mainly as a **graded soft constraint**, not as a frequently activated hard metronome.
+
+The revised figure is a one-column, three-row layout. Backbone is encoded by
+color (BeatThis blue, MSCNN gold, TCN olive-green), while corpus is encoded by
+line style (SMC solid, GTZAN dashed). The TCN/GTZAN final0 panel contains 57,943
+selected-path edges; its median/90th-percentile margin is 0.097/0.131, its
+per-piece median-coefficient quartiles are 0.721/0.844/0.915, and its fallback
+rate is 15.0%.
 
 This is an important refinement to the methodology narrative: the value of the nonlinear law is its ability to allocate different constraint strength from the same frozen configuration, not an assertion that the maximum stiffness is routinely reached.
 

@@ -34,6 +34,18 @@ PANEL_ORDER = [
     "mscnn_gtzan",
 ]
 
+# Figure 1 uses a balanced 3-backbone x 2-corpus mechanism panel.  Keep this
+# separate from PANEL_ORDER because Figures 3--6 use the original five-panel
+# performance experiment.
+FIG1_PANEL_ORDER = [
+    "bt_smc_oof",
+    "mscnn_smc_oof",
+    "tcn_smc_final0",
+    "bt_gtzan_seed0",
+    "mscnn_gtzan",
+    "tcn_gtzan_final0",
+]
+
 PANEL_SHORT = {
     "bt_smc_oof": "Beat This\nSMC OOF",
     "mscnn_smc_oof": "MSCNN-lite\nSMC OOF",
@@ -48,6 +60,24 @@ PANEL_LINE = {
     "tcn_smc_final0": (ORANGE, "-."),
     "bt_gtzan_seed0": (GOLD, "-"),
     "mscnn_gtzan": (OLIVE, "--"),
+}
+
+FIG1_STYLE = {
+    "bt_smc_oof": (BLUE, "-"),
+    "mscnn_smc_oof": (GOLD, "-"),
+    "tcn_smc_final0": (OLIVE, "-"),
+    "bt_gtzan_seed0": (BLUE, "--"),
+    "mscnn_gtzan": (GOLD, "--"),
+    "tcn_gtzan_final0": (OLIVE, "--"),
+}
+
+FIG1_LABEL = {
+    "bt_smc_oof": "BeatThis / SMC",
+    "mscnn_smc_oof": "MSCNN / SMC",
+    "tcn_smc_final0": "TCN / SMC",
+    "bt_gtzan_seed0": "BeatThis / GTZAN",
+    "mscnn_gtzan": "MSCNN / GTZAN",
+    "tcn_gtzan_final0": "TCN / GTZAN",
 }
 
 PANEL_TINY = {
@@ -117,10 +147,13 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
     sigma0 = float(frozen["duration_sigma"])
     sigmau = float(frozen["uncertain_sigma"])
 
-    fig = plt.figure(figsize=(7.15, 4.15))
-    grid = fig.add_gridspec(2, 2, height_ratios=[1.15, 0.82])
-    axes = [fig.add_subplot(grid[0, 0]), fig.add_subplot(grid[0, 1]), fig.add_subplot(grid[1, :])]
-    fig.subplots_adjust(wspace=0.34, hspace=0.55, top=0.84, bottom=0.14, left=0.11, right=0.97)
+    fig, axes = plt.subplots(
+        3,
+        1,
+        figsize=(3.45, 7.60),
+        gridspec_kw={"height_ratios": [1.0, 1.08, 1.15]},
+    )
+    fig.subplots_adjust(hspace=0.58, top=0.91, bottom=0.16, left=0.24, right=0.97)
 
     ax = axes[0]
     c = np.linspace(0.0, 1.0, 1001)
@@ -140,29 +173,34 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
     ax.grid(axis="y")
 
     ax = axes[1]
-    for panel in PANEL_ORDER:
+    for panel in FIG1_PANEL_ORDER:
         group = edges[edges.panel == panel]
         x, y = ecdf(group.edge_margin.to_numpy())
-        color, style = PANEL_LINE[panel]
-        short_label = {
-            "bt_smc_oof": "BT / SMC",
-            "mscnn_smc_oof": "MSCNN / SMC",
-            "tcn_smc_final0": "TCN / SMC",
-            "bt_gtzan_seed0": "BT / GTZAN",
-            "mscnn_gtzan": "MSCNN / GTZAN",
-        }[panel]
-        ax.plot(x, y, color=color, ls=style, lw=1.2, label=short_label)
+        color, style = FIG1_STYLE[panel]
+        ax.plot(x, y, color=color, ls=style, lw=1.2, label=FIG1_LABEL[panel])
     ax.set_xlim(0, max(0.62, edges.edge_margin.quantile(0.999)))
     ax.set_ylim(0, 1)
     ax.set_xlabel("Observed edge margin $c_{ij}$")
     ax.set_ylabel("Cumulative fraction")
     ax.set_title("(b) Real edge margins", loc="left", fontweight="bold")
     ax.grid()
-    ax.legend(frameon=False, loc="lower right", handlelength=2.1, labelspacing=0.2, borderaxespad=0.2)
+    ax.legend(
+        frameon=False,
+        loc="lower right",
+        ncol=2,
+        handlelength=2.0,
+        columnspacing=0.8,
+        labelspacing=0.2,
+        borderaxespad=0.2,
+        fontsize=6.0,
+    )
 
     ax = axes[2]
-    box_data = [pieces.loc[pieces.panel == panel, "edge_coefficient_median"].dropna().to_numpy() for panel in PANEL_ORDER]
-    positions = np.arange(len(PANEL_ORDER))
+    box_data = [
+        pieces.loc[pieces.panel == panel, "edge_coefficient_median"].dropna().to_numpy()
+        for panel in FIG1_PANEL_ORDER
+    ]
+    positions = np.arange(len(FIG1_PANEL_ORDER))
     box = ax.boxplot(
         box_data,
         vert=False,
@@ -175,41 +213,38 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
         capprops={"color": GREY, "lw": 0.7},
         boxprops={"facecolor": BLUE_LIGHT, "edgecolor": BLUE, "lw": 0.8},
     )
-    for patch, panel in zip(box["boxes"], PANEL_ORDER):
-        color, _ = PANEL_LINE[panel]
-        patch.set_facecolor(mpl.colors.to_rgba(color, 0.28))
+    for patch, panel in zip(box["boxes"], FIG1_PANEL_ORDER):
+        color, style = FIG1_STYLE[panel]
+        alpha = 0.28 if style == "-" else 0.16
+        patch.set_facecolor(mpl.colors.to_rgba(color, alpha))
         patch.set_edgecolor(color)
-    for y, panel in zip(positions, PANEL_ORDER):
+        patch.set_linestyle(style)
+    for y, panel in zip(positions, FIG1_PANEL_ORDER):
         rate = 100 * pieces.loc[pieces.panel == panel, "beat_fallback"].mean()
-        ax.text(32, y, f"fallback {rate:.1f}%", va="center", ha="right", fontsize=6.8, color=GREY)
+        ax.text(32, y, f"fallback {rate:.1f}%", va="center", ha="right", fontsize=5.8, color=GREY)
     ax.set_xscale("log")
     ax.set_xlim(0.08, 38)
-    ax.set_yticks(
-        positions,
-        [
-            {
-                "bt_smc_oof": "BT / SMC",
-                "mscnn_smc_oof": "MSCNN / SMC",
-                "tcn_smc_final0": "TCN / SMC",
-                "bt_gtzan_seed0": "BT / GTZAN",
-                "mscnn_gtzan": "MSCNN / GTZAN",
-            }[panel]
-            for panel in PANEL_ORDER
-        ],
-    )
+    ax.set_yticks(positions, [FIG1_LABEL[panel] for panel in FIG1_PANEL_ORDER])
     ax.invert_yaxis()
     ax.set_xlabel("Per-piece median $w(c_{ij})$ (log scale)")
     ax.set_title("(c) Input-specific operating points", loc="left", fontweight="bold")
     ax.grid(axis="x", which="both")
 
-    fig.suptitle("Input-conditioned duration stiffness under one Frozen-4F configuration", x=0.02, y=0.975, ha="left", fontweight="bold")
+    fig.suptitle(
+        "Input-conditioned duration stiffness\nunder one Frozen-4F configuration",
+        x=0.04,
+        y=0.985,
+        ha="left",
+        fontweight="bold",
+    )
     fig.text(
-        0.02,
-        0.02,
+        0.04,
+        0.025,
         "All values are derived from real decoded edges; the shaded region marks the empirical 99.5th percentile of $c_{ij}$. "
-        "SMC panels contain 217 tracks; GTZAN panels contain 993 tracks.",
-        fontsize=6.4,
+        "Each SMC series contains 217 tracks; each GTZAN series contains 993 tracks.",
+        fontsize=5.6,
         color=GREY,
+        wrap=True,
     )
     save_all(fig, figures, "fig01_input_conditioned_stiffness")
 
@@ -770,7 +805,6 @@ def write_bootstrap(data: Path) -> None:
 
 
 def write_numeric_summary(data: Path, frozen: dict[str, object]) -> None:
-    aggregate = pd.read_csv(data / "aggregate_metrics.csv")
     pieces = pd.read_csv(data / "mechanism_piece_summary.csv")
     edges = pd.read_csv(data / "mechanism_edges.csv.gz")
     payload: dict[str, object] = {
@@ -783,11 +817,9 @@ def write_numeric_summary(data: Path, frozen: dict[str, object]) -> None:
         },
         "panels": {},
     }
-    for panel in PANEL_ORDER:
+    for panel in FIG1_PANEL_ORDER:
         panel_piece = pieces[pieces.panel == panel]
         panel_edge = edges[edges.panel == panel]
-        direct = aggregate[(aggregate.panel == panel) & (aggregate.method == "direct")].iloc[0]
-        casm = aggregate[(aggregate.panel == panel) & (aggregate.method == "casm_full")].iloc[0]
         payload["panels"][panel] = {
             "piece_count": len(panel_piece),
             "edge_count": len(panel_edge),
@@ -796,7 +828,13 @@ def write_numeric_summary(data: Path, frozen: dict[str, object]) -> None:
             "edge_margin_median": float(panel_edge.edge_margin.median()),
             "edge_coefficient_median": float(panel_edge.edge_coefficient.median()),
             "casm_minus_direct_percentage_points": {
-                metric: 100 * float(casm[metric] - direct[metric])
+                metric: 100
+                * float(
+                    (
+                        panel_piece[f"casm_{metric}"]
+                        - panel_piece[f"direct_{metric}"]
+                    ).mean()
+                )
                 for metric in ("beat_fmeasure", "beat_cmlt", "beat_amlt")
             },
         }

@@ -1,0 +1,17 @@
+{
+  "new_rows": {
+    "mechanism_candidates.csv.gz": 110765,
+    "mechanism_edges.csv.gz": 57943,
+    "mechanism_piece_summary.csv": 993
+  },
+  "output_sha256": {
+    "extend_fig01_mechanism_panel.py": "2ea6dd590d876e4a688721071533132d1ea5d560a678268aa393cfd78a278515",
+    "mechanism_candidates.csv.gz": "77ec17c4a2db1635837906ffd62de36a398296893c1afaf10a8d033ee8179c10",
+    "mechanism_edges.csv.gz": "019bfa09d916ce1a72bf25c7b731b618736b3c42df3e2b2cdccdbe5b32e3da31",
+    "mechanism_piece_summary.csv": "df9ab5a5c0201ccea338fb67234f423628d0f027321e4341cb9a45eff014d0ae",
+    "protocol.json": "bc1442d8f2326132d082ce031d1147a6aaaba0c39b60c3752ae7528b47ed95a4"
+  },
+  "panel": "tcn_gtzan_final0",
+  "piece_count": 993,
+  "status": "COMPLETE"
+}

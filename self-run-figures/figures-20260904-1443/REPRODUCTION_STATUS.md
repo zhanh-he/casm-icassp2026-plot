@@ -5,7 +5,9 @@ Verified on 2026-09-05 using the pinned `lab5090` environment:
 - all six numbered figures rendered successfully from this directory's `data/`,
   with Figure 5 split into matched CASM and DBN files;
 - all seven regenerated PNG files are byte-identical to `reference_figures/`;
-- the independent data/provenance audit passes 196/196 checks;
+- the independent data/provenance audit passes 198/198 checks;
+- Figure 1 includes a separately provenance-checked 993-track TCN/GTZAN
+  final0 mechanism panel generated with the identical Frozen-4F payload;
 - Figure 5 uses Beat This GTZAN final0 on all 993 tracks;
 - all 64 fold-combination selections were fixed from SMC folds 1--7 before
   GTZAN evaluation and reduce to 22 unique configurations;
@@ -19,7 +21,7 @@ Verified on 2026-09-05 using the pinned `lab5090` environment:
 Reference/regenerated PNG SHA-256:
 
 ```text
-64f06c6e0c358f1fe22d969aac0525734d9dac7dbbad5401178407e8d631f942  fig01_input_conditioned_stiffness.png
+40c4cfbeb3aba4511547688195fa9f14205f5e5afc5e13501f88bd37e4abb938  fig01_input_conditioned_stiffness.png
 96f4ef1992016a96532c2da9382d83174a4b2da8fdbf122de3b881720f726390  fig02_real_track_mechanism.png
 35e689e65ef79ea4a41795d50136c08d135b984f1e432b772d29f2d20e67ddcb  fig03_ablation_matrix.png
 10b8a266be2d392f440aa75edcb540c6f280a8811863a9d798db71a110ff7927  fig04_decoder_operating_points.png

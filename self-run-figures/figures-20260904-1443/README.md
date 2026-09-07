@@ -80,6 +80,7 @@ the DBN jitter uses `20260905`. The environment is pinned in
 ├── render_and_validate.sh          # render with an existing environment
 ├── plot_mechanism_evidence.py      # six numbered figures; supports --only
 ├── validate_mechanism_evidence.py  # data/provenance checks
+├── extend_fig01_mechanism_panel.py # append a mechanism-only cache panel
 ├── run_mechanism_ablation.py       # upstream experiment runner
 ├── evaluate_locked_combinations_final0.py
 │                                     # locked GTZAN-final0 evaluation runner
@@ -118,6 +119,24 @@ caches, annotations, and the Frozen-4F parameter file at their recorded remote
 paths. Those paths and the parameter SHA-256 are recorded in
 `data/protocol.json`. This is deliberately separated from ordinary figure
 editing: no remote cache is needed to redraw any figure.
+
+### C.1 Recompute the Figure 1 TCN/GTZAN extension
+
+`extend_fig01_mechanism_panel.py` reuses the original experiment runner's
+`casm_trace()` implementation and the frozen payload recorded in the base
+protocol. It writes a new directory and refuses to overwrite an existing one:
+
+```bash
+PYTHONPATH=/media/mengh/SharedData/zhanh/auto_structbeat \
+python extend_fig01_mechanism_panel.py \
+  --base-data-dir /media/mengh/SharedData/zhanh/auto_structbeat/runs/20260904_casm_mechanism_v1/output \
+  --output-dir /media/mengh/SharedData/zhanh/auto_structbeat/runs/FRESH_FIG01_EXTENSION_DIRECTORY \
+  --cache-dir /media/mengh/SharedData/zhanh/auto_structbeat/runs/20260904_casm_tempo_range_blindspot_ablation_v1/lab5090/imported_kaya/tcn_beatthis_protocol/caches/tcn_beatthis_protocol/final0_gtzan \
+  --panel tcn_gtzan_final0 \
+  --label "TCN / GTZAN final0" \
+  --expected-pieces 993 \
+  --workers 12
+```
 
 ### D. Re-run the final0 calibration-scale evaluation
 
@@ -192,14 +211,21 @@ final0 lock, panel size, summaries, hashes, and checkpoint identity. It also
 checks that CASM and DBN use identical fold combinations and Direct panels,
 reconstructs the DBN summaries, and verifies the DBN grid, selection audit,
 lock, output hashes, and checkpoint. See `qa_reference/qa_report.md` for the
-reference run, which passes **196/196 checks**.
+reference run, which passes **198/198 checks**.
 
 The final0 evaluation was also cross-checked against an older, independently
 run final0 experiment for the four overlapping configurations; every reported
 metric agreed exactly (maximum absolute discrepancy 0.0).
 
-The copied data comprise 2,637 panel-track instances, 26,370 method-track
-metric rows, 321,617 retained candidates, and 147,000 decoded CASM edges.
+The performance experiment comprises 2,637 panel-track instances and 26,370
+method-track metric rows. Figure 1 additionally includes a mechanism-only TCN /
+GTZAN final0 panel (993 tracks), giving 3,630 mechanism panel-track instances,
+432,382 retained candidates, and 204,943 decoded CASM edges.
+
+The added TCN / GTZAN diagnostics were generated from the same Frozen-4F
+parameter payload with `extend_fig01_mechanism_panel.py`. Its source-cache
+path, base-protocol hash, row counts, and merged-table hashes are recorded in
+`data/protocol.json` and `data/fig01_tcn_gtzan_manifest.json`.
 
 ## Figure names
 

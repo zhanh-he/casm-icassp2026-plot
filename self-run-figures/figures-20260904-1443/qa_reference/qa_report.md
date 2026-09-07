@@ -1,6 +1,6 @@
 # CASM mechanism-evidence QA
 
-**Status: PASS (196/196 checks passed).**
+**Status: PASS (198/198 checks passed).**
 
 ## Checks
 
@@ -182,20 +182,22 @@
 - **PASS — DBN calibration summary recomputation:** max mean error=2.220e-16; max population-SD error=9.714e-17
 - **PASS — DBN selection-audit completeness:** 3328 rows; 52 candidates; one choice for each of 64 subsets
 - **PASS — DBN calibration provenance:** fresh DBN grid, selection audit, lock, fixed-panel protocol, hashes, and upstream QA agree
-- **PASS — mechanism summary coverage:** 2637 unique panel/piece rows; expected 2637
+- **PASS — mechanism summary coverage:** 3630 unique panel/piece rows; expected 3630
 - **PASS — bt_gtzan_seed0: mechanism piece coverage:** summary=993, candidates=993, edges=993
 - **PASS — bt_smc_oof: mechanism piece coverage:** summary=217, candidates=217, edges=217
 - **PASS — mscnn_gtzan: mechanism piece coverage:** summary=993, candidates=993, edges=991
 - **PASS — mscnn_smc_oof: mechanism piece coverage:** summary=217, candidates=217, edges=214
+- **PASS — tcn_gtzan_final0: mechanism piece coverage:** summary=993, candidates=993, edges=991
 - **PASS — tcn_smc_final0: mechanism piece coverage:** summary=217, candidates=217, edges=210
 - **PASS — candidate response-law closure:** max sigma error=1.159e-08; coefficient error=3.245e-06 (float32 confidence storage)
 - **PASS — edge response-law closure:** max sigma error=1.665e-16; coefficient error=7.105e-15
 - **PASS — candidate domains:** confidence, tempo, sigma, and cost coefficient are valid
 - **PASS — edge domains:** confidence, tempo, interval, sigma, and cost coefficient are valid
-- **PASS — duration-cost closure:** maximum absolute discrepancy=4.441e-16
+- **PASS — duration-cost closure:** maximum absolute discrepancy=4.996e-16
 - **PASS — piece diagnostic domains:** confidence, agreement, and fallback flags are valid
 - **PASS — mechanism count reconciliation:** candidate/edge count mismatches=0
 - **PASS — mechanism metric reconciliation:** maximum delta discrepancy=3.123e-16
+- **PASS — Fig. 1 TCN/GTZAN extension provenance:** 993-track final0 mechanism panel, frozen-parameter provenance, and merged-table hashes agree
 - **PASS — bootstrap paired means:** maximum discrepancy from piece-level paired means=9.628e-17
 - **PASS — bootstrap protocol:** 5,000 paired resamples; seed fixed; means lie inside reported intervals
 - **PASS — representative trace provenance:** validated 8 trace files; metadata mismatches=0
@@ -203,8 +205,8 @@
 
 ## Empirical operating range
 
-Across 147,000 decoded CASM edges, the median margin is 0.108, the 99.5th percentile is 0.340, and the maximum is 0.602.
+Across 204,943 decoded CASM edges, the median margin is 0.103, the 99.5th percentile is 0.319, and the maximum is 0.602.
 
-The median effective duration coefficient is 0.951; the observed maximum is 15.473. The response law would reach 138.889 at c=1, which was not approached by these real edges.
+The median effective duration coefficient is 0.901; the observed maximum is 15.473. The response law would reach 138.889 at c=1, which was not approached by these real edges.
 
-The QA checks integrity and algebraic consistency. It does not turn post-hoc representative windows into independent performance evidence, and the TCN final0 panel remains exploratory rather than OOF.
+The QA checks integrity and algebraic consistency. It does not turn post-hoc representative windows into independent performance evidence, and both TCN final0 mechanism panels remain exploratory rather than OOF.
