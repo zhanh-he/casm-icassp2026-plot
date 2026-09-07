@@ -1,6 +1,8 @@
 # Reproduction status
 
-Verified on 2026-09-05 using the pinned `lab5090` environment:
+Re-verified on 2026-09-08 using the pinned `lab5090` environment (Figure 1
+was rerendered; unchanged Figures 2--6 retain their 2026-09-05 reference
+hashes):
 
 - all six numbered figures rendered successfully from this directory's `data/`,
   with Figure 5 split into matched CASM and DBN files;
@@ -21,7 +23,7 @@ Verified on 2026-09-05 using the pinned `lab5090` environment:
 Reference/regenerated PNG SHA-256:
 
 ```text
-40c4cfbeb3aba4511547688195fa9f14205f5e5afc5e13501f88bd37e4abb938  fig01_input_conditioned_stiffness.png
+58fed411b18c230af2d3b53b9e588548f91e8bece9b4670039c00c3ead84b57f  fig01_input_conditioned_stiffness.png
 96f4ef1992016a96532c2da9382d83174a4b2da8fdbf122de3b881720f726390  fig02_real_track_mechanism.png
 35e689e65ef79ea4a41795d50136c08d135b984f1e432b772d29f2d20e67ddcb  fig03_ablation_matrix.png
 10b8a266be2d392f440aa75edcb540c6f280a8811863a9d798db71a110ff7927  fig04_decoder_operating_points.png

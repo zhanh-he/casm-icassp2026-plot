@@ -2,9 +2,9 @@
 
 **日期：** 2026-09-05
 
-**最近复核：** 2026-09-07
+**最近复核：** 2026-09-08
 
-**Fig. 1 单栏版更新：** 2026-09-07
+**Fig. 1 组合排版恢复：** 2026-09-08
 
 **性质：** 论文写作说明、实验审计与 caption 备忘
 
@@ -185,9 +185,9 @@ D_{ij}=w(c_{ij})\,[\log(\Delta_{ij}/\tau_{ij})]^2.
 | MSCNN-lite / GTZAN | 0.814 | 0.928 | 1.029 | 12.4% |
 | TCN / GTZAN final0 | 0.721 | 0.844 | 0.915 | 15.0% |
 
-### 单栏版的视觉编码
+### 横向组合版的视觉编码
 
-新版将 (a)、(b)、(c) **从上到下竖排**，画布宽度为 3.45 inch，可直接放入 ICASSP 的单栏。内容逻辑没有改变，只调整了空间组织并补齐 TCN / GTZAN：
+当前版本恢复原来的横向组合：**(a) 与 (b) 在上排并列，(c) 横跨下排**，画布为 7.15 × 4.15 inch。与早期版本相比，内容层面的修正全部保留：补齐 TCN / GTZAN，并统一 backbone/corpus 的视觉语义：
 
 - BeatThis 始终用蓝色；MSCNN 始终用金黄色；TCN 始终用橄榄绿色；
 - SMC 在 (b) 使用实线，GTZAN 使用虚线；
@@ -366,7 +366,7 @@ Fig. 1 的数据规模是 3,630 个 panel--track instances，而不是 3,630 首
 复现说明见 [README](../../self-run-figures/figures-20260904-1443/README.md)。归档 PNG 的 SHA-256 分别为：
 
 ```text
-40c4cfbeb3aba4511547688195fa9f14205f5e5afc5e13501f88bd37e4abb938  fig01_input_conditioned_stiffness.png
+58fed411b18c230af2d3b53b9e588548f91e8bece9b4670039c00c3ead84b57f  fig01_input_conditioned_stiffness.png
 96f4ef1992016a96532c2da9382d83174a4b2da8fdbf122de3b881720f726390  fig02_real_track_mechanism.png
 ```
 

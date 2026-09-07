@@ -7,8 +7,9 @@
 - Takeaway: the deterministic response curve is fixed, but real edge margins
   occupy different ranges across datasets/backbones and produce a broad range
   of effective duration coefficients.
-- Form: one-column, three-row research figure: response curve, empirical
-  edge-margin ECDF, and per-piece effective-coefficient distribution.
+- Form: two-row composite research figure: response curve and empirical
+  edge-margin ECDF side by side above a full-width per-piece
+  effective-coefficient distribution.
 - Data: every structured-path edge from 3,630 panel-track instances across a
   balanced 3-backbone x 2-corpus mechanism panel. SMC contains 217 tracks per
   backbone; GTZAN contains 993 tracks per backbone. Both TCN panels are

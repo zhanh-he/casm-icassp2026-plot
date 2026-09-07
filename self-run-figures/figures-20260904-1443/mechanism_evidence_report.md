@@ -37,10 +37,11 @@ with \(\sigma_0=0.12\), \(\sigma_u=0.4\), and \(\lambda=4\). The global paramete
 
 Across 204,943 real decoded edges, median \(c_{ij}=0.103\), the 90th percentile is 0.166, the 99.5th percentile is 0.319, and the maximum is 0.602. The theoretical coefficient is 138.89 at \(c=1\), but the empirical median, 99.5th percentile, and maximum are only 0.901, 4.146, and 15.473. CASM therefore behaves mainly as a **graded soft constraint**, not as a frequently activated hard metronome.
 
-The revised figure is a one-column, three-row layout. Backbone is encoded by
-color (BeatThis blue, MSCNN gold, TCN olive-green), while corpus is encoded by
-line style (SMC solid, GTZAN dashed). The TCN/GTZAN final0 panel contains 57,943
-selected-path edges; its median/90th-percentile margin is 0.097/0.131, its
+The figure uses the original two-row composite layout: the response law and
+ECDF sit side by side above a full-width operating-point panel. Backbone is
+encoded by color (BeatThis blue, MSCNN gold, TCN olive-green), while corpus is
+encoded by line style (SMC solid, GTZAN dashed). The TCN/GTZAN final0 panel
+contains 57,943 selected-path edges; its median/90th-percentile margin is 0.097/0.131, its
 per-piece median-coefficient quartiles are 0.721/0.844/0.915, and its fallback
 rate is 15.0%.
 

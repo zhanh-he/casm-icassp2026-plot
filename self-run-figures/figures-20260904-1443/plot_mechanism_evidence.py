@@ -147,13 +147,21 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
     sigma0 = float(frozen["duration_sigma"])
     sigmau = float(frozen["uncertain_sigma"])
 
-    fig, axes = plt.subplots(
-        3,
-        1,
-        figsize=(3.45, 7.60),
-        gridspec_kw={"height_ratios": [1.0, 1.08, 1.15]},
+    fig = plt.figure(figsize=(7.15, 4.15))
+    grid = fig.add_gridspec(2, 2, height_ratios=[1.15, 0.82])
+    axes = [
+        fig.add_subplot(grid[0, 0]),
+        fig.add_subplot(grid[0, 1]),
+        fig.add_subplot(grid[1, :]),
+    ]
+    fig.subplots_adjust(
+        wspace=0.34,
+        hspace=0.55,
+        top=0.84,
+        bottom=0.14,
+        left=0.13,
+        right=0.97,
     )
-    fig.subplots_adjust(hspace=0.58, top=0.91, bottom=0.16, left=0.24, right=0.97)
 
     ax = axes[0]
     c = np.linspace(0.0, 1.0, 1001)
@@ -192,7 +200,7 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
         columnspacing=0.8,
         labelspacing=0.2,
         borderaxespad=0.2,
-        fontsize=6.0,
+        fontsize=5.8,
     )
 
     ax = axes[2]
@@ -221,7 +229,7 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
         patch.set_linestyle(style)
     for y, panel in zip(positions, FIG1_PANEL_ORDER):
         rate = 100 * pieces.loc[pieces.panel == panel, "beat_fallback"].mean()
-        ax.text(32, y, f"fallback {rate:.1f}%", va="center", ha="right", fontsize=5.8, color=GREY)
+        ax.text(32, y, f"fallback {rate:.1f}%", va="center", ha="right", fontsize=6.2, color=GREY)
     ax.set_xscale("log")
     ax.set_xlim(0.08, 38)
     ax.set_yticks(positions, [FIG1_LABEL[panel] for panel in FIG1_PANEL_ORDER])
@@ -231,20 +239,19 @@ def figure_input_conditioning(data: Path, figures: Path, frozen: dict[str, objec
     ax.grid(axis="x", which="both")
 
     fig.suptitle(
-        "Input-conditioned duration stiffness\nunder one Frozen-4F configuration",
-        x=0.04,
-        y=0.985,
+        "Input-conditioned duration stiffness under one Frozen-4F configuration",
+        x=0.02,
+        y=0.975,
         ha="left",
         fontweight="bold",
     )
     fig.text(
-        0.04,
-        0.025,
+        0.02,
+        0.02,
         "All values are derived from real decoded edges; the shaded region marks the empirical 99.5th percentile of $c_{ij}$. "
         "Each SMC series contains 217 tracks; each GTZAN series contains 993 tracks.",
-        fontsize=5.6,
+        fontsize=6.4,
         color=GREY,
-        wrap=True,
     )
     save_all(fig, figures, "fig01_input_conditioned_stiffness")
 
