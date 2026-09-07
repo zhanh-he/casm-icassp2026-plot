@@ -29,7 +29,7 @@ def main() -> None:
             "label": "SMC 117",
             "screen_rank": 234,
             "summary": (
-                "Adjusted DBN reduces dense-path failures, yet unstable IBI "
+                "DBN reduces dense-path failures, yet unstable IBI "
                 "transitions remain; CASM follows the local intervals."
             ),
             "data": json.loads(args.smc117.read_text(encoding="utf-8")),
@@ -39,7 +39,7 @@ def main() -> None:
             "label": "SMC 221",
             "screen_rank": 301,
             "summary": (
-                "Adjusted DBN recovers a plausible variable-tempo path but remains "
+                "DBN recovers a plausible variable-tempo path but remains "
                 "less continuous than CASM."
             ),
             "data": json.loads(args.smc221.read_text(encoding="utf-8")),
@@ -225,6 +225,12 @@ TEMPLATE = r'''
       height: 0;
       border-top: 2px solid currentColor;
     }
+    #decoder-contrast-real-v2 .legend-output-line {
+      display: inline-block;
+      width: 23px;
+      height: 0;
+      border-top: 2px solid currentColor;
+    }
     #decoder-contrast-real-v2 .chart-wrap {
       position: relative;
       width: 100%;
@@ -306,10 +312,10 @@ TEMPLATE = r'''
     <span class="legend-item"><i class="legend-tick"></i>matched prediction</span>
     <span class="legend-item"><i class="legend-symbol">×</i>false-positive prediction</span>
     <span class="legend-item"><i class="legend-dot"></i>GroundTruth IBI</span>
-    <span class="legend-item direct-color"><i class="legend-symbol">◆</i>Direct output IBI</span>
-    <span class="legend-item fixed-color"><i class="legend-prior"></i>fixed τ + square output IBI</span>
-    <span class="legend-item dbn-color"><i class="legend-symbol">▲</i>DBN output IBI</span>
-    <span class="legend-item plpdp-color"><i class="legend-symbol">✦</i>PLPDP output IBI</span>
+    <span class="legend-item direct-color"><i class="legend-output-line"></i>Direct output IBI</span>
+    <span class="legend-item fixed-color"><i class="legend-prior"></i>Fixed Semi-Markov output IBI (fixed τ + square)</span>
+    <span class="legend-item dbn-color"><i class="legend-output-line"></i>DBN output IBI</span>
+    <span class="legend-item plpdp-color"><i class="legend-output-line"></i>PLPDP output IBI</span>
     <span class="legend-item casm-color"><i class="legend-prior"></i>CASM local τ(t) + circle output IBI</span>
   </div>
 
@@ -347,7 +353,7 @@ TEMPLATE = r'''
       {id: 'direct', label: 'Direct', short: 'Direct', color: 'direct'},
       {id: 'fixed_semimarkov', label: 'Fixed Semi-Markov', short: 'Fixed SMM', color: 'fixed'},
       {id: 'dbn', label: 'DBN', short: 'DBN', color: 'dbn'},
-      {id: 'plpdp', label: 'PLPDP (30–300 BPM)', short: 'PLPDP', color: 'plpdp'},
+      {id: 'plpdp', label: 'PLPDP', short: 'PLPDP', color: 'plpdp'},
       {id: 'casm', label: 'CASM', short: 'CASM', color: 'casm'}
     ];
     const css = getComputedStyle(root);
@@ -373,12 +379,6 @@ TEMPLATE = r'''
     function pct(value) { return (100 * value).toFixed(1); }
     function methodColor(method) { return colors[method.color]; }
     function displayLabel(method, payload, compactLabel = false) {
-      if (method.id === 'dbn' && payload.dbn_tuning) {
-        return compactLabel ? 'DBN adj.' : 'DBN (adjusted)';
-      }
-      if (method.id === 'dbn' && payload.dbn_configuration) {
-        return compactLabel ? 'DBN' : 'DBN (30–300 BPM)';
-      }
       return compactLabel ? method.short : method.label;
     }
 
@@ -595,14 +595,16 @@ TEMPLATE = r'''
         if (!rows.length) return;
         svg.append('path').datum(rows).attr('clip-path', `url(#${panel.clip})`).attr('fill', 'none').attr('stroke', color).attr('stroke-width', 1.25).attr('opacity', .72)
           .attr('d', d3.line().x(row => x(row.time)).y(row => yPanel(row.interval)));
-        svg.selectAll(`.${label}`).data(rows).enter().append('path').attr('class', label).attr('d', d3.symbol().type(symbolType).size(38)())
-          .attr('transform', row => `translate(${x(row.time)},${yPanel(row.interval)})`).attr('fill', color)
-          .attr('data-tooltip', row => `${label.replaceAll('-', ' ')} IBI: ${row.interval.toFixed(3)} s`);
+        if (symbolType) {
+          svg.selectAll(`.${label}`).data(rows).enter().append('path').attr('class', label).attr('d', d3.symbol().type(symbolType).size(38)())
+            .attr('transform', row => `translate(${x(row.time)},${yPanel(row.interval)})`).attr('fill', color)
+            .attr('data-tooltip', row => `${label.replaceAll('-', ' ')} IBI: ${row.interval.toFixed(3)} s`);
+        }
       }
-      plotIntervals(methodIntervals.direct, colors.direct, d3.symbolDiamond, 'direct-output', directPanel, yDirect);
+      plotIntervals(methodIntervals.direct, colors.direct, null, 'direct-output', directPanel, yDirect);
       plotIntervals(methodIntervals.fixed_semimarkov, colors.fixed, d3.symbolSquare, 'fixed-output', fixedPanel, yFixed);
-      plotIntervals(methodIntervals.dbn, colors.dbn, d3.symbolTriangle, 'dbn-output', dbnPanel, yDbn);
-      plotIntervals(methodIntervals.plpdp, colors.plpdp, d3.symbolWye, 'plpdp-output', plpdpPanel, yPlpdp);
+      plotIntervals(methodIntervals.dbn, colors.dbn, null, 'dbn-output', dbnPanel, yDbn);
+      plotIntervals(methodIntervals.plpdp, colors.plpdp, null, 'plpdp-output', plpdpPanel, yPlpdp);
       plotIntervals(methodIntervals.casm, colors.casm, d3.symbolCircle, 'casm-output', casmPanel, yCasm);
       [
         [directPanel, methodIntervals.direct, colors.direct],

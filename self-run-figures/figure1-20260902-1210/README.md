@@ -74,7 +74,7 @@ jupyter lab figure1_reproduction.ipynb
 
 ## Scientific warning
 
-These cases were selected for mechanism explanation. The SMC adjusted DBN
+These cases were selected for mechanism explanation. The shared SMC DBN display
 setting was selected on the displayed examples and must not be reported as an
 unbiased aggregate DBN benchmark. GTZAN uses the matched 30-300 BPM DBN, while
 PLPDP uses its released 30-300 BPM default. Window IBI MAE is explanatory;

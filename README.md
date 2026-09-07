@@ -14,9 +14,10 @@ One-click audition buttons sit directly below the decoder score table. Music is
 played by the browser's native MP3 player, while beat and downbeat clicks remain
 synchronized to the frozen event arrays.
 
-Each public case includes its complete 30- or 40-second performance. Original
-plays the music alone; GroundTruth and every decoder overlay their events on
-exactly the same recording. The figure still opens on the selected 18-second
+Each public case includes its complete 30- or 40-second performance. GroundTruth
+and every decoder overlay their events on exactly the same recording. SMC uses
+uniform beat clicks because it has no downbeat annotations; GTZAN retains beat
+and downbeat click accents. The figure still opens on the selected 18-second
 analysis window, while the slider can audition any valid interval in every case.
 
 ## Source layout

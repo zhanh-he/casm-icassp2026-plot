@@ -17,10 +17,11 @@ One-click audition buttons sit directly below the decoder score table. Music is
 streamed through the browser's native MP3 player; the click and music gains are
 fixed, so the public interface only exposes the controls needed for comparison.
 
-Each case includes its complete 30- or 40-second performance. Original plays
-the music alone; GroundTruth and every decoder overlay their events on exactly
-the same recording. The figure opens on the selected 18-second analysis window,
-and the slider can audition every valid interval in each case.
+Each case includes its complete 30- or 40-second performance. GroundTruth and
+every decoder overlay their events on exactly the same recording. SMC uses one
+uniform beat click because it has no downbeat annotations; GTZAN retains beat
+and downbeat click accents. The figure opens on the selected 18-second analysis
+window, and the slider can audition every valid interval in each case.
 
 The published clips and their provenance are documented in
 [`audio/ATTRIBUTION.md`](audio/ATTRIBUTION.md).

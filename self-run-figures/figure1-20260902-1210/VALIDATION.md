@@ -13,7 +13,7 @@ Validated on 2026-09-04 with the isolated `.venv` documented in `README.md`.
 
 Expected selected-window IBI MAE values:
 
-| Case | Direct | Fixed Semi-Markov | DBN adjusted | CASM |
+| Case | Direct | Fixed Semi-Markov | DBN | CASM |
 | --- | ---: | ---: | ---: | ---: |
 | SMC 221, 6.14-24.14 s | 0.304386 | 0.212127 | 0.284283 | 0.144559 |
 | SMC 117, 21.48-39.48 s | 0.211634 | 0.130188 | 0.105487 | 0.097110 |

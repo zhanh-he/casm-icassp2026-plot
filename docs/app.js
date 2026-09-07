@@ -1,7 +1,6 @@
 "use strict";
 
 const SOURCES = [
-  { id: "original", label: "Original", color: "#42474d" },
   { id: "reference", label: "GroundTruth", color: "#242629" },
   { id: "direct", label: "Direct", color: "#409eff" },
   { id: "fixed_semimarkov", label: "Fixed Semi-Markov", color: "#ff7a3d" },
@@ -82,15 +81,16 @@ function renderSourceButtons() {
 function visibleEvents(source) {
   const data = currentCase();
   if (!data || source === "original") return { beats: [], downbeats: [] };
+  const downbeatsAvailable = data.dataset !== "smc";
   if (source === "reference") {
     return {
       beats: data.truth.beat_times,
-      downbeats: data.truth.downbeat_times,
+      downbeats: downbeatsAvailable ? data.truth.downbeat_times : [],
     };
   }
   return {
     beats: data.decoders[source].beat_times,
-    downbeats: data.decoders[source].downbeat_times,
+    downbeats: downbeatsAvailable ? data.decoders[source].downbeat_times : [],
   };
 }
 
@@ -325,7 +325,7 @@ function mountInlineAuditionControls() {
 .audition-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
 .audition-heading strong { font-size: 12px; font-weight: 700; }
 .audition-window { color: #697079; font-size: 11px; font-variant-numeric: tabular-nums; }
-.audition-buttons { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)) 38px; gap: 6px; }
+.audition-buttons { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)) 38px; gap: 6px; }
 .audition-method, .audition-stop { min-height: 36px; border: 1px solid #dce1e5; border-radius: 5px; background: #fff; color: #202327; cursor: pointer; font: inherit; font-size: 11px; font-weight: 650; }
 .audition-method { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 6px 7px 6px 10px; overflow: hidden; }
 .audition-method::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: var(--method-color); }
@@ -485,7 +485,7 @@ function bindFigureControls() {
 
 async function initialize() {
   try {
-    const response = await fetch("data/cases.json?v=20260905-4");
+    const response = await fetch("data/cases.json?v=20260907-1");
     if (!response.ok) throw new Error(`Case data returned ${response.status}.`);
     cases = await response.json();
     void loadBundledAudio();

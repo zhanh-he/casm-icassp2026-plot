@@ -41,13 +41,13 @@ for case, label, rank, summary in (
         "smc_117",
         "SMC 117",
         234,
-        "Adjusted DBN reduces dense-path failures, yet unstable IBI transitions remain; CASM follows the local intervals.",
+        "DBN reduces dense-path failures, yet unstable IBI transitions remain; CASM follows the local intervals.",
     ),
     (
         "smc_221",
         "SMC 221",
         301,
-        "Adjusted DBN recovers a plausible variable-tempo path but remains less continuous than CASM.",
+        "DBN recovers a plausible variable-tempo path but remains less continuous than CASM.",
     ),
     (
         "gtzan_blues_00023",

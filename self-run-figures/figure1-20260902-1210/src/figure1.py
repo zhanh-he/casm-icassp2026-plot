@@ -25,7 +25,7 @@ METHOD_LABELS = {
     "direct": "Direct",
     "fixed_semimarkov": "Fixed Semi-Markov",
     "dbn": "DBN",
-    "plpdp": "PLPDP (30-300 BPM)",
+    "plpdp": "PLPDP",
     "casm": "CASM",
 }
 COLORS = {
@@ -452,7 +452,7 @@ def plot_figure(
         COLORS["plpdp"],
         COLORS["casm"],
     )
-    row_markers = ("o", "D", "s", "^", "*", "o")
+    row_markers = ("o", None, "s", None, None, "o")
     for index, (axis, label, rows, color, marker) in enumerate(
         zip(ibi_axes, labels, row_sets, row_colors, row_markers)
     ):
@@ -468,7 +468,10 @@ def plot_figure(
                 linewidth=0.8 if index == 0 else 1,
                 alpha=0.2 if index == 0 else 0.72,
             )
-            axis.scatter(rows[:, 0], rows[:, 1], color=color, marker=marker, s=28, zorder=3)
+            if marker is not None:
+                axis.scatter(
+                    rows[:, 0], rows[:, 1], color=color, marker=marker, s=28, zorder=3
+                )
         if index > 0:
             method = METHODS[index - 1]
             mae = data["window_mae"][method]
