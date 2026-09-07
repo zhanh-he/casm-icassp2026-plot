@@ -100,6 +100,16 @@ Our contributions are threefold:
 
 Dynamic programming has long combined onset evidence with inter-beat regularity \cite{ellis2007beattracking}. Korzeniowski \emph{et al.} proposed a Bayesian beat-position extractor around a dominant beat interval \cite{korzeniowski2014crf}; its implementation is exposed by \texttt{madmom} under the historical name \texttt{CRFBeatDetectionProcessor}, although the paper is not the learned linear-chain CRF of Fillon \emph{et al.} \cite{fillon2015crf}. The learned CRF branch was extended to downbeats \cite{durand2016crfdownbeat} and, in 2019, to skip-chain musical structure and Afro-Latin microtiming \cite{fuentes2019skipchain,fuentes2019microtiming}. Resonating comb filters form a different branch: they estimate a dominant global tempo from recurrent activations \cite{bock2015combfilter}, after which events are aligned to that periodicity. The 2019 multi-task tempo--beat model \cite{bock2019multitask} extended neural training rather than this comb-filter event decoder, and retained structured inference. DBNs instead enumerate tempo--phase--meter states and decode their most likely trajectory \cite{krebs2015dbn,bock2016joint}; they remain common in recent high-performing systems.
 
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/p0.jpg}
+\caption{Workflow for beat post-processing...} 
+\label{fg:beat_post}
+\end{center}
+\end{figure}
+
+
 \subsection{Local, segmental, and modern alternatives}
 
 Reliability-informed tracking established the principle that temporal commitment should depend on evidence quality \cite{degara2012reliability}. More recently, a compact one-dimensional semi-Markov state space represented time-varying rhythmic jumps for causal joint tracking \cite{heydari2022semimarkov}. Particle filters have long maintained online tempo hypotheses \cite{hainsworth2004particle}, and BeatNet/BeatNet+ extend that branch to joint real-time rhythm analysis \cite{heydari2021beatnet,heydari2024beatnetplus}. PLPDP is CASM's closest conceptual predecessor: it derives predominant local pulse information and uses dense-frame dynamic programming for expressive tempo \cite{chiu2023localperiodicity}. Its real-time continuation improves controllability \cite{meier2024realtime}, and dPLP makes local-pulse estimation differentiable \cite{chiu2025dplp}.
@@ -107,14 +117,6 @@ Reliability-informed tracking established the principle that temporal commitment
 CASM does not claim novelty for local periodicity, dynamic programming, or semi-Markov inference separately. Unlike PLPDP's dense frame grid, it scores only segments joining retained activation maxima and conditions each segment on the local period \emph{and ambiguity at both endpoints}. Ambiguity modulates both penalty strength and tolerance, rather than merely supplying a preferred period. Unlike the one-dimensional causal semi-Markov model, CASM is an offline sparse event graph with explicit fallback behaviour. Unlike a DBN, it does not maintain a dense tempo--phase state lattice; unlike a semi-CRF \cite{sarawagi2004semimarkov}, its potentials are not learned or normalized.
 
 Another response to difficult rhythm is to adapt the tracker with user annotations \cite{pinto2021userdriven,maia2022adapting,pinto2023bridging, maia2024selective,pinto2026challenging}. That line is complementary: it deliberately imports target-specific supervision. CASM instead recomputes its constraint from unlabelled test activations and leaves upstream weights fixed. At the other extreme, recent work reformulates the prediction task itself \cite{bolt2026reformulated}; masked diffusion learns coherent sequences through iterative refinement \cite{foscarin2026masked}, while BeatFCOS predicts intervals as objects with Soft-NMS \cite{ahn2025beatfcos}. Knowledge-driven metrical hypotheses have also been introduced during self-supervised pre-training \cite{gagnere2025multiple}. These are modern alternatives to traditional post-processing, but require a changed or retrained predictor; CASM targets the still-useful deployment setting in which only a frozen activation interface is available.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/p1.jpg}
-\caption{Workflow for beat post-processing...} 
-\label{fg:beat_post}
-\end{center}
-\end{figure}
 
 \section{Methodology}
 \label{sec:method}
@@ -164,6 +166,15 @@ Motivated also by the octave and continuity failures exposed on SMC
 single-path CASM does not claim to solve multi-hypothesis tempo inference;
 instead, it detects a locally ambiguous period and then deliberately backs off
 from enforcing it.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/p1.jpg}
+\caption{Principal for beat post-processing...} 
+\label{fg:beat_post}
+\end{center}
+\end{figure}
+
 
 \subsubsection{Candidate-event graph.}
 Let $a_t=\operatorname{sigmoid}(z_t^{\mathrm b})$.  We retain its
